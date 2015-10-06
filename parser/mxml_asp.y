@@ -114,7 +114,8 @@ attr : /*...*/ {}
 body : body block {$$ = 0;}
 	| body TEXT {$$ = 0;}
 	| block {$$ = 0;}
-	| TEXT {$$ = 0;};
+	| TEXT {$$ = 0;}
+	| /*...*/;
 %%
 
 int main(int argc, char *argv[]) {
