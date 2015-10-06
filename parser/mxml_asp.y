@@ -60,7 +60,17 @@ S : version doctype block | block | error {yyerror("Go home XML, you are drunk")
 
 version : OPTAG QUES TEXT attr QUES CLTAG {printf("Version OK\n");};
 
-doctype : OPTAG EXCL DOCTYPE TEXT KVOTHE TEXT KVOTHE KVOTHE TEXT KVOTHE CLTAG {printf("DOCTYPE OK\n");};
+doctype : OPTAG EXCL DOCTYPE doctags docurl CLTAG {printf("DOCTYPE OK\n");};
+
+doctags : /*...*/ {}
+		| TEXT doctags {};
+
+docurl : /*...*/ {}
+		|  KVOTHE TEXT docwords KVOTHE docurl {};
+
+docwords : /*...*/ {}
+		|  SLASHTAG docwords {}
+		|  TEXT docwords {}
 
 block : OPTAG REST SLASHTAG CLTAG {$$ = 0; act_oct = -1;}
 		| OPTAG TEXT attr SLASHTAG CLTAG {$$ = 0;}

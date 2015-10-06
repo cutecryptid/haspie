@@ -10,8 +10,7 @@ octave "octave"
 alteration "alteration"
 part "part id="
 doctype "DOCTYPE"
-text [-.A-Za-z0-9]+
-special_text \"[-.A-Za-z0-9\s\:\/]+\"
+text [-.A-Za-z0-9:\\]+
 ques_montgomery [?]
 excl [!]
 open [<]
