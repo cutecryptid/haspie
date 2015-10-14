@@ -30,19 +30,19 @@ int noteVal (char * note, char * act_alter){
 		alterVal = 0;
 
 	if(!strcmp(note, "C"))
-		return 1 + alterVal;
+		return 24 + alterVal;
 	if(!strcmp(note, "D"))
-		return 3 + alterVal;
+		return 26 + alterVal;
 	if(!strcmp(note, "E"))
-		return 4 + alterVal;
+		return 28 + alterVal;
 	if(!strcmp(note, "F"))
-		return 5 + alterVal;
+		return 29 + alterVal;
 	if(!strcmp(note, "G"))
-		return 7 + alterVal;
+		return 31 + alterVal;
 	if(!strcmp(note, "A"))
-		return 9 + alterVal;
+		return 21 + alterVal;
 	if(!strcmp(note, "B"))
-		return 11 + alterVal;
+		return 23 + alterVal;
 }
 %}
 %union{
@@ -96,10 +96,17 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 			if (act_oct == -1){
 				act_note_val = -1;
 			} else {
-				act_note_val = noteVal(act_note, act_alter) + (8 * act_oct);
+				act_note_val = noteVal(act_note, act_alter) + (12 * act_oct);
 			}
-            fprintf(f, "note(voice%d, %d, %d).\n", part, act_note_val, note_position);
+            fprintf(f, "note(%d, %d, %d).\n", part, act_note_val, note_position);
 		} 
+		| CLTAG OPTAG SLASHTAG TEXT CLTAG {
+			$$ = 0; 
+			if(strcmp($4, pop(stag))){
+				printf("%s - TAG NO CERRADO\n", $4);
+				exit(-1);
+			};
+		};
 		| CLTAG body OPTAG SLASHTAG TEXT CLTAG {
 			$$ = 0; 
 			if(strcmp($5, pop(stag))){
@@ -114,8 +121,7 @@ attr : /*...*/ {}
 body : body block {$$ = 0;}
 	| body TEXT {$$ = 0;}
 	| block {$$ = 0;}
-	| TEXT {$$ = 0;}
-	| /*...*/;
+	| TEXT {$$ = 0;};
 %%
 
 int main(int argc, char *argv[]) {
