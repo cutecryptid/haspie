@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <malloc.h>
 #include <math.h>
+#include <unistd.h>
 #include "lib/stack.h"
 
 void yyerror (char const *);
@@ -58,7 +59,7 @@ int noteVal (char * note, char * act_alter){
 %%
 S : version doctype block | block | error {yyerror("Go home XML, you are drunk");};
 
-version : OPTAG QUES TEXT attr QUES CLTAG {printf("Version OK\n");};
+version : OPTAG QUES TEXT attr QUES CLTAG {printf("Version OK, subdivision %d\n", subdivision);};
 
 doctype : OPTAG EXCL DOCTYPE doctags docurl CLTAG {printf("DOCTYPE OK\n");};
 
@@ -124,17 +125,78 @@ body : body block {$$ = 0;}
 	| TEXT {$$ = 0;};
 %%
 
+
+extern int yylex();
+extern int yyparse();
+extern FILE *yyin;
+
+int usage(char* prog_name){
+	printf ("usage: %s file.xml [-s subdivision] [-o output.asp]\n", prog_name);
+	printf ("-s subdivision: subdivision in which the notes of the piece should be divided\n");
+	printf ("-o output.asp: name for the output file\n");
+}
+
 int main(int argc, char *argv[]) {
-	f = fopen("output.asp", "w");
+	if (argc < 2) {
+		printf("Too few arguments\n");
+		usage(argv[0]);
+		exit(1);
+	}
+
+	FILE *infile = fopen(argv[1], "r");
+	char* outfile = "output.asp";
+
+	if (!infile) {
+		printf("The input file specified can't be opened!\n");
+		return -1;
+	}
+
+	int c;
+	int subdivision = 4;
+
+	while ((c = getopt (argc, argv, "s:o:")) != -1)
+    switch (c)
+      {
+      case 's':
+        subdivision = atoi(optarg);
+        break;
+      case 'o':
+      	outfile = optarg;
+      	break;
+      case '?':
+        if (optopt == 'o' || optopt == 's'){
+        	fprintf (stderr, "Option -%c requires an argument.\n", optopt);
+      	  	usage(argv[0]);
+        }
+        else if (isprint (optopt)){
+        	fprintf (stderr, "Unknown option `-%c'.\n", optopt);
+      	  	usage(argv[0]);
+        }
+        else {
+        	fprintf (stderr,
+                   "Unknown option character `\\x%x'.\n",
+                   optopt);
+      		usage(argv[0]);
+        }
+        return 1;
+      default:
+        abort ();
+      }
+
+	yyin = infile;
+
+	f = fopen(outfile, "w");
 	if (f == NULL){
-	    printf("Error opening file!\n");
+	    printf("Error opening %s file!\n", outfile);
 	    exit(1);
 	}
 
 	act_note = malloc(sizeof(char));
 
 	stag = new_stack();
-	yyparse();
+	do {
+		yyparse();
+	} while (!feof(yyin));
 
 	fclose(f);
 	printf("OK - Fichero output.asp generado\n");
