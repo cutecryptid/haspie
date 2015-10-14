@@ -59,7 +59,7 @@ int noteVal (char * note, char * act_alter){
 %%
 S : version doctype block | block | error {yyerror("Go home XML, you are drunk");};
 
-version : OPTAG QUES TEXT attr QUES CLTAG {printf("Version OK, subdivision %d\n", subdivision);};
+version : OPTAG QUES TEXT attr QUES CLTAG {printf("Version OK\n");};
 
 doctype : OPTAG EXCL DOCTYPE doctags docurl CLTAG {printf("DOCTYPE OK\n");};
 
@@ -131,9 +131,9 @@ extern int yyparse();
 extern FILE *yyin;
 
 int usage(char* prog_name){
-	printf ("usage: %s file.xml [-s subdivision] [-o output.asp]\n", prog_name);
+	printf ("usage: %s file.xml [-s subdivision] [-o file.lp]\n", prog_name);
 	printf ("-s subdivision: subdivision in which the notes of the piece should be divided\n");
-	printf ("-o output.asp: name for the output file\n");
+	printf ("-o file.lp: name for the output file, default is output.lp\n");
 }
 
 int main(int argc, char *argv[]) {
@@ -144,7 +144,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	FILE *infile = fopen(argv[1], "r");
-	char* outfile = "output.asp";
+	char* outfile = "output.lp";
 
 	if (!infile) {
 		printf("The input file specified can't be opened!\n");
