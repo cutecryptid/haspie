@@ -21,20 +21,13 @@ grade(V,0,T) :- sem_tones(V,2,T).
 voice(V) :- grade(V,_,_).
 % times in the score that contain a least one note
 time(T) :- grade(_,_,T).
-% number of times containing at least one note
-max_time(MT) :- MT := {time(T)}.
 
-% assign one chord to at least one time of the score
-1 { chord(G1,G2,G3,T) : pos_chord(G1,G2,G3) : time(T) }.
-
-% restrict the solutions (Test)
-% only the solutions that have a chord per time with at least one note
-:- not MT {chord(G1,G2,G3,T)} MT, max_time(MT). %is this right?
+% assign one chord to each time of the score where a note plays in at least one voice
+1 { chord(G1,G2,G3,T) : pos_chord(G1,G2,G3) } 1 :- time(T).
 
 % playing chord must contain only playing grades that are playing at that given time
 % in other words prohibit chords that don't contain all the playing grades
-
-:- chord(G1,G2,G3,T), grade(V,G,T), G!=G1, G!=G2, G!=G3, voice(V), time(T). %checkear con multiples voces
+:- chord(G1,G2,G3,T), grade(V,G,T), G!=G1, G!=G2, G!=G3, voice(V), time(T). 
 
 % project the chords 
 chord(G1,T) :- chord(G1,_,_,T).
