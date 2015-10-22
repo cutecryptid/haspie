@@ -20,7 +20,7 @@ int act_oct;
 FILE *f;
 
 
-int noteVal (char * note, char * act_alter){
+int noteVal (char * note, int act_oct, char * act_alter){
 	int alterVal;
 	alterVal = 0;
 	if(!strcmp(act_alter, "flat"))
@@ -30,20 +30,22 @@ int noteVal (char * note, char * act_alter){
 	if(!strcmp(act_alter, "natural"))
 		alterVal = 0;
 
+	int oct_val = 12 * act_oct;
+
 	if(!strcmp(note, "C"))
-		return 24 + alterVal;
+		return 24 + oct_val + alterVal;
 	if(!strcmp(note, "D"))
-		return 26 + alterVal;
+		return 26 + oct_val + alterVal;
 	if(!strcmp(note, "E"))
-		return 28 + alterVal;
+		return 28 + oct_val + alterVal;
 	if(!strcmp(note, "F"))
-		return 29 + alterVal;
+		return 29 + oct_val + alterVal;
 	if(!strcmp(note, "G"))
-		return 31 + alterVal;
+		return 31 + oct_val + alterVal;
 	if(!strcmp(note, "A"))
-		return 21 + alterVal;
+		return 21 + oct_val + 12 + alterVal;
 	if(!strcmp(note, "B"))
-		return 23 + alterVal;
+		return 23 + oct_val + 12 + alterVal;
 }
 %}
 %union{
@@ -97,7 +99,7 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 			if (act_oct == -1){
 				act_note_val = -1;
 			} else {
-				act_note_val = noteVal(act_note, act_alter) + (12 * act_oct);
+				act_note_val = noteVal(act_note, act_oct, act_alter);
 			}
             fprintf(f, "note(%d, %d, %d).\n", part, act_note_val, note_position);
 		} 
