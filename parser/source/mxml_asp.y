@@ -147,18 +147,15 @@ int main(int argc, char *argv[]) {
 
 	FILE *infile = fopen(argv[1], "r");
 	char* outfile = "output.lp";
-
-	if (!infile) {
-		printf("The input file specified can't be opened!\n");
-		return -1;
-	}
-
 	int c;
 	int subdivision = 4;
 
-	while ((c = getopt (argc, argv, "s:o:")) != -1)
+	while ((c = getopt (argc, argv, "hs:o:")) != -1)
     switch (c)
       {
+      case 'h':
+      	usage(argv[0]);
+      	return 1;
       case 's':
         subdivision = atoi(optarg);
         break;
@@ -184,6 +181,11 @@ int main(int argc, char *argv[]) {
       default:
         abort ();
       }
+
+    if (!infile) {
+		printf("The input file specified can't be opened!\n");
+		return -1;
+	}
 
 	yyin = infile;
 

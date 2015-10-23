@@ -30,7 +30,3 @@
 
 # Debug files
 *.dSYM/
-
-# ASP Output
-*.asp
-*.lp
