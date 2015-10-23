@@ -203,13 +203,13 @@ int main(int argc, char *argv[]) {
 	} while (!feof(yyin));
 
 	fclose(f);
-	printf("OK - Fichero output.asp generado\n");
+	printf("OK - Correctly generated music logic file in %s\n", outfile);
 	return 0;
 }
 
 void yyerror (char const *message) { 
 	if (strcmp(message, "syntax error"))	{
 		fprintf (stderr, "%s\n", message);
-		exit(0);
+		exit(1);
 	}
 }
