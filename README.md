@@ -10,3 +10,6 @@ The current project is its author's Computer Science Final Degree Project and tr
 
 # Requisites
 Python 2.7, gringo 3.0.5 and clingo 3.0.5 installed and present in the system's PATH.
+
+# Compiling from source
+The only compiled part of the project is the MXML to ASP facts parser. A binary is bundled with every release, but if you wish to compile it for compatibility reasons, a Makefile is also bundled. Go to ```parser/source``` and run ```make```. The bin file is generated in the parser folder so it can be properly referenced by the python pipeline.
