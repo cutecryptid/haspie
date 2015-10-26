@@ -22,6 +22,8 @@ def main():
 	                   help='input musicXML score for armonizing')
 	parser.add_argument('-n', metavar='N', nargs=1, default=1, type=int,
 	                   help='max number of ASP solutions')
+	parser.add_argument('-s', metavar='S', nargs=1, default=1, type=int,
+	                   help='horizontal span to consider while harmonizing')
 	parser.add_argument('-m', metavar='[major|minor]', nargs=1, default="major",
 	                   help='mode')
 
@@ -37,12 +39,16 @@ def main():
 	if args.m != "major":
 		mode = args.m[0]
 
+	span = args.s
+	if args.s != 1:
+		span = args.s[0]
+
 	asp_outfile_name = re.search('/(.*?)\.xml', infile)
 	outname = asp_outfile_name.group(1)
 	lp_outname = outname + ".lp"
 	xml_parser_args = ("parser/mxml_asp", infile, "-o", "asp/generated_logic_music/" + lp_outname)
 	xml_parser = subprocess.call(xml_parser_args)
-	asp_args = ("clingo", "asp/assign_chords_black.lp", "asp/include/" + mode + "_mode.lp" ,
+	asp_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp" ,
 		"asp/generated_logic_music/" + lp_outname, "-n", str(n))
 	asp_proc = subprocess.Popen(asp_args, stdout=subprocess.PIPE)
 	asp_out = asp_proc.stdout.read()
