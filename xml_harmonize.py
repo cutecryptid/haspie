@@ -3,13 +3,8 @@ import subprocess
 import re
 
 def parse_out(asp_out):
-	satis = re.search('SATISFIABLE', asp_out)
 	solution = []
-	if satis == None:
-		print "UNSATISFIABLE"
-		return solution
 	solutions = re.compile("Answer:\s*[0-9]+").split(asp_out)
-
 	for sol in solutions:
 		chord = re.findall('chord\([0-9]+,[i,v,m,o]+\)', sol)
 		if len(sol) > 0:
@@ -49,17 +44,13 @@ def main():
 	xml_parser_args = ("parser/mxml_asp", infile, "-o", "asp/generated_logic_music/" + lp_outname)
 	xml_parser = subprocess.call(xml_parser_args)
 	asp_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
-		"asp/generated_logic_music/" + lp_outname, "-n", str(n))
+		"asp/generated_logic_music/" + lp_outname, "-n", str(n), "--const", "span=" + str(span))
 	asp_proc = subprocess.Popen(asp_args, stdout=subprocess.PIPE)
 	asp_out = asp_proc.stdout.read()
 
 	solution = parse_out(asp_out)
-	if len(solution) > 0:
-		print "SATISFIABLE"
-		for sol in solution:
-			print sol
-	else:
-		print "UNSATISFIABLE"
+	for sol in solution:
+		print sol
 
 
 if __name__ == "__main__":

@@ -17,8 +17,9 @@ time(T/span) :- grade(_,_,T), T/span != 0.
 
 % restrict solutions where assignated chords contain grades that are not present
 % this is, grades that do not belong to them
-:- chord(T,C), grade(V,G,T), time(T), voice(V), not belongs(G,C), time(T..(T+(span-1)))
+error(V,G,T) :- chord(T,C), grade(V,G,T), time(T), voice(V), not belongs(G,C), time(T..(T+(span-1))).	
 
+#minimize[error(_,_,_)].
 
 #hide.
 #show chord/2.
