@@ -11,7 +11,7 @@ def parse_out(asp_out):
 	solutions = re.compile("Answer:\s*[0-9]+").split(asp_out)
 
 	for sol in solutions:
-		chord = re.findall('chord\([0-9]+,[0-9]+\)', sol)
+		chord = re.findall('chord\([0-9]+,[i,v,m,o]+\)', sol)
 		if len(sol) > 0:
 			solution += [sorted(chord)]
 	return solution
@@ -42,7 +42,7 @@ def main():
 	lp_outname = outname + ".lp"
 	xml_parser_args = ("parser/mxml_asp", infile, "-o", "asp/generated_logic_music/" + lp_outname)
 	xml_parser = subprocess.call(xml_parser_args)
-	asp_args = ("clingo", "asp/assign_chords_black.lp", "asp/include/" + mode + "_mode.lp" ,
+	asp_args = ("clingo", "asp/assign_chords_black.lp", "asp/include/" + mode + "_mode.lp" , "asp/include/" + mode + "_chords.lp", 
 		"asp/generated_logic_music/" + lp_outname, "-n", str(n))
 	asp_proc = subprocess.Popen(asp_args, stdout=subprocess.PIPE)
 	asp_out = asp_proc.stdout.read()

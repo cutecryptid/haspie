@@ -2,8 +2,6 @@
 
 % define the possible grades
 pos_grade(1..7).
-pos_chord(G\7,(G+2)\7,(G+4)\7) :- pos_grade(G).
-% note that seventh grade will be 0 because modulo reasons
 
 % translate note value into semitone value (skipping silences)
 sem_tones(V,((N - base) \ 12),T) :- note(V,N,T), N >= 0.
@@ -14,14 +12,11 @@ voice(V) :- grade(V,_,_).
 time(T) :- grade(_,_,T).
 
 % assign one chord to each time of the score where a note plays in at least one voice
-1 { chord(G1,G2,G3,T) : pos_chord(G1,G2,G3) } 1 :- time(T).
+1 { chord(T,C) : pos_chord(C) } 1 :- time(T).
 
-% playing chord must contain only playing grades that are playing at that given time
-% in other words prohibit chords that don't contain all the playing grades
-:- chord(G1,G2,G3,T), grade(V,G,T), G!=G1, G!=G2, G!=G3, voice(V), time(T). 
-
-% project the chords 
-chord(T,G1) :- chord(G1,_,_,T).
+% restrict solutions where assignated chords contain grades that are not present
+% this is, grades that do not belong to them
+:- chord(T,C), grade(V,G,T), time(T), voice(V), not belongs(G,C).
 
 #hide.
 #show chord/2.
