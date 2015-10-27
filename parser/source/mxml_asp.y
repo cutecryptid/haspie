@@ -15,8 +15,11 @@ int note_position;
 char * act_note;
 char * voice;
 char * act_alter;
+char * act_type;
 int act_note_val;
 int act_oct;
+int act_sub;
+int subdivision;
 FILE *f;
 
 
@@ -47,13 +50,33 @@ int noteVal (char * note, int act_oct, char * act_alter){
 	if(!strcmp(note, "B"))
 		return 23 + oct_val + 12 + alterVal;
 }
+
+
+int subdivide(char* notetype, int subdivision){
+	int notelength;
+	if (!strcmp(notetype, "32nd"))
+		notelength = 32;
+	if (!strcmp(notetype, "16th"))
+		notelength = 16;
+	if (!strcmp(notetype, "eighth"))
+		notelength = 8;
+	if (!strcmp(notetype, "quarter"))
+		notelength = 4;
+	if (!strcmp(notetype, "half"))
+		notelength = 2;
+	if (!strcmp(notetype, "whole"))
+		notelength = 1;
+	return subdivision/notelength;
+}
+
+
 %}
 %union{
 	int valInt;
 	float valFloat;
 	char * valStr;
 }
-%token OPTAG CLTAG SLASHTAG EQUAL KVOTHE QUES EXCL NOTE OCTA STEP PART_ID REST CHORD ALTER DOCTYPE
+%token OPTAG CLTAG SLASHTAG EQUAL KVOTHE QUES EXCL NOTE OCTA STEP PART_ID REST CHORD ALTER DOCTYPE OPTYPE CLTYPE
 %token <valStr> TEXT
 %token <valInt> NUMBER
 %type  <valInt> block part1 part2 body attr
@@ -81,6 +104,7 @@ block : OPTAG REST SLASHTAG CLTAG {$$ = 0; act_oct = -1;}
 		| OPTAG CHORD SLASHTAG CLTAG {$$ = 0; note_position = note_position-1;} 
 		| OPTAG OCTA CLTAG TEXT OPTAG SLASHTAG OCTA CLTAG {$$ = 0; act_oct = atoi($4);} 
 		| OPTAG STEP CLTAG TEXT OPTAG SLASHTAG STEP CLTAG {$$ = 0; act_note = $4;} 
+		| OPTYPE TEXT CLTYPE {$$ = 0; act_type = $2;}
 		| part1 part2 {$$ = 0;} 
 		| part1 error {yyerror("Close the tag, that enters viruji");}
 		| part1 part2 error {yyerror("There are a lot of things there. Too many things.");};
@@ -95,13 +119,18 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 				printf("note - TAG NO CERRADO\n");
 				exit(-1);
 			};
-			note_position = note_position+1;
 			if (act_oct == -1){
 				act_note_val = -1;
 			} else {
 				act_note_val = noteVal(act_note, act_oct, act_alter);
 			}
-            fprintf(f, "note(%d, %d, %d).\n", part, act_note_val, note_position);
+			act_sub = subdivide(act_type, subdivision);
+			int i = 0;
+			for (i; i < act_sub; ++i)
+			{
+				note_position = note_position+1;
+	            fprintf(f, "note(%d, %d, %d).\n", part, act_note_val, note_position);
+			}
 		} 
 		| CLTAG OPTAG SLASHTAG TEXT CLTAG {
 			$$ = 0; 
@@ -148,7 +177,7 @@ int main(int argc, char *argv[]) {
 	FILE *infile = fopen(argv[1], "r");
 	char* outfile = "output.lp";
 	int c;
-	int subdivision = 4;
+	subdivision = 4;
 
 	while ((c = getopt (argc, argv, "hs:o:")) != -1)
     switch (c)

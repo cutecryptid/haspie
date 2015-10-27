@@ -7,6 +7,8 @@ step "step"
 rest "rest"
 chord "chord"
 octave "octave"
+optype "<type>"
+cltype "</type>"
 alteration "alteration"
 part "part id="
 doctype "DOCTYPE"
@@ -30,6 +32,8 @@ kvothe [\"]
 {note} {return NOTE;}
 {step} {return STEP;}
 {octave} {return OCTA;}
+{optype} {return OPTYPE;}
+{cltype} {return CLTYPE;}
 {alteration} {return ALTER;}
 {part} {return PART_ID;}
 {doctype} {return DOCTYPE;}
