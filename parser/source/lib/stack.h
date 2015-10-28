@@ -25,5 +25,5 @@ void empty_stack(stack*);
 int stack_size(stack);
 int is_empty_stack(stack); 
 void add_stack(stack*, elem_type e); 
-elem_type pop(stack*); 
+elem_type pop(stack*);
 void print_stack (stack q, void (*print_function) (void*elem));

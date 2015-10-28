@@ -99,7 +99,13 @@ int type_to_int(char* notetype){
 
 
 int subdivide(int notelength, int subdivision){
-	return subdivision/notelength;
+	if ((subdivision >= notelength) && (notelength != 0)){
+		return subdivision/notelength;
+	} else {
+		printf("Cannot divide a 1/%d with a subdivision of 1/%d. Use automated mode or a smaller subdivision.\n", notelength, subdivision);
+		return 1;
+	}
+	
 }
 
 
@@ -267,23 +273,23 @@ int main(int argc, char *argv[]) {
 		subdivision = opt_subdivision;
 	}
 
+	printf("Base note - 1/%d\n", subdivision);
+
 	f = fopen(outfile, "w");
 	if (f == NULL){
 	    printf("Error opening %s file!\n", outfile);
 	    exit(1);
 	}
-	
+
 	int times;
 	while(stack_size(*note_stack) > 0){
 		tmp_note = pop(note_stack);
 		times = subdivide(tmp_note->length, subdivision);
-		int i = 0;
-		int pos = (tmp_note->position)*times;
-		//FIX THIS LOOP, POSITION IS NOT CORRECT
-		for (i; i < times; ++i)
+		int i = 1;
+		int pos = ((tmp_note->position)-1)*times;
+		for (i; i < (times+1); ++i)
 		{
-			fprintf(f, "note(%d, %d, %d).\n", tmp_note->voice, tmp_note->value, pos);
-			pos++;
+			fprintf(f, "note(%d, %d, %d).\n", tmp_note->voice, tmp_note->value, pos+i);
 		}
 	}
 	
