@@ -11,6 +11,10 @@ def parse_out(asp_out):
 			solution += [sorted(chord)]
 	return solution
 
+def autosub(input):
+	#TODO implement automatic calculation of shortest note
+	return 4
+
 def main():
 	parser = argparse.ArgumentParser(description='Harmonizing music with ASP')
 	parser.add_argument('xml_score', metavar='XML_SCORE',
@@ -19,6 +23,8 @@ def main():
 	                   help='max number of ASP solutions')
 	parser.add_argument('-s', metavar='S', nargs=1, default=1, type=int,
 	                   help='horizontal span to consider while harmonizing')
+	parser.add_argument('-d', metavar='[32|16|8|4|2|1]', nargs=1, default=0, type=int,
+	                   help='forces subdivision of the notes in the score to a specific value, by default it\'s automatically calculated')
 	parser.add_argument('-m', metavar='[major|minor]', nargs=1, default="major",
 	                   help='mode')
 
@@ -34,6 +40,11 @@ def main():
 	if args.m != "major":
 		mode = args.m[0]
 
+	if args.d != 0:
+		sub = args.d[0]
+	else:
+		sub = autosub(infile)
+
 	span = args.s
 	if args.s != 1:
 		span = args.s[0]
@@ -41,7 +52,7 @@ def main():
 	asp_outfile_name = re.search('/(.*?)\.xml', infile)
 	outname = asp_outfile_name.group(1)
 	lp_outname = outname + ".lp"
-	xml_parser_args = ("parser/mxml_asp", infile, "-o", "asp/generated_logic_music/" + lp_outname)
+	xml_parser_args = ("parser/mxml_asp", infile, "-o", "asp/generated_logic_music/" + lp_outname, "-s", str(sub))
 	xml_parser = subprocess.call(xml_parser_args)
 	asp_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
 		"asp/generated_logic_music/" + lp_outname, "-n", str(n), "--const", "span=" + str(span))
