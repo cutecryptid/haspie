@@ -9,7 +9,15 @@
 
 void yyerror (char const *);
 
+typedef struct{ 
+	int voice;
+	int value;
+	int position;
+	int length;
+} note; 
+
 stack * stag;
+stack * note_stack;
 int part = 0;
 int note_position;
 char * act_note;
@@ -20,7 +28,28 @@ int act_note_val;
 int act_oct;
 int act_sub;
 int subdivision;
+int opt_subdivision;
+int act_length;
+note * tmp_note;
 FILE *f;
+
+note* new_note(){
+	  note* n;
+	  n = malloc(sizeof(note));
+	  n -> voice = 0;
+	  n -> value = 0;
+	  n -> position = 0;
+	  n -> length = 0;
+	  return n;
+}
+
+note* mod_note(note* n, int voi, int val, int pos, int len){
+	n -> voice = voi;
+	n -> value = val;
+	n -> position = pos;
+	n -> length = len;
+	return n;
+}
 
 
 int noteVal (char * note, int act_oct, char * act_alter){
@@ -51,8 +80,7 @@ int noteVal (char * note, int act_oct, char * act_alter){
 		return 23 + oct_val + 12 + alterVal;
 }
 
-
-int subdivide(char* notetype, int subdivision){
+int type_to_int(char* notetype){
 	int notelength;
 	if (!strcmp(notetype, "32nd"))
 		notelength = 32;
@@ -66,6 +94,11 @@ int subdivide(char* notetype, int subdivision){
 		notelength = 2;
 	if (!strcmp(notetype, "whole"))
 		notelength = 1;
+	return notelength;
+}
+
+
+int subdivide(int notelength, int subdivision){
 	return subdivision/notelength;
 }
 
@@ -124,13 +157,16 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 			} else {
 				act_note_val = noteVal(act_note, act_oct, act_alter);
 			}
-			act_sub = subdivide(act_type, subdivision);
-			int i = 0;
-			for (i; i < act_sub; ++i)
-			{
-				note_position = note_position+1;
-	            fprintf(f, "note(%d, %d, %d).\n", part, act_note_val, note_position);
+
+			act_length = type_to_int(act_type);
+			if (act_length > subdivision){
+				subdivision = act_length;
 			}
+			note_position = note_position+1;
+			tmp_note = new_note();
+			tmp_note = mod_note(tmp_note, part, act_note_val, note_position, act_length);
+			add_stack(note_stack, tmp_note);
+
 		} 
 		| CLTAG OPTAG SLASHTAG TEXT CLTAG {
 			$$ = 0; 
@@ -177,7 +213,8 @@ int main(int argc, char *argv[]) {
 	FILE *infile = fopen(argv[1], "r");
 	char* outfile = "output.lp";
 	int c;
-	subdivision = 4;
+	subdivision = 0;
+	opt_subdivision = 0;
 
 	while ((c = getopt (argc, argv, "hs:o:")) != -1)
     switch (c)
@@ -186,7 +223,7 @@ int main(int argc, char *argv[]) {
       	usage(argv[0]);
       	return 1;
       case 's':
-        subdivision = atoi(optarg);
+        opt_subdivision = atoi(optarg);
         break;
       case 'o':
       	outfile = optarg;
@@ -218,19 +255,38 @@ int main(int argc, char *argv[]) {
 
 	yyin = infile;
 
+	act_note = malloc(sizeof(char));
+
+	stag = new_stack();
+	note_stack = new_stack();
+	do {
+		yyparse();
+	} while (!feof(yyin));
+
+	if (opt_subdivision != 0){
+		subdivision = opt_subdivision;
+	}
+
 	f = fopen(outfile, "w");
 	if (f == NULL){
 	    printf("Error opening %s file!\n", outfile);
 	    exit(1);
 	}
-
-	act_note = malloc(sizeof(char));
-
-	stag = new_stack();
-	do {
-		yyparse();
-	} while (!feof(yyin));
-
+	
+	int times;
+	while(stack_size(*note_stack) > 0){
+		tmp_note = pop(note_stack);
+		times = subdivide(tmp_note->length, subdivision);
+		int i = 0;
+		int pos = (tmp_note->position)*times;
+		//FIX THIS LOOP, POSITION IS NOT CORRECT
+		for (i; i < times; ++i)
+		{
+			fprintf(f, "note(%d, %d, %d).\n", tmp_note->voice, tmp_note->value, pos);
+			pos++;
+		}
+	}
+	
 	fclose(f);
 	printf("OK - Correctly generated music logic file in %s\n", outfile);
 	return 0;

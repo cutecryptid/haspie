@@ -19,21 +19,21 @@ def main():
 	parser = argparse.ArgumentParser(description='Harmonizing music with ASP')
 	parser.add_argument('xml_score', metavar='XML_SCORE',
 	                   help='input musicXML score for armonizing')
-	parser.add_argument('-n', metavar='N', nargs=1, default=1, type=int,
-	                   help='max number of ASP solutions')
+	parser.add_argument('-n', metavar='N', nargs=1, default=0, type=int,
+	                   help='max number of ASP solutions, by default all of them')
 	parser.add_argument('-s', metavar='S', nargs=1, default=1, type=int,
-	                   help='horizontal span to consider while harmonizing')
+	                   help='horizontal span to consider while harmonizing, by default 1')
 	parser.add_argument('-d', metavar='[32|16|8|4|2|1]', nargs=1, default=0, type=int,
 	                   help='forces subdivision of the notes in the score to a specific value, by default it\'s automatically calculated')
 	parser.add_argument('-m', metavar='[major|minor]', nargs=1, default="major",
-	                   help='mode')
+	                   help='mode of the scale, major by default')
 
 	args = parser.parse_args()
 
 	infile = args.xml_score
 
 	n = args.n
-	if args.n != 1:
+	if args.n != 0:
 		n = args.n[0]
 
 	mode = args.m
