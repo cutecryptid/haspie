@@ -23,3 +23,4 @@ error(V,G,T) :- chord(T,C), grade(V,G,T), time(T), voice(V), not belongs(G,C), t
 
 #hide.
 #show chord/2.
+#show error/3.
