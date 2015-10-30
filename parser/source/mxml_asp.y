@@ -108,6 +108,10 @@ int subdivide(int notelength, int subdivision){
 	
 }
 
+int ispower2(int x){
+	return (((x & (x - 1)) == 0) && (x >= 0) && (x <= 32));
+}
+
 
 %}
 %union{
@@ -121,7 +125,7 @@ int subdivide(int notelength, int subdivision){
 %type  <valInt> block part1 part2 body attr
 %start S
 %%
-S : version doctype block | block | error {yyerror("Go home XML, you are drunk");};
+S : version doctype block | block | error {yyerror("ERROR: Unrecognised file format. File is not Standard Music XML.");};
 
 version : OPTAG QUES TEXT attr QUES CLTAG {printf("Version OK\n");};
 
@@ -145,8 +149,8 @@ block : OPTAG REST SLASHTAG CLTAG {$$ = 0; act_oct = -1;}
 		| OPTAG STEP CLTAG TEXT OPTAG SLASHTAG STEP CLTAG {$$ = 0; act_note = $4;} 
 		| OPTYPE TEXT CLTYPE {$$ = 0; act_type = $2;}
 		| part1 part2 {$$ = 0;} 
-		| part1 error {yyerror("Close the tag, that enters viruji");}
-		| part1 part2 error {yyerror("There are a lot of things there. Too many things.");};
+		| part1 error {yyerror("ERROR: Unclosed tag found.");}
+		| part1 part2 error {yyerror("ERROR: Unrecognised file format. File is not Standard Music XML.");};
 
 part1 : OPTAG NOTE attr {$$ = 0; act_alter = ""; add_stack(stag, "note");} 
 		| OPTAG PART_ID KVOTHE TEXT KVOTHE {$$ = 0; part= part+1; note_position = 0; add_stack(stag, "part");}
@@ -155,7 +159,7 @@ part1 : OPTAG NOTE attr {$$ = 0; act_alter = ""; add_stack(stag, "note");}
 part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 			$$ = 0;
 			if(strcmp("note", pop(stag))){
-				printf("note - TAG NO CERRADO\n");
+				printf("note - UNCLOSED TAG\n");
 				exit(-1);
 			};
 			if (act_oct == -1){
@@ -177,14 +181,14 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 		| CLTAG OPTAG SLASHTAG TEXT CLTAG {
 			$$ = 0; 
 			if(strcmp($4, pop(stag))){
-				printf("%s - TAG NO CERRADO\n", $4);
+				printf("%s - UNCLOSED TAG\n", $4);
 				exit(-1);
 			};
 		};
 		| CLTAG body OPTAG SLASHTAG TEXT CLTAG {
 			$$ = 0; 
 			if(strcmp($5, pop(stag))){
-				printf("%s - TAG NO CERRADO\n", $5);
+				printf("%s - UNCLOSED TAG\n", $5);
 				exit(-1);
 			};
 		};
@@ -255,8 +259,13 @@ int main(int argc, char *argv[]) {
       }
 
     if (!infile) {
-		printf("The input file specified can't be opened!\n");
-		return -1;
+		printf("The input file specified can't be opened! Make sure the file exists and that is not locked.\n");
+		return 1;
+	}
+
+	if (!ispower2(opt_subdivision)){
+		printf("The specified subdivision is not valid, choose a power of 2 between 1 and 32 (both included).\n");
+		return 1;
 	}
 
 	yyin = infile;
@@ -277,7 +286,7 @@ int main(int argc, char *argv[]) {
 
 	f = fopen(outfile, "w");
 	if (f == NULL){
-	    printf("Error opening %s file!\n", outfile);
+	    printf("Error writing to %s file! Make sure the route is valid and that it's not writing-protected.\n", outfile);
 	    exit(1);
 	}
 

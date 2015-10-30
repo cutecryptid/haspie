@@ -95,44 +95,48 @@ def main():
 	parser = argparse.ArgumentParser(description='Harmonizing music with ASP')
 	parser.add_argument('xml_score', metavar='XML_SCORE',
 	                   help='input musicXML score for armonizing')
-	parser.add_argument('-n', metavar='N', nargs=1, default=0, type=int,
+	parser.add_argument('-n', '--num_sols', metavar='N', nargs=1, default=0, type=int,
 	                   help='max number of ASP solutions, by default all of them')
-	parser.add_argument('-s', metavar='S', nargs=1, default=1, type=int,
+	parser.add_argument('-s', '--span', metavar='S', nargs=1, default=1, type=int,
 	                   help='horizontal span to consider while harmonizing, by default 1')
-	parser.add_argument('-d', metavar='[32|16|8|4|2|1]', nargs=1, default=0, type=int,
+	parser.add_argument('-d', '--divide', metavar='32|16|8|4|2|1', nargs=1, default=0, type=int,
 	                   help='forces subdivision of the notes in the score to a specific value, by default it\'s automatically calculated')
-	parser.add_argument('-m', metavar='[major|minor]', nargs=1, default="major",
+	parser.add_argument('-m', '--mode', metavar='major|minor', nargs=1, default="major", choices=['major', 'minor'],
 	                   help='mode of the scale, major by default')
 
 	args = parser.parse_args()
 
 	infile = args.xml_score
 
-	n = args.n
-	if args.n != 0:
-		n = args.n[0]
+	n = args.num_sols
+	if args.num_sols != 0:
+		n = args.num_sols[0]
 
 	opt_all = ""
 	if n == 0:
 		opt_all = "--opt-all"
 
-	mode = args.m
-	if args.m != "major":
-		mode = args.m[0]
+	mode = args.mode
+	if args.mode != "major":
+		mode = args.mode[0]
 
-	sub = args.d
-	if args.d != 0:
-		sub = args.d[0]
+	sub = args.divide
+	if args.divide != 0:
+		sub = args.divide[0]
 
-	span = args.s
-	if args.s != 1:
-		span = args.s[0]
+	span = args.span
+	if args.span != 1:
+		span = args.span[0]
 
 	asp_outfile_name = re.search('/(.*?)\.xml', infile)
 	outname = asp_outfile_name.group(1)
 	lp_outname = outname + ".lp"
 	xml_parser_args = ("parser/mxml_asp", infile, "-o", "asp/generated_logic_music/" + lp_outname, "-s", str(sub))
-	xml_parser = subprocess.call(xml_parser_args)
+	xml_parser_ret = subprocess.call(xml_parser_args)
+	
+	if xml_parser_ret != 0:
+		sys.exit("Parsing error, stopping execution.")
+
 	asp_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
 		"asp/generated_logic_music/" + lp_outname, "-n", str(n), "--const", "span=" + str(span), opt_all)
 	asp_proc = subprocess.Popen(asp_args, stdout=subprocess.PIPE)
