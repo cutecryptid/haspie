@@ -103,6 +103,8 @@ def main():
 	                   help='forces subdivision of the notes in the score to a specific value, by default it\'s automatically calculated')
 	parser.add_argument('-m', '--mode', metavar='major|minor', nargs=1, default="major", choices=['major', 'minor'],
 	                   help='mode of the scale, major by default')
+	parser.add_argument('-v', '--voices', metavar='V', nargs=1, default="0", type=int,
+	                   help='number of extra voices that should be added to the score for harmonization')
 
 	args = parser.parse_args()
 
@@ -128,6 +130,10 @@ def main():
 	if args.span != 1:
 		span = args.span[0]
 
+	voices = args.voices
+	if args.voices != 0:
+		voices = args.voices[0]
+
 	asp_outfile_name = re.search('/(.*?)\.xml', infile)
 	outname = asp_outfile_name.group(1)
 	lp_outname = outname + ".lp"
@@ -138,7 +144,9 @@ def main():
 		sys.exit("Parsing error, stopping execution.")
 
 	asp_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
-		"asp/generated_logic_music/" + lp_outname, "-n", str(n), "--const", "span=" + str(span), opt_all)
+		"asp/generated_logic_music/" + lp_outname, "-n", str(n), "--const", "span=" + str(span), 
+		"--const", "extra_voices="+ str(voices), opt_all)
+
 	asp_proc = subprocess.Popen(asp_args, stdout=subprocess.PIPE)
 	asp_out = asp_proc.stdout.read()
 
