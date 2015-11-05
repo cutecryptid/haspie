@@ -13,3 +13,10 @@ Python 2.7, gringo 3.0.5 and clingo 3.0.5, music21 >= 2.1.2 python module instal
 
 # Compiling from source
 The only compiled part of the project is the MXML to ASP facts parser. A binary is bundled with every release, but if you wish to compile it for compatibility reasons, a Makefile is also bundled. Go to ```parser/source``` and run ```make```. The bin file is generated in the parser folder so it can be properly referenced by the python pipeline.
+
+#TO DO:
+Currently working on Prototype mkIV.
+- Functional output module (not styling yet, just output solution to MusicXML, LilyPond or MIDI)
+- Adjust and refine new notes generation (fifth jumps)
+- Include 7th chords (4 notes)
+- Identify and restrict weak/strong times and bridge notes (LOW PRIO, maybe mkV)
