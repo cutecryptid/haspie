@@ -4,21 +4,16 @@
 
 % define the possible grades
 pos_grade(1..7).
-
-% translate note value into semitone value (skipping silences)
-sem_tones(V,((N - base) \ 12),T) :- note(V,N,T), N >= 0.
+pos_oct(0..8).
 
 % number of voices that play at least one note
 % changing extra_voices constant, more blank voices can be specified
 voice(V..(V+extra_voices)) :- grade(V,_,_).
-% times in the score that contain a least one note
 time(T/span) :- grade(_,_,T), T/span != 0.
 
 % assign one chord to each time of the score where a note plays in at least one voice
 1 { chord(T,C) : pos_chord(C) } 1 :- time(T).
 
-% restrict solutions where assignated chords contain grades that are not present
-% this is, grades that do not belong to them
 error(V,G,T) :- chord(T,C), grade(V,G,T), time(T), voice(V), not belongs(G,C), time(T..(T+(span-1))).
 
 % define the places where a note should be assignated
@@ -26,22 +21,28 @@ error(V,G,T) :- chord(T,C), grade(V,G,T), time(T), voice(V), not belongs(G,C), t
 busytime(V,T) :- time(T), voice(V), note(V,P,T), P >= -1.
 freetime(V,T) :- not busytime(V,T), time(T), voice(V).
 
-% place notes in the freetimes
-1 { ex_grade(V,G,T) : pos_grade(G) } :- voice(V), time(T), freetime(V,T).
+% place new grades in the freetimes
+1 { ex_grade(V,G,T) : pos_grade(G) } 1 :- voice(V), time(T), freetime(V,T).
+% place new octaves in the freetimes
+1 { ex_octave(V,O,T) : pos_oct(O) } 1 :- voice(V), time(T), freetime(V,T).
 
-% don't allow notes that don't belong to the assignated chord in freetimes
-:- ex_grade(V,G,T), not belongs(G,C), chord(T,C).
+error(V,G,T) :- ex_grade(V,G,T), not belongs(G,C), chord(T,C).
+repeated_grade(V1,V2,T) :- out_grade(V1,G,O1,T), out_grade(V2,G,O2,T), voice(V1), voice(V2), V1 != V2.
+unison(V1,V2,T) :- out_note(V1,N,T), out_note(V2,N,T), voice(V1), voice(V2), V1 != V2.
 
-% notes that already play in other voice at the same time of the score
-unison(V2,G,T) :- ex_grade(V1,G,T), grade(V2,G,T), voice(V1), voice(V2), V1 != V2.
-% notes that already play in the same freetime but in other voice
-unison(V2,G,T) :- ex_grade(V1,G,T), ex_grade(V2,G,T), voice(V1), voice(V2), V1 != V2.
+octave_jump(V,T1,T2) :- out_note(V,N1,T1), out_note(V,N2,T2), (T1+1) == T2, N2 > (N1+12), N2 < (N1-12).
 
-#minimize[error(_,_,_)].
-:- unison(_,_,_).
+% don't allow jumps of two octaves or more
+:- out_note(V,N1,T1), out_note(V,N2,T2), (T1+1) == T2, N2 > (N1+24), N2 < (N1-24).
+
+:- octave_jump(V,T1,T2).
+
+
+#minimize[error(_,_,_) @ 3].
+#minimize[unison(_,_,_) @ 1].
+#minimize[repeated_grade(_,_,_) @ 2].
 
 #hide.
 #show chord/2.
 #show error/3.
-#show grade/3.
-#show ex_grade/3.
+#show out_note/3.

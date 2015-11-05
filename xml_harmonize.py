@@ -2,6 +2,10 @@ import argparse
 import subprocess
 import re
 import sys
+import os
+sys.path.append('./out_module') 
+import Out
+
 
 class Chord:
 	"""Class that stores information about a chord in the score"""
@@ -25,10 +29,12 @@ class Error:
 class HaspSolution:
 	"""Class that stores information of a single solution of the harmony
 	deducing module"""
-	def __init__(self, chords, errors, opt_grade):
+	def __init__(self, chords, notes, errors, num_error, num_unison):
 		self.chords = chords
 		self.errors = errors
-		self.opt_grade = opt_grade
+		self.notes = notes
+		self.num_error = num_error
+		self.num_unison = num_unison
 
 	def __str__(self):
 		ret = "Chords: "
@@ -39,8 +45,9 @@ class HaspSolution:
 			ret += "Errors: "
 			for er in self.errors:
 				ret += str(er) + " // "
-			ret += "\n"
-		ret += "Optimization grade: " + str(self.opt_grade)
+			ret += "\n["
+		ret += str(self.notes) + "\n"
+		ret += "Errors: " + str(self.num_error) + " // Unisons: " + str(self.num_unison)
 		return ret
 
 class ClaspResult:
@@ -52,27 +59,41 @@ class ClaspResult:
 		self.raw_output = asp_out
 		self.optimum = self.parse_optimum()
 		sols = self.parse_solutions()
-		self.best_opt_grade = sols[1]
+		self.min_error = sols[1]
+		self.min_unison = sols[2]
 		self.solutions = []
 		raw_sols = sols[0]
 		for sol in raw_sols:
-			if sol.opt_grade == self.best_opt_grade:
+			#Check min_unisons, not working properly
+			if (sol.num_error == self.min_error):
 				self.solutions += [sol]
 
 	def parse_solutions(self):
 		out = self.raw_output
 		answers = re.split('Answer:\s*[0-9]+', out)
-		min_opt = sys.maxint
+		min_er = sys.maxint
+		min_un = sys.maxint
 		solutions = []
 		for ans in answers:
 			if len(ans) > 0:
+				notes = re.findall('out_note\(([0-9]+),([0-9]+),([0-9]+)\)', ans)
 				chords = [Chord(int(ch[0]),ch[1]) for ch in re.findall('chord\(([0-9]+),([ivxmo]+)\)', ans)]
 				errors = [Error(int(er[0]),int(er[1]),int(er[2])) for er in re.findall('error\(([0-9]+),([0-9]+),([0-9]+)\)', ans)]
-				opt_val = int(re.search('Optimization:\s*([0-9]+)', ans).group(1))
-				if opt_val < min_opt:
-					min_opt = opt_val
-				solutions += [HaspSolution(chords,errors,opt_val)]
-		return (solutions, min_opt)
+				optimums = re.search('Optimization:\s*([0-9]+)\s*([0-9]+)', ans)
+				if optimums == None:
+					optimums = re.search('Optimization:\s*([0-9]+)', ans)
+					n_er = int(optimums.group(1))
+					n_un = 0
+				else:
+					n_er = int(optimums.group(1))
+					n_un = int(optimums.group(2))
+
+				if (n_er < min_er):
+					min_er = n_er
+				if (n_un < min_un):
+					min_un = n_un
+				solutions += [HaspSolution(chords,notes,errors,n_er,n_un)]
+		return (solutions, min_er, min_un)
 
 	def parse_optimum(self):
 		out = self.raw_output
@@ -87,7 +108,7 @@ class ClaspResult:
 		for sol in self.solutions:
 			ret += str(sol) + "\n\n"
 		if self.optimum == True:
-			ret += "Optimum found, optimal solution(s) have an Optimum Value of " + str(self.best_opt_grade)
+			ret += "Optimum found, optimal solution(s) have " + str(self.min_error) + " errors and " + str(self.min_unison) + " unisons."
 		return ret
 
 		
@@ -116,7 +137,8 @@ def main():
 
 	opt_all = ""
 	if n == 0:
-		opt_all = "--opt-all"
+		pass
+		#opt_all = "--opt-all"
 
 	mode = args.mode
 	if args.mode != "major":
@@ -144,7 +166,7 @@ def main():
 		sys.exit("Parsing error, stopping execution.")
 
 	asp_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
-		"asp/generated_logic_music/" + lp_outname, "-n", str(n), "--const", "span=" + str(span), 
+		"asp/include/conversions.lp", "asp/generated_logic_music/" + lp_outname, "-n", str(n), "--const", "span=" + str(span), 
 		"--const", "extra_voices="+ str(voices), opt_all)
 
 	asp_proc = subprocess.Popen(asp_args, stdout=subprocess.PIPE)
