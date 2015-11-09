@@ -32,16 +32,16 @@ unison(V1,V2,T) :- out_note(V1,N,T), out_note(V2,N,T), voice(V1), voice(V2), V1 
 
 fifth_jump(V,T1,T2) :- out_grade(V,G1,O1,T1), out_grade(V,G2,O2,T2), (T1+1) == T2, G2 == ((G1+5)\7), G2 == ((G1-5)\7).
 fifth_jump(V,T1,T2) :- out_grade(V,G1,O1,T1), out_grade(V,G2,O2,T2), (T1-1) == T2, G2 == ((G1+5)\7), G2 == ((G1-5)\7).
-octave_jump(V,T1,T2) :- out_note(V,N1,T1), out_note(V,N2,T2), (T1+1) == T2, N2 >= (N1+12), N2 =< (N1-12).
-octave_jump(V,T1,T2) :- out_note(V,N1,T1), out_note(V,N2,T2), (T1-1) == T2, N2 >= (N1+12), N2 =< (N1-12).
+octave_jump(V,T1,T2) :- out_note(V,N1,T1), out_note(V,N2,T2), (T1+1) == T2, N2 >= (N1+12), N2 <= (N1-12).
+octave_jump(V,T1,T2) :- out_note(V,N1,T1), out_note(V,N2,T2), (T1-1) == T2, N2 >= (N1+12), N2 <= (N1-12).
 
 % don't allow octave jumping
 :- octave_jump(V,T1,T2).
 
 #minimize[error(_,_,_) @ 4].
-#minimize[unison(_,_,_) @ 1].
-#minimize[repeated_grade(_,_,_) @ 2].
-#minimize[fifth_jump(_,_,_) @ 3].
+#minimize[unison(_,_,_) @ 3].
+#minimize[fifth_jump(_,_,_) @ 2].
+#minimize[repeated_grade(_,_,_) @ 1].
 
 #hide.
 #show chord/2.
