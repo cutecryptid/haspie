@@ -16,7 +16,6 @@ The only compiled part of the project is the MXML to ASP facts parser. A binary 
 
 #TO DO:
 Currently working on Prototype mkIV.
-- Functional output module (not styling yet, just output solution to MusicXML, LilyPond or MIDI)
 - Adjust and refine new notes generation (fifth jumps)
-- Include 7th chords (4 notes)
+- Functional output module (not styling yet, just output solution to MusicXML, LilyPond or MIDI)
 - Identify and restrict weak/strong times and bridge notes (LOW PRIO, maybe mkV)
