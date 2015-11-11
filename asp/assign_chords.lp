@@ -9,31 +9,30 @@ pos_oct(0..8).
 % number of voices that play at least one note
 % changing extra_voices constant, more blank voices can be specified
 voice(V..(V+extra_voices)) :- grade(V,_,_).
-time(T/span) :- grade(_,_,T), T/span != 0.
+htime(T/span) :- grade(_,_,T), T/span != 0.
+beat(T) :- grade(_,_,T).
 
-% assign one chord to each time of the score where a note plays in at least one voice
-1 { chord(T,C) : pos_chord(C) } 1 :- time(T).
+% assign one chord to each harmony time of the score where a note plays in at least one voice
+1 { chord(T,C) : pos_chord(C) } 1 :- htime(T).
 
-error(V,G,T) :- chord(T,C), grade(V,G,T), time(T), voice(V), not belongs(G,C), time(T..(T+(span-1))).
+error(V,G,T) :- chord(HT,C), grade(V,G,T), htime(HT), voice(V), not belongs(G,C), beat(T..(T+(span-1))).
 
 % define the places where a note should be assignated
 % maybe it'd be better to specify these points by hand (somehow)
-busytime(V,T) :- time(T), voice(V), note(V,P,T), P >= -1.
-freetime(V,T) :- not busytime(V,T), time(T), voice(V).
+busybeat(V,T) :- beat(T), voice(V), note(V,P,T), P >= -1.
+freebeat(V,T) :- not busybeat(V,T), beat(T), voice(V).
 
-% place new grades in the freetimes
-1 { ex_grade(V,G,T) : pos_grade(G) } 1 :- voice(V), time(T), freetime(V,T).
+% place new grades in the freebeats
+1 { ex_grade(V,G,T) : pos_grade(G) } 1 :- voice(V), beat(T), freebeat(V,T).
 % place new octaves in the freetimes
-1 { ex_octave(V,O,T) : pos_oct(O) } 1 :- voice(V), time(T), freetime(V,T).
+1 { ex_octave(V,O,T) : pos_oct(O) } 1 :- voice(V), beat(T), freebeat(V,T).
 
 error(V,G,T) :- ex_grade(V,G,T), not belongs(G,C), chord(T,C).
 repeated_grade(V1,V2,T) :- out_grade(V1,G,O1,T), out_grade(V2,G,O2,T), voice(V1), voice(V2), V1 != V2.
 unison(V1,V2,T) :- out_note(V1,N,T), out_note(V2,N,T), voice(V1), voice(V2), V1 != V2.
 
-fifth_jump(V,T1,T2) :- out_grade(V,G1,O1,T1), out_grade(V,G2,O2,T2), (T1+1) == T2, G2 == ((G1+5)\7), G2 == ((G1-5)\7).
-fifth_jump(V,T1,T2) :- out_grade(V,G1,O1,T1), out_grade(V,G2,O2,T2), (T1-1) == T2, G2 == ((G1+5)\7), G2 == ((G1-5)\7).
-octave_jump(V,T1,T2) :- out_note(V,N1,T1), out_note(V,N2,T2), (T1+1) == T2, N2 >= (N1+12), N2 <= (N1-12).
-octave_jump(V,T1,T2) :- out_note(V,N1,T1), out_note(V,N2,T2), (T1-1) == T2, N2 >= (N1+12), N2 <= (N1-12).
+fifth_jump(V,T1,T2) :- out_grade(V,G1,O1,T1), out_grade(V,G2,O2,T2), (T1+1) == T2, G2 == ((G1+5)\7), G2 == ((G1-5)\7), beat(T1+1).
+octave_jump(V,T1,T2) :- out_note(V,N1,T1), out_note(V,N2,T2), (T1+1) == T2, N2 >= (N1+12), N2 <= (N1-12), beat(T1+1).
 
 % don't allow octave jumping
 :- octave_jump(V,T1,T2).

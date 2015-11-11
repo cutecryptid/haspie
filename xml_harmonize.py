@@ -23,7 +23,7 @@ class Chord:
 		self.time = time
 
 	def __str__(self):
-		return self.name + ", " + str(self.time)
+		return self.name
 
 class Error:
 	"""Class that stores information about an error in the score"""
@@ -45,16 +45,36 @@ class HaspSolution:
 		self.optimization = optimization
 
 	def __str__(self):
-		ret = "Chords: "
+		ret = "Chords: ["
+		first = True
 		for ch in self.chords:
-			ret += str(ch) + " // "
-		ret += "\n"
+			if first:
+				first = False
+				ret += str(ch)
+			else:
+				ret +=", " + str(ch)
+		ret += "]\n"
 		if len(self.errors) > 0:
 			ret += "Errors: "
+			first = True
 			for er in self.errors:
-				ret += str(er) + " // "
-			ret += "\n["
-		ret += str(self.voices) + "\n"
+				if first:
+					first = False
+					ret += str(er)
+				else:
+					ret +=" // " + str(er)
+			ret += "\n"
+		for voice in self.voices.keys():
+			notes = self.voices[voice]
+			ret += "Voice " + str(voice) + ": ["
+			first = True
+			for note in notes:
+				if first:
+					first = False
+					ret += str(note[0])
+				else:
+					ret += ", " + str(note[0])
+			ret += "]\n"
 		ret += "OPT: " + str(self.optimization)
 		return ret
 
@@ -65,7 +85,6 @@ class ClaspResult:
 	with its optimization values"""
 	def __init__(self, asp_out):
 		self.raw_output = asp_out
-		self.optimum = self.parse_optimum()
 		self.solutions = self.parse_solutions()
 
 	def parse_solutions(self):
@@ -77,31 +96,24 @@ class ClaspResult:
 				notes = re.findall('out_note\(([0-9]+),([0-9]+),([0-9]+)\)', ans)
 				voices = {};
 				for note in notes:
-					if (note[0] in voices):
-						voices[note[0]].append((note[1],note[2]))
+					if (int(note[0]) in voices):
+						voices[int(note[0])].append((int(note[1]),int(note[2])))
 					else:
-						voices.update({note[0] : [(note[1],note[2])]})
+						voices.update({int(note[0]) : [(int(note[1]),int(note[2]))]})
+				voices = {k: sorted(v, key=lambda tup: tup[1]) for k, v in voices.items()}
 
-				chords = [Chord(int(ch[0]),ch[1]) for ch in re.findall('chord\(([0-9]+),([ivxmo]+)\)', ans)]
+				chords = [Chord(int(ch[0]),ch[1]) for ch in sorted(re.findall('chord\(([0-9]+),([ivxmo7]+)\)', ans))]
 				errors = [Error(int(er[0]),int(er[1]),int(er[2])) for er in re.findall('error\(([0-9]+),([0-9]+),([0-9]+)\)', ans)]
-				optimums = re.split("\s*", re.search('Optimization:((?:\s*[0-9]+)+)', ans).group())
+				str_opts = re.split("\s*", re.search('Optimization:((?:\s*[0-9]+)+)', ans).group(1))
+				taw = str_opts.pop(0)
+				optimums = map(int, str_opts)
 				solutions += [HaspSolution(chords,voices,errors,optimums)]
 		return solutions
-
-	def parse_optimum(self):
-		out = self.raw_output
-		m = re.search('OPTIMUM FOUND', out)
-		if m != None:
-			return True
-		else:
-			return False
 
 	def __str__(self):
 		ret = ""
 		for sol in self.solutions:
 			ret += str(sol) + "\n\n"
-		if self.optimum == True:
-			ret += "Optimum found"
 		return ret
 
 		
@@ -119,6 +131,14 @@ def main():
 	                   help='mode of the scale, major by default')
 	parser.add_argument('-v', '--voices', metavar='V', nargs=1, default="0", type=int,
 	                   help='number of extra voices that should be added to the score for harmonization')
+	parser.add_argument('-sh', '--show', action='store_true', default=False,
+						help='show result in editor instead of writing it to a file in the desired format')
+	parser.add_argument('-f', '--format', metavar='xml|pdf|midi|ly', nargs=1, default="xml", type=str,
+	                   help='output file format for the result')
+	parser.add_argument('-o', '--output', metavar='output/dir/for/file', nargs=1, default="out", type=str,
+	                   help='output file format for the result')
+	parser.add_argument('-t', '--timeout', metavar='T', nargs=1, default=5, type=int,
+	                   help='maximum time allowed to search for optimum')
 
 	args = parser.parse_args()
 
@@ -130,8 +150,7 @@ def main():
 
 	opt_all = ""
 	if n == 0:
-		pass
-		#opt_all = "--opt-all"
+		opt_all = "--opt-all"
 
 	mode = args.mode
 	if args.mode != "major":
@@ -149,13 +168,28 @@ def main():
 	if args.voices != 0:
 		voices = args.voices[0]
 
+	fmt = args.format
+	if args.format != "xml":
+		fmt = args.format[0]
+
+	if args.output != "out":
+		final_out = args.output[0]
+
+	timeout = args.timeout
+	if args.timeout != 5:
+		timeout = args.timeout[0]
+
+	print "SHOW: ", args.show
+
 	asp_outfile_name = re.search('/(.*?)\.xml', infile)
 	outname = asp_outfile_name.group(1)
+	if args.output == "out":
+		final_out = outname + "." + fmt
 	lp_outname = outname + ".lp"
 	xml_parser_args = ("parser/mxml_asp", infile, "-o", "asp/generated_logic_music/" + lp_outname, "-s", str(sub))
 	xml_parser_ret = subprocess.call(xml_parser_args)
 	
-	if xml_parser_ret != 0:
+	if xml_parser_ret <= 0:
 		sys.exit("Parsing error, stopping execution.")
 
 	asp_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
@@ -167,6 +201,13 @@ def main():
 
 	res = ClaspResult(asp_out)
 	print res
+
+	output = Out.solution_to_music21(res.solutions[-1], xml_parser_ret)
+	if args.show:
+		output.show(fmt)
+	else:
+		print "Writing output file to", final_out
+		output.write(fp=final_out, fmt=fmt)
 
 if __name__ == "__main__":
     main()

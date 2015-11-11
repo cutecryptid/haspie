@@ -217,7 +217,7 @@ int main(int argc, char *argv[]) {
 	if (argc < 2) {
 		printf("Too few arguments\n");
 		usage(argv[0]);
-		exit(1);
+		exit(-1);
 	}
 
 	FILE *infile = fopen(argv[1], "r");
@@ -287,7 +287,7 @@ int main(int argc, char *argv[]) {
 	f = fopen(outfile, "w");
 	if (f == NULL){
 	    printf("Error writing to %s file! Make sure the route is valid and that it's not writing-protected.\n", outfile);
-	    exit(1);
+	    exit(-1);
 	}
 
 	int times;
@@ -304,12 +304,12 @@ int main(int argc, char *argv[]) {
 	
 	fclose(f);
 	printf("OK - Correctly generated music logic file in %s\n", outfile);
-	return 0;
+	return subdivision;
 }
 
 void yyerror (char const *message) { 
 	if (strcmp(message, "syntax error"))	{
 		fprintf (stderr, "%s\n", message);
-		exit(1);
+		exit(-1);
 	}
 }
