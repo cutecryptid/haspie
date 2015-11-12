@@ -7,11 +7,13 @@ step "step"
 rest "rest"
 chord "chord"
 octave "octave"
+lyric "lyric"
 optype "<type>"
 cltype "</type>"
 alteration "alteration"
 part "part id="
 doctype "DOCTYPE"
+texttag "text"
 text [-.A-Za-z0-9:\\]+
 ques_montgomery [?]
 excl [!]
@@ -38,6 +40,7 @@ kvothe [\"]
 {part} {return PART_ID;}
 {doctype} {return DOCTYPE;}
 {rest} {return REST;}
+{texttag} {return LYRICTEXT;}
 {text} {yylval.valStr=strdup(yytext); return TEXT;}
 . ;
 \n ;
