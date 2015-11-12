@@ -20,7 +20,8 @@ error(V,G,B) :- chord(T,C), htime(T), grade(V,G,B), voice(V), not belongs(G,C), 
 
 % define the places where a note should be assignated
 % maybe it'd be better to specify these points by hand (somehow)
-busybeat(V,B) :- beat(B), voice(V), note(V,P,B), P >= -1.
+busybeat(V,B) :- beat(B), voice(V), note(V,P,B).
+busybeat(V,B) :- beat(B), voice(V), rest(V,B).
 freebeat(V,B) :- not busybeat(V,B), beat(B), voice(V).
 
 % place new grades in the freebeats
