@@ -19,4 +19,4 @@ Currently working on Prototype mkIV.
 - Functional output module (not styling yet, just output solution to MusicXML, LilyPond or MIDI)
 - Colorize errors on score? (That'd be cool)
 - Annotate chords over score? (That'd be SUPER COOL)
-- Identify and restrict weak/strong times and bridge notes (LOW PRIO, maybe mkV)
+- Restric based on weak/strong times and passing notes.
