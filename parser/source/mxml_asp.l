@@ -14,6 +14,9 @@ alteration "alteration"
 part "part id="
 doctype "DOCTYPE"
 texttag "text"
+beats "beats"
+beattype "beat-type"
+type "type"
 text [-.A-Za-z0-9:\\]+
 ques_montgomery [?]
 excl [!]
@@ -42,6 +45,9 @@ kvothe [\"]
 {rest} {return REST;}
 {texttag} {return LYRICTEXT;}
 {text} {yylval.valStr=strdup(yytext); return TEXT;}
+{beats} {return BEATS;}
+{beattype} {return BEATTYPE;}
+{type} {return TYPE;}
 . ;
 \n ;
 %%

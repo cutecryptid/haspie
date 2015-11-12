@@ -16,8 +16,16 @@ typedef struct{
 	int length;
 } note; 
 
+typedef struct{ 
+	int voice;
+	int beats;
+	int beattype;
+	int position;
+} measure; 
+
 stack * stag;
 stack * note_stack;
+stack * meas_stack;
 int part = 0;
 int note_position;
 char * act_note;
@@ -28,10 +36,13 @@ char * act_lyric;
 int act_note_val;
 int act_oct;
 int act_sub;
+int act_beats;
+int act_beattype;
 int subdivision;
 int opt_subdivision;
 int act_length;
 note * tmp_note;
+measure * tmp_meas;
 FILE *f;
 
 note* new_note(){
@@ -50,6 +61,24 @@ note* mod_note(note* n, int voi, int val, int pos, int len){
 	n -> position = pos;
 	n -> length = len;
 	return n;
+}
+
+measure* new_measure(){
+	  measure* m;
+	  m = malloc(sizeof(note));
+	  m -> voice = 0;
+	  m -> beats = 0;
+	  m -> beattype = 0;
+	  m -> position = 0;
+	  return m;
+}
+
+measure* mod_measure(measure* m, int voi, int bea, int bet, int pos){
+	m -> voice = voi;
+	m -> beats = bea;
+	m -> beattype = bet;
+	m -> position = pos;
+	return m;
 }
 
 
@@ -121,7 +150,7 @@ int ispower2(int x){
 	char * valStr;
 }
 %token OPTAG CLTAG SLASHTAG EQUAL KVOTHE QUES EXCL NOTE OCTA STEP PART_ID REST CHORD ALTER DOCTYPE OPTYPE CLTYPE
-%token LYRICTEXT
+%token LYRICTEXT BEATS BEATTYPE TYPE
 %token <valStr> TEXT
 %token <valInt> NUMBER
 %type  <valInt> block part1 part2 body attr
@@ -147,7 +176,9 @@ block : OPTAG REST SLASHTAG CLTAG {$$ = 0; act_oct = -1;}
 		| OPTAG TEXT attr SLASHTAG CLTAG {$$ = 0;}
 		| OPTAG ALTER CLTAG TEXT OPTAG SLASHTAG ALTER CLTAG{$$ = 0; act_alter = $4;} 
 		| OPTAG CHORD SLASHTAG CLTAG {$$ = 0; note_position = note_position-1;} 
-		| OPTAG OCTA CLTAG TEXT OPTAG SLASHTAG OCTA CLTAG {$$ = 0; act_oct = atoi($4);} 
+		| OPTAG OCTA CLTAG TEXT OPTAG SLASHTAG OCTA CLTAG {$$ = 0; act_oct = atoi($4);}
+		| OPTAG BEATS CLTAG NUMBER OPTAG SLASHTAG BEATS CLTAG {$$ = 0; act_beats = $4;}
+		| OPTAG BEATTYPE CLTAG NUMBER OPTAG SLASHTAG BEATTYPE CLTAG {$$ = 0; act_beattype = $4;} 
 		| OPTAG STEP CLTAG TEXT OPTAG SLASHTAG STEP CLTAG {$$ = 0; act_note = $4;} 
 		| OPTAG LYRICTEXT CLTAG TEXT OPTAG SLASHTAG LYRICTEXT CLTAG {
 			$$ = 0;
@@ -171,6 +202,7 @@ block : OPTAG REST SLASHTAG CLTAG {$$ = 0; act_oct = -1;}
 
 part1 : OPTAG NOTE attr {$$ = 0; act_alter = ""; add_stack(stag, "note");} 
 		| OPTAG PART_ID KVOTHE TEXT KVOTHE {$$ = 0; part= part+1; note_position = 0; add_stack(stag, "part");}
+		| OPTAG TYPE {$$ = 0; add_stack(stag, "type");}
 		| OPTAG TEXT attr {$$ = 0; add_stack(stag, (void*) $2);};
 
 part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
@@ -194,13 +226,23 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 			tmp_note = mod_note(tmp_note, part, act_note_val, note_position, act_length);
 			add_stack(note_stack, tmp_note);
 
-		} 
+		}
+		| CLTAG body SLASHTAG TYPE CLTAG {
+			$$ = 0;
+			if(strcmp("type", pop(stag))){
+				printf("type - UNCLOSED TAG\n");
+				exit(-1);
+			};
+			tmp_meas = new_measure();
+			tmp_meas = mod_measure(tmp_meas, part, act_beats, act_beattype, note_position);
+			add_stack(meas_stack, tmp_meas);
+		}
 		| CLTAG OPTAG SLASHTAG TEXT CLTAG {
 			$$ = 0; 
 			if(strcmp($4, pop(stag))){
 				printf("%s - UNCLOSED TAG\n", $4);
 				exit(-1);
-			};
+			}
 		}
 		| CLTAG body OPTAG SLASHTAG TEXT CLTAG {
 			$$ = 0; 
@@ -291,6 +333,7 @@ int main(int argc, char *argv[]) {
 
 	stag = new_stack();
 	note_stack = new_stack();
+	meas_stack = new_stack();
 	do {
 		yyparse();
 	} while (!feof(yyin));
@@ -330,6 +373,12 @@ int main(int argc, char *argv[]) {
 		}
 		if (tmp_note->value == -9)
 			truerest = 0;
+	}
+
+	while(stack_size(*meas_stack) > 0){
+		tmp_meas = pop(meas_stack);
+		s_factor = (subdivision/tmp_meas->beattype);
+		fprintf(f, "measure(%d, %d).\n", (tmp_meas->beats)*s_factor, tmp_meas->position);
 	}
 	
 	fclose(f);
