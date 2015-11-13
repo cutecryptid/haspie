@@ -1,5 +1,4 @@
 FUENTE = mxml_asp
-INPUT = input/music.xml
 
 all: compile clean_source
 

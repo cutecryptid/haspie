@@ -16,8 +16,8 @@ doctype "DOCTYPE"
 texttag "text"
 beats "beats"
 beattype "beat-type"
-type "type"
-text [-.A-Za-z0-9:\\]+
+time "time"
+text [-.A-Za-z0-9:\[\]\\]+
 ques_montgomery [?]
 excl [!]
 open [<]
@@ -39,15 +39,15 @@ kvothe [\"]
 {octave} {return OCTA;}
 {optype} {return OPTYPE;}
 {cltype} {return CLTYPE;}
+{time} {return TIME;}
 {alteration} {return ALTER;}
 {part} {return PART_ID;}
 {doctype} {return DOCTYPE;}
 {rest} {return REST;}
-{texttag} {return LYRICTEXT;}
-{text} {yylval.valStr=strdup(yytext); return TEXT;}
 {beats} {return BEATS;}
 {beattype} {return BEATTYPE;}
-{type} {return TYPE;}
+{texttag} {return LYRICTEXT;}
+{text} {yylval.valStr=strdup(yytext); return TEXT;}
 . ;
 \n ;
 %%

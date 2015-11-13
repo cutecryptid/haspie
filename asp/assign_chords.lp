@@ -24,8 +24,8 @@ busybeat(V,B) :- beat(B), voice(V), note(V,P,B).
 busybeat(V,B) :- beat(B), voice(V), rest(V,B).
 freebeat(V,B) :- not busybeat(V,B), beat(B), voice(V).
 
-strong_beat(B) :- measure(BN,BP), B >= BP, (((B-1) \ BN) == 0), beat(B).
-semistrong_beat(B) :- measure(BN,BP), B >= BP, ((B \ 2) == 1), ((BN \ 3) != 0), not strong_beat(B), beat(B).
+strong_beat(B) :- measure(BN,BP), B >= BP, ((B-1) \ BN) == 0, beat(B).
+semistrong_beat(B) :- measure(BN,BP), B >= BP, (B \ 2) == 1, (BN \ 3) != 0, not strong_beat(B), beat(B).
 weak_beat(B) :- not strong_beat(B), not semistrong_beat(B), beat(B).
 
 % place new grades in the freebeats
@@ -36,7 +36,7 @@ weak_beat(B) :- not strong_beat(B), not semistrong_beat(B), beat(B).
 error(V,G,B) :- chord(T,C), htime(T), ex_grade(V,G,B), voice(V), not belongs(G,C), beat_belongs_htime(B,T).
 repeated_grade(V1,V2,B) :- out_grade(V1,G,O1,B), out_grade(V2,G,O2,B), voice(V1), voice(V2), V1 != V2.
 unison(V1,V2,B) :- out_note(V1,N,B), out_note(V2,N,B), voice(V1), voice(V2), V1 != V2.
-passing_note(V,N,B) :- chord(T,C), htime(T), ex_grade(V,G,B), voice(V), not belongs(G,C), beat_belongs_htime(B,T), weak_beat(B).
+passing_note(V,N,B) :- chord(T,C), out_note(V,N,B), htime(T), out_grade(V,G,B), voice(V), not belongs(G,C), beat_belongs_htime(B,T), weak_beat(B).
 
 fifth_jump(V,B1,B2) :- out_grade(V,G1,O1,B1), out_grade(V,G2,O2,B2), (B1+1) == B2, G2 == ((G1+5)\7), G2 == ((G1-5)\7), beat(B1+1).
 octave_jump(V,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2), (B1+1) == B2, N2 >= (N1+12), N2 <= (N1-12), beat(B1+1).
@@ -51,5 +51,6 @@ octave_jump(V,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2), (B1+1) == B2, N2 >
 
 #hide.
 #show chord/2.
+#show rest/2.
 #show error/3.
 #show out_note/3.

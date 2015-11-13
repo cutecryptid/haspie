@@ -150,9 +150,8 @@ int ispower2(int x){
 	char * valStr;
 }
 %token OPTAG CLTAG SLASHTAG EQUAL KVOTHE QUES EXCL NOTE OCTA STEP PART_ID REST CHORD ALTER DOCTYPE OPTYPE CLTYPE
-%token LYRICTEXT BEATS BEATTYPE TYPE
+%token LYRICTEXT BEATS BEATTYPE TIME
 %token <valStr> TEXT
-%token <valInt> NUMBER
 %type  <valInt> block part1 part2 body attr
 %start S
 %%
@@ -177,18 +176,18 @@ block : OPTAG REST SLASHTAG CLTAG {$$ = 0; act_oct = -1;}
 		| OPTAG ALTER CLTAG TEXT OPTAG SLASHTAG ALTER CLTAG{$$ = 0; act_alter = $4;} 
 		| OPTAG CHORD SLASHTAG CLTAG {$$ = 0; note_position = note_position-1;} 
 		| OPTAG OCTA CLTAG TEXT OPTAG SLASHTAG OCTA CLTAG {$$ = 0; act_oct = atoi($4);}
-		| OPTAG BEATS CLTAG NUMBER OPTAG SLASHTAG BEATS CLTAG {$$ = 0; act_beats = $4;}
-		| OPTAG BEATTYPE CLTAG NUMBER OPTAG SLASHTAG BEATTYPE CLTAG {$$ = 0; act_beattype = $4;} 
+		| OPTAG BEATS CLTAG TEXT OPTAG SLASHTAG BEATS CLTAG {$$ = 0; act_beats = atoi($4);}
+		| OPTAG BEATTYPE CLTAG TEXT OPTAG SLASHTAG BEATTYPE CLTAG {$$ = 0; act_beattype = atoi($4);} 
 		| OPTAG STEP CLTAG TEXT OPTAG SLASHTAG STEP CLTAG {$$ = 0; act_note = $4;} 
 		| OPTAG LYRICTEXT CLTAG TEXT OPTAG SLASHTAG LYRICTEXT CLTAG {
 			$$ = 0;
 			act_lyric = $4;
-			if(!strcomp(act_lyric, "[")){
+			if(!strcmp(act_lyric, "[")){
 				tmp_note = new_note();
 				tmp_note = mod_note(tmp_note, part, -8, note_position, act_length);
 				add_stack(note_stack, tmp_note);
 			}
-			if(!strcomp(act_lyric, "]")){
+			if(!strcmp(act_lyric, "]")){
 				tmp_note = new_note();
 				tmp_note = mod_note(tmp_note, part, -9, note_position+1, act_length);
 				add_stack(note_stack, tmp_note);
@@ -198,11 +197,10 @@ block : OPTAG REST SLASHTAG CLTAG {$$ = 0; act_oct = -1;}
 		| part1 part2 {$$ = 0;} 
 		| part1 error {yyerror("ERROR: Unclosed tag found.");}
 		| part1 part2 error {yyerror("ERROR: Unrecognised file format. File is not Standard Music XML.");};
-			}
 
 part1 : OPTAG NOTE attr {$$ = 0; act_alter = ""; add_stack(stag, "note");} 
 		| OPTAG PART_ID KVOTHE TEXT KVOTHE {$$ = 0; part= part+1; note_position = 0; add_stack(stag, "part");}
-		| OPTAG TYPE {$$ = 0; add_stack(stag, "type");}
+		| OPTAG TIME {$$ = 0; add_stack(stag, "time");}
 		| OPTAG TEXT attr {$$ = 0; add_stack(stag, (void*) $2);};
 
 part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
@@ -227,10 +225,10 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 			add_stack(note_stack, tmp_note);
 
 		}
-		| CLTAG body SLASHTAG TYPE CLTAG {
+		| CLTAG body OPTAG SLASHTAG TIME CLTAG {
 			$$ = 0;
-			if(strcmp("type", pop(stag))){
-				printf("type - UNCLOSED TAG\n");
+			if(strcmp("time", pop(stag))){
+				printf("time - UNCLOSED TAG\n");
 				exit(-1);
 			};
 			tmp_meas = new_measure();
@@ -242,7 +240,7 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 			if(strcmp($4, pop(stag))){
 				printf("%s - UNCLOSED TAG\n", $4);
 				exit(-1);
-			}
+			};
 		}
 		| CLTAG body OPTAG SLASHTAG TEXT CLTAG {
 			$$ = 0; 
@@ -351,31 +349,39 @@ int main(int argc, char *argv[]) {
 	}
 
 	int times;
-	int truerest = 0;
+	int truerest;
+	int act_part = 0;
 	while(stack_size(*note_stack) > 0){
 		tmp_note = pop(note_stack);
-		if (tmp_note->value == -8)
+		if (tmp_note->voice != act_part){
 			truerest = 1;
-		times = subdivide(tmp_note->length, subdivision);
-		int i = 1;
-		int pos = ((tmp_note->position)-1)*times;
-		for (i; i < (times+1); ++i)
-		{
-			if (tmp_note->value == -1){
-				if (truerest){
-					fprintf(f, "rest(%d, %d).\n", tmp_note->voice, pos+i);
-				} else {
-					fprintf(f, "freebeat(%d, %d).\n", tmp_note->voice, pos+i);
-				}
-			} else {
-				fprintf(f, "note(%d, %d, %d).\n", tmp_note->voice, tmp_note->value, pos+i);
-			}
+			act_part = tmp_note->voice;
 		}
 		if (tmp_note->value == -9)
 			truerest = 0;
+		if ((tmp_note->value != -8) && (tmp_note->value != -9)){
+			times = subdivide(tmp_note->length, subdivision);
+			int i = 1;
+			int pos = ((tmp_note->position)-1)*times;
+			for (i; i < (times+1); ++i)
+			{
+				if (tmp_note->value == -1){
+					if (truerest){
+						fprintf(f, "rest(%d, %d).\n", tmp_note->voice, pos+i);
+					} else {
+						fprintf(f, "freebeat(%d, %d).\n", tmp_note->voice, pos+i);
+					}
+				} else {
+					fprintf(f, "note(%d, %d, %d).\n", tmp_note->voice, tmp_note->value, pos+i);
+				}
+			}
+		}
+		if (tmp_note->value == -8)
+			truerest = 1;
 	}
 
 	while(stack_size(*meas_stack) > 0){
+		int s_factor;
 		tmp_meas = pop(meas_stack);
 		s_factor = (subdivision/tmp_meas->beattype);
 		fprintf(f, "measure(%d, %d).\n", (tmp_meas->beats)*s_factor, tmp_meas->position);
