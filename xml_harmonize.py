@@ -8,13 +8,19 @@ import Out
 
 class Note:
 	"""Class that stores information about a note in the score"""
-	def __init__(self, voice, value, time):
-		self.voice = voice
+	def __init__(self, value, time):
 		self.value = value
 		self.time = time
 
 	def __str__(self):
-		return self.name + ", " + str(self.time)
+		return str(self.value)
+
+class Rest:
+	"""Class that stores information about a rest in the score"""
+	def __init__(self, time):
+		self.time = time
+	def __str__(self):
+		return "R"
 
 class Chord:
 	"""Class that stores information about a chord in the score"""
@@ -71,9 +77,9 @@ class HaspSolution:
 			for note in notes:
 				if first:
 					first = False
-					ret += str(note[0])
+					ret += str(note)
 				else:
-					ret += ", " + str(note[0])
+					ret += ", " + str(note)
 			ret += "]\n"
 		ret += "OPT: " + str(self.optimization)
 		return ret
@@ -96,11 +102,18 @@ class ClaspResult:
 				notes = re.findall('out_note\(([0-9]+),([0-9]+),([0-9]+)\)', ans)
 				voices = {};
 				for note in notes:
-					if (int(note[0]) in voices):
-						voices[int(note[0])].append((int(note[1]),int(note[2])))
+					if (int(note[0]) in voices.keys()):
+						voices[int(note[0])].append(Note(int(note[1]),int(note[2])))
 					else:
-						voices.update({int(note[0]) : [(int(note[1]),int(note[2]))]})
-				voices = {k: sorted(v, key=lambda tup: tup[1]) for k, v in voices.items()}
+						voices.update({(int(note[0])) : [Note(int(note[1]),int(note[2]))]})
+				rests = re.findall('rest\(([0-9]+),([0-9]+)\)', ans)
+				for rest in rests:
+					if (int(rest[0]) in voices.keys()):
+						voices[int(rest[0])].append(Rest(int(rest[1])))
+					else:
+						voices.update({(int(rest[0])) : [Rest(int(rest[1]))]})
+
+				voices = {k: sorted(v, key=lambda tup: tup.time) for k, v in voices.items()}
 
 				chords = [Chord(int(ch[0]),ch[1]) for ch in sorted(re.findall('chord\(([0-9]+),([ivxmo7]+)\)', ans))]
 				errors = [Error(int(er[0]),int(er[1]),int(er[2])) for er in re.findall('error\(([0-9]+),([0-9]+),([0-9]+)\)', ans)]
@@ -112,8 +125,11 @@ class ClaspResult:
 
 	def __str__(self):
 		ret = ""
+		ansno = 1
 		for sol in self.solutions:
+			ret += "Answer " + str(ansno) + ":\n"
 			ret += str(sol) + "\n\n"
+			ansno += 1
 		return ret
 
 		
@@ -202,7 +218,11 @@ def main():
 	res = ClaspResult(asp_out)
 	print res
 
-	output = Out.solution_to_music21(res.solutions[-1], xml_parser_ret)
+	sol_num = len(res.solutions)
+	selected_solution = raw_input('Select a solution to output [1..' + str(sol_num) + ']: ')
+	print res.solutions[int(selected_solution)-1]
+	
+	output = Out.solution_to_music21(res.solutions[int(selected_solution)-1], xml_parser_ret)
 	if args.show:
 		output.show(fmt)
 	else:

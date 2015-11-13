@@ -16,7 +16,6 @@ The only compiled part of the project is the MXML to ASP facts parser. A binary 
 
 #TO DO:
 Currently working on Prototype mkIV.
-- Functional output module (not styling yet, just output solution to MusicXML, LilyPond or MIDI)
-- Colorize errors on score? (That'd be cool)
+- Polish Output Module
 - Annotate chords over score? (That'd be SUPER COOL)
-- Restric based on weak/strong times and passing notes.
+- Restrict based on weak/strong times and passing notes.
