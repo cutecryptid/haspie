@@ -16,6 +16,4 @@ The only compiled part of the project is the MXML to ASP facts parser. A binary 
 
 #TO DO:
 Currently working on Prototype mkIV.
-- Polish Output Module
-- Annotate chords over score? (That'd be SUPER COOL)
-- Restrict based on weak/strong times and passing notes.
+- Polish Output Module (Annotate chords over score)
