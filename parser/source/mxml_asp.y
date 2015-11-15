@@ -6,6 +6,7 @@
 #include <math.h>
 #include <unistd.h>
 #include "lib/stack.h"
+#include "lib/queue.h"
 
 void yyerror (char const *);
 
@@ -24,8 +25,8 @@ typedef struct{
 } measure; 
 
 stack * stag;
-stack * note_stack;
-stack * meas_stack;
+queue * note_q;
+queue * meas_q;
 int part = 0;
 int note_position;
 char * act_note;
@@ -175,7 +176,7 @@ block : OPTAG REST SLASHTAG CLTAG {$$ = 0; act_oct = -1;}
 		| OPTAG TEXT attr SLASHTAG CLTAG {$$ = 0;}
 		| OPTAG ALTER CLTAG TEXT OPTAG SLASHTAG ALTER CLTAG{$$ = 0; act_alter = $4;} 
 		| OPTAG CHORD SLASHTAG CLTAG {$$ = 0; note_position = note_position-1;} 
-		| OPTAG OCTA CLTAG TEXT OPTAG SLASHTAG OCTA CLTAG {$$ = 0; act_oct = atoi($4)}
+		| OPTAG OCTA CLTAG TEXT OPTAG SLASHTAG OCTA CLTAG {$$ = 0; act_oct = atoi($4);}
 		| OPTAG BEATS CLTAG TEXT OPTAG SLASHTAG BEATS CLTAG {$$ = 0; act_beats = atoi($4);}
 		| OPTAG BEATTYPE CLTAG TEXT OPTAG SLASHTAG BEATTYPE CLTAG {$$ = 0; act_beattype = atoi($4);} 
 		| OPTAG STEP CLTAG TEXT OPTAG SLASHTAG STEP CLTAG {$$ = 0; act_note = $4;} 
@@ -185,12 +186,12 @@ block : OPTAG REST SLASHTAG CLTAG {$$ = 0; act_oct = -1;}
 			if(!strcmp(act_lyric, "[")){
 				tmp_note = new_note();
 				tmp_note = mod_note(tmp_note, part, -8, note_position, act_length);
-				add_stack(note_stack, tmp_note);
+				add_queue(note_q, tmp_note);
 			}
 			if(!strcmp(act_lyric, "]")){
 				tmp_note = new_note();
 				tmp_note = mod_note(tmp_note, part, -9, note_position+1, act_length);
-				add_stack(note_stack, tmp_note);
+				add_queue(note_q, tmp_note);
 			}
 		}
 		| OPTYPE TEXT CLTYPE {$$ = 0; act_type = $2;}
@@ -222,7 +223,7 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 			note_position = note_position+1;
 			tmp_note = new_note();
 			tmp_note = mod_note(tmp_note, part, act_note_val, note_position, act_length);
-			add_stack(note_stack, tmp_note);
+			add_queue(note_q, tmp_note);
 
 		}
 		| CLTAG body OPTAG SLASHTAG TIME CLTAG {
@@ -233,7 +234,7 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 			};
 			tmp_meas = new_measure();
 			tmp_meas = mod_measure(tmp_meas, part, act_beats, act_beattype, note_position);
-			add_stack(meas_stack, tmp_meas);
+			add_queue(meas_q, tmp_meas);
 		}
 		| CLTAG OPTAG SLASHTAG TEXT CLTAG {
 			$$ = 0; 
@@ -330,8 +331,8 @@ int main(int argc, char *argv[]) {
 	act_note = malloc(sizeof(char));
 
 	stag = new_stack();
-	note_stack = new_stack();
-	meas_stack = new_stack();
+	note_q = new_queue();
+	meas_q = new_queue();
 	do {
 		yyparse();
 	} while (!feof(yyin));
@@ -351,13 +352,13 @@ int main(int argc, char *argv[]) {
 	int times;
 	int truerest;
 	int act_part = 0;
-	while(stack_size(*note_stack) > 0){
-		tmp_note = pop(note_stack);
+	while(queue_size(*note_q) > 0){
+		tmp_note = pop_queue(note_q);
 		if (tmp_note->voice != act_part){
 			truerest = 1;
 			act_part = tmp_note->voice;
 		}
-		if (tmp_note->value == -9)
+		if (tmp_note->value == -8)
 			truerest = 0;
 		if ((tmp_note->value != -8) && (tmp_note->value != -9)){
 			times = subdivide(tmp_note->length, subdivision);
@@ -376,13 +377,13 @@ int main(int argc, char *argv[]) {
 				}
 			}
 		}
-		if (tmp_note->value == -8)
+		if (tmp_note->value == -9)
 			truerest = 1;
 	}
 
-	while(stack_size(*meas_stack) > 0){
+	while(queue_size(*meas_q) > 0){
 		int s_factor;
-		tmp_meas = pop(meas_stack);
+		tmp_meas = pop_queue(meas_q);
 		s_factor = (subdivision/tmp_meas->beattype);
 		fprintf(f, "measure(%d, %d).\n", (tmp_meas->beats)*s_factor, tmp_meas->position);
 	}

@@ -8,15 +8,16 @@ insertions/reads.*/
 
 typedef void* elem_type;
 
-typedef struct nodos{
+typedef struct qnodos{
   elem_type elem;
   struct nodoq* next;
-} nodos;
+} qnodos;
 
-typedef nodos* pnodos;
+typedef qnodos* pqnodos;
 
 typedef struct{ 
-	pnodos first;
+	pqnodos first;
+	pqnodos last;
 	int size;
 } queue; 
 
@@ -25,5 +26,5 @@ void empty_queue(queue*);
 int queue_size(queue);
 int is_empty_queue(queue); 
 void add_queue(queue*, elem_type e); 
-elem_type pop(queue*);
+elem_type pop_queue(queue*);
 void print_queue (queue q, void (*print_function) (void*elem));
