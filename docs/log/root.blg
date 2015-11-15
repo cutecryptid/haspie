@@ -1,0 +1,18 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: root.aux
+A level-1 auxiliary file: cover.aux
+A level-1 auxiliary file: introduccion.aux
+A level-1 auxiliary file: introduccion-musical.aux
+A level-1 auxiliary file: contexto-tecnologico.aux
+A level-1 auxiliary file: desarrollo.aux
+A level-1 auxiliary file: conclusiones.aux
+The style file: IEEEtran.bst
+Database file #1: bibliography.bib
+Warning--entry type for "lilypond" isn't style-file defined
+--line 82 of file bibliography.bib
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty year in anton-composing
+
+Done.
+(There were 2 warnings)

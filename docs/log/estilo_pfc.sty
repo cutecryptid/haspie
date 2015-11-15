@@ -1,0 +1,85 @@
+\ProvidesPackage{estilo_pfc}
+\typeout{Estilo LaTeX para Proyectos FIC}
+
+%%                                   %%
+%% Paquetes a incluir por defecto    %%
+%%                                   %%
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[spanish]{babel}
+
+\usepackage{indentfirst}
+
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage[pdftex]{graphicx}
+\usepackage{hhline}
+\usepackage{subfigure}
+\usepackage{longtable}
+\usepackage{minitoc}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{cite}
+\usepackage{lscape}
+\usepackage[nottoc,notlot,notlof,notindex]{tocbibind}
+\usepackage{setspace}
+\usepackage{lettrine}
+\usepackage{eurosym}
+\usepackage[hmargin={4cm,2.5cm},tmargin=4cm,bmargin=4cm]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% minitoc options                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{secnumdepth}{25}
+\setcounter{tocdepth}{3}
+\setlength{\mtcindent}{0pt}
+\renewcommand{\mtcfont}{\small\rm}
+\renewcommand{\mtcSfont}{\small\bf}
+\raggedbottom
+\renewcommand{\mtctitle}{\contentsname}
+\renewcommand{\mlftitle}{\listfigurename}
+\renewcommand{\mlttitle}{\listtablename}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% titlesec options                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bigrule}{\titlerule[0.5mm]}
+\titleformat{\chapter}[display]%
+{\bfseries\Huge}%
+{\titlerule\filleft\Large\chaptertitlename \Large{} \thechapter}%
+{0mm}{\filleft}[\vspace{0.5cm} \titlerule \vspace{0.05cm} \bigrule]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fancyhdr options                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\rightmark}
+\fancyhead[RO,LE]{\thepage}
+\renewcommand{\chaptermark}[1]{\markboth{\textbf{\thechapter. #1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0.6pt}
+\setlength{\headheight}{2.5\headheight}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% setspace options                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\onehalfspacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% lettrine options                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\LettrineFontHook}{\fontfamily{pag}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% toc options                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocontents{toc}{\small\hfill\textsf{\textbf{P\'agina}}\endgraf}
+\addtocontents{lof}{\small\textsf{\textbf{Figura}}\hfill\textsf{\textbf{P\'agina}}\endgraf}
+\addtocontents{lot}{\small\textsf{\textbf{Tabla}}\hfill\textsf{\textbf{P\'agina}}\endgraf}
+
+\endinput
