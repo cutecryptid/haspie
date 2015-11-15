@@ -218,8 +218,10 @@ def main():
 	res = ClaspResult(asp_out)
 	print res
 
-	sol_num = len(res.solutions)
-	selected_solution = raw_input('Select a solution to output [1..' + str(sol_num) + ']: ')
+	sol_num = len(res.solutions)-1
+	selected_solution = raw_input('Select a solution to output (0..' + str(sol_num) +') [' + str(sol_num) + ']: ')
+	if selected_solution == '':
+		selected_solution = sol_num
 	print res.solutions[int(selected_solution)-1]
 	
 	output = Out.solution_to_music21(res.solutions[int(selected_solution)-1], xml_parser_ret)

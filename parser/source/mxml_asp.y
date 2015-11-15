@@ -95,19 +95,19 @@ int noteVal (char * note, int act_oct, char * act_alter){
 	int oct_val = 12 * act_oct;
 
 	if(!strcmp(note, "C"))
-		return 24 + oct_val + alterVal;
+		return 12 + oct_val + alterVal;
 	if(!strcmp(note, "D"))
-		return 26 + oct_val + alterVal;
+		return 14 + oct_val + alterVal;
 	if(!strcmp(note, "E"))
-		return 28 + oct_val + alterVal;
+		return 16 + oct_val + alterVal;
 	if(!strcmp(note, "F"))
-		return 29 + oct_val + alterVal;
+		return 17 + oct_val + alterVal;
 	if(!strcmp(note, "G"))
-		return 31 + oct_val + alterVal;
+		return 19 + oct_val + alterVal;
 	if(!strcmp(note, "A"))
-		return 21 + oct_val + 12 + alterVal;
+		return 9 + oct_val + 12 + alterVal;
 	if(!strcmp(note, "B"))
-		return 23 + oct_val + 12 + alterVal;
+		return 11 + oct_val + 12 + alterVal;
 }
 
 int type_to_int(char* notetype){
@@ -175,7 +175,7 @@ block : OPTAG REST SLASHTAG CLTAG {$$ = 0; act_oct = -1;}
 		| OPTAG TEXT attr SLASHTAG CLTAG {$$ = 0;}
 		| OPTAG ALTER CLTAG TEXT OPTAG SLASHTAG ALTER CLTAG{$$ = 0; act_alter = $4;} 
 		| OPTAG CHORD SLASHTAG CLTAG {$$ = 0; note_position = note_position-1;} 
-		| OPTAG OCTA CLTAG TEXT OPTAG SLASHTAG OCTA CLTAG {$$ = 0; act_oct = atoi($4);}
+		| OPTAG OCTA CLTAG TEXT OPTAG SLASHTAG OCTA CLTAG {$$ = 0; act_oct = atoi($4)}
 		| OPTAG BEATS CLTAG TEXT OPTAG SLASHTAG BEATS CLTAG {$$ = 0; act_beats = atoi($4);}
 		| OPTAG BEATTYPE CLTAG TEXT OPTAG SLASHTAG BEATTYPE CLTAG {$$ = 0; act_beattype = atoi($4);} 
 		| OPTAG STEP CLTAG TEXT OPTAG SLASHTAG STEP CLTAG {$$ = 0; act_note = $4;} 
