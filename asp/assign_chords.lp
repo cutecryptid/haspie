@@ -47,16 +47,13 @@ fifth_jump(V,B1,B2) :- out_grade(V,G1,O1,B1), out_grade(V,G2,O2,B2), (B1+1) == B
 octave_jump(V,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2), (B1+1) == B2, N2 >= (N1+12), beat(B1+1).
 octave_jump(V,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2), (B1+1) == B2, N2 >= (N1-12), beat(B1+1).
 
-% don't allow octave jumping
-%:- octave_jump(V,B1,B2).
-
-#minimize[error_in_strong(_,_,_) @ 5].
-#minimize[unison(_,_,_) @ 4].
-#minimize[repeated_grade(_,_,_) @ 4].
+#minimize[error_in_strong(_,_,_) @ 7].
+#minimize[unison(_,_,_) @ 6].
+#minimize[repeated_grade(_,_,_) @ 5].
 #minimize[error_in_semistrong(_,_,_) @ 4].
 #minimize[octave_jump(_,_,_) @ 3].
-#minimize[fifth_jump(_,_,_) @ 3].
-#minimize[error_in_weak(_,_,_) @ 2].
+#minimize[fifth_jump(_,_,_) @ 2].
+#minimize[error_in_weak(_,_,_) @ 1].
 
 #hide.
 #show chord/2.
