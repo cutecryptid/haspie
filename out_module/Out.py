@@ -44,23 +44,22 @@ def romanToChord(roman, base, mode):
 
 def solution_to_music21(solution, subdivision, span, base, mode):
 	score = stream.Score()
-	first_voice = True
+	i = 0
 	for v in solution.voices.items():
 		p = stream.Part()
+		p.append(clef.TrebleClef())
 		for item in v[1]:
 			c = next((c for c in solution.chords if ((c.time-1)*span) == (item.time-1)), None)
-			if c != None and first_voice:
+			if c != None and i == 0:
 				p.append(harmony.ChordSymbol(romanToChord(c.name, base, mode)))
 			if str(item) == "R":
 				tmp_note = note.Rest()
 			else:
 				tmp_note = note.Note(item.value)
 				tmp_note.pitch.accidental = None
-				if any(e.time == item.time for e in solution.errors):
+				if any((e.time == item.time) and (e.voice-1 == i)  for e in solution.errors):
 					tmp_note.color = "#ff0000"
 			p.append(tmp_note)
-		p.clef = clef.TrebleClef()
 		score.append(p)
-		if first_voice:
-			first_voice = False
+		i+= 1
 	return score
