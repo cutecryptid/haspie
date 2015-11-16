@@ -11,7 +11,6 @@ class Note:
 	def __init__(self, value, time):
 		self.value = value
 		self.time = time
-
 	def __str__(self):
 		return str(self.value)
 
@@ -143,7 +142,7 @@ def main():
 	                   help='horizontal span to consider while harmonizing, by default 1')
 	parser.add_argument('-d', '--divide', metavar='32|16|8|4|2|1', nargs=1, default=0, type=int,
 	                   help='forces subdivision of the notes in the score to a specific value, by default it\'s automatically calculated')
-	parser.add_argument('-m', '--mode', metavar='major|minor', nargs=1, default="major", choices=['major', 'minor'],
+	parser.add_argument('-m', '--mode', metavar='maj|min', nargs=1, default="maj", choices=['major', 'minor'],
 	                   help='mode of the scale, major by default')
 	parser.add_argument('-v', '--voices', metavar='V', nargs=1, default="0", type=int,
 	                   help='number of extra voices that should be added to the score for harmonization')
@@ -155,6 +154,8 @@ def main():
 	                   help='output file format for the result')
 	parser.add_argument('-t', '--timeout', metavar='T', nargs=1, default=5, type=int,
 	                   help='maximum time allowed to search for optimum')
+	parser.add_argument('-b', '--base', metavar='B', nargs=1, default=21, type=int,
+	                   help='scale base for scale shifting, C is 21')
 
 	args = parser.parse_args()
 
@@ -169,7 +170,7 @@ def main():
 		opt_all = "--opt-all"
 
 	mode = args.mode
-	if args.mode != "major":
+	if args.mode != "maj":
 		mode = args.mode[0]
 
 	sub = args.divide
@@ -195,7 +196,10 @@ def main():
 	if args.timeout != 5:
 		timeout = args.timeout[0]
 
-	print "SHOW: ", args.show
+
+	base = args.base
+	if args.base != 21:
+		base = args.base[0]
 
 	asp_outfile_name = re.search('/(.*?)\.xml', infile)
 	outname = asp_outfile_name.group(1)
@@ -208,9 +212,9 @@ def main():
 	if xml_parser_ret <= 0:
 		sys.exit("Parsing error, stopping execution.")
 
-	asp_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
+	asp_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "or_mode.lp", "asp/include/" + mode + "or_chords.lp",
 		"asp/include/conversions.lp", "asp/generated_logic_music/" + lp_outname, "-n", str(n), "--const", "span=" + str(span), 
-		"--const", "extra_voices="+ str(voices), opt_all)
+		"--const", "extra_voices="+ str(voices), "--const", "base="+ str(base), opt_all)
 
 	asp_proc = subprocess.Popen(asp_args, stdout=subprocess.PIPE)
 	asp_out = asp_proc.stdout.read()
@@ -224,7 +228,7 @@ def main():
 		selected_solution = sol_num
 	print res.solutions[int(selected_solution)-1]
 	
-	output = Out.solution_to_music21(res.solutions[int(selected_solution)-1], xml_parser_ret, span)
+	output = Out.solution_to_music21(res.solutions[int(selected_solution)-1], xml_parser_ret, span, base, mode)
 	if args.show:
 		output.show(fmt)
 	else:
