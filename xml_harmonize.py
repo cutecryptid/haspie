@@ -234,10 +234,9 @@ def main():
 	t = threading.Timer( timeout, clasp_timeout, [asp_proc] )
 	t.start()
 	t.join()
+	t.cancel()
     
 	asp_out = asp_proc.stdout.read()
-
-	t.cancel()
 
 	if (re.search("UNSATISFIABLE",asp_out) != None):
 		sys.exit("UNSATISFIABLE, stopping execution.")

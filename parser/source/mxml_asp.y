@@ -13,8 +13,9 @@ void yyerror (char const *);
 typedef struct{ 
 	int voice;
 	int value;
-	int position;
+	int chordmod;
 	int length;
+	int dotted;
 } note; 
 
 typedef struct{ 
@@ -42,6 +43,8 @@ int act_beattype;
 int subdivision;
 int opt_subdivision;
 int act_length;
+int act_dot;
+int act_ch_mod;
 note * tmp_note;
 measure * tmp_meas;
 FILE *f;
@@ -51,22 +54,24 @@ note* new_note(){
 	  n = malloc(sizeof(note));
 	  n -> voice = 0;
 	  n -> value = 0;
-	  n -> position = 0;
+	  n -> chordmod = 0;
 	  n -> length = 0;
+	  n -> dotted = 0;
 	  return n;
 }
 
-note* mod_note(note* n, int voi, int val, int pos, int len){
+note* mod_note(note* n, int voi, int val, int cm, int len, int dot){
 	n -> voice = voi;
 	n -> value = val;
-	n -> position = pos;
+	n -> chordmod = cm;
 	n -> length = len;
+	n -> dotted = dot;
 	return n;
 }
 
 measure* new_measure(){
 	  measure* m;
-	  m = malloc(sizeof(note));
+	  m = malloc(sizeof(measure));
 	  m -> voice = 0;
 	  m -> beats = 0;
 	  m -> beattype = 0;
@@ -151,7 +156,7 @@ int ispower2(int x){
 	char * valStr;
 }
 %token OPTAG CLTAG SLASHTAG EQUAL KVOTHE QUES EXCL NOTE OCTA STEP PART_ID REST CHORD ALTER DOCTYPE OPTYPE CLTYPE
-%token LYRICTEXT BEATS BEATTYPE TIME
+%token NOTVISIBLE BEATS BEATTYPE TIME DOT
 %token <valStr> TEXT
 %type  <valInt> block part1 part2 body attr
 %start S
@@ -172,34 +177,29 @@ docwords : /*...*/ {}
 		|  SLASHTAG docwords {}
 		|  TEXT docwords {}
 
-block : OPTAG REST SLASHTAG CLTAG {$$ = 0; act_oct = -1;}
+block : OPTAG REST SLASHTAG CLTAG {
+		$$ = 0; 
+		if (act_oct != -2){
+			act_oct = -1;
+		}
+		}
+		| OPTAG DOT SLASHTAG CLTAG {
+			$$ = 0;
+			act_dot = 1;
+		}
 		| OPTAG TEXT attr SLASHTAG CLTAG {$$ = 0;}
 		| OPTAG ALTER CLTAG TEXT OPTAG SLASHTAG ALTER CLTAG{$$ = 0; act_alter = $4;} 
-		| OPTAG CHORD SLASHTAG CLTAG {$$ = 0; note_position = note_position-1;} 
+		| OPTAG CHORD SLASHTAG CLTAG {$$ = 0; act_ch_mod = -1;} 
 		| OPTAG OCTA CLTAG TEXT OPTAG SLASHTAG OCTA CLTAG {$$ = 0; act_oct = atoi($4);}
 		| OPTAG BEATS CLTAG TEXT OPTAG SLASHTAG BEATS CLTAG {$$ = 0; act_beats = atoi($4);}
 		| OPTAG BEATTYPE CLTAG TEXT OPTAG SLASHTAG BEATTYPE CLTAG {$$ = 0; act_beattype = atoi($4);} 
 		| OPTAG STEP CLTAG TEXT OPTAG SLASHTAG STEP CLTAG {$$ = 0; act_note = $4;} 
-		| OPTAG LYRICTEXT CLTAG TEXT OPTAG SLASHTAG LYRICTEXT CLTAG {
-			$$ = 0;
-			act_lyric = $4;
-			if(!strcmp(act_lyric, "[")){
-				tmp_note = new_note();
-				tmp_note = mod_note(tmp_note, part, -8, note_position, act_length);
-				add_queue(note_q, tmp_note);
-			}
-			if(!strcmp(act_lyric, "]")){
-				tmp_note = new_note();
-				tmp_note = mod_note(tmp_note, part, -9, note_position+1, act_length);
-				add_queue(note_q, tmp_note);
-			}
-		}
 		| OPTYPE TEXT CLTYPE {$$ = 0; act_type = $2;}
 		| part1 part2 {$$ = 0;} 
 		| part1 error {yyerror("ERROR: Unclosed tag found.");}
 		| part1 part2 error {yyerror("ERROR: Unrecognised file format. File is not Standard Music XML.");};
 
-part1 : OPTAG NOTE attr {$$ = 0; act_alter = ""; add_stack(stag, "note");} 
+part1 : OPTAG NOTE attr {$$ = 0; act_alter = ""; act_ch_mod=0; add_stack(stag, "note");} 
 		| OPTAG PART_ID KVOTHE TEXT KVOTHE {$$ = 0; part= part+1; note_position = 0; add_stack(stag, "part");}
 		| OPTAG TIME {$$ = 0; add_stack(stag, "time");}
 		| OPTAG TEXT attr {$$ = 0; add_stack(stag, (void*) $2);};
@@ -210,21 +210,28 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 				printf("note - UNCLOSED TAG\n");
 				exit(-1);
 			};
-			if (act_oct == -1){
-				act_note_val = -1;
-			} else {
-				act_note_val = noteVal(act_note, act_oct, act_alter);
+			switch(act_oct) {
+			   	case -1:
+			    	act_note_val = -2;
+			      	break;
+			   	case -2:
+			      	act_note_val = -2;
+			      	break;
+			   	default :
+			   	act_note_val = noteVal(act_note, act_oct, act_alter);
 			}
-
 			act_length = type_to_int(act_type);
 			if (act_length > subdivision){
 				subdivision = act_length;
 			}
 			note_position = note_position+1;
+			if (act_dot){
+				subdivision = act_length * 2;
+			}
 			tmp_note = new_note();
-			tmp_note = mod_note(tmp_note, part, act_note_val, note_position, act_length);
+			tmp_note = mod_note(tmp_note, part, act_note_val, act_ch_mod, act_length, act_dot);
 			add_queue(note_q, tmp_note);
-
+			act_dot = 0;
 		}
 		| CLTAG body OPTAG SLASHTAG TIME CLTAG {
 			$$ = 0;
@@ -251,7 +258,8 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 			};
 		};
 
-attr : /*...*/ {} 
+attr : /*...*/ {}
+		| NOTVISIBLE attr {$$ = 0; act_oct = -2;}
 		| TEXT EQUAL KVOTHE TEXT KVOTHE attr {$$ = 0;};
 
 body : body block {$$ = 0;}
@@ -350,35 +358,33 @@ int main(int argc, char *argv[]) {
 	}
 
 	int times;
-	int truerest;
 	int act_part = 0;
+	int pos = 0;
 	while(queue_size(*note_q) > 0){
 		tmp_note = pop_queue(note_q);
-		if (tmp_note->voice != act_part){
-			truerest = 1;
+		if (act_part != tmp_note->voice){
 			act_part = tmp_note->voice;
+			pos = 0;
 		}
-		if (tmp_note->value == -8)
-			truerest = 0;
-		if ((tmp_note->value != -8) && (tmp_note->value != -9)){
-			times = subdivide(tmp_note->length, subdivision);
-			int i = 1;
-			int pos = ((tmp_note->position)-1)*times;
-			for (i; i < (times+1); ++i)
-			{
-				if (tmp_note->value == -1){
-					if (truerest){
-						fprintf(f, "rest(%d, %d).\n", tmp_note->voice, pos+i);
-					} else {
-						fprintf(f, "freebeat(%d, %d).\n", tmp_note->voice, pos+i);
-					}
-				} else {
-					fprintf(f, "note(%d, %d, %d).\n", tmp_note->voice, tmp_note->value, pos+i);
-				}
+		times = subdivide(tmp_note->length, subdivision);
+		if (tmp_note->dotted){
+			times++;
+		}
+		pos += times*tmp_note->chordmod;
+		int i = 1;
+		for (i; i < (times+1); i++){
+			pos++;
+			switch(tmp_note->value) {
+			   	case -1:
+			    	fprintf(f, "rest(%d, %d).\n", tmp_note->voice, pos);
+			    	break;
+			   	case -2:
+			      	fprintf(f, "freebeat(%d, %d).\n", tmp_note->voice, pos);
+			      	break;
+			    default:
+			    	fprintf(f, "note(%d, %d, %d).\n", tmp_note->voice, tmp_note->value, pos);
 			}
 		}
-		if (tmp_note->value == -9)
-			truerest = 1;
 	}
 
 	while(queue_size(*meas_q) > 0){

@@ -44,6 +44,9 @@ error_in_strong(V,G,B) :- error(V,G,B), beat(B), strong_beat(B).
 error_in_semistrong(V,G,B) :- error(V,G,B), beat(B), semistrong_beat(B).
 error_in_weak(V,G,B) :- error(V,G,B), beat(B), weak_beat(B).
 
+support_note(V,N,B) :- out_note(V,N,B), out_grade(V,G,O,B), error_in_strong(V,G,B), out_grade(V,G1,O1,B1), B+1 == B1, beat(B+1), belongs(G1,C1).
+semisupport_note(V,N,B) :- out_note(V,N,B), out_grade(V,G,O,B), error_in_semistrong(V,G,B), belongs(G1,C1), out_grade(V,G1,O1,B1), B+1 == B1, beat(B+1).
+
 fifth_jump(V,B1,B2) :- out_grade(V,G1,O1,B1), out_grade(V,G2,O2,B2), (B1+1) == B2, G2 == ((G1-5)\7), beat(B1+1).
 fifth_jump(V,B1,B2) :- out_grade(V,G1,O1,B1), out_grade(V,G2,O2,B2), (B1+1) == B2, G2 == ((G1+5)\7), beat(B1+1).
 octave_jump(V,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2), (B1+1) == B2, N2 >= (N1+12), beat(B1+1).
@@ -57,9 +60,6 @@ octave_jump(V,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2), (B1+1) == B2, N2 <
 #minimize[fifth_jump(_,_,_) @ 3].
 #minimize[error_in_weak(_,_,_) @ 2].
 #minimize[repeated_grade(_,_,_) @ 1].
-
-
-
 
 #hide.
 #show chord/2.

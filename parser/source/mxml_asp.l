@@ -7,7 +7,6 @@ step "step"
 rest "rest"
 chord "chord"
 octave "octave"
-lyric "lyric"
 optype "<type>"
 cltype "</type>"
 alteration "alteration"
@@ -17,6 +16,8 @@ texttag "text"
 beats "beats"
 beattype "beat-type"
 time "time"
+dot "dot"
+notvisible "print-object=\"no\""
 text [-.A-Za-z0-9:\[\]\\]+
 ques_montgomery [?]
 excl [!]
@@ -46,7 +47,8 @@ kvothe [\"]
 {rest} {return REST;}
 {beats} {return BEATS;}
 {beattype} {return BEATTYPE;}
-{texttag} {return LYRICTEXT;}
+{notvisible} {return NOTVISIBLE;}
+{dot} {return DOT;}
 {text} {yylval.valStr=strdup(yytext); return TEXT;}
 . ;
 \n ;
