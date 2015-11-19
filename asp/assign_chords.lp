@@ -61,8 +61,9 @@ octave_jump(V,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2), (B1+1) == B2, N2 <
 
 #minimize[error_in_strong(_,_,_) @ 6].
 #minimize[unison(_,_,_) @ 5].
-% Minimization of priority 4 is the melodious smoothing
-% Maximization of priority 3 is the same tendency
+% Minimization of priority 5 is the melodious smoothing
+% Maximization of priority 4 is the same tendency
+% Maximization of priority 3 is the contrary tendency
 #minimize[error_in_weak(_,_,_) @ 2].
 #minimize[repeated_grade(_,_,_) @ 1].
 

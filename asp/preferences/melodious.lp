@@ -9,10 +9,13 @@ tendency(still,V,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2), N1 == N2, beat(
 
 same_tendency(V1,V2,B1,B2) :- voice(V1), voice(V2), V1 != V2, tendency(T,V1,B1,B2), tendency(T,V2,B1,B2),
 							beat(B1), beat(B2), pos_tendency(T). 
+cont_tendency(V1,V2,B1,B2) :- voice(V1), voice(V2), V1 != V2, tendency(pos,V1,B1,B2), tendency(neg,V2,B1,B2),
+							beat(B1), beat(B2).
 
 % Sixths sequence
 
 
 % Melody Smoothing
-#minimize[melodic_jump(_,J,_,_) = J @ 4].
+#minimize[melodic_jump(_,J,_,_) = J @ 5].
+#maximize[cont_tendency(_,_,_,_) @ 4].
 #maximize[same_tendency(_,_,_,_) @ 3].
