@@ -38,7 +38,7 @@ repeated_grade(V1,V2,B) :- out_grade(V1,G,O1,B), out_grade(V2,G,O2,B), voice(V1)
 unison(V1,V2,B) :- out_note(V1,N,B), out_note(V2,N,B), voice(V1), voice(V2), V1 != V2.
 passing_note(V,N,B) :- chord(T,C), out_note(V,N,B), htime(T), out_grade(V,G,O,B), voice(V), not belongs(G,C), beat_belongs_htime(B,T), weak_beat(B).
 
-error_in_strong(V,G,B) :- error(V,G,B), beat(B), strong_beat(B), not support_note(V,N,B), out_note(V,N,B).
+error_in_strong(V,G,B) :- error(V,G,B), beat(B), strong_beat(B), out_note(V,N,B). %not support_note(V,N,B)
 error_in_weak(V,G,B) :- error(V,G,B), beat(B), weak_beat(B), not passing_note(V,N,B), out_note(V,N,B).
 
 melodic_jump(V,J,B1,B2) :- out_grade(V,G1,O1,B1), out_grade(V,G2,O2,B2), (B1+1) == B2, beat(B1+1), J = #abs(G2+(7*O2)+1-G1+(7*O1))\7.
@@ -59,9 +59,10 @@ octave_jump(V,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2), (B1+1) == B2, N2 <
 % Octave jumping is always restricted to restric search space
 :- octave_jump(_,_,_).
 
-#minimize[error_in_strong(_,_,_) @ 5].
-#minimize[unison(_,_,_) @ 4].
-% Minimization of priority 4 is the melodious smoothing specified in a preference file
+#minimize[error_in_strong(_,_,_) @ 6].
+#minimize[unison(_,_,_) @ 5].
+% Minimization of priority 4 is the melodious smoothing
+% Maximization of priority 3 is the same tendency
 #minimize[error_in_weak(_,_,_) @ 2].
 #minimize[repeated_grade(_,_,_) @ 1].
 
