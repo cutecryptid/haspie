@@ -13,4 +13,4 @@ ex_sem_tones(V,7,T) :- ex_grade(V,3,T).
 ex_sem_tones(V,8,T) :- ex_grade(V,4,T).
 ex_sem_tones(V,10,T) :- ex_grade(V,5,T).
 ex_sem_tones(V,0,T) :- ex_grade(V,6,T).
-ex_sem_tones(V,2,T) :- ex_grade(V,0,T).
+ex_sem_tones(V,2,T) :- ex_grade(V,7,T).

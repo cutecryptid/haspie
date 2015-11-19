@@ -392,6 +392,7 @@ int main(int argc, char *argv[]) {
 		tmp_meas = pop_queue(meas_q);
 		s_factor = (subdivision/tmp_meas->beattype);
 		fprintf(f, "measure(%d, %d).\n", (tmp_meas->beats)*s_factor, tmp_meas->position);
+		fprintf(f, "real_measure(%d, %d, %d).\n", tmp_meas->beats, tmp_meas->beattype, tmp_meas->position);
 	}
 	
 	fclose(f);

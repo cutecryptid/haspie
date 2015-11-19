@@ -118,7 +118,7 @@ class ClaspResult:
 					voices = {k: sorted(v, key=lambda tup: tup.time) for k, v in voices.items()}
 
 					chords = [Chord(int(ch[0]),ch[1]) for ch in sorted(re.findall('chord\(([0-9]+),([ivxmo7]+)\)', ans))]
-					errors = [Error(int(er[0]),int(er[1]),int(er[2])) for er in re.findall('error\(([0-9]+),([0-9]+),([0-9]+)\)', ans)]
+					errors = [Error(int(er[0]),int(er[1]),int(er[2])) for er in re.findall('error_in_strong\(([0-9]+),([0-9]+),([0-9]+)\)', ans)]
 					str_opts = re.split("\s*", re.search('Optimization:((?:\s*[0-9]+)+)', ans).group(1))
 					taw = str_opts.pop(0)
 					optimums = map(int, str_opts)
@@ -159,7 +159,7 @@ def main():
 	                   help='mode of the scale, major by default')
 	parser.add_argument('-v', '--voices', metavar='V', nargs=1, default="0", type=int,
 	                   help='number of extra voices that should be added to the score for harmonization')
-	parser.add_argument('-sh', '--show', action='store_true', default=False,
+	parser.add_argument('-S', '--show', action='store_true', default=False,
 						help='show result in editor instead of writing it to a file in the desired format')
 	parser.add_argument('-f', '--format', metavar='xml|pdf|midi|ly', nargs=1, default="xml", type=str,
 	                   help='output file format for the result')
@@ -169,6 +169,8 @@ def main():
 	                   help='maximum time allowed to search for optimum')
 	parser.add_argument('-b', '--base', metavar='B', nargs=1, default=21, type=int,
 	                   help='scale base for scale shifting, C is 21')
+	parser.add_argument('-M', '--melodious', action='store_true', default=False,
+	                   help='turns on melodic preferences in ASP for a more melodic result')
 
 	args = parser.parse_args()
 
@@ -181,7 +183,6 @@ def main():
 	opt_all = ""
 	if n == 0:
 		opt_all = "--opt-all"
-
 	mode = args.mode
 	if args.mode != "maj":
 		mode = args.mode[0]
@@ -209,10 +210,13 @@ def main():
 	if args.timeout != 5:
 		timeout = args.timeout[0]
 
-
 	base = args.base
 	if args.base != 21:
 		base = args.base[0]
+
+	melodious = ""
+	if args.melodious:
+		melodious = "asp/preferences/melodious.lp"
 
 	asp_outfile_name = re.search('/(.*?)\.xml', infile)
 	outname = asp_outfile_name.group(1)
@@ -226,8 +230,9 @@ def main():
 		sys.exit("Parsing error, stopping execution.")
 
 	asp_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "or_mode.lp", "asp/include/" + mode + "or_chords.lp",
-		"asp/include/conversions.lp", "asp/generated_logic_music/" + lp_outname, "-n", str(n), "--const", "span=" + str(span), 
-		"--const","extra_voices="+ str(voices), "--const", "base="+ str(base), opt_all)
+		"asp/include/conversions.lp", "asp/include/measures.lp", "asp/generated_logic_music/" + lp_outname,"-n", str(n), 
+		"--const", "span=" + str(span), "--const","extra_voices="+ str(voices), "--const", "base="+ str(base), 
+		"--const", "subdiv="+str(xml_parser_ret), opt_all, melodious)
 
 	asp_proc = subprocess.Popen(asp_args, stdout=subprocess.PIPE)
 
