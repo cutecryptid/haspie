@@ -15,5 +15,6 @@ Python 2.7, gringo 3.0.5 and clingo 3.0.5, music21 >= 2.1.2 python module instal
 The only compiled part of the project is the MXML to ASP facts parser. A binary is bundled with every release, but if you wish to compile it for compatibility reasons, a Makefile is also bundled. Go to ```parser/source``` and run ```make```. The bin file is generated in the parser folder so it can be properly referenced by the python pipeline.
 
 #TO DO:
-Finished Prototype mkIII. (It may need posterior bugfix, tho)
-Waiting for instructions for Prototype mkIV
+Working on Prototype mkIV (FINAL!)
+- Support notes do not work properly (length of note is important)
+- Sixths sequence optimization should be included in the melodious preferences file.
