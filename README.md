@@ -17,4 +17,3 @@ The only compiled part of the project is the MXML to ASP facts parser. A binary 
 #TO DO:
 Working on Prototype mkIV (FINAL!)
 - Support notes do not work properly (length of note is important)
-- Sixths sequence optimization should be included in the melodious preferences file.

@@ -6,7 +6,7 @@
     <creator type="composer">Music21</creator>
     <encoding>
       <software>MuseScore 2.0.2</software>
-      <encoding-date>2015-11-17</encoding-date>
+      <encoding-date>2015-11-24</encoding-date>
       <supports element="accidental" type="yes"/>
       <supports element="beam" type="yes"/>
       <supports element="print" attribute="new-page" type="yes" value="yes"/>
@@ -97,9 +97,9 @@
         </attributes>
       <harmony print-frame="no">
         <root>
-          <root-step>A</root-step>
+          <root-step>F</root-step>
           </root>
-        <kind>minor</kind>
+        <kind>major</kind>
         </harmony>
       <note default-x="76.77" default-y="-25.00">
         <pitch>
@@ -176,10 +176,6 @@
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
-        <lyric number="1">
-          <syllabic>single</syllabic>
-          <text>[</text>
-          </lyric>
         </note>
       <note default-x="137.40" default-y="-155.00">
         <pitch>
@@ -191,7 +187,7 @@
         <type>quarter</type>
         <stem>up</stem>
         </note>
-      <note>
+      <note print-object="no">
         <rest/>
         <duration>1</duration>
         <voice>1</voice>
@@ -206,10 +202,6 @@
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
-        <lyric number="1">
-          <syllabic>single</syllabic>
-          <text>]</text>
-          </lyric>
         </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>

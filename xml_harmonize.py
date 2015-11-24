@@ -166,7 +166,7 @@ def main():
 	parser.add_argument('-o', '--output', metavar='output/dir/for/file', nargs=1, default="out", type=str,
 	                   help='output file format for the result')
 	parser.add_argument('-t', '--timeout', metavar='T', nargs=1, default=5, type=int,
-	                   help='maximum time allowed to search for optimum')
+	                   help='maximum time (in seconds) allowed to search for optimum')
 	parser.add_argument('-b', '--base', metavar='B', nargs=1, default=21, type=int,
 	                   help='scale base for scale shifting, C is 21')
 	parser.add_argument('-M', '--melodious', action='store_true', default=False,
