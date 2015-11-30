@@ -171,6 +171,8 @@ def main():
 	                   help='scale base for scale shifting, C is 21')
 	parser.add_argument('-M', '--melodious', action='store_true', default=False,
 	                   help='turns on melodic preferences in ASP for a more melodic result')
+	parser.add_argument('-A', '--aspdebug', action='store_true', default=False,
+	                   help='turns on melodic preferences in ASP for a more melodic result')
 
 	args = parser.parse_args()
 
@@ -230,37 +232,41 @@ def main():
 		sys.exit("Parsing error, stopping execution.")
 
 	asp_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "or_mode.lp", "asp/include/" + mode + "or_chords.lp",
-		"asp/include/conversions.lp", "asp/include/measures.lp", "asp/generated_logic_music/" + lp_outname,"-n", str(n), 
+		"asp/include/conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", 
+		"asp/generated_logic_music/" + lp_outname,"-n", str(n), 
 		"--const", "span=" + str(span), "--const","extra_voices="+ str(voices), "--const", "base="+ str(base), 
 		"--const", "subdiv="+str(xml_parser_ret), opt_all, melodious)
 
-	asp_proc = subprocess.Popen(asp_args, stdout=subprocess.PIPE)
-
-	t = threading.Timer( timeout, clasp_timeout, [asp_proc] )
-	t.start()
-	t.join()
-	t.cancel()
-    
-	asp_out = asp_proc.stdout.read()
-
-	if (re.search("UNSATISFIABLE",asp_out) != None):
-		sys.exit("UNSATISFIABLE, stopping execution.")
-
-	res = ClaspResult(asp_out)
-	print res
-
-	sol_num = len(res.solutions)
-	selected_solution = raw_input('Select a solution to output (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
-	if selected_solution == '':
-		selected_solution = sol_num
-	print res.solutions[int(selected_solution)-1]
-	
-	output = Out.solution_to_music21(res.solutions[int(selected_solution)-1], xml_parser_ret, span, base, mode)
-	if args.show:
-		output.show(fmt)
+	if args.aspdebug:
+		asp_proc = subprocess.call(asp_args)
 	else:
-		print "Writing output file to", final_out
-		output.write(fp=final_out, fmt=fmt)
+		asp_proc = subprocess.Popen(asp_args, stdout=subprocess.PIPE)
+
+		t = threading.Timer( timeout, clasp_timeout, [asp_proc] )
+		t.start()
+		t.join()
+		t.cancel()
+	    
+		asp_out = asp_proc.stdout.read()
+
+		if (re.search("UNSATISFIABLE",asp_out) != None):
+			sys.exit("UNSATISFIABLE, stopping execution.")
+
+		res = ClaspResult(asp_out)
+		print res
+
+		sol_num = len(res.solutions)
+		selected_solution = raw_input('Select a solution to output (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
+		if selected_solution == '':
+			selected_solution = sol_num
+		print res.solutions[int(selected_solution)-1]
+		
+		output = Out.solution_to_music21(res.solutions[int(selected_solution)-1], xml_parser_ret, span, base, mode)
+		if args.show:
+			output.show(fmt)
+		else:
+			print "Writing output file to", final_out
+			output.write(fp=final_out, fmt=fmt)
 
 if __name__ == "__main__":
     main()
