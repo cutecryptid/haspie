@@ -2,7 +2,6 @@
 #const span = 1.
 #const subdiv = 4.
 #const extra_voices = 0.
-#const same_chord_weight = 1.
 
 % define the possible grades
 pos_grade(1..7).
@@ -65,12 +64,16 @@ octave_jump(V,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2), (B1+1) == B2, N2 <
 same_chord(HT1,HT2) :- htime(HT1), htime(HT2), htime(HT1+1), HT1+1 == HT2,
 						chord(HT1,C1), chord(HT2,C2), C1 == C2, pos_chord(C1), pos_chord(C2).
 
+note_belongs_voicetype(N,VT) :- voice_type(VT,V), out_note(V,N,B), voice(V), voice_low(VT,NL), voice_high(VT,NH),
+								N >= NL, N<= NH.
+:- voice_type(VT,V), voice(V), not note_belongs_voicetype(N,VT), out_note(V,N,B).
+
 % Octave jumping is always restricted to restric search space
 :- octave_jump(_,_,_).
 
 #minimize[error_in_strong(_,_,_) @ 9].
 #minimize[unison(_,_,_) @ 8].
-#minimize[same_chord(_,_) = same_chord_weight @ 7].
+#minimize[same_chord(_,_) @ 7].
 % Minimization of priority 6 is the melodious smoothing
 % Maximization of priority 5 is the 4th-6th inversion linking.
 % Maximization of priority 4 is the same tendency
@@ -83,3 +86,5 @@ same_chord(HT1,HT2) :- htime(HT1), htime(HT2), htime(HT1+1), HT1+1 == HT2,
 #show rest/2.
 #show error_in_strong/3.
 #show out_note/3.
+#show passing_note/3.
+#show voice_type/2.
