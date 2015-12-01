@@ -59,6 +59,8 @@ def solution_to_music21(solution, subdivision, span, base, mode):
 				tmp_note.pitch.accidental = None
 				if any((e.time == item.time) and (e.voice-1 == i)  for e in solution.errors):
 					tmp_note.color = "#ff0000"
+				if any((p.time == item.time) and (p.voice-1 == i)  for p in solution.passing):
+					tmp_note.color = "#0000ff"
 			p.append(tmp_note)
 		score.append(p)
 		i+= 1

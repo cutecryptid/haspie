@@ -16,6 +16,15 @@ class Note:
 	def __str__(self):
 		return str(self.value)
 
+class PassingNote:
+	"""Class that stores information about a passing note in the score"""
+	def __init__(self, voice, value, time):
+		self.voice = voice
+		self.value = value
+		self.time = time
+	def __str__(self):
+		return str(self.value)
+
 class Rest:
 	"""Class that stores information about a rest in the score"""
 	def __init__(self, time):
@@ -45,9 +54,10 @@ class Error:
 class HaspSolution:
 	"""Class that stores information of a single solution of the harmony
 	deducing module"""
-	def __init__(self, chords, voices, errors, optimization):
+	def __init__(self, chords, voices, errors, passing,optimization):
 		self.chords = chords
 		self.errors = errors
+		self.passing = passing
 		self.voices = voices
 		self.optimization = optimization
 
@@ -70,6 +80,16 @@ class HaspSolution:
 					ret += str(er)
 				else:
 					ret +=" // " + str(er)
+			ret += "\n"
+		if len(self.passing) > 0:
+			ret += "Passing Notes: "
+			first = True
+			for pn in self.passing:
+				if first:
+					first = False
+					ret += str(pn)
+				else:
+					ret +=" // " + str(pn)
 			ret += "\n"
 		for voice in self.voices.keys():
 			notes = self.voices[voice]
@@ -119,10 +139,11 @@ class ClaspResult:
 
 					chords = [Chord(int(ch[0]),ch[1]) for ch in sorted(re.findall('chord\(([0-9]+),([ivxmo7]+)\)', ans))]
 					errors = [Error(int(er[0]),int(er[1]),int(er[2])) for er in re.findall('error_in_strong\(([0-9]+),([0-9]+),([0-9]+)\)', ans)]
+					passing = [PassingNote(int(pn[0]),int(pn[1]),int(pn[2])) for pn in re.findall('passing_note\(([0-9]+),([0-9]+),([0-9]+)\)', ans)]
 					str_opts = re.split("\s*", re.search('Optimization:((?:\s*[0-9]+)+)', ans).group(1))
 					taw = str_opts.pop(0)
 					optimums = map(int, str_opts)
-					solutions += [HaspSolution(chords,voices,errors,optimums)]
+					solutions += [HaspSolution(chords,voices,errors,passing,optimums)]
 				except AttributeError:
 					print "Discarding incomplete answer due to early temrination."
 		return solutions
