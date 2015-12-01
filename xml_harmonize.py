@@ -23,7 +23,7 @@ class PassingNote:
 		self.value = value
 		self.time = time
 	def __str__(self):
-		return str(self.value)
+		return "Voice: " + str(self.voice) + ", " + str(self.time)
 
 class Rest:
 	"""Class that stores information about a rest in the score"""
