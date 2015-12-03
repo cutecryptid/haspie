@@ -279,6 +279,7 @@ def main():
 			sys.exit("UNSATISFIABLE, stopping execution.")
 
 		res = ClaspResult(asp_out)
+		print res
 
 		sol_num = len(res.solutions)
 		selected_solution = raw_input('Select a solution to output (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
