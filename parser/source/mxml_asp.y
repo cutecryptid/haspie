@@ -14,8 +14,10 @@ typedef struct{
 	int voice;
 	int value;
 	int chordmod;
+	int staff;
 	int length;
 	int dotted;
+	int grace;
 } note; 
 
 typedef struct{ 
@@ -45,6 +47,8 @@ int opt_subdivision;
 int act_length;
 int act_dot;
 int act_ch_mod;
+int act_staff;
+int grace_mod;
 note * tmp_note;
 measure * tmp_meas;
 FILE *f;
@@ -54,18 +58,21 @@ note* new_note(){
 	  n = malloc(sizeof(note));
 	  n -> voice = 0;
 	  n -> value = 0;
+	  n -> staff = 0;
 	  n -> chordmod = 0;
 	  n -> length = 0;
 	  n -> dotted = 0;
 	  return n;
 }
 
-note* mod_note(note* n, int voi, int val, int cm, int len, int dot){
+note* mod_note(note* n, int voi, int val, int cm, int sta, int len, int dot, int gra){
 	n -> voice = voi;
 	n -> value = val;
 	n -> chordmod = cm;
+	n -> staff = sta;
 	n -> length = len;
 	n -> dotted = dot;
+	n -> grace = gra;
 	return n;
 }
 
@@ -156,7 +163,7 @@ int ispower2(int x){
 	char * valStr;
 }
 %token OPTAG CLTAG SLASHTAG EQUAL KVOTHE QUES EXCL NOTE OCTA STEP PART_ID REST CHORD ALTER DOCTYPE OPTYPE CLTYPE
-%token NOTVISIBLE BEATS BEATTYPE TIME DOT
+%token NOTVISIBLE BEATS BEATTYPE TIME DOT OPSTAFF CLSTAFF GRACETAG
 %token <valStr> TEXT
 %type  <valInt> block part1 part2 body attr
 %start S
@@ -187,9 +194,14 @@ block : OPTAG REST SLASHTAG CLTAG {
 			$$ = 0;
 			act_dot = 1;
 		}
+		| GRACETAG{
+			$$ = 0;
+			grace_mod = 1;
+		}
 		| OPTAG TEXT attr SLASHTAG CLTAG {$$ = 0;}
 		| OPTAG ALTER CLTAG TEXT OPTAG SLASHTAG ALTER CLTAG{$$ = 0; act_alter = $4;} 
 		| OPTAG CHORD SLASHTAG CLTAG {$$ = 0; act_ch_mod = -1;} 
+		| OPSTAFF TEXT CLSTAFF {$$ = 0; act_staff = atoi($2);} 
 		| OPTAG OCTA CLTAG TEXT OPTAG SLASHTAG OCTA CLTAG {$$ = 0; act_oct = atoi($4);}
 		| OPTAG BEATS CLTAG TEXT OPTAG SLASHTAG BEATS CLTAG {$$ = 0; act_beats = atoi($4);}
 		| OPTAG BEATTYPE CLTAG TEXT OPTAG SLASHTAG BEATTYPE CLTAG {$$ = 0; act_beattype = atoi($4);} 
@@ -199,7 +211,7 @@ block : OPTAG REST SLASHTAG CLTAG {
 		| part1 error {yyerror("ERROR: Unclosed tag found.");}
 		| part1 part2 error {yyerror("ERROR: Unrecognised file format. File is not Standard Music XML.");};
 
-part1 : OPTAG NOTE attr {$$ = 0; act_alter = ""; act_ch_mod=0; add_stack(stag, "note");} 
+part1 : OPTAG NOTE attr {$$ = 0; act_alter = ""; act_ch_mod=0; grace_mod=0; act_staff=1; add_stack(stag, "note");} 
 		| OPTAG PART_ID KVOTHE TEXT KVOTHE {$$ = 0; part= part+1; note_position = 0; add_stack(stag, "part");}
 		| OPTAG TIME {$$ = 0; add_stack(stag, "time");}
 		| OPTAG TEXT attr {$$ = 0; add_stack(stag, (void*) $2);};
@@ -212,7 +224,7 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 			};
 			switch(act_oct) {
 			   	case -1:
-			    	act_note_val = -2;
+			    	act_note_val = -1;
 			      	break;
 			   	case -2:
 			      	act_note_val = -2;
@@ -225,11 +237,11 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 				subdivision = act_length;
 			}
 			note_position = note_position+1;
-			if (act_dot){
+			if (act_dot && (act_length*2 > subdivision)){
 				subdivision = act_length * 2;
 			}
 			tmp_note = new_note();
-			tmp_note = mod_note(tmp_note, part, act_note_val, act_ch_mod, act_length, act_dot);
+			tmp_note = mod_note(tmp_note, part, act_note_val, act_ch_mod, act_staff, act_length, act_dot, grace_mod);
 			add_queue(note_q, tmp_note);
 			act_dot = 0;
 		}
@@ -289,6 +301,7 @@ int main(int argc, char *argv[]) {
 	FILE *infile = fopen(argv[1], "r");
 	char* outfile = "output.lp";
 	int c;
+	act_staff = 1;
 	subdivision = 0;
 	opt_subdivision = 0;
 
@@ -360,17 +373,44 @@ int main(int argc, char *argv[]) {
 	int times;
 	int act_part = 0;
 	int pos = 0;
+	int last_staff = 0;
+	int fst_staff_pos = 0;
+	int snd_staff_pos = 0;
+	int voice_mod = 0;
+	int staff_no = 0;
+	int grace_overhead = 0;
 	while(queue_size(*note_q) > 0){
 		tmp_note = pop_queue(note_q);
 		if (act_part != tmp_note->voice){
 			act_part = tmp_note->voice;
+			voice_mod += staff_no;
+			staff_no = 0;
 			pos = 0;
+			last_staff = 0;
+			fst_staff_pos = 0;
+			snd_staff_pos = 0;
+		}
+		if (tmp_note -> staff != last_staff){
+			if (tmp_note -> staff == 1){
+				snd_staff_pos = pos;
+				pos = fst_staff_pos;
+			} else {
+				fst_staff_pos = pos;
+				pos = snd_staff_pos;
+			}
+			if (tmp_note -> staff > staff_no){
+				staff_no = tmp_note-> staff;
+			}
 		}
 		times = subdivide(tmp_note->length, subdivision);
 		if (tmp_note->dotted){
 			times++;
 		}
 		pos += times*tmp_note->chordmod;
+		if (grace_overhead != 0){
+			pos -= grace_overhead;
+			grace_overhead = 0;
+		}
 		int i = 1;
 		for (i; i < (times+1); i++){
 			pos++;
@@ -382,9 +422,15 @@ int main(int argc, char *argv[]) {
 			      	fprintf(f, "freebeat(%d, %d).\n", tmp_note->voice, pos);
 			      	break;
 			    default:
-			    	fprintf(f, "note(%d, %d, %d).\n", tmp_note->voice, tmp_note->value, pos);
+			    	if (tmp_note->grace){
+			    		fprintf(f, "grace_note(%d, %d, %d).\n", (tmp_note->voice + (tmp_note->staff-1) + voice_mod), tmp_note->value, pos);
+			    		grace_overhead++;
+			    	} else {
+			    		fprintf(f, "note(%d, %d, %d).\n", (tmp_note->voice + (tmp_note->staff-1) + voice_mod), tmp_note->value, pos);
+			    	}
 			}
 		}
+		last_staff = tmp_note -> staff;
 	}
 
 	while(queue_size(*meas_q) > 0){

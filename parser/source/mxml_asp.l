@@ -9,6 +9,9 @@ chord "chord"
 octave "octave"
 optype "<type>"
 cltype "</type>"
+opstaff "<staff>"
+clstaff "</staff>"
+gracetag "<grace/>"
 alteration "alteration"
 part "part id="
 doctype "DOCTYPE"
@@ -49,6 +52,9 @@ kvothe [\"]
 {beattype} {return BEATTYPE;}
 {notvisible} {return NOTVISIBLE;}
 {dot} {return DOT;}
+{opstaff} {return OPSTAFF;}
+{clstaff} {return CLSTAFF;}
+{gracetag} {return GRACETAG;}
 {text} {yylval.valStr=strdup(yytext); return TEXT;}
 . ;
 \n ;

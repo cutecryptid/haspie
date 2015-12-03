@@ -52,6 +52,7 @@ melodic_jump(V,J,B1,B2) :- out_grade(V,G1,O1,B1), out_grade(V,G2,O2,B2), (B1+1) 
 % belonging or not to the present chord.
 passing_note(V,N,B) :- out_note(V,N,B), out_grade(V,G,O,B), weak_beat(B), beat(B), beat(B+1), beat(B-1),
 						melodic_jump(V,JA,BA,B), melodic_jump(V,JP,B,BP), BA+1 == B, BP-1 == B, JA <= 3, JP <= 3.
+						%not belongs(G,C), chord(HT,C), beat_belongs_htime(B,HT).
 
 % Support notes are notes that take the strong time and let the right note for the time next to them, usually shorter
 % (Not working since the duration of the support note is really important)

@@ -193,7 +193,9 @@ def main():
 	parser.add_argument('-M', '--melodious', action='store_true', default=False,
 	                   help='turns on melodic preferences in ASP for a more melodic result')
 	parser.add_argument('-A', '--aspdebug', action='store_true', default=False,
-	                   help='turns on melodic preferences in ASP for a more melodic result')
+	                   help='option for not interpreting results, just print ASP out')
+	parser.add_argument('-P', '--onlyparse', action='store_true', default=False,
+	                   help='option for not ASPing, just parse')
 
 	args = parser.parse_args()
 
@@ -252,6 +254,9 @@ def main():
 	if xml_parser_ret <= 0:
 		sys.exit("Parsing error, stopping execution.")
 
+	if args.onlyparse:
+		sys.exit("")
+
 	asp_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "or_mode.lp", "asp/include/" + mode + "or_chords.lp",
 		"asp/include/conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", 
 		"asp/generated_logic_music/" + lp_outname,"-n", str(n), 
@@ -263,10 +268,10 @@ def main():
 	else:
 		asp_proc = subprocess.Popen(asp_args, stdout=subprocess.PIPE)
 
-		t = threading.Timer( timeout, clasp_timeout, [asp_proc] )
-		t.start()
-		t.join()
-		t.cancel()
+		# t = threading.Timer( timeout, clasp_timeout, [asp_proc] )
+		# t.start()
+		# t.join()
+		# t.cancel()
 	    
 		asp_out = asp_proc.stdout.read()
 
@@ -274,7 +279,6 @@ def main():
 			sys.exit("UNSATISFIABLE, stopping execution.")
 
 		res = ClaspResult(asp_out)
-		print res
 
 		sol_num = len(res.solutions)
 		selected_solution = raw_input('Select a solution to output (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
