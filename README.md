@@ -16,4 +16,4 @@ The only compiled part of the project is the MXML to ASP facts parser. A binary 
 
 #TO DO:
  - Keep checking out why Bach's Menuet don't work properly (Output is very unbalanced between voices)
- - Investigate about hamronization in other scales (is base constant enough or do we need more info?)
+ - Investigate about harmonization in other scales (is base constant enough or do we need more info?)
