@@ -55,7 +55,7 @@ def solution_to_music21(solution, subdivision, span, base, mode):
 			if str(item) == "R":
 				tmp_note = note.Rest()
 			else:
-				tmp_note = note.Note(item.value)
+				tmp_note = note.Note(item.value, quarterLength=(float(4)/float(subdivision)))
 				tmp_note.pitch.accidental = None
 				if any((e.time == item.time) and (e.voice-1 == i)  for e in solution.errors):
 					tmp_note.color = "#ff0000"

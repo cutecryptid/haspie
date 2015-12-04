@@ -404,7 +404,7 @@ int main(int argc, char *argv[]) {
 		}
 		times = subdivide(tmp_note->length, subdivision);
 		if (tmp_note->dotted){
-			times++;
+			times+= times/2;
 		}
 		pos += times*tmp_note->chordmod;
 		if (grace_overhead != 0){
