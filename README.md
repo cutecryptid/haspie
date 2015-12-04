@@ -15,6 +15,5 @@ Python 2.7, gringo 3.0.5 and clingo 3.0.5, music21 >= 2.1.2 python module instal
 The only compiled part of the project is the MXML to ASP facts parser. A binary is bundled with every release, but if you wish to compile it for compatibility reasons, a Makefile is also bundled. Go to ```parser/source``` and run ```make```. The bin file is generated in the parser folder so it can be properly referenced by the python pipeline.
 
 #TO DO:
-Testing Bach's Menuet. It has grace notes and it's a piano score.
- - Piano scores don't have two voices, just a single voice. Fix parser to work properly with this kind of instruments.
- - Make something about grace notes (supress them, fix length of subsequent notes... something)
+ - Keep checking out why Bach's Menuet don't work properly (Output is very unbalanced between voices)
+ - Investigate about hamronization in other scales (is base constant enough or do we need more info?)
