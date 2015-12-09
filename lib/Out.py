@@ -52,8 +52,12 @@ def solution_to_music21(solution, subdivision, span, base, mode):
 			c = next((c for c in solution.chords if ((c.time-1)*span) == (item.time-1)), None)
 			if c != None and i == 0:
 				p.append(harmony.ChordSymbol(romanToChord(c.name, base, mode)))
-			if str(item) == "R":
+			if item.type == "rest":
 				tmp_note = note.Rest()
+			elif item.type == "measure":
+				factor = subdivision/item.ntype
+				str_meas = str(item.ncount*factor) + "/" + str(subdivision)
+				tmp_note =  meter.TimeSignature(str_meas)
 			else:
 				tmp_note = note.Note(item.value, quarterLength=(float(4)/float(subdivision)))
 				tmp_note.pitch.accidental = None

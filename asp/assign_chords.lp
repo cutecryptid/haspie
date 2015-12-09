@@ -25,9 +25,6 @@ freebeat(V,B) :- not busybeat(V,B), beat(B), voice(V).
 % assign one chord to each harmony time of the score where a note plays in at least one voice
 1 { chord(HT,C) : pos_chord(C) } 1 :- htime(HT).
 
-% assign one voice type to each voice
-1 { voice_type(VT,V) : pos_voice(VT) } 1 :- voice(V).
-
 beat_belongs_htime(((((T-1)*span)+1)..(T*span)),T) :- htime(T).
 error(V,G,B) :- chord(T,C), htime(T), grade(V,G,B), voice(V), not belongs(G,C), beat_belongs_htime(B,T), beat(B).
 
@@ -59,17 +56,12 @@ passing_note(V,N,B) :- out_note(V,N,B), out_grade(V,G,O,B), weak_beat(B), beat(B
 % support_note(V,N,B) :- out_note(V,N,B), out_grade(V,G,O,B), out_grade(V,G1,O1,B1), B+1 == B1, beat(B+1), belongs(G1,C1).
 
 % octave_jump and no_jump are special cases of melodic_jump and need to be specified
-octave_jump(V,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2), (B1+1) == B2, N2 >= (N1+12), beat(B1+1).
-octave_jump(V,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2), (B1+1) == B2, N2 <= (N1-12), beat(B1+1).
+octave_jump(V,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2), (B1+1) == B2, N2 > (N1+12), beat(B1+1).
+octave_jump(V,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2), (B1+1) == B2, N2 < (N1-12), beat(B1+1).
 
 same_chord(HT1,HT2) :- htime(HT1), htime(HT2), htime(HT1+1), HT1+1 == HT2,
 						chord(HT1,C1), chord(HT2,C2), C1 == C2, pos_chord(C1), pos_chord(C2).
 
-note_belongs_voicetype(N,VT) :- voice_type(VT,V), out_note(V,N,B), voice(V), voice_low(VT,NL), voice_high(VT,NH),
-								N >= NL, N<= NH.
-:- voice_type(VT,V), voice(V), not note_belongs_voicetype(N,VT), out_note(V,N,B).
-
-% Octave jumping is always restricted to restric search space
 :- octave_jump(_,_,_).
 
 #minimize[error_in_strong(_,_,_) @ 9].
@@ -87,5 +79,5 @@ note_belongs_voicetype(N,VT) :- voice_type(VT,V), out_note(V,N,B), voice(V), voi
 #show rest/2.
 #show error_in_strong/3.
 #show out_note/3.
-#show passing_note/3.
-#show voice_type/2.
+%#show passing_note/3.
+#show real_measure/3.
