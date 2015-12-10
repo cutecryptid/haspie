@@ -412,6 +412,7 @@ int main(int argc, char *argv[]) {
 			grace_overhead = 0;
 		}
 		int i = 1;
+		fprintf(f, "figure(%d,%d,%d).\n", (tmp_note->voice + (tmp_note->staff-1) + voice_mod), times, pos+1);
 		for (i; i < (times+1); i++){
 			pos++;
 			switch(tmp_note->value) {

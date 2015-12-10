@@ -16,4 +16,8 @@ The only compiled part of the project is the MXML to ASP facts parser. A binary 
 
 #TO DO:
  - Investigate about harmonization in other scales (is base constant enough or do we need more info?)
- - Start working on postprocessing so the output is not that messy.
+ - Melodic preferences stopped working
+ - Decide which preferences should be included as a parameter in pipeline (single/bundled/mixed)
+ - Tessiturae detection is very expensive, but it can be included while generating brand new voices
+ - Optimums should be filtered to show only the really best competing options to user
+

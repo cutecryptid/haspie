@@ -47,24 +47,23 @@ def solution_to_music21(solution, subdivision, span, base, mode):
 	i = 0
 	for v in solution.voices.items():
 		p = stream.Part()
-		p.append(clef.TrebleClef())
 		for item in v[1]:
 			c = next((c for c in solution.chords if ((c.time-1)*span) == (item.time-1)), None)
 			if c != None and i == 0:
 				p.append(harmony.ChordSymbol(romanToChord(c.name, base, mode)))
 			if item.type == "rest":
-				tmp_note = note.Rest()
+				subdivision/4
+				tmp_note = note.Rest(quarterLength=(float(item.duration)/(float(subdivision)/float(4))))
 			elif item.type == "measure":
-				factor = subdivision/item.ntype
-				str_meas = str(item.ncount*factor) + "/" + str(subdivision)
+				str_meas = str(item.ncount) + "/" + str(item.ntype)
 				tmp_note =  meter.TimeSignature(str_meas)
 			else:
-				tmp_note = note.Note(item.value, quarterLength=(float(4)/float(subdivision)))
+				tmp_note = note.Note(item.value, quarterLength=(float(item.duration)/(float(subdivision)/float(4))))
 				tmp_note.pitch.accidental = None
-				if any((e.time == item.time) and (e.voice-1 == i)  for e in solution.errors):
-					tmp_note.color = "#ff0000"
-				if any((p.time == item.time) and (p.voice-1 == i)  for p in solution.passing):
-					tmp_note.color = "#0000ff"
+			if any((e.time == item.time) and (e.voice-1 == i)  for e in solution.errors):
+			 	tmp_note.color = "#ff0000"
+			if any((p.time == item.time) and (p.voice-1 == i)  for p in solution.passing):
+				tmp_note.color = "#0000ff"
 			p.append(tmp_note)
 		score.append(p)
 		i+= 1

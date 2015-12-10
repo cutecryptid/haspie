@@ -124,10 +124,10 @@ def main():
 	else:
 		asp_proc = subprocess.Popen(asp_args, stdout=subprocess.PIPE)
 
-		# t = threading.Timer( timeout, clasp_timeout, [asp_proc] )
-		# t.start()
-		# t.join()
-		# t.cancel()
+		t = threading.Timer( timeout, clasp_timeout, [asp_proc] )
+		t.start()
+		t.join()
+		t.cancel()
 	    
 		asp_out = asp_proc.stdout.read()
 

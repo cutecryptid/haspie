@@ -1,23 +1,5 @@
 import re
 
-class Note:
-	"""Class that stores information about a note in the score"""
-	def __init__(self, value, time):
-		self.value = value
-		self.time = time
-		self.type = "note"
-	def __str__(self):
-		return str(self.value)
-
-class PassingNote:
-	"""Class that stores information about a passing note in the score"""
-	def __init__(self, voice, value, time):
-		self.voice = voice
-		self.value = value
-		self.time = time
-	def __str__(self):
-		return "Voice: " + str(self.voice) + ", " + str(self.time)
-
 class Measure:
 	"""Class that stores information about a measure in the score"""
 	def __init__(self, ncount, ntype, time):
@@ -28,9 +10,20 @@ class Measure:
 	def __str__(self):
 		return "(" + str(self.ncount) + "/" + str(self.ntype) + ")"
 
+class Note:
+	"""Class that stores information about a note in the score"""
+	def __init__(self, value, duration, time):
+		self.value = value
+		self.duration = duration
+		self.time = time
+		self.type = "note"
+	def __str__(self):
+		return str(self.value)
+
 class Rest:
 	"""Class that stores information about a rest in the score"""
-	def __init__(self, time):
+	def __init__(self, duration, time):
+		self.duration = duration
 		self.time = time
 		self.type = "rest"
 	def __str__(self):
@@ -45,24 +38,32 @@ class Chord:
 	def __str__(self):
 		return self.name
 
-class Error:
+class PassingNote:
 	"""Class that stores information about an error in the score"""
-	def __init__(self, voice, grade, time):
+	def __init__(self, voice, time):
 		self.voice = voice
-		self.grade = grade
 		self.time = time
 
 	def __str__(self):
-		return "Voice: " + str(self.voice) + ", Grade: " + str(self.grade) + ", " + str(self.time)
+		return "Voice: " + str(self.voice) + ", " + str(self.time)
+
+class Error:
+	"""Class that stores information about a passing note in the score"""
+	def __init__(self, voice, time):
+		self.voice = voice
+		self.time = time
+
+	def __str__(self):
+		return "Voice: " + str(self.voice) + ", " + str(self.time)
 
 class HaspSolution:
 	"""Class that stores information of a single solution of the harmony
 	deducing module"""
-	def __init__(self, chords, errors, passing, voices, optimization):
+	def __init__(self, chords, voices, errors, passing, optimization):
 		self.chords = chords
+		self.voices = voices
 		self.errors = errors
 		self.passing = passing
-		self.voices = voices
 		self.optimization = optimization
 
 	def __str__(self):
@@ -125,20 +126,22 @@ class ClaspResult:
 		for ans in answers:
 			if len(ans) > 0:
 				try:
-					notes = re.findall('out_note\(([0-9]+),([0-9]+),([0-9]+)\)', ans)
+					figures = re.findall('out_figure\(([0-9]+),([0-9]+),([0-9]+),([0-9]+)\)', ans)
 					voices = {};
-					for note in notes:
-						if (int(note[0]) in voices.keys()):
-							voices[int(note[0])].append(Note(int(note[1]),int(note[2])))
+					for figure in figures:
+						if (int(figure[0]) in voices.keys()):
+							if (figure[1] != -1):
+								voices[int(figure[0])].append(Note(int(figure[1]),int(figure[2]),int(figure[3])))
+							else:
+								voices[int(figure[0])].append(Rest(int(figure[1]),int(figure[3])))
 						else:
-							voices.update({(int(note[0])) : [Note(int(note[1]),int(note[2]))]})
-					rests = re.findall('rest\(([0-9]+),([0-9]+)\)', ans)
-					for rest in rests:
-						if (int(rest[0]) in voices.keys()):
-							voices[int(rest[0])].append(Rest(int(rest[1])))
-						else:
-							voices.update({(int(rest[0])) : [Rest(int(rest[1]))]})
+							if (figure[1] != -1):
+								voices.update({(int(figure[0])) : [Note(int(figure[1]),int(figure[2]),int(figure[3]))]})
+							else:
+								voices.update({(int(figure[0])) : [Rest(int(figure[1]),int(figure[3]))]})
+
 					measures = re.findall('real_measure\(([0-9]+),([0-9]+),([0-9]+)\)', ans)
+
 					for measure in measures:
 						for key in voices.keys():
 							voices[key].append(Measure(int(measure[0]), int(measure[1]), int(measure[2])))
@@ -146,12 +149,12 @@ class ClaspResult:
 					voices = {k: sorted(v, key=lambda tup: tup.time) for k, v in voices.items()}
 
 					chords = [Chord(int(ch[0]),ch[1]) for ch in sorted(re.findall('chord\(([0-9]+),([ivxmo7]+)\)', ans))]
-					errors = [Error(int(er[0]),int(er[1]),int(er[2])) for er in re.findall('error_in_strong\(([0-9]+),([0-9]+),([0-9]+)\)', ans)]
-					passing = [PassingNote(int(pn[0]),int(pn[1]),int(pn[2])) for pn in re.findall('passing_note\(([0-9]+),([0-9]+),([0-9]+)\)', ans)]
+					errors = [Error(int(er[0]),int(er[1])) for er in re.findall('out_error\(([0-9]+),([0-9]+)\)', ans)]
+					passing = [PassingNote(int(pn[0]),int(pn[1])) for pn in re.findall('passing_note\(([0-9]+),([0-9]+)\)', ans)]
 					str_opts = re.split("\s*", re.search('Optimization:((?:\s*[0-9]+)+)', ans).group(1))
 					taw = str_opts.pop(0)
 					optimums = map(int, str_opts)
-					solutions += [HaspSolution(chords,errors,passing,voices,optimums)]
+					solutions += [HaspSolution(chords,voices,errors,passing,optimums)]
 				except AttributeError:
 					print "Discarding incomplete answer due to early temrination."
 		return solutions

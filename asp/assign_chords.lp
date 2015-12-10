@@ -64,6 +64,12 @@ same_chord(HT1,HT2) :- htime(HT1), htime(HT2), htime(HT1+1), HT1+1 == HT2,
 
 :- octave_jump(_,_,_).
 
+out_figure(V,N,D,FB) :- out_note(V,N,B), figure(V,D,FB), B >= FB, B < FB + D.
+out_figure(V,-1,D,FB) :- rest(V,B), figure(V,D,FB), B >= FB, B < FB + D.
+
+out_error(V,FB) :- error_in_strong(V,G,B), figure(V,D,FB), B >= FB, B < FB + D.
+out_passing(V,FB) :- passing_note(V,N,B), figure(V,D,FB), B >= FB, B < FB + D.
+
 #minimize[error_in_strong(_,_,_) @ 9].
 #minimize[unison(_,_,_) @ 8].
 #minimize[same_chord(_,_) @ 7].
@@ -76,8 +82,7 @@ same_chord(HT1,HT2) :- htime(HT1), htime(HT2), htime(HT1+1), HT1+1 == HT2,
 
 #hide.
 #show chord/2.
-#show rest/2.
-#show error_in_strong/3.
-#show out_note/3.
-%#show passing_note/3.
 #show real_measure/3.
+#show out_figure/4.
+#show out_error/2.
+#show out_passing/2.
