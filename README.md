@@ -15,7 +15,7 @@ Python 2.7, gringo 3.0.5 and clingo 3.0.5, music21 >= 2.1.2 python module instal
 The only compiled part of the project is the MXML to ASP facts parser. A binary is bundled with every release, but if you wish to compile it for compatibility reasons, a Makefile is also bundled. Go to ```parser/source``` and run ```make```. The bin file is generated in the parser folder so it can be properly referenced by the python pipeline.
 
 #TO DO:
- - Investigate about harmonization in other scales (is base constant enough or do we need more info?)
+ - Notes out of scale are not being parsed into grades, then are not being taken in account!!! (CRITICAL)
  - Melodic preferences stopped working
  - Decide which preferences should be included as a parameter in pipeline (single/bundled/mixed)
  - Tessiturae detection is very expensive, but it can be included while generating brand new voices
