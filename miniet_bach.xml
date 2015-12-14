@@ -18,14 +18,14 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="P2f62cafa05145069744acbe6aec31a8d">
+    <score-part id="P3b3250b2920d4c8961b4d2626c90f8b2">
       <part-name />
     </score-part>
-    <score-part id="Pd579597ce80d353e1e9adcea128fe984">
+    <score-part id="P809f5f1b8470e0a4be7bb2f23955d9dc">
       <part-name />
     </score-part>
   </part-list>
-  <part id="P2f62cafa05145069744acbe6aec31a8d">
+  <part id="P3b3250b2920d4c8961b4d2626c90f8b2">
     <measure number="1">
       <attributes>
         <divisions>10080</divisions>
@@ -40,9 +40,9 @@
       </attributes>
       <harmony>
         <root>
-          <root-step>A</root-step>
+          <root-step>G</root-step>
         </root>
-        <kind>minor</kind>
+        <kind>major</kind>
       </harmony>
       <note>
         <pitch>
@@ -95,9 +95,9 @@
       </attributes>
       <harmony>
         <root>
-          <root-step>F</root-step>
+          <root-step>B</root-step>
         </root>
-        <kind>major</kind>
+        <kind>minor</kind>
       </harmony>
       <note>
         <pitch>
@@ -128,7 +128,7 @@
       </barline>
     </measure>
   </part>
-  <part id="Pd579597ce80d353e1e9adcea128fe984">
+  <part id="P809f5f1b8470e0a4be7bb2f23955d9dc">
     <measure number="1">
       <attributes>
         <divisions>10080</divisions>

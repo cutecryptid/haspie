@@ -25,11 +25,18 @@ typedef struct{
 	int beats;
 	int beattype;
 	int position;
-} measure; 
+} measure;
+
+typedef struct{
+	char* root; 
+	char* kind;
+	int hbeat;
+} chord;
 
 stack * stag;
 queue * note_q;
 queue * meas_q;
+queue * chord_q;
 int part = 0;
 int note_position;
 char * act_note;
@@ -49,9 +56,28 @@ int act_dot;
 int act_ch_mod;
 int act_staff;
 int grace_mod;
+int key_fifths;
+char* key_mode;
+char* act_root;
+char* act_kind;
 note * tmp_note;
 measure * tmp_meas;
+chord * tmp_chord;
 FILE *f;
+
+chord * new_chord(){
+	chord* c;
+	c = malloc(sizeof(chord));
+	c -> root = "";
+	c -> kind = "";
+	c -> hbeat = 0;
+}
+
+chord * mod_chord(chord* c, char* rt, char * kn, int hb){
+	c -> root = rt;
+	c -> kind = kn;
+	c -> hbeat = hb;
+}
 
 note* new_note(){
 	  note* n;
@@ -162,8 +188,9 @@ int ispower2(int x){
 	float valFloat;
 	char * valStr;
 }
+
 %token OPTAG CLTAG SLASHTAG EQUAL KVOTHE QUES EXCL NOTE OCTA STEP PART_ID REST CHORD ALTER DOCTYPE OPTYPE CLTYPE
-%token NOTVISIBLE BEATS BEATTYPE TIME DOT OPSTAFF CLSTAFF GRACETAG
+%token NOTVISIBLE BEATS BEATTYPE TIME DOT OPSTAFF CLSTAFF GRACETAG MODE HARMONY ROOT ROOTSTEP KIND FIFTHS KEY
 %token <valStr> TEXT
 %type  <valInt> block part1 part2 body attr
 %start S
@@ -206,14 +233,20 @@ block : OPTAG REST SLASHTAG CLTAG {
 		| OPTAG BEATS CLTAG TEXT OPTAG SLASHTAG BEATS CLTAG {$$ = 0; act_beats = atoi($4);}
 		| OPTAG BEATTYPE CLTAG TEXT OPTAG SLASHTAG BEATTYPE CLTAG {$$ = 0; act_beattype = atoi($4);} 
 		| OPTAG STEP CLTAG TEXT OPTAG SLASHTAG STEP CLTAG {$$ = 0; act_note = $4;} 
+		| OPTAG FIFTHS CLTAG TEXT OPTAG SLASHTAG FIFTHS CLTAG {$$ = 0; key_fifths= atoi($4);}
+		| OPTAG MODE CLTAG TEXT OPTAG SLASHTAG MODE CLTAG {$$ = 0; key_mode=$4;}
+		| OPTAG ROOTSTEP CLTAG TEXT OPTAG SLASHTAG ROOTSTEP CLTAG {$$ = 0; act_root = $4;}
+		| OPTAG KIND CLTAG TEXT OPTAG SLASHTAG KIND CLTAG {$$ = 0; act_kind = $4;}
 		| OPTYPE TEXT CLTYPE {$$ = 0; act_type = $2;}
 		| part1 part2 {$$ = 0;} 
 		| part1 error {yyerror("ERROR: Unclosed tag found.");}
-		| part1 part2 error {yyerror("ERROR: Unrecognised file format. File is not Standard Music XML.");};
+		| part1 part2 error {yyerror("ERROR: Unrecognised file format. File is not Standard Music XML.");}; 
 
-part1 : OPTAG NOTE attr {$$ = 0; act_alter = ""; act_ch_mod=0; grace_mod=0; act_staff=1; add_stack(stag, "note");} 
+part1 : OPTAG NOTE attr {$$ = 0; act_alter = ""; act_ch_mod=0; grace_mod=0; act_staff=1; add_stack(stag, "note");}
+		| OPTAG KEY  {$$ = 0; add_stack(stag, "key");}
 		| OPTAG PART_ID KVOTHE TEXT KVOTHE {$$ = 0; part= part+1; note_position = 0; add_stack(stag, "part");}
 		| OPTAG TIME {$$ = 0; add_stack(stag, "time");}
+		| OPTAG HARMONY {$$ = 0; act_kind = "";}
 		| OPTAG TEXT attr {$$ = 0; add_stack(stag, (void*) $2);};
 
 part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
@@ -255,6 +288,12 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 			tmp_meas = mod_measure(tmp_meas, part, act_beats, act_beattype, note_position);
 			add_queue(meas_q, tmp_meas);
 		}
+		| CLTAG body OPTAG SLASHTAG HARMONY CLTAG{
+			$$ = 0;
+			tmp_chord = new_chord();
+			tmp_chord = mod_chord(tmp_chord, act_root, act_kind, note_position);
+			add_queue(chord_q, tmp_chord);
+		}
 		| CLTAG OPTAG SLASHTAG TEXT CLTAG {
 			$$ = 0; 
 			if(strcmp($4, pop(stag))){
@@ -284,6 +323,22 @@ body : body block {$$ = 0;}
 extern int yylex();
 extern int yyparse();
 extern FILE *yyin;
+
+char * key_name(int kf, char * km){
+	char* roots[] = {"A", "B-", "B", "C", "D-", "D", "E-", "E", "F", "G-", "G", "A-"};
+	int key_fifths[] = {3, -2, 5, 0, -5, 2, -3, 4, -1, -6, 1, -4};
+	// For minor scales just add 3 to the index (modulo'ed ofc)
+	char* key_root = "";
+	int key_index = 0;
+
+    while ( key_index < 12 && key_fifths[key_index] != kf) ++ key_index;  
+
+    if (strcmp(km, "major") == 0){
+    	key_root = roots[key_index];
+    } else {
+    	key_root = roots[(key_index+3) % 12];
+    }
+}
 
 int usage(char* prog_name){
 	printf ("usage: %s file.xml [-s subdivision] [-o file.lp]\n", prog_name);
@@ -350,10 +405,13 @@ int main(int argc, char *argv[]) {
 	yyin = infile;
 
 	act_note = malloc(sizeof(char));
+	key_fifths = 0;
+	key_mode = "major";
 
 	stag = new_stack();
 	note_q = new_queue();
 	meas_q = new_queue();
+	chord_q = new_queue();
 	do {
 		yyparse();
 	} while (!feof(yyin));
@@ -441,8 +499,15 @@ int main(int argc, char *argv[]) {
 		fprintf(f, "measure(%d, %d).\n", (tmp_meas->beats)*s_factor, tmp_meas->position);
 		fprintf(f, "real_measure(%d, %d, %d).\n", tmp_meas->beats, tmp_meas->beattype, tmp_meas->position);
 	}
+
+	while(queue_size(*chord_q) > 0){
+		tmp_chord = pop_queue(chord_q);
+		printf("CHORD %s, %s, %d\n", tmp_chord->root, tmp_chord->kind, tmp_chord->hbeat);
+		fprintf(f, "chord(%d, %s).\n", tmp_chord->hbeat, tmp_chord->root);
+	}
 	
 	fclose(f);
+	
 	printf("OK - Correctly generated music logic file in %s\n", outfile);
 	return subdivision;
 }

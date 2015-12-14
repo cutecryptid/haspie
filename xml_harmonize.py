@@ -20,7 +20,6 @@ def clasp_timeout(p):
 
 def key_to_base(key):
 	base = 21
-	mod = 0
 	split_key = re.search("([A-G])([\+\-])?", key)
 	bases = [("C",21),("D",23),("E",25),("F",26),("G",28),("A",30),("B",32)]
 	if split_key == None:
@@ -28,9 +27,14 @@ def key_to_base(key):
 	groups = len(split_key.groups())
 	if (groups > 0) or (groups <= 2):
 		fund = split_key.group(0)
-		base = [p[1] for p in bases if p[0] == "C"][0]
+		base = [p[1] for p in bases if p[0] == key][0]
 		if groups == 2:
-			mod = (1 if split_key.group(1) == "+" else -1)
+			if split_key.group(1) == "+":
+				mod = 1
+			elif split_key.group(1) == "-":
+				mod = -1
+			else:
+				mod = 0
 	else:
 		raise ValueError("Key should be in the form [A-G][+-]?")
 	return (base + mod)

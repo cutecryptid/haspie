@@ -20,6 +20,11 @@ beats "beats"
 beattype "beat-type"
 time "time"
 dot "dot"
+harmony "harmony"
+rootstep "root-step"
+kind "kind"
+fifths "fifths"
+mode "mode"
 notvisible "print-object=\"no\""
 text [-.A-Za-z0-9:\[\]\\]+
 ques_montgomery [?]
@@ -28,7 +33,7 @@ open [<]
 close [>]
 manubrio [/]
 equal [=]
-kvothe [\"]
+kvothe [\"\']
 %%
 {ques_montgomery} {return QUES;}
 {excl} {return EXCL;}
@@ -55,6 +60,11 @@ kvothe [\"]
 {opstaff} {return OPSTAFF;}
 {clstaff} {return CLSTAFF;}
 {gracetag} {return GRACETAG;}
+{harmony} {return HARMONY;}
+{rootstep} {return ROOTSTEP;}
+{kind} {return KIND;}
+{fifths} {return FIFTHS;}
+{mode} {return MODE;}
 {text} {yylval.valStr=strdup(yytext); return TEXT;}
 . ;
 \n ;

@@ -7,7 +7,7 @@
   <identification>
     <creator type="composer">Music21</creator>
     <encoding>
-      <encoding-date>2015-12-10</encoding-date>
+      <encoding-date>2015-12-11</encoding-date>
       <software>Music21</software>
     </encoding>
   </identification>
@@ -18,20 +18,20 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="P1c395816e75bd022d16ee507c19a281d">
+    <score-part id="Pb19b4b6c7af4215314c03b8d5d81ef94">
       <part-name />
     </score-part>
-    <score-part id="P8bf5e545895b8626ef1d74da495e2f15">
+    <score-part id="Pa10e15824a2f17f5d7ae31ba338f0dbe">
       <part-name />
     </score-part>
-    <score-part id="Pfe1133a8d53ec58c7845d3c9c1b09710">
+    <score-part id="P2b0e948256cff9fcac8abe4c5232225c">
       <part-name />
     </score-part>
-    <score-part id="Pd176947a3c2127f5fcc72e992d11bc98">
+    <score-part id="P84db538a82ea2036713e49409e039708">
       <part-name />
     </score-part>
   </part-list>
-  <part id="P1c395816e75bd022d16ee507c19a281d">
+  <part id="Pb19b4b6c7af4215314c03b8d5d81ef94">
     <measure number="1">
       <attributes>
         <divisions>10080</divisions>
@@ -144,18 +144,17 @@
       </attributes>
       <harmony>
         <root>
-          <root-step>A</root-step>
+          <root-step>G</root-step>
         </root>
-        <kind>minor</kind>
+        <kind>major</kind>
       </harmony>
-      <note color="#FF0000">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
         </pitch>
         <duration>10080</duration>
         <type>quarter</type>
-        <notehead color="#FF0000" parentheses="no">normal</notehead>
       </note>
       <note>
         <pitch>
@@ -241,7 +240,7 @@
       </barline>
     </measure>
   </part>
-  <part id="P8bf5e545895b8626ef1d74da495e2f15">
+  <part id="Pa10e15824a2f17f5d7ae31ba338f0dbe">
     <measure number="1">
       <attributes>
         <divisions>10080</divisions>
@@ -414,7 +413,7 @@
       </barline>
     </measure>
   </part>
-  <part id="Pfe1133a8d53ec58c7845d3c9c1b09710">
+  <part id="P2b0e948256cff9fcac8abe4c5232225c">
     <measure number="1">
       <attributes>
         <divisions>10080</divisions>
@@ -501,14 +500,13 @@
       <attributes>
         <divisions>10080</divisions>
       </attributes>
-      <note color="#FF0000">
+      <note>
         <pitch>
           <step>B</step>
           <octave>3</octave>
         </pitch>
         <duration>10080</duration>
         <type>quarter</type>
-        <notehead color="#FF0000" parentheses="no">normal</notehead>
       </note>
       <note>
         <pitch>
@@ -576,7 +574,7 @@
       </barline>
     </measure>
   </part>
-  <part id="Pd176947a3c2127f5fcc72e992d11bc98">
+  <part id="P84db538a82ea2036713e49409e039708">
     <measure number="1">
       <attributes>
         <divisions>10080</divisions>

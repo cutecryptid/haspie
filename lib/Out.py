@@ -36,7 +36,7 @@ def romanToChord(roman, base, mode):
 		root_semitones = major_semitone_grades[rootval-1]
 	else:
 		root_semitones = minor_semitone_grades[rootval-1]
-	out_chord = av_chords[root_semitones]
+	out_chord = av_chords[(root_semitones + (base-21))%12]
 	if chord[0][1] != None:
 		out_chord += chord[0][1]
 	return out_chord
