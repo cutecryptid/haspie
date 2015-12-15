@@ -62,6 +62,8 @@ octave_jump(V,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2), (B1+1) == B2, N2 <
 same_chord(HT1,HT2) :- htime(HT1), htime(HT2), htime(HT1+1), HT1+1 == HT2,
 						chord(HT1,C1), chord(HT2,C2), C1 == C2, pos_chord(C1), pos_chord(C2).
 
+:- voice(V), voice_type(V, VT), voice_low(VT, VL), voice_high(VT, VH), out_note(V, N, B), beat(B), N < VL, N > VH.
+
 :- octave_jump(_,_,_).
 
 out_figure(V,N,D,FB) :- out_note(V,N,B), figure(V,D,FB), B >= FB, B < FB + D.

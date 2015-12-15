@@ -124,7 +124,8 @@ def main():
 	if args.output == "out":
 		final_out = outname + "." + fmt
 	lp_outname = outname + ".lp"
-	xml_parser_args = ("parser/mxml_asp", infile, "-o", "asp/generated_logic_music/" + lp_outname, "-s", str(sub))
+	xml_parser_args = ("parser/mxml_asp", infile, "-o", "asp/generated_logic_music/" + lp_outname, "-d",
+						str(sub), "-s", str(span))
 	xml_parser_ret = subprocess.call(xml_parser_args)
 	
 	if xml_parser_ret <= 0:

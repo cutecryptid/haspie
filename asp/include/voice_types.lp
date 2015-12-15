@@ -1,6 +1,3 @@
-pos_voice(bass). pos_voice(baritone). pos_voice(tenor). pos_voice(countertenor).
-pos_voice(contralto). pos_voice(mezzosoprano). pos_voice(soprano).
-
 voice_low(bass,40). voice_high(bass,64).
 voice_low(baritone,45). voice_high(baritone,69).
 voice_low(tenor,48). voice_high(tenor,72).

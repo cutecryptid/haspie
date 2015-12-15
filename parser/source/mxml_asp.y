@@ -33,10 +33,18 @@ typedef struct{
 	int hbeat;
 } chord;
 
+typedef struct{
+	int part_id;
+	char * instrument;
+	int limit_low;
+	int limit_high;
+} voice_type;
+
 stack * stag;
 queue * note_q;
 queue * meas_q;
 queue * chord_q;
+queue * voice_q;
 int part = 0;
 int note_position;
 char * act_note;
@@ -60,6 +68,11 @@ int key_fifths;
 char* key_mode;
 char* act_root;
 char* act_kind;
+int act_voice;
+char* act_instrument;
+int voice_high;
+int voice_low;
+voice_type * tmp_voice;
 note * tmp_note;
 measure * tmp_meas;
 chord * tmp_chord;
@@ -77,6 +90,22 @@ chord * mod_chord(chord* c, char* rt, char * kn, int hb){
 	c -> root = rt;
 	c -> kind = kn;
 	c -> hbeat = hb;
+}
+
+voice_type * new_voice(){
+	voice_type* v;
+	v = malloc(sizeof(voice));
+	v->part_id = 0;
+	v->instrument = "";
+	v-> limit_low = 0;
+	v-> limit_high = 0;
+}
+
+voice_type * mod_voice(voice_type * v, int pid, char * inst, int low, int high){
+	v->part_id = pid;
+	v->instrument = inst;
+	v-> limit_low = low;
+	v-> limit_high = high;
 }
 
 note* new_note(){
@@ -191,6 +220,7 @@ int ispower2(int x){
 
 %token OPTAG CLTAG SLASHTAG EQUAL KVOTHE QUES EXCL NOTE OCTA STEP PART_ID REST CHORD ALTER DOCTYPE OPTYPE CLTYPE
 %token NOTVISIBLE BEATS BEATTYPE TIME DOT OPSTAFF CLSTAFF GRACETAG MODE HARMONY ROOT ROOTSTEP KIND FIFTHS KEY
+%token INSTRUMENT SCOREPART
 %token <valStr> TEXT
 %type  <valInt> block part1 part2 body attr
 %start S
@@ -232,7 +262,8 @@ block : OPTAG REST SLASHTAG CLTAG {
 		| OPTAG OCTA CLTAG TEXT OPTAG SLASHTAG OCTA CLTAG {$$ = 0; act_oct = atoi($4);}
 		| OPTAG BEATS CLTAG TEXT OPTAG SLASHTAG BEATS CLTAG {$$ = 0; act_beats = atoi($4);}
 		| OPTAG BEATTYPE CLTAG TEXT OPTAG SLASHTAG BEATTYPE CLTAG {$$ = 0; act_beattype = atoi($4);} 
-		| OPTAG STEP CLTAG TEXT OPTAG SLASHTAG STEP CLTAG {$$ = 0; act_note = $4;} 
+		| OPTAG STEP CLTAG TEXT OPTAG SLASHTAG STEP CLTAG {$$ = 0; act_note = $4;}
+		| OPTAG INSTRUMENT CLTAG TEXT OPTAG SLASHTAG INSTRUMENT CLTAG {$$=0;act_instrument = $4;}
 		| OPTAG FIFTHS CLTAG TEXT OPTAG SLASHTAG FIFTHS CLTAG {$$ = 0; key_fifths= atoi($4);}
 		| OPTAG MODE CLTAG TEXT OPTAG SLASHTAG MODE CLTAG {$$ = 0; key_mode=$4;}
 		| OPTAG ROOTSTEP CLTAG TEXT OPTAG SLASHTAG ROOTSTEP CLTAG {$$ = 0; act_root = $4;}
@@ -247,6 +278,7 @@ part1 : OPTAG NOTE attr {$$ = 0; act_alter = ""; act_ch_mod=0; grace_mod=0; act_
 		| OPTAG PART_ID KVOTHE TEXT KVOTHE {$$ = 0; part= part+1; note_position = 0; add_stack(stag, "part");}
 		| OPTAG TIME {$$ = 0; add_stack(stag, "time");}
 		| OPTAG HARMONY {$$ = 0; act_kind = "";}
+		| OPTAG SCOREPART attr{$$= 0; act_voice = act_voice +1; act_instrument = "";}
 		| OPTAG TEXT attr {$$ = 0; add_stack(stag, (void*) $2);};
 
 part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
@@ -294,6 +326,24 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 			tmp_chord = mod_chord(tmp_chord, act_root, act_kind, note_position);
 			add_queue(chord_q, tmp_chord);
 		}
+		| CLTAG body OPTAG SLASHTAG SCOREPART CLTAG{
+			if (strcmp(act_instrument, "") != 0){
+				int i;
+				for(i = 0; act_instrument[i]; i++){
+					  act_instrument[i] = tolower(act_instrument[i]);
+				}
+			} else {
+				act_instrument = "default";
+			}
+			tmp_voice = new_voice();
+			mod_voice(tmp_voice, act_voice, act_instrument, voice_low, voice_high);
+			add_queue(voice_q, tmp_voice);
+			if (strcmp(act_instrument, "piano") == 0){
+				act_voice = act_voice+1;
+				mod_voice(tmp_voice, act_voice, act_instrument, voice_low, voice_high);
+				add_queue(voice_q, tmp_voice);
+			}
+		}
 		| CLTAG OPTAG SLASHTAG TEXT CLTAG {
 			$$ = 0; 
 			if(strcmp($4, pop(stag))){
@@ -302,7 +352,7 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 			};
 		}
 		| CLTAG body OPTAG SLASHTAG TEXT CLTAG {
-			$$ = 0; 
+			$$ = 0;
 			if(strcmp($5, pop(stag))){
 				printf("%s - UNCLOSED TAG\n", $5);
 				exit(-1);
@@ -390,7 +440,8 @@ char * chord_grade(chord* c, char ** scale){
 
 int usage(char* prog_name){
 	printf ("usage: %s file.xml [-s subdivision] [-o file.lp]\n", prog_name);
-	printf ("-s subdivision: subdivision in which the notes of the piece should be divided\n");
+	printf ("-d subdivision: subdivision in which the notes of the piece should be divided\n");
+	printf ("-s harmonization span: base figures taken in account to assign a chord\n");
 	printf ("-o file.lp: name for the output file, default is output.lp\n");
 }
 
@@ -407,21 +458,25 @@ int main(int argc, char *argv[]) {
 	act_staff = 1;
 	subdivision = 0;
 	opt_subdivision = 0;
+	int harm_span = 1;
 
-	while ((c = getopt (argc, argv, "hs:o:")) != -1)
+	while ((c = getopt (argc, argv, "hd:s:o:")) != -1)
     switch (c)
       {
       case 'h':
       	usage(argv[0]);
       	return 1;
-      case 's':
+      case 'd':
         opt_subdivision = atoi(optarg);
         break;
+      case 's':
+      	harm_span = atoi(optarg);
+      	break;
       case 'o':
       	outfile = optarg;
       	break;
       case '?':
-        if (optopt == 'o' || optopt == 's'){
+        if (optopt == 'o' || optopt == 's' || optopt == 'd'){
         	fprintf (stderr, "Option -%c requires an argument.\n", optopt);
       	  	usage(argv[0]);
         }
@@ -452,6 +507,7 @@ int main(int argc, char *argv[]) {
 
 	yyin = infile;
 
+	act_voice = 0;
 	act_note = malloc(sizeof(char));
 	key_fifths = 0;
 	key_mode = "major";
@@ -460,6 +516,7 @@ int main(int argc, char *argv[]) {
 	note_q = new_queue();
 	meas_q = new_queue();
 	chord_q = new_queue();
+	voice_q = new_queue();
 	do {
 		yyparse();
 	} while (!feof(yyin));
@@ -485,7 +542,29 @@ int main(int argc, char *argv[]) {
 	int voice_mod = 0;
 	int staff_no = 0;
 	int grace_overhead = 0;
+	int hbeat = 0;
+
+	while(queue_size(*voice_q) > 0){
+		tmp_voice = pop_queue(voice_q);
+		fprintf(f, "voice_type(%d, %s).\n", tmp_voice->part_id, tmp_voice->instrument);
+		if (tmp_voice -> limit_low != 0){
+			fprintf(f, "voice_limit_low(%d, %d).\n", tmp_voice->part_id, tmp_voice->limit_low);
+		}
+		if (tmp_voice -> limit_high != 0){
+			fprintf(f, "voice_limit_high(%d, %d).\n", tmp_voice->part_id, tmp_voice->limit_high);
+		}
+	}
+
+	char *scale[7];
+	tonality_scale(key_name(key_fifths,key_mode),key_mode,scale);
+
 	while(queue_size(*note_q) > 0){
+		if (pos % harm_span == 0 && queue_size(*chord_q) > 0){
+			hbeat ++;
+			tmp_chord = pop_queue(chord_q);
+			fprintf(f, "chord(%d, %s).\n", hbeat, chord_grade(tmp_chord, scale));
+		}
+
 		tmp_note = pop_queue(note_q);
 		if (act_part != tmp_note->voice){
 			act_part = tmp_note->voice;
@@ -546,14 +625,6 @@ int main(int argc, char *argv[]) {
 		s_factor = (subdivision/tmp_meas->beattype);
 		fprintf(f, "measure(%d, %d).\n", (tmp_meas->beats)*s_factor, tmp_meas->position);
 		fprintf(f, "real_measure(%d, %d, %d).\n", tmp_meas->beats, tmp_meas->beattype, tmp_meas->position);
-	}
-
-	char *scale[7];
-	tonality_scale(key_name(key_fifths,key_mode),key_mode,scale);
-
-	while(queue_size(*chord_q) > 0){
-		tmp_chord = pop_queue(chord_q);
-		fprintf(f, "chord(%d, %s).\n", tmp_chord->hbeat, chord_grade(tmp_chord, scale));
 	}
 	
 	fclose(f);

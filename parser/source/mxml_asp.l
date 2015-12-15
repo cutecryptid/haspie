@@ -14,6 +14,8 @@ clstaff "</staff>"
 gracetag "<grace/>"
 alteration "alteration"
 part "part id="
+scorepart "score-part"
+instrument "instrument-name"
 doctype "DOCTYPE"
 texttag "text"
 beats "beats"
@@ -51,6 +53,8 @@ kvothe [\"\']
 {time} {return TIME;}
 {alteration} {return ALTER;}
 {part} {return PART_ID;}
+{scorepart} {return SCOREPART;}
+{instrument} {return INSTRUMENT;}
 {doctype} {return DOCTYPE;}
 {rest} {return REST;}
 {beats} {return BEATS;}
