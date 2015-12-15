@@ -340,6 +340,54 @@ char * key_name(int kf, char * km){
     }
 }
 
+char ** tonality_scale(char * key_name, char * km, char* scale[]){
+	char* notes[] = {"A", "B-", "B", "C", "D-", "D", "E-", "E", "F", "G-", "G", "A-"};
+	int maj_pattern[] = {0,2,4,5,7,9,11};
+	int min_pattern[] = {0,2,3,5,7,8,10};
+	int key_index = 0;
+	while (key_index < 12 && strcmp(notes[key_index],key_name) != 0) ++ key_index;
+	// Create scale following pattern based on km
+	int i;
+	for (i = 0; i < 7; ++i)
+	{
+		scale[i] = malloc(5 * sizeof(char));
+		if (strcmp(km, "major") == 0){
+			scale[i] = notes[(key_index + maj_pattern[i]) % 12];
+		} else {
+			scale[i] = notes[(key_index + min_pattern[i]) % 12];
+		}
+	}
+}
+
+char * chord_grade(chord* c, char ** scale){
+	char* grades[] = {"i", "ii", "iii", "iv", "v", "vi", "vii"};
+	// Find root of chord in that scale, use that as index for grades
+	int grade_index = 0;
+	while (grade_index < 7 && strcmp(scale[grade_index],(c-> root))!=0) ++ grade_index;
+	char str[5];
+	strcpy(str, grades[grade_index]);
+	int sz = strlen(grades[grade_index]);
+	if (strcmp((c -> kind), "minor") == 0){
+		strcat(str, "m");
+		sz = sz + 1;
+	}
+	if (strcmp((c -> kind), "diminished") == 0){
+		strcat(str, "o");
+		sz = sz + 1;
+	}
+	if (strcmp((c -> kind), "dominant") == 0){
+		strcat(str, "7");
+		sz = sz + 1;
+	}
+	if (strcmp((c -> kind), "minor-seventh") == 0){
+		strcat(str, "m7");
+		sz = sz + 2;
+	}
+	char *ret_str = malloc(sz);
+    strcpy(ret_str,str);
+	return ret_str;
+}
+
 int usage(char* prog_name){
 	printf ("usage: %s file.xml [-s subdivision] [-o file.lp]\n", prog_name);
 	printf ("-s subdivision: subdivision in which the notes of the piece should be divided\n");
@@ -500,10 +548,12 @@ int main(int argc, char *argv[]) {
 		fprintf(f, "real_measure(%d, %d, %d).\n", tmp_meas->beats, tmp_meas->beattype, tmp_meas->position);
 	}
 
+	char *scale[7];
+	tonality_scale(key_name(key_fifths,key_mode),key_mode,scale);
+
 	while(queue_size(*chord_q) > 0){
 		tmp_chord = pop_queue(chord_q);
-		printf("CHORD %s, %s, %d\n", tmp_chord->root, tmp_chord->kind, tmp_chord->hbeat);
-		fprintf(f, "chord(%d, %s).\n", tmp_chord->hbeat, tmp_chord->root);
+		fprintf(f, "chord(%d, %s).\n", tmp_chord->hbeat, chord_grade(tmp_chord, scale));
 	}
 	
 	fclose(f);
