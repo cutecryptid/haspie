@@ -78,6 +78,7 @@ char * justify;
 char * valign;
 char * title;
 char * composer;
+char act_sentence[140];
 voice_type * tmp_voice;
 note * tmp_note;
 measure * tmp_meas;
@@ -277,14 +278,15 @@ block : OPTAG REST SLASHTAG CLTAG {
 		| OPTAG MODE CLTAG TEXT OPTAG SLASHTAG MODE CLTAG {$$ = 0; key_mode=$4;}
 		| OPTAG ROOTSTEP CLTAG TEXT OPTAG SLASHTAG ROOTSTEP CLTAG {$$ = 0; act_root = $4;}
 		| OPTAG KIND CLTAG TEXT OPTAG SLASHTAG KIND CLTAG {$$ = 0; act_kind = $4;}
-		| OPTAG CREDIT attr CLTAG TEXT OPTAG SLASHTAG CREDIT CLTAG{
+		| OPTAG CREDIT attr CLTAG sentence OPTAG SLASHTAG CREDIT CLTAG{
 			$$ = 0;
 			if (strcmp(justify, "center") == 0 && strcmp(valign, "top") == 0){
-				title = $5;
+				title = strdup(act_sentence);
 			}
 			if (strcmp(justify, "right") == 0 && strcmp(valign, "bottom") == 0){
-				composer = $5;
+				composer = strdup(act_sentence);
 			}
+			memset(&act_sentence[0], 0, sizeof(act_sentence));
 		}
 		| OPTYPE TEXT CLTYPE {$$ = 0; act_type = $2;}
 		| part1 part2 {$$ = 0;} 
@@ -383,6 +385,9 @@ attr : /*...*/ {}
 		| JUSTIFY EQUAL KVOTHE TEXT KVOTHE attr {$$ = 0; justify = $4;}
 		| VALIGN EQUAL KVOTHE TEXT KVOTHE attr {$$ = 0; valign = $4;}
 		| TEXT EQUAL KVOTHE TEXT KVOTHE attr {$$ = 0;};
+
+sentence : TEXT {strcat(act_sentence, $1); strcat(act_sentence, " ");}
+		| sentence TEXT {strcat(act_sentence, $2); strcat(act_sentence, " ");}
 
 body : body block {$$ = 0;}
 	| body TEXT {$$ = 0;}
@@ -697,7 +702,7 @@ int main(int argc, char *argv[]) {
 	}
 
     if (strcmp(composer, "") == 0){
-		title = "HASP";
+		composer = "HASP";
 	}
 
 	printf("%s by %s\n", title, composer);
