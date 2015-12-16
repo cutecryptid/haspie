@@ -5,6 +5,7 @@ import sys
 import os
 import threading
 import errno
+import ConfigParser
 sys.path.append('./lib') 
 from HaspMusic import ClaspResult
 import Out
@@ -60,10 +61,10 @@ def main():
 	                   help='output file format for the result')
 	parser.add_argument('-t', '--timeout', metavar='T', nargs=1, default=5, type=int,
 	                   help='maximum time (in seconds) allowed to search for optimum')
-	parser.add_argument('-k', '--key', metavar='[A-G][+-]?', nargs=1, default="C",
-	                   help='key in which the score should be harmonized, default is C, flats and sharps can be specified by -/+ (i.e. C+,A-,...)')
-	parser.add_argument('-m', '--mode', metavar='maj|min', nargs=1, default="maj", choices=['major', 'minor'],
-	                   help='mode of the scale, major by default')
+	parser.add_argument('-k', '--key', metavar='[A-G][+-]?', nargs=1, default="",
+	                   help='key in which the score should be harmonized, if not specified, parser will autodetect it')
+	parser.add_argument('-m', '--mode', metavar='major|minor', nargs=1, default="", choices=['major', 'minor'],
+	                   help='mode of the scale, if not specified, parser will autodetect it')
 	parser.add_argument('-M', '--melodious', action='store_true', default=False,
 	                   help='turns on melodic preferences in ASP for a more melodic result')
 	parser.add_argument('-A', '--aspdebug', action='store_true', default=False,
@@ -83,7 +84,7 @@ def main():
 	if n == 0:
 		opt_all = "--opt-all"
 	mode = args.mode
-	if args.mode != "maj":
+	if args.mode != "":
 		mode = args.mode[0]
 
 	sub = args.divide
@@ -110,10 +111,8 @@ def main():
 		timeout = args.timeout[0]
 
 	key = args.key
-	if args.key != "C":
+	if args.key != "":
 		key = args.key[0]
-
-	base = key_to_base(key)
 
 	melodious = ""
 	if args.melodious:
@@ -122,27 +121,39 @@ def main():
 	asp_outfile_name = re.search('/(.*?)\.xml', infile)
 	outname = asp_outfile_name.group(1)
 	if args.output == "out":
-		final_out = outname + "." + fmt
+		final_out = "./out/" + outname + "." + fmt
 	lp_outname = outname + ".lp"
 	xml_parser_args = ("parser/mxml_asp", infile, "-o", "asp/generated_logic_music/" + lp_outname, "-d",
-						str(sub), "-s", str(span))
+						str(sub), "-s", str(span), "-k", str(key), "-m", str(mode))
 	xml_parser_ret = subprocess.call(xml_parser_args)
 	
-	if xml_parser_ret <= 0:
+	if xml_parser_ret < 0:
 		sys.exit("Parsing error, stopping execution.")
 
 	if args.onlyparse:
 		sys.exit("")
 
+	score_config = ConfigParser.ConfigParser()
+	score_config.read('./tmp/score_meta.cfg')
+
+	title = score_config.get('meta', 'title')
+	composer = score_config.get('meta', 'composer')
+	subdivision = score_config.get('scoredata', 'base_note')
+	key = score_config.get('scoredata', 'key_name')
+	key_value = score_config.get('scoredata', 'key_value')
+	mode = score_config.get('scoredata', 'mode')
+
+	base = key_to_base(key)
+
 	verbose = ""
 	if args.aspdebug:
 		verbose = "-V"
 
-	asp_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "or_mode.lp", "asp/include/" + mode + "or_chords.lp",
+	asp_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
 		"asp/include/conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", 
 		"asp/generated_logic_music/" + lp_outname,"-n", str(n), 
 		"--const", "span=" + str(span), "--const","extra_voices="+ str(voices), "--const", "base="+ str(base), 
-		"--const", "subdiv="+str(xml_parser_ret), opt_all, melodious, verbose)
+		"--const", "subdiv="+subdivision, opt_all, melodious, verbose)
 
 	if args.aspdebug:
 		asp_proc = subprocess.call(asp_args)
@@ -168,7 +179,7 @@ def main():
 			selected_solution = sol_num
 		print res.solutions[int(selected_solution)-1]
 		
-		output = Out.solution_to_music21(res.solutions[int(selected_solution)-1], xml_parser_ret, span, base, mode)
+		output = Out.solution_to_music21(res.solutions[int(selected_solution)-1], int(subdivision), span, base, int(key_value), mode, title, composer)
 		if args.show:
 			output.show(fmt)
 		else:

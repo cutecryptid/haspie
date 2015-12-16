@@ -42,11 +42,13 @@ def romanToChord(roman, base, mode):
 	return out_chord
 	
 
-def solution_to_music21(solution, subdivision, span, base, mode):
+def solution_to_music21(solution, subdivision, span, base, key_value, mode, title, composer):
 	score = stream.Score()
 	i = 0
+	k = key.KeySignature(key_value)
 	for v in solution.voices.items():
 		p = stream.Part()
+		p.append(k)
 		for item in v[1]:
 			c = next((c for c in solution.chords if ((c.time-1)*span) == (item.time-1)), None)
 			if c != None and i == 0:
@@ -67,4 +69,7 @@ def solution_to_music21(solution, subdivision, span, base, mode):
 			p.append(tmp_note)
 		score.append(p)
 		i+= 1
+	score.insert(metadata.Metadata())
+	score.metadata.title = title
+	score.metadata.composer = composer
 	return score

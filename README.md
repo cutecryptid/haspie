@@ -18,6 +18,5 @@ The only compiled part of the project is the MXML to ASP facts parser. A binary 
  - Notes dissapearing?? WHY?? (CRITICAL)
  - Preferences should be weighted and configured by conf files
  - Try emptying voices
- - Out module should reflect parsed key and instruments
  - Optimums should be filtered to show only the really best competing options to user
 

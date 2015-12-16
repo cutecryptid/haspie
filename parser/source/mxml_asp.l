@@ -28,6 +28,9 @@ kind "kind"
 fifths "fifths"
 mode "mode"
 notvisible "print-object=\"no\""
+credit "credit-words"
+justify "justify"
+valign "valign"
 text [-.A-Za-z0-9:\[\]\\]+
 ques_montgomery [?]
 excl [!]
@@ -69,6 +72,9 @@ kvothe [\"\']
 {kind} {return KIND;}
 {fifths} {return FIFTHS;}
 {mode} {return MODE;}
+{credit} {return CREDIT;}
+{justify} {return JUSTIFY;}
+{valign} {return VALIGN;}
 {text} {yylval.valStr=strdup(yytext); return TEXT;}
 . ;
 \n ;

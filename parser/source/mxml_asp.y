@@ -18,6 +18,7 @@ typedef struct{
 	int length;
 	int dotted;
 	int grace;
+	int harm_over;
 } note; 
 
 typedef struct{ 
@@ -72,6 +73,11 @@ int act_voice;
 char* act_instrument;
 int voice_high;
 int voice_low;
+int act_harm_over;
+char * justify;
+char * valign;
+char * title;
+char * composer;
 voice_type * tmp_voice;
 note * tmp_note;
 measure * tmp_meas;
@@ -117,10 +123,12 @@ note* new_note(){
 	  n -> chordmod = 0;
 	  n -> length = 0;
 	  n -> dotted = 0;
+	  n -> grace = 0;
+	  n -> harm_over = 0;
 	  return n;
 }
 
-note* mod_note(note* n, int voi, int val, int cm, int sta, int len, int dot, int gra){
+note* mod_note(note* n, int voi, int val, int cm, int sta, int len, int dot, int gra, int hao){
 	n -> voice = voi;
 	n -> value = val;
 	n -> chordmod = cm;
@@ -128,6 +136,7 @@ note* mod_note(note* n, int voi, int val, int cm, int sta, int len, int dot, int
 	n -> length = len;
 	n -> dotted = dot;
 	n -> grace = gra;
+	n -> harm_over = hao;
 	return n;
 }
 
@@ -220,16 +229,16 @@ int ispower2(int x){
 
 %token OPTAG CLTAG SLASHTAG EQUAL KVOTHE QUES EXCL NOTE OCTA STEP PART_ID REST CHORD ALTER DOCTYPE OPTYPE CLTYPE
 %token NOTVISIBLE BEATS BEATTYPE TIME DOT OPSTAFF CLSTAFF GRACETAG MODE HARMONY ROOT ROOTSTEP KIND FIFTHS KEY
-%token INSTRUMENT SCOREPART
+%token INSTRUMENT SCOREPART CREDIT JUSTIFY VALIGN
 %token <valStr> TEXT
 %type  <valInt> block part1 part2 body attr
 %start S
 %%
 S : version doctype block | block | error {yyerror("ERROR: Unrecognised file format. File is not Standard Music XML.");};
 
-version : OPTAG QUES TEXT attr QUES CLTAG {printf("Version OK\n");};
+version : OPTAG QUES TEXT attr QUES CLTAG {};
 
-doctype : OPTAG EXCL DOCTYPE doctags docurl CLTAG {printf("DOCTYPE OK\n");};
+doctype : OPTAG EXCL DOCTYPE doctags docurl CLTAG {};
 
 doctags : /*...*/ {}
 		| TEXT doctags {};
@@ -268,6 +277,15 @@ block : OPTAG REST SLASHTAG CLTAG {
 		| OPTAG MODE CLTAG TEXT OPTAG SLASHTAG MODE CLTAG {$$ = 0; key_mode=$4;}
 		| OPTAG ROOTSTEP CLTAG TEXT OPTAG SLASHTAG ROOTSTEP CLTAG {$$ = 0; act_root = $4;}
 		| OPTAG KIND CLTAG TEXT OPTAG SLASHTAG KIND CLTAG {$$ = 0; act_kind = $4;}
+		| OPTAG CREDIT attr CLTAG TEXT OPTAG SLASHTAG CREDIT CLTAG{
+			$$ = 0;
+			if (strcmp(justify, "center") == 0 && strcmp(valign, "top") == 0){
+				title = $5;
+			}
+			if (strcmp(justify, "right") == 0 && strcmp(valign, "bottom") == 0){
+				composer = $5;
+			}
+		}
 		| OPTYPE TEXT CLTYPE {$$ = 0; act_type = $2;}
 		| part1 part2 {$$ = 0;} 
 		| part1 error {yyerror("ERROR: Unclosed tag found.");}
@@ -277,7 +295,7 @@ part1 : OPTAG NOTE attr {$$ = 0; act_alter = ""; act_ch_mod=0; grace_mod=0; act_
 		| OPTAG KEY  {$$ = 0; add_stack(stag, "key");}
 		| OPTAG PART_ID KVOTHE TEXT KVOTHE {$$ = 0; part= part+1; note_position = 0; add_stack(stag, "part");}
 		| OPTAG TIME {$$ = 0; add_stack(stag, "time");}
-		| OPTAG HARMONY {$$ = 0; act_kind = "";}
+		| OPTAG HARMONY {$$ = 0; act_kind = ""; act_harm_over = 1;}
 		| OPTAG SCOREPART attr{$$= 0; act_voice = act_voice +1; act_instrument = "";}
 		| OPTAG TEXT attr {$$ = 0; add_stack(stag, (void*) $2);};
 
@@ -306,9 +324,10 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 				subdivision = act_length * 2;
 			}
 			tmp_note = new_note();
-			tmp_note = mod_note(tmp_note, part, act_note_val, act_ch_mod, act_staff, act_length, act_dot, grace_mod);
+			tmp_note = mod_note(tmp_note, part, act_note_val, act_ch_mod, act_staff, act_length, act_dot, grace_mod, act_harm_over);
 			add_queue(note_q, tmp_note);
 			act_dot = 0;
+			act_harm_over = 0;
 		}
 		| CLTAG body OPTAG SLASHTAG TIME CLTAG {
 			$$ = 0;
@@ -361,6 +380,8 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 
 attr : /*...*/ {}
 		| NOTVISIBLE attr {$$ = 0; act_oct = -2;}
+		| JUSTIFY EQUAL KVOTHE TEXT KVOTHE attr {$$ = 0; justify = $4;}
+		| VALIGN EQUAL KVOTHE TEXT KVOTHE attr {$$ = 0; valign = $4;}
 		| TEXT EQUAL KVOTHE TEXT KVOTHE attr {$$ = 0;};
 
 body : body block {$$ = 0;}
@@ -388,6 +409,23 @@ char * key_name(int kf, char * km){
     } else {
     	key_root = roots[(key_index+3) % 12];
     }
+    return key_root;
+}
+
+int key_fifths_number(char * key_name, char * km){
+	char* roots[] = {"A", "B-", "B", "C", "D-", "D", "E-", "E", "F", "G-", "G", "A-"};
+	int key_fifths[] = {3, -2, 5, 0, -5, 2, -3, 4, -1, -6, 1, -4};
+	// For minor scales just add 3 to the index (modulo'ed ofc)
+	int key_fifths_no = 0;
+	int key_index = 0;
+    while ( key_index < 12 && strcmp(roots[key_index], key_name) != 0) ++ key_index;  
+
+    if (strcmp(km, "major") == 0){
+    	key_fifths_no = key_fifths[key_index];
+    } else {
+    	key_fifths_no = key_fifths[(key_index+3) % 12];
+    }
+    return key_fifths_no;
 }
 
 char ** tonality_scale(char * key_name, char * km, char* scale[]){
@@ -441,6 +479,7 @@ char * chord_grade(chord* c, char ** scale){
 int usage(char* prog_name){
 	printf ("usage: %s file.xml [-s subdivision] [-o file.lp]\n", prog_name);
 	printf ("-d subdivision: subdivision in which the notes of the piece should be divided\n");
+	printf ("-k key: key in which the piece should be harmonized\n");
 	printf ("-s harmonization span: base figures taken in account to assign a chord\n");
 	printf ("-o file.lp: name for the output file, default is output.lp\n");
 }
@@ -459,8 +498,10 @@ int main(int argc, char *argv[]) {
 	subdivision = 0;
 	opt_subdivision = 0;
 	int harm_span = 1;
+	char * opt_key = "";
+	char * opt_mode = "";
 
-	while ((c = getopt (argc, argv, "hd:s:o:")) != -1)
+	while ((c = getopt (argc, argv, "hd:k:m:s:o:")) != -1)
     switch (c)
       {
       case 'h':
@@ -469,6 +510,12 @@ int main(int argc, char *argv[]) {
       case 'd':
         opt_subdivision = atoi(optarg);
         break;
+      case 'k':
+        opt_key = optarg;
+        break;
+      case 'm':
+        opt_mode = optarg;
+        break;
       case 's':
       	harm_span = atoi(optarg);
       	break;
@@ -476,7 +523,7 @@ int main(int argc, char *argv[]) {
       	outfile = optarg;
       	break;
       case '?':
-        if (optopt == 'o' || optopt == 's' || optopt == 'd'){
+        if (optopt == 'o' || optopt == 's' || optopt == 'd' || optopt == 'k'){
         	fprintf (stderr, "Option -%c requires an argument.\n", optopt);
       	  	usage(argv[0]);
         }
@@ -511,6 +558,8 @@ int main(int argc, char *argv[]) {
 	act_note = malloc(sizeof(char));
 	key_fifths = 0;
 	key_mode = "major";
+	title = "";
+	composer = "";
 
 	stag = new_stack();
 	note_q = new_queue();
@@ -524,8 +573,6 @@ int main(int argc, char *argv[]) {
 	if (opt_subdivision != 0){
 		subdivision = opt_subdivision;
 	}
-
-	printf("Base note - 1/%d\n", subdivision);
 
 	f = fopen(outfile, "w");
 	if (f == NULL){
@@ -542,7 +589,6 @@ int main(int argc, char *argv[]) {
 	int voice_mod = 0;
 	int staff_no = 0;
 	int grace_overhead = 0;
-	int hbeat = 0;
 
 	while(queue_size(*voice_q) > 0){
 		tmp_voice = pop_queue(voice_q);
@@ -555,17 +601,34 @@ int main(int argc, char *argv[]) {
 		}
 	}
 
+	char * final_key;
+	int final_fifths;
+	char * final_mode;
+
+	if (strcmp(opt_mode, "") != 0){
+		final_mode = opt_mode;
+	} else {
+		final_mode = key_mode;
+	}
+
+	char * det_key = key_name(key_fifths,final_mode);
+	if (strcmp(opt_key, "") != 0){
+		final_key = opt_key;
+		final_fifths = key_fifths_number(opt_key, final_mode);
+	} else {
+		final_key = det_key;
+		final_fifths = key_fifths;
+	}
+	
 	char *scale[7];
-	tonality_scale(key_name(key_fifths,key_mode),key_mode,scale);
+	tonality_scale(det_key,key_mode,scale);
 
 	while(queue_size(*note_q) > 0){
-		if (pos % harm_span == 0 && queue_size(*chord_q) > 0){
-			hbeat ++;
-			tmp_chord = pop_queue(chord_q);
-			fprintf(f, "chord(%d, %s).\n", hbeat, chord_grade(tmp_chord, scale));
-		}
-
 		tmp_note = pop_queue(note_q);
+		if (pos % harm_span == 0 && tmp_note->harm_over == 1 && queue_size(*chord_q) > 0 ){
+			tmp_chord = pop_queue(chord_q);
+			fprintf(f, "chord(%d, %s).\n", ((pos/harm_span)+1), chord_grade(tmp_chord, scale));
+		}
 		if (act_part != tmp_note->voice){
 			act_part = tmp_note->voice;
 			voice_mod += staff_no;
@@ -628,9 +691,34 @@ int main(int argc, char *argv[]) {
 	}
 	
 	fclose(f);
-	
+
+	if (strcmp(title, "") == 0){
+		title = "Music Piece";
+	}
+
+    if (strcmp(composer, "") == 0){
+		title = "HASP";
+	}
+
+	printf("%s by %s\n", title, composer);
+	printf("Base note - 1/%d\n", subdivision);
+	printf("Detected %s %s key from key signature\n", det_key, key_mode);
+	printf("Harmonizing in %s %s\n", final_key, final_mode);
 	printf("OK - Correctly generated music logic file in %s\n", outfile);
-	return subdivision;
+	
+	f = fopen("tmp/score_meta.cfg", "w");
+	fprintf(f, "[meta]\n");
+	fprintf(f, "title=%s\n", title);
+	fprintf(f, "composer=%s\n", composer);
+
+	fprintf(f, "[scoredata]\n");
+	fprintf(f, "base_note=%d\n", subdivision);
+	fprintf(f, "key_name=%s\n", final_key);
+	fprintf(f, "key_value=%d\n", final_fifths);
+	fprintf(f, "mode=%s\n", final_mode);
+	fclose(f);
+	printf("Extra score information can be found in tmp/score_meta.conf\n");
+	return 0;
 }
 
 void yyerror (char const *message) { 
