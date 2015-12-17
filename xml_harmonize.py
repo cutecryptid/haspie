@@ -71,6 +71,8 @@ def main():
 	                   help='option for not interpreting results, just print ASP out')
 	parser.add_argument('-P', '--onlyparse', action='store_true', default=False,
 	                   help='option for not ASPing, just parse')
+	parser.add_argument('-V', '--verbose_asp', action='store_true', default=False,
+	                   help='enables ASP verbosity')
 
 	args = parser.parse_args()
 
@@ -146,7 +148,7 @@ def main():
 	base = key_to_base(key)
 
 	verbose = ""
-	if args.aspdebug:
+	if args.verbose_asp:
 		verbose = "-V"
 
 	asp_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",

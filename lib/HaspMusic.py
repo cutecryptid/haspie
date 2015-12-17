@@ -29,6 +29,25 @@ class Rest:
 	def __str__(self):
 		return "R"
 
+class VoiceChord:
+	"""Class that stores information about chord performed by a single voice"""
+	def __init__(self, notes, duration, time):
+		self.notes = notes
+		self.duration = duration
+		self.time = time
+		self.type = "vchord"
+	def __str__(self):
+		ret_str = ""
+		first = True
+		for n in self.notes:
+			if first:
+				ret_str += str(n)
+				first = False
+			else:
+				ret_str += "/" + str(n) 
+		return "{" + ret_str + "}"
+
+
 class Chord:
 	"""Class that stores information about a chord in the score"""
 	def __init__(self, time, name):
@@ -127,18 +146,47 @@ class ClaspResult:
 			if len(ans) > 0:
 				try:
 					figures = re.findall('out_figure\(([0-9]+),([0-9]+),([0-9]+),([0-9]+)\)', ans)
-					voices = {};
+					figures = [(int(v),int(n),int(d),int(b)) for v,n,d,b in figures]
+					figures = sorted(figures, key = lambda x: (x[0], x[3]))
+					voices = {}
+					i = 0
+					acum_chord = []
+					append_chord = False
 					for figure in figures:
-						if (int(figure[0]) in voices.keys()):
-							if (figure[1] != -1):
-								voices[int(figure[0])].append(Note(int(figure[1]),int(figure[2]),int(figure[3])))
+						if (figure[1] != -1):
+							act_note = Note(int(figure[1]),int(figure[2]),int(figure[3]))
+							if i < (len(figures)-1):
+								next_fig = figures[i+1]
+								if next_fig[0] == figure[0]:
+									if next_fig[3] == figure[3]:
+										acum_chord += [act_note]
+									elif len(acum_chord) > 0 and next_fig[3] != figure[3]:
+										acum_chord += [act_note]
+										act_chord = VoiceChord(acum_chord,int(figure[2]),int(figure[3]))
+										append_chord = True
+							if (int(figure[0]) in voices.keys()):
+								if append_chord:
+									voices[int(figure[0])].append(act_chord)
+									append_chord = False
+									acum_chord = []
+								elif len(acum_chord) == 0:
+									voices[int(figure[0])].append(act_note)
 							else:
-								voices[int(figure[0])].append(Rest(int(figure[1]),int(figure[3])))
+								if append_chord:
+									voices.update({(int(figure[0])) : [act_chord]})
+									append_chord = False
+									acum_chord = []
+								elif len(acum_chord) == 0:
+									voices.update({(int(figure[0])) : [act_note]})
+							print append_chord
+
 						else:
-							if (figure[1] != -1):
-								voices.update({(int(figure[0])) : [Note(int(figure[1]),int(figure[2]),int(figure[3]))]})
+							act_rest = Rest(int(figure[1]),int(figure[3]))
+							if (int(figure[0]) in voices.keys()):
+								voices[int(figure[0])].append(act_rest)
 							else:
-								voices.update({(int(figure[0])) : [Rest(int(figure[1]),int(figure[3]))]})
+								voices.update({(int(figure[0])) : [act_rest]})									
+						i += 1
 
 					measures = re.findall('real_measure\(([0-9]+),([0-9]+),([0-9]+)\)', ans)
 
