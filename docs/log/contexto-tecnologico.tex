@@ -8,6 +8,20 @@ Dentro de la música en computación existen varias ramas diferenciadas, aunque 
 
 Si bien el sistema planteado en el proyecto no es un compositor, se enmarca dentro de este mismo contexto, y por tanto es necesario desglosarlo para entender en qué punto se encuentra la tecnología desarrollada en el momento de la publicación de este documento.
 
+\subsection{Answer Set Programming}
+El módulo principal del proyecto se ha desarrollado usando técnicas conocidas como Answer Set Programming (ASP de ahora en adelante) basadas en modelos estables y lógica no-monótona. La gran ventaja de ASP reside en la facilidad para separar las reglas de inferencia de los hechos lógicos. El lenguaje de entrada de los programas usados es una variante de PROlog pero con un preprocesado que permite crear reglas generales mediante el uso de variables. La metodología de ASP se conoce como generate and test, primero se definen reglas generadoras, que con ayuda de los hechos generan los predicados derivados de los predicados simples aprotados en la entrada y en la segunda etapa se comparan los predicados presentes, tanto simples como derivados con una serie de restricciones lógicas, restricciones cardinales y predicados de optimización para eliminar del conjunto de soluciones posibles aquellas que no las cumplan o no resulten óptimas. Los modelos estables en los que se basa ASP permiten que estos pasos sean extremadamente ágiles incluso en presencia de grandes volúmenes de datos. 
+
+Las herramientas desarrolladas por el grupo Potassco incluyen, entre otras, un \textit{grounder} (Gringo) y un \textit{solver} (Clasp).
+
+\subsubsection{gringo}
+Gringo es el \textit{grounder} de la suite. Se encarga de transformar reglas generales a reglas concretas y transforma el problema planteado a un lenguaje entendible por el \textit{solver}.
+
+\subsubsection{clasp}
+Clasp es el \textit{solver} de la suite. Se encarga de decidir el conjunto final de soluciones válidas dado el problema procesado e interpretado por el \textit{grounder}.
+
+\subsubsection{clingo}
+Clingo es una herramienta combinada formada por clasp y gringo. Realiza el procesado completo de un problema planteado en ASP y permite indicar algunas preferencias adicionales.
+
 \subsection{Formatos}
 Debido al contexto en el que se enmarca este proyecto no se cree necesario considerar formatos de salida finales, como OGG, WAV o MP3 ya que como su nombre indica, son formatos utilizados solo para reproducción que no permiten extraer ni editar información musical de forma precisa. Así mismo tampoco se contemplan formatos de representación de partituras en forma de imágenes como SVG, PNG o PDF por motivos similares.
 
