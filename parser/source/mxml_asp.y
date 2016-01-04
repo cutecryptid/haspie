@@ -274,6 +274,7 @@ block : OPTAG REST SLASHTAG CLTAG {
 		| OPTAG BEATTYPE CLTAG TEXT OPTAG SLASHTAG BEATTYPE CLTAG {$$ = 0; act_beattype = atoi($4);} 
 		| OPTAG STEP CLTAG TEXT OPTAG SLASHTAG STEP CLTAG {$$ = 0; act_note = $4;}
 		| OPTAG INSTRUMENT CLTAG TEXT OPTAG SLASHTAG INSTRUMENT CLTAG {$$=0;act_instrument = $4;}
+		| OPTAG INSTRUMENT CLTAG OPTAG SLASHTAG INSTRUMENT CLTAG {$$=0;act_instrument = "";}
 		| OPTAG FIFTHS CLTAG TEXT OPTAG SLASHTAG FIFTHS CLTAG {$$ = 0; key_fifths= atoi($4);}
 		| OPTAG MODE CLTAG TEXT OPTAG SLASHTAG MODE CLTAG {$$ = 0; key_mode=$4;}
 		| OPTAG ROOTSTEP CLTAG TEXT OPTAG SLASHTAG ROOTSTEP CLTAG {$$ = 0; act_root = $4;}
@@ -297,7 +298,7 @@ part1 : OPTAG NOTE attr {$$ = 0; act_alter = ""; act_ch_mod=0; grace_mod=0; act_
 		| OPTAG KEY  {$$ = 0; add_stack(stag, "key");}
 		| OPTAG PART_ID KVOTHE TEXT KVOTHE {$$ = 0; part= part+1; note_position = 0; add_stack(stag, "part");}
 		| OPTAG TIME {$$ = 0; add_stack(stag, "time");}
-		| OPTAG HARMONY {$$ = 0; act_kind = ""; act_harm_over = 1;}
+		| OPTAG HARMONY attr{$$ = 0; act_kind = ""; act_harm_over = 1;}
 		| OPTAG SCOREPART attr{$$= 0; act_voice = act_voice +1; act_instrument = "";}
 		| OPTAG TEXT attr {$$ = 0; add_stack(stag, (void*) $2);};
 
@@ -361,6 +362,7 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 			add_queue(voice_q, tmp_voice);
 			if (strcmp(act_instrument, "piano") == 0){
 				act_voice = act_voice+1;
+				tmp_voice = new_voice();
 				mod_voice(tmp_voice, act_voice, act_instrument, voice_low, voice_high);
 				add_queue(voice_q, tmp_voice);
 			}
@@ -594,17 +596,7 @@ int main(int argc, char *argv[]) {
 	int voice_mod = 0;
 	int staff_no = 0;
 	int grace_overhead = 0;
-
-	while(queue_size(*voice_q) > 0){
-		tmp_voice = pop_queue(voice_q);
-		fprintf(f, "voice_type(%d, %s).\n", tmp_voice->part_id, tmp_voice->instrument);
-		if (tmp_voice -> limit_low != 0){
-			fprintf(f, "voice_limit_low(%d, %d).\n", tmp_voice->part_id, tmp_voice->limit_low);
-		}
-		if (tmp_voice -> limit_high != 0){
-			fprintf(f, "voice_limit_high(%d, %d).\n", tmp_voice->part_id, tmp_voice->limit_high);
-		}
-	}
+	int last_voice = 1;
 
 	char * final_key;
 	int final_fifths;
@@ -637,6 +629,17 @@ int main(int argc, char *argv[]) {
 		if (act_part != tmp_note->voice){
 			act_part = tmp_note->voice;
 			voice_mod += staff_no;
+			if(queue_size(*voice_q) > 0){
+				tmp_voice = pop_queue(voice_q);
+				fprintf(f, "voice_type(%d, %s).\n", (tmp_voice->part_id + (tmp_note->staff-1) + voice_mod), tmp_voice->instrument);
+				if (tmp_voice -> limit_low != 0){
+					fprintf(f, "voice_limit_low(%d, %d).\n", (tmp_voice->part_id + (tmp_note->staff-1) + voice_mod), tmp_voice->limit_low);
+				}
+				if (tmp_voice -> limit_high != 0){
+					fprintf(f, "voice_limit_high(%d, %d).\n", (tmp_voice->part_id + (tmp_note->staff-1) + voice_mod), tmp_voice->limit_high);
+				}
+				last_voice = (tmp_voice->part_id + (tmp_note->staff-1) + voice_mod);
+			}
 			staff_no = 0;
 			pos = 0;
 			last_staff = 0;
@@ -721,6 +724,7 @@ int main(int argc, char *argv[]) {
 	fprintf(f, "key_name=%s\n", final_key);
 	fprintf(f, "key_value=%d\n", final_fifths);
 	fprintf(f, "mode=%s\n", final_mode);
+	fprintf(f, "last_voice=%d\n", last_voice);
 	fclose(f);
 	printf("Extra score information can be found in tmp/score_meta.conf\n");
 	return 0;

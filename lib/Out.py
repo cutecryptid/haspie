@@ -49,6 +49,13 @@ def solution_to_music21(solution, subdivision, span, base, key_value, mode, titl
 	for v in solution.voices.items():
 		p = stream.Part()
 		p.append(k)
+		for vt in solution.voicetypes:
+			if v[0] == vt.voice:
+				inst_name = vt.name
+			else:
+				inst_name = "piano"
+		inst = instrument.fromString(inst_name)
+		p.append(inst)
 		for item in v[1]:
 			c = next((c for c in solution.chords if ((c.time-1)*span) == (item.time-1)), None)
 			if c != None and i == 0:
