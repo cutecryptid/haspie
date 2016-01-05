@@ -36,30 +36,54 @@ def romanToChord(roman, base, mode):
 		root_semitones = major_semitone_grades[rootval-1]
 	else:
 		root_semitones = minor_semitone_grades[rootval-1]
-	out_chord = av_chords[root_semitones]
+	out_chord = av_chords[(root_semitones + (base-21))%12]
 	if chord[0][1] != None:
 		out_chord += chord[0][1]
 	return out_chord
 	
 
-def solution_to_music21(solution, subdivision, span, base, mode):
+def solution_to_music21(solution, subdivision, span, base, key_value, mode, title, composer):
 	score = stream.Score()
 	i = 0
+	k = key.KeySignature(key_value)
 	for v in solution.voices.items():
 		p = stream.Part()
-		p.append(clef.TrebleClef())
+		p.append(k)
+		for vt in solution.voicetypes:
+			if v[0] == vt.voice:
+				inst_name = vt.name
+			else:
+				inst_name = "piano"
+		inst = instrument.fromString(inst_name)
+		p.append(inst)
 		for item in v[1]:
 			c = next((c for c in solution.chords if ((c.time-1)*span) == (item.time-1)), None)
 			if c != None and i == 0:
 				p.append(harmony.ChordSymbol(romanToChord(c.name, base, mode)))
-			if str(item) == "R":
-				tmp_note = note.Rest()
+			if item.type == "rest":
+				subdivision/4
+				tmp_note = note.Rest(quarterLength=(float(item.duration)/(float(subdivision)/float(4))))
+			elif item.type == "measure":
+				str_meas = str(item.ncount) + "/" + str(item.ntype)
+				tmp_note =  meter.TimeSignature(str_meas)
+			elif item.type == "vchord":
+				tmp_chord = []
+				for n in item.notes:
+					tmp_n = note.Note(n.value, quarterLength=(float(n.duration)/(float(subdivision)/float(4))))
+					tmp_n.pitch.accidental = None
+					tmp_chord += [tmp_n]
+				tmp_note = chord.Chord(tmp_chord)
 			else:
-				tmp_note = note.Note(item.value)
+				tmp_note = note.Note(item.value, quarterLength=(float(item.duration)/(float(subdivision)/float(4))))
 				tmp_note.pitch.accidental = None
-				if any((e.time == item.time) and (e.voice-1 == i)  for e in solution.errors):
-					tmp_note.color = "#ff0000"
+			if any((e.time == item.time) and (e.voice-1 == i)  for e in solution.errors):
+			 	tmp_note.color = "#ff0000"
+			if any((p.time == item.time) and (p.voice-1 == i)  for p in solution.passing):
+				tmp_note.color = "#0000ff"
 			p.append(tmp_note)
 		score.append(p)
 		i+= 1
+	score.insert(metadata.Metadata())
+	score.metadata.title = title
+	score.metadata.composer = composer
 	return score
