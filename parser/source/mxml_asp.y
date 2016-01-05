@@ -632,6 +632,9 @@ int main(int argc, char *argv[]) {
 			if(queue_size(*voice_q) > 0){
 				tmp_voice = pop_queue(voice_q);
 				fprintf(f, "voice_type(%d, %s).\n", (tmp_voice->part_id + (tmp_note->staff-1) + voice_mod), tmp_voice->instrument);
+				if (strcmp(tmp_voice->instrument, "piano") == 0){
+					fprintf(f, "voice_type(%d, %s).\n", (tmp_voice->part_id + (tmp_note->staff) + voice_mod), tmp_voice->instrument);
+				}
 				if (tmp_voice -> limit_low != 0){
 					fprintf(f, "voice_limit_low(%d, %d).\n", (tmp_voice->part_id + (tmp_note->staff-1) + voice_mod), tmp_voice->limit_low);
 				}

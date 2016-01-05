@@ -1,0 +1,16 @@
+chord(16,vim). 
+chord(5,v7). 
+chord(1,i). 
+chord(4,vim). 
+chord(7,i). 
+chord(8,v7). 
+chord(9,iiim). 
+chord(14,i). 
+chord(2,iiim). 
+chord(10,i). 
+chord(3,iim). 
+chord(6,vim). 
+chord(11,iim). 
+chord(12,i). 
+chord(13,v7). 
+chord(15,v7). 

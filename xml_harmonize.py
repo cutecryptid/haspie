@@ -156,7 +156,7 @@ def main():
 				if (vrange[0] != "0"):
 					f.write("voice_limit_low("+ str(last_voice+i) + ", " + vrange[0] +").\n")
 				if (vrange[1] != "0"):
-					f.write("voice_limit_low("+ str(last_voice+i) + ", " + vrange[1] +").\n")
+					f.write("voice_limit_high("+ str(last_voice+i) + ", " + vrange[1] +").\n")
 			else:
 				print "Voice limit for voice "+str(last_voice+1)+" has not been properly specified, please refer to usage.\n"
 			i += 1
@@ -230,7 +230,7 @@ def main():
 			if selected_solution == '':
 				selected_solution = sol_num
 			print res.solutions[int(selected_solution)-1]
-			
+
 			output = Out.solution_to_music21(res.solutions[int(selected_solution)-1], int(subdivision), span, base, int(key_value), mode, title, composer)
 			if args.show:
 				output.show(fmt)

@@ -189,8 +189,6 @@ class ClaspResult:
 									acum_chord = []
 								elif len(acum_chord) == 0:
 									voices.update({(int(figure[0])) : [act_note]})
-							print append_chord
-
 						else:
 							act_rest = Rest(int(figure[0]),int(figure[1]),int(figure[3]))
 							if (int(figure[0]) in voices.keys()):
@@ -231,16 +229,28 @@ class ClaspResult:
 class ChordSolution:
 	"""Class that stores a partial chord solution, evaluated only
 	in terms of chord assignation"""
-	def __init__(self, chords, optimization, raw_ans):
+	def __init__(self, chords, optimization, errors, raw_ans):
 		self.chords = chords
 		self.optimization = optimization
+		self.errors = errors
 		self.raw_ans = raw_ans
 
 	def __str__(self):
 		ret = ""
+		if len(self.errors) > 0:
+			ret += "Errors: "
+			first = True
+			for er in self.errors:
+				if first:
+					first = False
+					ret += str(er)
+				else:
+					ret +=" // " + str(er)
+			ret += "\n"
 		for ch in self.chords:
 			ret += str(ch) + " "
-		ret += "// OPT: " + str(self.optimization) + "\n"
+		ret += "\nOptimization - Errors: " + str(self.optimization[0]) + " // Repeated Chord: " + str(self.optimization[1])
+		ret += " // Errors (weak beat): " + str(self.optimization[2]) + "\n"
 		return ret
 
 
@@ -256,6 +266,7 @@ class ClaspChords:
 	def parse_chords(self, asp_out):
 		out = self.raw_output
 		answers = re.split('Answer:\s*[0-9]+', out)
+		min_opt = 9999
 		sols = []
 		for ans in answers:
 			if len(ans) > 0:
@@ -263,7 +274,11 @@ class ClaspChords:
 				str_opts = [a for a in str_opts if len(a) > 0]
 				tmp_opts = map(int, str_opts)
 				tmp_chords = [Chord(int(ch[0]),ch[1]) for ch in sorted(re.findall('chord\(([0-9]+),([ivxmo7]+)\)', ans))]
-				sols += [ChordSolution(tmp_chords, tmp_opts, ans)]
+				tmp_errors = [Error(int(er[0]),int(er[1])) for er in re.findall('out_error\(([0-9]+),([0-9]+)\)', ans)]
+				sols += [ChordSolution(tmp_chords, tmp_opts, tmp_errors, ans)]
+				if sum(tmp_opts) < min_opt:
+					min_opt = sum(tmp_opts)
+		sols = [s for s in sols if sum(s.optimization) == min_opt]
 		return sols
 		
 	def __str__(self):
@@ -271,7 +286,7 @@ class ClaspChords:
 		ansno = 1
 		for sol in self.chord_solutions:
 			ret += "Answer " + str(ansno) + ":\n"
-			ret += str(sol)
+			ret += str(sol) + "\n"
 			ansno += 1
 		return ret
 
