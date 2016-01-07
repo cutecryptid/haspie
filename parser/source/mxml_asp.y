@@ -642,6 +642,9 @@ int main(int argc, char *argv[]) {
 					fprintf(f, "voice_limit_high(%d, %d).\n", (tmp_voice->part_id + (tmp_note->staff-1) + voice_mod), tmp_voice->limit_high);
 				}
 				last_voice = (tmp_voice->part_id + (tmp_note->staff-1) + voice_mod);
+				if (strcmp(tmp_voice->instrument, "piano") == 0){
+					last_voice++;
+				}
 			}
 			staff_no = 0;
 			pos = 0;
@@ -671,15 +674,17 @@ int main(int argc, char *argv[]) {
 			grace_overhead = 0;
 		}
 		int i = 1;
-		fprintf(f, "figure(%d,%d,%d).\n", (tmp_note->voice + (tmp_note->staff-1) + voice_mod), times, pos+1);
+		if (!tmp_note->grace){
+			fprintf(f, "figure(%d,%d,%d).\n", (tmp_note->voice + (tmp_note->staff-1) + voice_mod), times, pos+1);
+		}
 		for (i; i < (times+1); i++){
 			pos++;
 			switch(tmp_note->value) {
 			   	case -1:
-			    	fprintf(f, "rest(%d, %d).\n", tmp_note->voice, pos);
+			    	fprintf(f, "rest(%d, %d).\n", (tmp_note->voice + (tmp_note->staff-1) + voice_mod), pos);
 			    	break;
 			   	case -2:
-			      	fprintf(f, "freebeat(%d, %d).\n", tmp_note->voice, pos);
+			      	fprintf(f, "freebeat(%d, %d).\n", (tmp_note->voice + (tmp_note->staff-1) + voice_mod), pos);
 			      	break;
 			    default:
 			    	if (tmp_note->grace){

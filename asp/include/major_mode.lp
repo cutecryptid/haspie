@@ -14,7 +14,7 @@ grade(V,11,T) :- sem_tones(V,9,T). % IV sharp, V flat
 grade(V,12,T) :- sem_tones(V,11,T). % V sharp, VI flat
 grade(V,13,T) :- sem_tones(V,1,T). % VI sharp, VII flat
 
-pos_grade(8;9;11;12;13).
+%pos_grade(8;9;11;12;13).
 
 ex_sem_tones(V,3,T) :-  ex_grade(V,1,T).
 ex_sem_tones(V,5,T) :- ex_grade(V,2,T).

@@ -151,6 +151,8 @@ def main():
 			vrange = re.findall("([0-9]+)", v)
 			if name != None:
 				f.write("voice_type("+ str(last_voice+i) + ", " + name.group(0) +").\n")
+			elif name == None:
+				f.write("voice_type("+ str(last_voice+i) + ", piano).\n")
 			elif len(vrange) == 2:
 				vrange = sorted(vrange)
 				if (vrange[0] != "0"):
@@ -174,7 +176,7 @@ def main():
 		verbose = "-V"
 
 	asp_chord_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
-		"asp/include/conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", extra_voices,
+		"asp/include/chord_conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", extra_voices,
 		"asp/generated_logic_music/" + lp_outname,"-n", str(n), 
 		"--const", "span=" + str(span), "--const", "base="+ str(base), 
 		"--const", "subdiv="+subdivision, opt_all)
@@ -209,11 +211,10 @@ def main():
 		asp_proc = subprocess.call(asp_note_args)
 	else:
 		asp_proc = subprocess.Popen(asp_note_args, stdout=subprocess.PIPE)
-		
-		# t = threading.Timer( timeout, clasp_timeout, [asp_proc] )
-		# t.start()
-		# t.join()
-		# t.cancel()
+		t = threading.Timer( timeout, clasp_timeout, [asp_proc] )
+		t.start()
+		t.join()
+		t.cancel()
 
 		asp_note_out = asp_proc.stdout.read()
 
