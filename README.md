@@ -14,10 +14,5 @@ Python 2.7, gringo 3.0.5 and clingo 3.0.5, music21 >= 2.1.2 python module instal
 # Compiling from source
 The only compiled part of the project is the MXML to ASP facts parser. A binary is bundled with every release, but if you wish to compile it for compatibility reasons, a Makefile is also bundled. Go to ```parser/source``` and run ```make```. The bin file is generated in the parser folder so it can be properly referenced by the python pipeline.
 
-#TO DO:
- - Add option to Pipeline to use sixths links
- - Check why Out module is printing naturals some times 
- - Preferences should be weighted and configured by conf files
- - Optimums should be filtered to show only the really best competing options to user
 
 

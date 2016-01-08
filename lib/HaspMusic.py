@@ -145,9 +145,13 @@ class ClaspResult:
 	It's created with the textual output of clasp and then stores
 	satisfability, optimization status and all of it's solutions
 	with its optimization values"""
-	def __init__(self, asp_out):
+	def __init__(self, asp_out, max_opts):
 		self.raw_output = asp_out
-		self.solutions = self.parse_solutions()
+		tmp_sols = self.parse_solutions()
+		if len(tmp_sols) <= max_opts:
+			self.solutions = tmp_sols
+		else:
+			self.solutions = tmp_sols[(max_opts*-1):]
 
 	def parse_solutions(self):
 		out = self.raw_output

@@ -60,15 +60,20 @@ out_error_weak(V,FB) :- error_in_weak(V,G,B), figure(V,D,FB), B >= FB, B < FB + 
 out_passing(V,N,D,B) :- out_error_weak(V,B), out_figure(V,N,D,B), out_figure(V,N2,D2,B2), B2 = B+D, beat(B+D), 
 						out_grade(V,G2,O2,B+D), belongs(G2,C), chord(HT,C), beat_belongs_htime(B+D,HT).
 
-#minimize[error_in_strong(_,_,_) @ 9].
-#minimize[unison(_,_,_) @ 8].
-#minimize[same_chord(_,_) @ 7].
-% Minimization of priority 6 is the melodious smoothing
-% Maximization of priority 5 is the 4th-6th inversion linking.
-% Maximization of priority 4 is the same tendency
-% Maximization of priority 3 is the contrary tendency
-#minimize[error_in_weak(_,_,_) @ 2].
-#minimize[repeated_grade(_,_,_) @ 1].
+#const note_errorinstrongw = 1.
+#const unisonw = 1.
+#const note_errorinweakw = 1.
+#const repeatedgradew = 1.
+
+#const note_errorinstrongp = 4.
+#const unisonp = 3.
+#const note_errorinweakp = 2.
+#const repeatedgradep = 1.
+
+#minimize[error_in_strong(_,_,_) = note_errorinstrongw @ note_errorinstrongp].
+#minimize[unison(_,_,_) = unisonw @ unisonp].
+#minimize[error_in_weak(_,_,_) = note_errorinweakw @ note_errorinweakp].
+#minimize[repeated_grade(_,_,_) = repeatedgradew @ repeatedgradep].
 
 #hide.
 #show chord/2.

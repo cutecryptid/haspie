@@ -13,6 +13,7 @@ opstaff "<staff>"
 clstaff "</staff>"
 gracetag "<grace/>"
 alteration "alteration"
+alter "alter"
 part "part id="
 scorepart "score-part"
 instrument "instrument-name"
@@ -54,6 +55,7 @@ kvothe [\"\']
 {optype} {return OPTYPE;}
 {cltype} {return CLTYPE;}
 {time} {return TIME;}
+{alter} {return ALTER;}
 {alteration} {return ALTER;}
 {part} {return PART_ID;}
 {scorepart} {return SCOREPART;}

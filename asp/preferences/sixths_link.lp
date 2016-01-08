@@ -10,4 +10,15 @@ second_inversion(C,B) :- harmonic_step(V1,V2,4,B), harmonic_step(V1,V3,6,B), bea
 
 sixth_link(B1,B2) :- beat(B1), beat(B1+1), B1+1 == B2, second_inversion(C1,B1), second_inversion(C2,B2).
 
-#maximize[sixth_link(_,_) @ 5].
+#const sixthlinkw = 1.
+
+#const note_errorinstrongp = 8.
+#const unisonp = 7.
+#const melodicjumpp = 6.
+#const sixthlinkp = 5.
+#const conttendencyp = 4.
+#const sametendencyp = 3.
+#const note_errorinweakp = 2.
+#const repeatedgradep = 1.
+
+#maximize[sixth_link(_,_) = sixthlinkw @ sixthlinkp].

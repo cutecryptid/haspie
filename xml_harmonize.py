@@ -50,7 +50,7 @@ def main():
 	parser.add_argument('-n', '--num_sols', metavar='N', nargs=1, default=0, type=int,
 	                   help='max number of ASP solutions, by default all of them')
 	parser.add_argument('-s', '--span', metavar='S', nargs=1, default=1, type=int,
-	                   help='horizontal span to consider while harmonizing, by default 1')
+	                   help='horizontal span to consider while harmonizing, this takes in account subdivision, by default 1')
 	parser.add_argument('-d', '--divide', metavar='32|16|8|4|2|1', nargs=1, default=0, type=int,
 	                   help='forces subdivision of the notes in the score to a specific value, by default it\'s automatically calculated')
 	parser.add_argument('-v', '--voices', metavar='V', nargs="+", default="",
@@ -69,12 +69,18 @@ def main():
 	                   help='mode of the scale, if not specified, parser will autodetect it')
 	parser.add_argument('-M', '--melodious', action='store_true', default=False,
 	                   help='turns on melodic preferences in ASP for a more melodic result')
+	parser.add_argument('-6', '--sixthslink', action='store_true', default=False,
+	                   help='turns on sixth-four chord linking in ASP for a more natural result (very heavy)')
 	parser.add_argument('-A', '--aspdebug', action='store_true', default=False,
 	                   help='option for not interpreting results, just print ASP out')
 	parser.add_argument('-P', '--onlyparse', action='store_true', default=False,
 	                   help='option for not ASPing, just parse')
 	parser.add_argument('-V', '--verbose_asp', action='store_true', default=False,
-	                   help='enables ASP verbosity')
+	                   help='enables ASP verbosity for debugging')
+	parser.add_argument('-O', '--max_optimums', metavar='O', nargs=1, default=10, type=int,
+	                   help='max number of optimum solutions to display in score completion, by default it\'s 10')
+	parser.add_argument('-c', '--config', metavar='config_file_name.lp', nargs=1, default="",
+						help='reads preference order and weights for parameters from the desired *.lp file stored in /pref folder')
 
 	args = parser.parse_args()
 
@@ -117,6 +123,18 @@ def main():
 	melodious = ""
 	if args.melodious:
 		melodious = "asp/preferences/melodious.lp"
+
+	sixthslink = ""
+	if args.sixthslink:
+		sixthslink = "asp/preferences/sixths_link.lp"
+
+	max_optimums = args.max_optimums
+	if args.max_optimums != 10:
+		max_optimums = args.max_optimums[0]
+
+	config = args.config
+	if args.config:
+		config = args.config[0]
 
 	asp_outfile_name = re.search('/(.*?)\.xml', infile)
 	outname = asp_outfile_name.group(1)
@@ -175,7 +193,7 @@ def main():
 	if args.verbose_asp:
 		verbose = "-V"
 
-	asp_chord_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
+	asp_chord_args = ("clingo", config, "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
 		"asp/include/chord_conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", extra_voices,
 		"asp/generated_logic_music/" + lp_outname,"-n", str(n), 
 		"--const", "span=" + str(span), "--const", "base="+ str(base), 
@@ -201,11 +219,11 @@ def main():
 	assig_chords.write(HaspMusic.asp_clean_chords(chords.chord_solutions[int(selected_solution)-1].raw_ans))
 	assig_chords.close()
 
-	asp_note_args = ("clingo", "asp/complete_score.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
+	asp_note_args = ("clingo", config, sixthslink, melodious, "asp/complete_score.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
 		"asp/include/conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", "tmp/assigned_chords.lp", extra_voices,
 		"asp/generated_logic_music/" + lp_outname,"-n", str(n), 
 		"--const", "span=" + str(span), "--const", "base="+ str(base), 
-		"--const", "subdiv="+subdivision, opt_all, melodious, verbose)
+		"--const", "subdiv="+subdivision, opt_all, verbose)
 
 	if args.aspdebug:
 		asp_proc = subprocess.call(asp_note_args)
@@ -221,7 +239,7 @@ def main():
 		if (re.search("UNSATISFIABLE",asp_note_out) != None):
 			sys.exit("UNSATISFIABLE, stopping execution.")
 
-		res = ClaspResult(asp_note_out)
+		res = ClaspResult(asp_note_out,max_optimums)
 		print res
 
 

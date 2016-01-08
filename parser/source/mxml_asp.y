@@ -163,11 +163,11 @@ measure* mod_measure(measure* m, int voi, int bea, int bet, int pos){
 int noteVal (char * note, int act_oct, char * act_alter){
 	int alterVal;
 	alterVal = 0;
-	if(!strcmp(act_alter, "flat"))
+	if(!strcmp(act_alter, "flat") || !strcmp(act_alter, "-1"))
 		alterVal = -1;
-	if(!strcmp(act_alter, "sharp"))
+	if(!strcmp(act_alter, "sharp") || !strcmp(act_alter, "1"))
 		alterVal = 1;
-	if(!strcmp(act_alter, "natural"))
+	if(!strcmp(act_alter, "natural") || !strcmp(act_alter, "0"))
 		alterVal = 0;
 
 	int oct_val = 12 * act_oct;
