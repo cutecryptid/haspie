@@ -71,12 +71,6 @@ def main():
 	                   help='turns on melodic preferences in ASP for a more melodic result')
 	parser.add_argument('-6', '--sixthslink', action='store_true', default=False,
 	                   help='turns on sixth-four chord linking in ASP for a more natural result (very heavy)')
-	parser.add_argument('-A', '--aspdebug', action='store_true', default=False,
-	                   help='option for not interpreting results, just print ASP out')
-	parser.add_argument('-P', '--onlyparse', action='store_true', default=False,
-	                   help='option for not ASPing, just parse')
-	parser.add_argument('-V', '--verbose_asp', action='store_true', default=False,
-	                   help='enables ASP verbosity for debugging')
 	parser.add_argument('-O', '--max_optimums', metavar='O', nargs=1, default=10, type=int,
 	                   help='max number of optimum solutions to display in score completion, by default it\'s 10')
 	parser.add_argument('-c', '--config', metavar='config_file_name.lp', nargs=1, default="",
@@ -189,10 +183,6 @@ def main():
 	if args.onlyparse:
 		sys.exit("")
 
-	verbose = ""
-	if args.verbose_asp:
-		verbose = "-V"
-
 	asp_chord_args = ("clingo", config, "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
 		"asp/include/chord_conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", extra_voices,
 		"asp/generated_logic_music/" + lp_outname,"-n", str(n), 
@@ -223,41 +213,38 @@ def main():
 		"asp/include/conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", "tmp/assigned_chords.lp", extra_voices,
 		"asp/generated_logic_music/" + lp_outname,"-n", str(n), 
 		"--const", "span=" + str(span), "--const", "base="+ str(base), 
-		"--const", "subdiv="+subdivision, opt_all, verbose)
+		"--const", "subdiv="+subdivision, opt_all)
 
-	if args.aspdebug:
-		asp_proc = subprocess.call(asp_note_args)
-	else:
-		asp_proc = subprocess.Popen(asp_note_args, stdout=subprocess.PIPE)
-		t = threading.Timer( timeout, clasp_timeout, [asp_proc] )
-		t.start()
-		t.join()
-		t.cancel()
+	asp_proc = subprocess.Popen(asp_note_args, stdout=subprocess.PIPE)
+	t = threading.Timer( timeout, clasp_timeout, [asp_proc] )
+	t.start()
+	t.join()
+	t.cancel()
 
-		asp_note_out = asp_proc.stdout.read()
+	asp_note_out = asp_proc.stdout.read()
 
-		if (re.search("UNSATISFIABLE",asp_note_out) != None):
-			sys.exit("UNSATISFIABLE, stopping execution.")
+	if (re.search("UNSATISFIABLE",asp_note_out) != None):
+		sys.exit("UNSATISFIABLE, stopping execution.")
 
-		res = ClaspResult(asp_note_out,max_optimums)
-		print res
+	res = ClaspResult(asp_note_out,max_optimums)
+	print res
 
 
-		sol_num = len(res.solutions)
-		if sol_num > 0:
-			selected_solution = raw_input('Select a solution to output (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
-			if selected_solution == '':
-				selected_solution = sol_num
-			print res.solutions[int(selected_solution)-1]
+	sol_num = len(res.solutions)
+	if sol_num > 0:
+		selected_solution = raw_input('Select a solution to output (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
+		if selected_solution == '':
+			selected_solution = sol_num
+		print res.solutions[int(selected_solution)-1]
 
-			output = Out.solution_to_music21(res.solutions[int(selected_solution)-1], int(subdivision), span, base, int(key_value), mode, title, composer)
-			if args.show:
-				output.show(fmt)
-			else:
-				print "Writing output file to", final_out
-				output.write(fp=final_out, fmt=fmt)
+		output = Out.solution_to_music21(res.solutions[int(selected_solution)-1], int(subdivision), span, base, int(key_value), mode, title, composer)
+		if args.show:
+			output.show(fmt)
 		else:
-			print "Timeout was to short or something went wrong, no solutions were found.\n"
+			print "Writing output file to", final_out
+			output.write(fp=final_out, fmt=fmt)
+	else:
+		print "Timeout was to short or something went wrong, no solutions were found.\n"
 
 if __name__ == "__main__":
     main()
