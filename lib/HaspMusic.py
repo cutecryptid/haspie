@@ -267,7 +267,7 @@ class ClaspChords:
 		self.raw_output = asp_out
 		self.chord_solutions = self.parse_chords(asp_out)
 
-	def parse_chords(self, asp_out):
+	def parse_chords(self):
 		out = self.raw_output
 		answers = re.split('Answer:\s*[0-9]+', out)
 		min_opt = 9999

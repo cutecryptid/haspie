@@ -1,7 +1,6 @@
 \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \hfill \textsf {\textbf {P\'agina}}\endgraf 
 \select@language {spanish}
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}
-<<<<<<< HEAD
 \contentsline {section}{\numberline {1.1}Motivaci\IeC {\'o}n}{1}
 \contentsline {section}{\numberline {1.2}El proyecto}{2}
 \contentsline {subsection}{\numberline {1.2.1}M\IeC {\'o}dulos}{3}
@@ -28,60 +27,22 @@
 \contentsline {paragraph}{\numberline {2.2.3.1.1}MuseScore}{19}
 \contentsline {paragraph}{\numberline {2.2.3.1.2}Sibelius}{19}
 \contentsline {paragraph}{\numberline {2.2.3.1.3}Finale}{19}
-\contentsline {subsubsection}{\numberline {2.2.3.2}Sistemas Inteligentes}{19}
+\contentsline {paragraph}{\numberline {2.2.3.1.4}Flex y Bison}{19}
+\contentsline {subsubsection}{\numberline {2.2.3.2}Sistemas Inteligentes}{20}
 \contentsline {paragraph}{\numberline {2.2.3.2.1}EMI y Emily Howell}{20}
 \contentsline {paragraph}{\numberline {2.2.3.2.2}ANTON}{20}
-\contentsline {paragraph}{\numberline {2.2.3.2.3}Vox Populi}{20}
+\contentsline {paragraph}{\numberline {2.2.3.2.3}Vox Populi}{21}
 \contentsline {paragraph}{\numberline {2.2.3.2.4}CHORAL}{21}
 \contentsline {paragraph}{\numberline {2.2.3.2.5}CHASP}{21}
 \contentsline {chapter}{\numberline {3}Desarrollo}{23}
 \contentsline {section}{\numberline {3.1}Planificaci\IeC {\'o}n y Presupuesto}{23}
 \contentsline {section}{\numberline {3.2}Iteraci\IeC {\'o}n 1}{23}
-\contentsline {section}{\numberline {3.3}Iteraci\IeC {\'o}n 2}{27}
-\contentsline {section}{\numberline {3.4}Iteraci\IeC {\'o}n 3}{30}
-\contentsline {section}{\numberline {3.5}Iteraci\IeC {\'o}n 4}{33}
-\contentsline {section}{\numberline {3.6}Iteraci\IeC {\'o}n 5}{34}
-\contentsline {section}{\numberline {3.7}Iteraci\IeC {\'o}n 6}{35}
-\contentsline {chapter}{\numberline {4}Evaluaci\IeC {\'o}n}{39}
-\contentsline {chapter}{\numberline {5}Conclusiones}{41}
-\contentsline {section}{\numberline {5.1}Resultados}{41}
-\contentsline {section}{\numberline {5.2}Trabajo Futuro}{41}
-=======
-\contentsline {section}{\numberline {1.1}Sobre el proyecto}{1}
-\contentsline {subsection}{\numberline {1.1.1}M\IeC {\'o}dulos}{2}
-\contentsline {subsubsection}{\numberline {1.1.1.1}Entrada y preprocesado}{2}
-\contentsline {subsubsection}{\numberline {1.1.1.2}Procesado}{2}
-\contentsline {subsubsection}{\numberline {1.1.1.3}Postprocesado y Salida}{3}
-\contentsline {section}{\numberline {1.2}Motivaci\IeC {\'o}n}{3}
-\contentsline {chapter}{\numberline {2}Contexto}{5}
-\contentsline {section}{\numberline {2.1}Contextualizaci\IeC {\'o}n musical}{5}
-\contentsline {subsection}{\numberline {2.1.1}Ritmo y Figuras}{5}
-\contentsline {subsection}{\numberline {2.1.2}Melod\IeC {\'\i }a y pentagrama}{7}
-\contentsline {subsection}{\numberline {2.1.3}Armon\IeC {\'\i }a}{10}
-\contentsline {section}{\numberline {2.2}Contexto Tecnol\IeC {\'o}gico}{14}
-\contentsline {subsection}{\numberline {2.2.1}Formatos}{14}
-\contentsline {subsubsection}{\numberline {2.2.1.1}MusicXML}{14}
-\contentsline {subsubsection}{\numberline {2.2.1.2}LilyPond}{15}
-\contentsline {subsubsection}{\numberline {2.2.1.3}MIDI}{15}
-\contentsline {subsection}{\numberline {2.2.2}Software}{16}
-\contentsline {subsubsection}{\numberline {2.2.2.1}Composici\IeC {\'o}n Asistida}{16}
-\contentsline {paragraph}{\numberline {2.2.2.1.1}MuseScore}{16}
-\contentsline {paragraph}{\numberline {2.2.2.1.2}Sibelius}{16}
-\contentsline {paragraph}{\numberline {2.2.2.1.3}Finale}{16}
-\contentsline {subsubsection}{\numberline {2.2.2.2}Sistemas Inteligentes}{16}
-\contentsline {paragraph}{\numberline {2.2.2.2.1}EMI y Emily Howell}{17}
-\contentsline {paragraph}{\numberline {2.2.2.2.2}ANTON}{17}
-\contentsline {paragraph}{\numberline {2.2.2.2.3}Vox Populi}{17}
-\contentsline {paragraph}{\numberline {2.2.2.2.4}CHORAL}{18}
-\contentsline {paragraph}{\numberline {2.2.2.2.5}CHASP}{18}
-\contentsline {chapter}{\numberline {3}Desarrollo}{19}
-\contentsline {section}{\numberline {3.1}Iteraci\IeC {\'o}n 1}{19}
-\contentsline {section}{\numberline {3.2}Iteraci\IeC {\'o}n 2}{23}
-\contentsline {section}{\numberline {3.3}Iteraci\IeC {\'o}n 3}{26}
-\contentsline {section}{\numberline {3.4}Iteraci\IeC {\'o}n 4}{29}
-\contentsline {section}{\numberline {3.5}Iteraci\IeC {\'o}n 5}{30}
-\contentsline {section}{\numberline {3.6}Iteraci\IeC {\'o}n 6}{31}
-\contentsline {chapter}{\numberline {4}Conclusiones}{35}
-\contentsline {section}{\numberline {4.1}Resultados}{35}
-\contentsline {section}{\numberline {4.2}Trabajo Futuro}{35}
->>>>>>> origin/master
+\contentsline {section}{\numberline {3.3}Iteraci\IeC {\'o}n 2}{28}
+\contentsline {section}{\numberline {3.4}Iteraci\IeC {\'o}n 3}{32}
+\contentsline {section}{\numberline {3.5}Iteraci\IeC {\'o}n 4}{35}
+\contentsline {section}{\numberline {3.6}Iteraci\IeC {\'o}n 5}{36}
+\contentsline {section}{\numberline {3.7}Iteraci\IeC {\'o}n 6}{37}
+\contentsline {chapter}{\numberline {4}Evaluaci\IeC {\'o}n}{41}
+\contentsline {chapter}{\numberline {5}Conclusiones}{43}
+\contentsline {section}{\numberline {5.1}Resultados}{43}
+\contentsline {section}{\numberline {5.2}Trabajo Futuro}{43}
