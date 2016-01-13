@@ -1,0 +1,13 @@
+This is my graduation project report source code.
+To obtain a Postscript or PDF version, please type
+
+	make pdf
+
+and to remove all auxiliar files created by the
+process, type
+
+	make clean
+
+or
+
+	make mrproper

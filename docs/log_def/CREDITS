@@ -1,0 +1,25 @@
+        This is at least a partial credits-file of people that have
+        contributed to this project.  It is sorted by name and
+        formatted to allow easy grepping and beautification by
+        scripts.  The fields are: name (N), email (E), and
+        description (D).
+        Thanks,
+
+                        Laura
+----------
+
+N: Carlos Abalde Ramiro
+E: carlos.abalde@gmail.com
+D: Project mate and bug reporter
+
+N: Carlos Varela Paz
+E: carlos.varela@lambdastream.com
+D: Project mate
+
+N: Javier Paris Fernandez
+E: javier.paris@udcc.es
+D: Laboratory fellow
+
+N: Victor Manuel Gulias Fernandez
+E: gulias@udc.es
+D: Project director

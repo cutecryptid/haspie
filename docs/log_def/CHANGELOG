@@ -1,0 +1,11 @@
+08-03-2010 --------------------------------------------------------------------
+
+- Adapted to UTF-8 encoding
+- Adapted to new UDC corporative image
+
+05-09-2007 --------------------------------------------------------------------
+
+- Use of package anysize replaced by geometry, due to certain incompatibilities
+  with table of contents formatting.
+- Use of package titletoc removed, since superseded by minitoc.
+- Compilation using LaTeX replaced by use of PDFLaTeX.
