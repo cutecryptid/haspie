@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.9)  13 JAN 2016 13:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.9)  15 JAN 2016 00:49
 entering extended mode
 **root.tex
 (C:\Users\Trigork\haspie-haspist\docs\log_def\root.tex
@@ -1186,37 +1186,69 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 ]
 Cap\'{\i }tulo 3.
-[21] [22] [23] [24] [25]
-<imagenes/arquitectura_inicial.pdf, id=186, 845.0471pt x 245.91875pt>
+<imagenes/espiral.jpg, id=169, 568.37344pt x 382.42876pt>
+File: imagenes/espiral.jpg Graphic file (type jpg)
+
+<use imagenes/espiral.jpg>
+Package pdftex.def Info: imagenes/espiral.jpg used on input line 15.
+(pdftex.def)             Requested size: 330.05322pt x 222.08308pt.
+ [21] [22 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/espiral.jpg>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[23] [24] [25] [26]
+<imagenes/arquitectura_inicial.pdf, id=190, 845.0471pt x 245.91875pt>
 File: imagenes/arquitectura_inicial.pdf Graphic file (type pdf)
 
 <use imagenes/arquitectura_inicial.pdf>
-Package pdftex.def Info: imagenes/arquitectura_inicial.pdf used on input line 9
-7.
+Package pdftex.def Info: imagenes/arquitectura_inicial.pdf used on input line 1
+13.
 (pdftex.def)             Requested size: 330.05322pt x 96.0505pt.
- [26] [27 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/arquitectura_i
-nicial.pdf>]
-Overfull \hbox (9.09949pt too wide) in paragraph at lines 116--117
+ [27 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/arquitectura_inicia
+l.pdf>] [28]
+Overfull \hbox (9.09949pt too wide) in paragraph at lines 132--133
 []\twelverm La formu-la em-plea-da pa-ra de-ri-var los gra-dos de la es-ca-la 
 es $[(\OML/cmm/m/it/12 valor \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 base\twelverm 
 )\OML/cmm/m/it/12 mod\twelverm 12]$
 
 \hbox(9.0+3.0)x412.56497, glue set - 1.0 []
 
-[28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42])
-[43] (C:\Users\Trigork\haspie-haspist\docs\log_def\evaluation.tex [44
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
 
+\hbox(0.0+0.0)x412.56497 []
 
-]
+[30] [31] [32] [33] [34] [35] [36] [37]
+Overfull \hbox (24.60587pt too wide) in paragraph at lines 235--236
+\twelverm pre-di-ca-dos que ma-ti-zan los di-fe-ren-tes erro-res de la par-ti-t
+u-ra \OT1/cmtt/m/n/12 error[]in[]strong(V,G,B)\twelverm ,
+
+\hbox(8.33331+2.66666)x412.56497, glue set - 1.0 []
+
+[38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49]
+<imagenes/arquitectura_final.pdf, id=298, 1096.095pt x 245.91875pt>
+File: imagenes/arquitectura_final.pdf Graphic file (type pdf)
+
+<use imagenes/arquitectura_final.pdf>
+Package pdftex.def Info: imagenes/arquitectura_final.pdf used on input line 373
+.
+(pdftex.def)             Requested size: 330.05322pt x 74.05011pt.
+ [50 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/arquitectura_final.
+pdf>]) [51] [52]
+(C:\Users\Trigork\haspie-haspist\docs\log_def\evaluation.tex
 Cap\'{\i }tulo 4.
-) [45] (C:\Users\Trigork\haspie-haspist\docs\log_def\conclusions.tex [46
+[53
 
 
 
-]
+]) [54] (C:\Users\Trigork\haspie-haspist\docs\log_def\conclusions.tex
 Cap\'{\i }tulo 5.
-) [47] (C:\Users\Trigork\haspie-haspist\docs\log_def\root.bbl [48
+) [55
+
+
+
+] (C:\Users\Trigork\haspie-haspist\docs\log_def\root.bbl [56
 
 
 ]
@@ -1251,10 +1283,27 @@ to read past where you wanted me to stop.
 I'll try to recover; but if the error is serious,
 you'd better type `E' or `X' now and fix your file.
 
-[49] [50] (C:\Users\Trigork\haspie-haspist\docs\log_def\appendix.tex [51
+[57] [58] (C:\Users\Trigork\haspie-haspist\docs\log_def\appendix.tex
+<imagenes/class_diagram_2.png, id=361, 519.9425pt x 361.35pt>
+File: imagenes/class_diagram_2.png Graphic file (type png)
+
+<use imagenes/class_diagram_2.png>
+Package pdftex.def Info: imagenes/class_diagram_2.png used on input line 5.
+(pdftex.def)             Requested size: 330.05322pt x 229.3775pt.
+ [59
 
 
-])
+ <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/class_diagram_2.png (PN
+G copy)>]
+<imagenes/class_diagram_note.png, id=366, 525.965pt x 456.70625pt>
+File: imagenes/class_diagram_note.png Graphic file (type png)
+
+<use imagenes/class_diagram_note.png>
+Package pdftex.def Info: imagenes/class_diagram_note.png used on input line 12.
+
+(pdftex.def)             Requested size: 330.05322pt x 286.60448pt.
+ [60 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/class_diagram_note.
+png (PNG copy)>])
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the root.maf file.
@@ -1297,13 +1346,13 @@ or  <return>  to continue without it.
 ### semi simple group (level 1) entered at line 2 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 8063 strings out of 493921
- 99658 string characters out of 3144871
- 194832 words of memory out of 3000000
- 10838 multiletter control sequences out of 15000+200000
+ 8077 strings out of 493921
+ 100186 string characters out of 3144871
+ 194894 words of memory out of 3000000
+ 10847 multiletter control sequences out of 15000+200000
  47145 words of font info for 165 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,12n,45p,2218b,620s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,12n,45p,2257b,620s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.
 enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pf
 b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
@@ -1311,22 +1360,21 @@ b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/musixtex-fonts/musix20.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/musixtex-fonts/musix24.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/musixtex-fonts/musixspx.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagk8a.pfb>
-Output written on root.pdf (71 pages, 910838 bytes).
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/musixtex-fonts/musix20.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/musixtex-fonts/musix24.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/musixtex-fonts/musixspx.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagk8a.pfb>
+Output written on root.pdf (80 pages, 1306185 bytes).
 PDF statistics:
- 366 PDF objects out of 1000 (max. 8388607)
+ 430 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

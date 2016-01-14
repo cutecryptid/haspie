@@ -14,8 +14,14 @@
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Ejemplo de polifon\IeC {\'\i }a para Piano (Sonata en Do Mayor, Mozart)}}{17}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Desarrollo}{21}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama del planteamiento inicial de la arquitectura del sistema}}{27}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Ciclo de desarrollo en espiral t\IeC {\'\i }pico}}{22}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Ejemplo de nota representada en MusicXML}}{24}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Gram\IeC {\'a}tica inicial utilizada por el procesador de MusicXML a hechos l\IeC {\'o}gicos}}{26}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagrama del planteamiento inicial de la arquitectura del sistema}}{27}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Diagrama de la arquitectura final del sistema}}{50}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Evaluaci\IeC {\'o}n}{45}
+\contentsline {xchapter}{Evaluaci\IeC {\'o}n}{53}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusiones}{47}
+\contentsline {xchapter}{Conclusiones}{55}
+\contentsline {figure}{\numberline {1}{\ignorespaces Diagrama de clases de almacenamiento de la Iteraci\IeC {\'o}n 3}}{59}
+\contentsline {figure}{\numberline {2}{\ignorespaces Diagrama de clases de almacenamiento de las iteraciones 4, 5 y 6}}{60}
