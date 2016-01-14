@@ -174,7 +174,7 @@ En cuanto al pipeline se comprobó que las nuevas opciones en la llamada a éste
 El objetivo de esta iteración es crear un tercer prototipo que busca no sólo refinar la armonización como el anterior si no ampliar funcionalidad de la herramienta. Se busca incorporar un módulo de salida escrito en python al cual el pipeline se encarga de pasarle los datos formateados correctamente para que dicho módulo, haciendo uso del toolkit \textbf{music21}, exporte al formato deseado. 
 
 \subsection{Trabajo}
-El módulo ASP se ha aumentado para incluir generación de notas en un nñumero de voces adicionales que puede ser especificado por parámetro. Además se creó un fichero de conversiones encargado de traducir valores de notas a grados, octavas y viceversa. De este modo los grados generados durante el procesado de la partitura pueden ser traducidos de vuelta a un valor de nota para que el módulo de salida llamado desde el pipeline reconstruya la pieza. Para la generación de notas en las nuevas voces se ha impuesto una única restricción fuerte, que dos notas consecutivas no realicen un salto melódico de dos octavas o más, mientras que mediante predicados de minimización se controla la cantidad de saltos de una quinta realizados por una misma voz. Junto con estas adiciones, se han incluído dos nuevos acordes a la lista de posibles acordes deducidos por el módulo, siendo estos la subdominante séptima (IV7) y la dominante séptima (V7) tanto de los modos mayor como menor.
+El módulo ASP se ha aumentado para incluir generación de notas en un número de voces adicionales que puede ser especificado por parámetro. Además se creó un fichero de conversiones encargado de traducir valores de notas a grados, octavas y viceversa. De este modo los grados generados durante el procesado de la partitura pueden ser traducidos de vuelta a un valor de nota para que el módulo de salida llamado desde el pipeline reconstruya la pieza. Para la generación de notas en las nuevas voces se ha impuesto una única restricción fuerte, que dos notas consecutivas no realicen un salto melódico de dos octavas o más, mientras que mediante predicados de minimización se controla la cantidad de saltos de una quinta realizados por una misma voz. Junto con estas adiciones, se han incluído dos nuevos acordes a la lista de posibles acordes deducidos por el módulo, siendo estos la subdominante séptima (IV7) y la dominante séptima (V7) tanto de los modos mayor como menor.
 
 Se ha diseñado implementado una nueva clase de almacenamiento Note y se ha incluido un método a HaspSolution que transforma una solución al tipo de dato requerido por el \textit{toolkit} music21 para producir los diferentes formatos de salida.
 
@@ -218,25 +218,69 @@ Se estudió la posibilidad de incluir también en este sub-módulo de preferenci
 
 Se ha descartado la detección de apoyaturas con el fin de no contemplarlas como errores por un motivo similar, al uniformizar la longitud de las figuras de la partitura, no es posible detectarlas bien, ya que una de las características de las apoyaturas es que "roban" brevemente el tiempo fuerte a una nota representativa del acorde de la armonía. Para detectar dicha brevedad sería necesario conservar la longitud original de las notas, lo que imposibilitaría una armonización correcta.
 
-En el pipeline se ha incluido una nueva opción que permite activar o desactivar este módulo de preferencias melódicas a gusto del usuario.
+En el módulo de salida se ha incluido la representación mediante nombre del acorde y no mediante el numeral romano.
+
+En el pipeline se ha incluido una nueva opción -M que permite activar o desactivar este módulo de preferencias melódicas a gusto del usuario. Además la llamada al módulo de salida produce un objeto de partitura music21 que puede ser manejado de diferentes modos según nuevos parámetros, -f permite especificar el formato de salida (Principalmente PDF, MIDI o XML) siempre y cuando se disponga de herramientas en el PC para generar dicho formato. Por otra parte, usando la opción -S se puede pedir al pipeline que no genere un fichero nuevo, si no uno temporal para mostrar o reproducir al terminar la ejecución. La opción -o permite especificar el nombre del fichero, de no estar presente, tomará el mismo nombre que el del fichero MusicXML de entrada
 
 \subsection{Pruebas}
+Módulo de preferencias melódicas falla por los enlaces de sextas, se revisa en la siguiente iteración.
+Algunas piezas dan problemas por VoiceChords
 
 \subsection{Resultados}
 
 \section{Iteración 7}
 \subsection{Planificación}
-En esta iteración se busca mejorar el módulo de procesado para que sea capaz de extraer más información y metadatos de la partitura original y así conseguir una salida más fiel.
+En esta iteración se busca mejorar el módulo de procesado para que sea capaz de extraer más información y metadatos de la partitura original y así conseguir una salida más fiel. Además se busca incluir en este mismo módulo la auto-detección de la clave de la partitura basándose en la armadura presente. A mayores se busca un modo más conveniente de incluir voces de una determinada tesitura a la partitura. Como en otras iteraciones se busca corregir los fallos encontrados en las pruebas de la anterior.
 
 \subsection{Trabajo}
+Se incluyeron en el \textit{parser} nuevos \textit{tokens} y reglas en la gramática para poder extraer metadatos y otra información de la partitura y exportarlos a un fichero temporal usado por el módulo de salida. Los diferentes datos extraídos para cada partitura son:
+\begin{itemize}
+	\item \textbf{title:} Título
+	\item \textbf{composer:} Compositor
+	\item \textbf{base\_note:} Longitud de la nota más breve presente
+	\item \textbf{key\_name:} Nombre de la clave en la que se armonizará la pieza
+	\item \textbf{mode:} Modo (mayor o menor)
+	\item \textbf{last\_voice:} Número que identifica cual es la última voz presente
+\end{itemize}
+Los dos primeros atienden a una cuestión estética, simplemente sirven para que el módulo de salida disponga de esta información y pueda completarla a la hora de reconstruir la partitura. Los tres siguientes son datos relevantes para el módulo de armonización, mientras que el último sirve para añadir voces nuevas correctamente a la partitura. 
+
+El procesador extrae una nueva pieza de información de la partitura, conocida como "figure". Figure en la forma "figure(voice,duration,beat)" es un hecho lógico que describe la duración de una figura para un pulso de una voz dada. De este modo, pese a subdividir las notas a la longitud de la más breve para el análisis, se pueden recomponer en la salida fidedignamente. Además esta nueva información puede usarse en la generación de nuevas notas en la pieza.
+
+Los nuevos datos extraídos por el procesador son leídos desde el pipeline y son pasados a los subsiguientes módulos de armonización y salida respectivamente. Se ha modificado el parámetro -v del pipeline y su efecto en el resto de módulos. En vez de especificar una cantidad de voces a añadir, toma como mínimo un argumento indicando la tesitura (por nombre) o el rango de notas para las nuevas voces. El pipeline se encarga de crear, a partir de los datos de este parámetro -v un nuevo fichero temporal "extra\_voices.lp" que será incluido en la llamada del módulo de armonización para que dichas nuevas voces se tengan en cuenta. Se ha añadido un parámetro -k que permite especificar, mediante la letra de la nota base de la escala, la clave en la que está escrita la pieza, de no ser especificada esta se calcula automñaticamente, como ya sucedía con el parámetro -d usado para especificar la longitud fraccionaria de la nota en la cual se debían subdividir todas las de la partitura.
+
+En el módulo de armonización se ha incluido un nuevo archivo similar al de acordes o tipos de compases que describe las diferentes tesituras de las voces presentes en la partitura. Este documento es ampliable al igual que los mencionados para incluir nuevos instrumentos o tesituras. Se han definido los principales tipos de voz coral (tanto masculinos como femeninos) y sus rangos de notas más frecuentes. 
+
+\begin{center}
+	\begin{tabular}{ | l | c | c | }
+		\hline
+		Tesitura & Nota mínima & Nota máxima \\ \hline \hline
+		Bajo & 40 & 64 \\ \hline
+		Barítono & 45 & 69 \\ \hline
+		Tenor & 48 & 72 \\ \hline
+		Contra-Tenor & 52 & 76 \\ \hline
+		\hline
+		Contralto & 53 & 77 \\ \hline
+		Mezzo-Soprano & 57 & 81 \\ \hline
+		Soprano & 60 & 84 \\ \hline
+	\end{tabular}
+\end{center}
+
+Además el módulo de armonización tiene en cuenta los nuevos hechos "figure" y los utiliza para generar correctamente las secciones a completar. Es decir, si se especifica un patrón en los tramos a rellenar, las nuevas notas generadas seguirán dicho patrón. Para las voces nuevas donde no existen dichos patrones se asigna la nota más breve ya que crear patrones rítmicos es muy costoso computacionalmente se estudia la posibilidad de crearlos mediante un postprocesado en el módulo de salida en futuras iteraciones. Se ha eliminado la constante "extra\_voices" al funcionar de un modo diferente la inclusión de voces nuevas en la partitura. Para este mismo módulo se corrigió el archivo de preferencias de enlace de sextas, ahora separado del archivo de preferencias melódicas.
+
+Se ha definido una nueva clase "VoiceChord", que representa un acorde realizado por un solo instrumento polifónico ya que los este tipo de acordes producían fallos en la anterior iteración.
+
+En el módulo de salida se han corregido algunos errores encontrados en las iteraciones anteriores y haciendo uso de los nuevos predicados "figure" se puede reconstruir la partitura mucho mejor que antes. Además el módulo de salida tiene en cuenta y representa correctamente el nuevo elemento "VoiceChord" y la partitura además se escribe en la clave especificada o detectada por el procesador.
+
+El pipeline cuenta con una opción nueva -6 que permite incluir la preferencia de los enlaces de sextas, que pese a estar corregida, sigue siendo muy costosa por tener que realizar una armonización a tiempo independientemente del intervalo de armonizacion fijado.
 
 \subsection{Pruebas}
+Todo bien excepto generación de notas nuevas.
 
 \subsection{Resultados}
 
 \section{Iteración 8}
 \subsection{Planificación}
-La última Iteración que cierra el ciclo de desarrollo busca corregir los problemas encontrados durante las pruebas de la anterior iteración, al ofrecer unos resultados relativamente malos en cuanto a tiempo de ejecución al incorporar secciones a completar en la partitura.
+La última Iteración que cierra el ciclo de desarrollo busca corregir los problemas encontrados durante las pruebas de la anterior iteración, al ofrecer unos resultados relativamente malos en cuanto a tiempo de ejecución al incorporar secciones a completar en la partitura. Además tiene como objetivo incluír la posibilidad del uso de ficheros de configuración que alteren el comportamiento del módulo de armonización ajustando los diferentes pesos de las preferencias a maximizar o minimizar.
 
 \subsection{Trabajo}
 

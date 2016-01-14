@@ -60,7 +60,7 @@ def main():
 	parser.add_argument('-f', '--format', metavar='xml|pdf|midi|ly', nargs=1, default="xml", type=str,
 	                   help='output file format for the result')
 	parser.add_argument('-o', '--output', metavar='output/dir/for/file', nargs=1, default="out", type=str,
-	                   help='output file format for the result')
+	                   help='output file name for the result')
 	parser.add_argument('-t', '--timeout', metavar='T', nargs=1, default=5, type=int,
 	                   help='maximum time (in seconds) allowed to search for optimum')
 	parser.add_argument('-k', '--key', metavar='[A-G][+-]?', nargs=1, default="",

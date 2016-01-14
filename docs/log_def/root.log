@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.9)  13 JAN 2016 11:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.9)  13 JAN 2016 13:43
 entering extended mode
 **root.tex
 (C:\Users\Trigork\haspie-haspist\docs\log_def\root.tex
@@ -1179,22 +1179,22 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[15] [16] bar 1 bar 1 bar 2 [17]) [18]
-(C:\Users\Trigork\haspie-haspist\docs\log_def\implementation.tex
+[15] [16] bar 1 bar 1 bar 2 [17] [18]) [19]
+(C:\Users\Trigork\haspie-haspist\docs\log_def\implementation.tex [20
+
+
+
+]
 Cap\'{\i }tulo 3.
-[19
-
-
-
-] [20] [21] [22] [23]
-<imagenes/arquitectura_inicial.pdf, id=180, 845.0471pt x 245.91875pt>
+[21] [22] [23] [24] [25]
+<imagenes/arquitectura_inicial.pdf, id=186, 845.0471pt x 245.91875pt>
 File: imagenes/arquitectura_inicial.pdf Graphic file (type pdf)
 
 <use imagenes/arquitectura_inicial.pdf>
 Package pdftex.def Info: imagenes/arquitectura_inicial.pdf used on input line 9
 7.
 (pdftex.def)             Requested size: 330.05322pt x 96.0505pt.
- [24] [25 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/arquitectura_i
+ [26] [27 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/arquitectura_i
 nicial.pdf>]
 Overfull \hbox (9.09949pt too wide) in paragraph at lines 116--117
 []\twelverm La formu-la em-plea-da pa-ra de-ri-var los gra-dos de la es-ca-la 
@@ -1203,25 +1203,20 @@ es $[(\OML/cmm/m/it/12 valor \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 base\twelverm
 
 \hbox(9.0+3.0)x412.56497, glue set - 1.0 []
 
-[26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37]) [38]
-(C:\Users\Trigork\haspie-haspist\docs\log_def\evaluation.tex
+[28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42])
+[43] (C:\Users\Trigork\haspie-haspist\docs\log_def\evaluation.tex [44
+
+
+
+]
 Cap\'{\i }tulo 4.
-) [39
-
-
-
-] (C:\Users\Trigork\haspie-haspist\docs\log_def\conclusions.tex [40
+) [45] (C:\Users\Trigork\haspie-haspist\docs\log_def\conclusions.tex [46
 
 
 
 ]
 Cap\'{\i }tulo 5.
-) [41] (C:\Users\Trigork\haspie-haspist\docs\log_def\appendix.tex [42
-
-
-
-] [43])
-(C:\Users\Trigork\haspie-haspist\docs\log_def\root.bbl [44
+) [47] (C:\Users\Trigork\haspie-haspist\docs\log_def\root.bbl [48
 
 
 ]
@@ -1249,14 +1244,17 @@ Runaway argument?
 ! File ended while scanning use of \url.
 <inserted text> 
                 \par 
-l.76  \bibliography{bibliography}
+l.74  \bibliography{bibliography}
                                  
 I suspect you have forgotten a `}', causing me
 to read past where you wanted me to stop.
 I'll try to recover; but if the error is serious,
 you'd better type `E' or `X' now and fix your file.
 
-[45]
+[49] [50] (C:\Users\Trigork\haspie-haspist\docs\log_def\appendix.tex [51
+
+
+])
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the root.maf file.
@@ -1273,13 +1271,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.79 \end{document}
+l.80 \end{document}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[46] (C:\Users\Trigork\haspie-haspist\docs\log_def\root.aux
+(C:\Users\Trigork\haspie-haspist\docs\log_def\root.aux
 (C:\Users\Trigork\haspie-haspist\docs\log_def\cover.aux)
 (C:\Users\Trigork\haspie-haspist\docs\log_def\draft.aux)
 (C:\Users\Trigork\haspie-haspist\docs\log_def\director-agreement.aux)
@@ -1292,21 +1290,17 @@ or  <return>  to continue without it.
 (C:\Users\Trigork\haspie-haspist\docs\log_def\implementation.aux)
 (C:\Users\Trigork\haspie-haspist\docs\log_def\evaluation.aux)
 (C:\Users\Trigork\haspie-haspist\docs\log_def\conclusions.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\appendix.aux))
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- )
+(C:\Users\Trigork\haspie-haspist\docs\log_def\appendix.aux)) )
 (\end occurred inside a group at level 2)
 
 ### semi simple group (level 2) entered at line 2 (\begingroup)
 ### semi simple group (level 1) entered at line 2 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 8059 strings out of 493921
- 99598 string characters out of 3144871
- 194831 words of memory out of 3000000
- 10834 multiletter control sequences out of 15000+200000
+ 8063 strings out of 493921
+ 99658 string characters out of 3144871
+ 194832 words of memory out of 3000000
+ 10838 multiletter control sequences out of 15000+200000
  47145 words of font info for 165 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  34i,12n,45p,2218b,620s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1330,9 +1324,9 @@ MiKTeX 2.9/fonts/type1/public/musixtex-fonts/musix20.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/musixtex-fonts/musix24.pfb><C:/Program Files (x
 86)/MiKTeX 2.9/fonts/type1/public/musixtex-fonts/musixspx.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagk8a.pfb>
-Output written on root.pdf (66 pages, 898885 bytes).
+Output written on root.pdf (71 pages, 910838 bytes).
 PDF statistics:
- 350 PDF objects out of 1000 (max. 8388607)
+ 366 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
