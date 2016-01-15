@@ -16,4 +16,4 @@ The only compiled part of the project is the MXML to ASP facts parser. A binary 
 
 
 # TO DO
- - Refactor different voice item classes (Measure, Rest, Note, VoiceChord) to inherit behaviour and implement new abstract class VoiceItems
+ - Some notes are not being well measured (value is fine, length is not)

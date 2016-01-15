@@ -265,7 +265,7 @@ class ClaspChords:
 	with its optimization values"""
 	def __init__(self, asp_out):
 		self.raw_output = asp_out
-		self.chord_solutions = self.parse_chords(asp_out)
+		self.chord_solutions = self.parse_chords()
 
 	def parse_chords(self):
 		out = self.raw_output

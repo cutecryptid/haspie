@@ -176,12 +176,8 @@ def main():
 			i += 1
 		f.close()
 
-
-	if xml_parser_ret < 0:
+	if xml_parser_ret != 0:
 		sys.exit("Parsing error, stopping execution.")
-
-	if args.onlyparse:
-		sys.exit("")
 
 	asp_chord_args = ("clingo", config, "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
 		"asp/include/chord_conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", extra_voices,
