@@ -18,10 +18,13 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Ejemplo de nota representada en MusicXML}}{24}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Gram\IeC {\'a}tica inicial utilizada por el procesador de MusicXML a hechos l\IeC {\'o}gicos}}{26}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Diagrama del planteamiento inicial de la arquitectura del sistema}}{27}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Diagrama de la arquitectura final del sistema}}{50}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Diagrama de la arquitectura final del sistema}}{51}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Evaluaci\IeC {\'o}n}{53}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Conclusiones}{55}
 \contentsline {figure}{\numberline {1}{\ignorespaces Diagrama de clases de almacenamiento de la Iteraci\IeC {\'o}n 3}}{59}
 \contentsline {figure}{\numberline {2}{\ignorespaces Diagrama de clases de almacenamiento de las iteraciones 4, 5 y 6}}{60}
+\contentsline {figure}{\numberline {3}{\ignorespaces Opciones de uso de la herramienta}}{64}
+\contentsline {figure}{\numberline {4}{\ignorespaces Seleccionando una figura podemos ver sus propiedades, entre otras la casilla de visibilidad}}{68}
+\contentsline {figure}{\numberline {5}{\ignorespaces Desmarcando la casilla de visibilidad, la figura pasa a un color m\IeC {\'a}s claro, indicando que no es visible}}{68}

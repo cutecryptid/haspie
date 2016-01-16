@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.9)  15 JAN 2016 00:49
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.9)  17 JAN 2016 00:34
 entering extended mode
 **root.tex
 (C:\Users\Trigork\haspie-haspist\docs\log_def\root.tex
@@ -1234,8 +1234,8 @@ File: imagenes/arquitectura_final.pdf Graphic file (type pdf)
 Package pdftex.def Info: imagenes/arquitectura_final.pdf used on input line 373
 .
 (pdftex.def)             Requested size: 330.05322pt x 74.05011pt.
- [50 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/arquitectura_final.
-pdf>]) [51] [52]
+ [50] [51 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/arquitectura_f
+inal.pdf>]) [52]
 (C:\Users\Trigork\haspie-haspist\docs\log_def\evaluation.tex
 Cap\'{\i }tulo 4.
 [53
@@ -1288,7 +1288,7 @@ you'd better type `E' or `X' now and fix your file.
 File: imagenes/class_diagram_2.png Graphic file (type png)
 
 <use imagenes/class_diagram_2.png>
-Package pdftex.def Info: imagenes/class_diagram_2.png used on input line 5.
+Package pdftex.def Info: imagenes/class_diagram_2.png used on input line 8.
 (pdftex.def)             Requested size: 330.05322pt x 229.3775pt.
  [59
 
@@ -1299,11 +1299,45 @@ G copy)>]
 File: imagenes/class_diagram_note.png Graphic file (type png)
 
 <use imagenes/class_diagram_note.png>
-Package pdftex.def Info: imagenes/class_diagram_note.png used on input line 12.
+Package pdftex.def Info: imagenes/class_diagram_note.png used on input line 15.
 
 (pdftex.def)             Requested size: 330.05322pt x 286.60448pt.
- [60 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/class_diagram_note.
-png (PNG copy)>])
+
+Overfull \hbox (731.91257pt too wide) in paragraph at lines 24--52
+ [] 
+
+\hbox(234.1305+228.1305)x370.78763 []
+
+[60 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/class_diagram_note.p
+ng (PNG copy)>] [61] [62]
+Overfull \hbox (4.22931pt too wide) in paragraph at lines 110--110
+[]\OT1/cmtt/m/n/12 usage: usage.py [-h] [-n N] [-s S] [-v V [V ...]] [-S] [-f x
+ml|pdf|midi|ly][] 
+
+\hbox(8.33331+2.66666)x412.56497, glue set - 1.0 []
+
+[63] [64] [65] [66]
+<imagenes/select_silence.jpg, id=389, 702.625pt x 228.855pt>
+File: imagenes/select_silence.jpg Graphic file (type jpg)
+
+<use imagenes/select_silence.jpg>
+Package pdftex.def Info: imagenes/select_silence.jpg used on input line 156.
+(pdftex.def)             Requested size: 330.05322pt x 107.50598pt.
+
+<imagenes/invisible_silence.jpg, id=390, 702.625pt x 228.855pt>
+File: imagenes/invisible_silence.jpg Graphic file (type jpg)
+
+<use imagenes/invisible_silence.jpg>
+Package pdftex.def Info: imagenes/invisible_silence.jpg used on input line 158.
+
+(pdftex.def)             Requested size: 330.05322pt x 107.50598pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[67] [68 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/select_silence.
+jpg> <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/invisible_silence.j
+pg>])
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the root.maf file.
@@ -1346,13 +1380,13 @@ or  <return>  to continue without it.
 ### semi simple group (level 1) entered at line 2 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 8077 strings out of 493921
- 100186 string characters out of 3144871
- 194894 words of memory out of 3000000
- 10847 multiletter control sequences out of 15000+200000
+ 8099 strings out of 493921
+ 100666 string characters out of 3144871
+ 198912 words of memory out of 3000000
+ 10867 multiletter control sequences out of 15000+200000
  47145 words of font info for 165 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,12n,45p,2257b,620s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,12n,45p,2257b,622s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.
 enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pf
 b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
@@ -1372,9 +1406,9 @@ x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files (x8
 x86)/MiKTeX 2.9/fonts/type1/public/musixtex-fonts/musix24.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/public/musixtex-fonts/musixspx.pfb><C:/Program Fi
 les (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagk8a.pfb>
-Output written on root.pdf (80 pages, 1306185 bytes).
+Output written on root.pdf (88 pages, 1472065 bytes).
 PDF statistics:
- 430 PDF objects out of 1000 (max. 8388607)
+ 457 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

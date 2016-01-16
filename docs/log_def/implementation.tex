@@ -364,9 +364,9 @@ Para posibilitar la configuración de pesos y orden de optimización en los dife
 
 Debido a estos cambios se modificaron las clases de almacenamiento para reflejar los resultados únicamente armonización. De modo paralelo a las clases de almacenamiento \texttt{ClaspResult} y \texttt{HaspSolution} se crearon \texttt{ClaspChords} y \texttt{ChordSolution}. \texttt{ClaspChords} Realiza la transformación de los predicados \texttt{chord} de cada una de las soluciones de la salida del módulo de armonización a objetos \texttt{Chord} y los agrega en un objeto \texttt{ChordSolution} que a su vez se almacenan en un vector de soluciones, cada solución además contiene sus valores de optimización. De este modo mediante una representación textual de \texttt{ClaspChords} se pueden visualizar las soluciones calculadas y ofrecérselas de modo amigable al usuario.
 
-Se detectó que el error de valores de las notas alteradas procedía de un problema en el procesador de MusicXML a hechos lógicos y se corrigió. El error se debía a una mala identificación de los valores que podía tomar la etiqueta \texttt{alteration}. Se revisó al mismo tiempo este módulo para corregir el error de los instrumentos con varios pentagramas, haciendo uso de un valor modificador del identificador de la voz que varía al ir encontrando las diferentes etiquetas \texttt{staff} para cada voz. Al estar entrelazadas las notas de cada uno de los pentagramas en una misma voz es necesario llevar un acumulador de los pulsos que ha realizado cada voz antes de cambiar de \texttt{staff} para poder compensarlo correctamente.
+Se detectó que el error de valores de las notas alteradas procedía de un problema en el procesador de MusicXML a hechos lógicos y se corrigió. El error se debía a una mala identificación de los valores que podía tomar la etiqueta \texttt{alteration}. Se revisó al mismo tiempo este módulo para corregir el error de los instrumentos con varios pentagramas, haciendo uso de un valor modificador del identificador de la voz que varía al ir encontrando las diferentes etiquetas \texttt{staff} para cada voz. Al estar entrelazadas las notas de cada uno de los pentagramas en una misma voz es necesario llevar un acumulador de los pulsos que ha realizado cada voz antes de cambiar de \texttt{staff} para poder compensarlo correctamente. Además durante el desarrollo se identificó un símbolo especial que usa MusicXML para representar compases vacíos, un silencio de duración igual a la del compás pero que no incluye tipo de figura y siempre es representado visualmente como un silencio de redonda.
 
-De modo ilustrativo se incluye la gramática final usada en el procesador de MusicXML a hechos lógicos.
+Tal y como estaba diseñado el procesador, que identificaba el tipo de figura y la subdividía cuando fuese necesario, este tipo de figuras eran irreconocibles y se tuvo que implementar un caso especifico para estos silencios especiales. En caso de encontrar un silencio sin tipo de figura y de duración igual a la cantidad de figuras que caben en el compás, este se traduce de modo correcto haciendo uso de un valor especial que se reconoce al sacarlo de la cola de símbolos leídos y se trata de forma correcta.
 
 \begin{figure}
 	\centering
@@ -388,4 +388,7 @@ Por último se verificó que los errores producidos por el procesador de MusicXM
 
 \subsection{Resultados}
 Se completaron correctamente todos los objetivos propuestos para esta iteración, solucionando el grave problema de tiempo de ejecución.
+
+No obstante, debido a que Music21 es una librería que aun se encuentra en desarrollo, la salida de MusicXML puede producir fallos visuales. Esto no afecta al resultado de la armonización ni al completado de partituras, y suponiendo un problema estético se anotó como trabajo futuro.
+
 Esta iteración cierró satisfactoriamente el ciclo de desarrollo y dejó paso a la evaluación de la herramienta en términos cualitativos y cuantitativos.

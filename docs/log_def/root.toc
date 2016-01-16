@@ -77,4 +77,11 @@
 \contentsline {subsection}{\numberline {3.9.4}Resultados}{52}
 \contentsline {chapter}{\numberline {4}Evaluaci\IeC {\'o}n}{53}
 \contentsline {chapter}{\numberline {5}Conclusiones}{55}
+\contentsline {section}{\numberline {5.1}Evaluaci\IeC {\'o}n propia}{55}
+\contentsline {section}{\numberline {5.2}Errores y Lecciones Aprendidas}{55}
+\contentsline {section}{\numberline {5.3}Trabajo Futuro}{55}
 \contentsline {chapter}{Bibliograf\'{\i }a}{57}
+\contentsline {section}{\numberline {A}Diagramas}{59}
+\contentsline {section}{\numberline {B}An\IeC {\'a}lisis de MusicXML}{60}
+\contentsline {section}{\numberline {C}Instalaci\IeC {\'o}n}{61}
+\contentsline {section}{\numberline {D}Manual de uso}{63}

@@ -44,7 +44,7 @@ def key_to_base(key):
 
 		
 def main():
-	parser = argparse.ArgumentParser(description='Harmonizing music with ASP')
+	parser = argparse.ArgumentParser(description='haspie - Harmonizing music with ASP')
 	parser.add_argument('xml_score', metavar='XML_SCORE',
 	                   help='input musicXML score for armonizing')
 	parser.add_argument('-n', '--num_sols', metavar='N', nargs=1, default=0, type=int,
@@ -61,7 +61,7 @@ def main():
 	                   help='output file name for the result')
 	parser.add_argument('-t', '--timeout', metavar='T', nargs=1, default=5, type=int,
 	                   help='maximum time (in seconds) allowed to search for optimum')
-	parser.add_argument('-k', '--key', metavar='[A-G][+-]?', nargs=1, default="",
+	parser.add_argument('-k', '--key', metavar='A~G+-?', nargs=1, default="",
 	                   help='key in which the score should be harmonized, if not specified, parser will autodetect it')
 	parser.add_argument('-m', '--mode', metavar='major|minor', nargs=1, default="", choices=['major', 'minor'],
 	                   help='mode of the scale, if not specified, parser will autodetect it')
