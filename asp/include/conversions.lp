@@ -2,6 +2,11 @@ octave(V,((N - base) / 12),T) :- note(V,N,T), N >= 0.
 sem_tones(V,((N - base) \ 12),T) :- note(V,N,T), N >= 0.
 
 newvoicenote(V,N,B) :- newvoicefigure(V,N,D,FB), beat(B), B >= FB, B < FB+D.
+freebeatnote(V,N,B) :- freebeatfigure(V,N,D,FB), beat(B), B >= FB, B < FB+D.
+
+ex_octave(V,((N - base) / 12),T) :- freebeatnote(V,N,T), N >= 0.
+ex_sem_tones(V,((N - base) \ 12),T) :- freebeatnote(V,N,T), N >= 0.
+
 ex_octave(V,((N - base) / 12),T) :- newvoicenote(V,N,T), N >= 0.
 ex_sem_tones(V,((N - base) \ 12),T) :- newvoicenote(V,N,T), N >= 0.
 

@@ -13,16 +13,17 @@ opstaff "<staff>"
 clstaff "</staff>"
 gracetag "<grace/>"
 alteration "alteration"
+duration "duration"
 alter "alter"
 part "part id="
 scorepart "score-part"
 instrument "instrument-name"
 doctype "DOCTYPE"
+dot "dot"
 texttag "text"
 beats "beats"
 beattype "beat-type"
 time "time"
-dot "dot"
 harmony "harmony"
 rootstep "root-step"
 kind "kind"
@@ -32,7 +33,7 @@ notvisible "print-object=\"no\""
 credit "credit-words"
 justify "justify"
 valign "valign"
-text [-.A-Za-z0-9:\[\]\\]+
+text [-.A-Za-zàáèéìíòóùúâêîôûç0-9:\[\]\\]+
 ques_montgomery [?]
 excl [!]
 open [<]
@@ -65,13 +66,14 @@ kvothe [\"\']
 {beats} {return BEATS;}
 {beattype} {return BEATTYPE;}
 {notvisible} {return NOTVISIBLE;}
-{dot} {return DOT;}
 {opstaff} {return OPSTAFF;}
 {clstaff} {return CLSTAFF;}
+{duration} {return DURATION;}
 {gracetag} {return GRACETAG;}
 {harmony} {return HARMONY;}
 {rootstep} {return ROOTSTEP;}
 {kind} {return KIND;}
+{dot} {return DOT;}
 {fifths} {return FIFTHS;}
 {mode} {return MODE;}
 {credit} {return CREDIT;}

@@ -19,7 +19,7 @@ class Note:
 		self.time = time
 		self.type = "note"
 	def __str__(self):
-		return str(self.value)
+		return str(self.value) + "["+str(self.duration)+"]"
 
 class Rest:
 	"""Class that stores information about a rest in the score"""
@@ -29,7 +29,7 @@ class Rest:
 		self.time = time
 		self.type = "rest"
 	def __str__(self):
-		return "R"
+		return "R" + "["+str(self.duration)+"]"
 
 class VoiceChord:
 	"""Class that stores information about chord performed by a single voice"""
@@ -160,7 +160,7 @@ class ClaspResult:
 		for ans in answers:
 			if len(ans) > 0:
 				try:
-					figures = re.findall('out_figure\(([0-9]+),([0-9]+),([0-9]+),([0-9]+)\)', ans)
+					figures = re.findall('out_figure\(([0-9]+),([-0-9]+),([0-9]+),([0-9]+)\)', ans)
 					figures = [(int(v),int(n),int(d),int(b)) for v,n,d,b in figures]
 					figures = sorted(figures, key = lambda x: (x[0], x[3]))
 					voices = {}
@@ -194,7 +194,7 @@ class ClaspResult:
 								elif len(acum_chord) == 0:
 									voices.update({(int(figure[0])) : [act_note]})
 						else:
-							act_rest = Rest(int(figure[0]),int(figure[1]),int(figure[3]))
+							act_rest = Rest(int(figure[0]),int(figure[2]),int(figure[3]))
 							if (int(figure[0]) in voices.keys()):
 								voices[int(figure[0])].append(act_rest)
 							else:

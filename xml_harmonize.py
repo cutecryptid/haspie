@@ -51,8 +51,6 @@ def main():
 	                   help='max number of ASP solutions, by default all of them')
 	parser.add_argument('-s', '--span', metavar='S', nargs=1, default=1, type=int,
 	                   help='horizontal span to consider while harmonizing, this takes in account subdivision, by default 1')
-	parser.add_argument('-d', '--divide', metavar='32|16|8|4|2|1', nargs=1, default=0, type=int,
-	                   help='forces subdivision of the notes in the score to a specific value, by default it\'s automatically calculated')
 	parser.add_argument('-v', '--voices', metavar='V', nargs="+", default="",
 	                   help='extra instruments, these can be input by name or by numerical note range (i.e soprano,guitar,(65,90)...) to leave one of the sides of the range unespecified use 0')
 	parser.add_argument('-S', '--show', action='store_true', default=False,
@@ -90,10 +88,6 @@ def main():
 	mode = args.mode
 	if args.mode != "":
 		mode = args.mode[0]
-
-	sub = args.divide
-	if args.divide != 0:
-		sub = args.divide[0]
 
 	span = args.span
 	if args.span != 1:
@@ -135,8 +129,7 @@ def main():
 	if args.output == "out":
 		final_out = "./out/" + outname + "." + fmt
 	lp_outname = outname + ".lp"
-	xml_parser_args = ("parser/mxml_asp", infile, "-o", "asp/generated_logic_music/" + lp_outname, "-d",
-						str(sub), "-s", str(span), "-k", str(key), "-m", str(mode))
+	xml_parser_args = ("parser/mxml_asp", infile, "-o", "asp/generated_logic_music/" + lp_outname, "-s", str(span), "-k", str(key), "-m", str(mode))
 	xml_parser_ret = subprocess.call(xml_parser_args)
 	
 	score_config = ConfigParser.ConfigParser()

@@ -61,7 +61,6 @@ def solution_to_music21(solution, subdivision, span, base, key_value, mode, titl
 			if c != None and i == 0:
 				p.append(harmony.ChordSymbol(romanToChord(c.name, base, mode)))
 			if item.type == "rest":
-				subdivision/4
 				tmp_note = note.Rest(quarterLength=(float(item.duration)/(float(subdivision)/float(4))))
 			elif item.type == "measure":
 				str_meas = str(item.ncount) + "/" + str(item.ntype)
@@ -70,12 +69,14 @@ def solution_to_music21(solution, subdivision, span, base, key_value, mode, titl
 				tmp_chord = []
 				for n in item.notes:
 					tmp_n = note.Note(n.value, quarterLength=(float(n.duration)/(float(subdivision)/float(4))))
-					tmp_n.pitch.accidental = None
+					if (tmp_n.pitch.accidental.name is 'natural'):
+						tmp_n.pitch.accidental = None
 					tmp_chord += [tmp_n]
 				tmp_note = chord.Chord(tmp_chord)
 			else:
 				tmp_note = note.Note(item.value, quarterLength=(float(item.duration)/(float(subdivision)/float(4))))
-				tmp_note.pitch.accidental = None
+				if (tmp_note.pitch.accidental.name is 'natural'):
+					tmp_note.pitch.accidental = None
 			if any((e.time == item.time) and (e.voice-1 == i)  for e in solution.errors):
 			 	tmp_note.color = "#ff0000"
 			if any((p.time == item.time) and (p.voice-1 == i)  for p in solution.passing):

@@ -59,13 +59,13 @@ int act_sub;
 int act_beats;
 int act_beattype;
 int subdivision;
-int opt_subdivision;
 int act_length;
 int act_dot;
 int act_ch_mod;
 int act_staff;
 int grace_mod;
 int key_fifths;
+int act_duration;
 char* key_mode;
 char* act_root;
 char* act_kind;
@@ -216,10 +216,6 @@ int subdivide(int notelength, int subdivision){
 	
 }
 
-int ispower2(int x){
-	return (((x & (x - 1)) == 0) && (x >= 0) && (x <= 32));
-}
-
 
 %}
 %union{
@@ -228,7 +224,7 @@ int ispower2(int x){
 	char * valStr;
 }
 
-%token OPTAG CLTAG SLASHTAG EQUAL KVOTHE QUES EXCL NOTE OCTA STEP PART_ID REST CHORD ALTER DOCTYPE OPTYPE CLTYPE
+%token OPTAG CLTAG SLASHTAG EQUAL KVOTHE QUES EXCL NOTE OCTA STEP PART_ID REST CHORD ALTER DOCTYPE OPTYPE CLTYPE DURATION
 %token NOTVISIBLE BEATS BEATTYPE TIME DOT OPSTAFF CLSTAFF GRACETAG MODE HARMONY ROOT ROOTSTEP KIND FIFTHS KEY
 %token INSTRUMENT SCOREPART CREDIT JUSTIFY VALIGN
 %token <valStr> TEXT
@@ -277,6 +273,7 @@ block : OPTAG REST SLASHTAG CLTAG {
 		| OPTAG INSTRUMENT CLTAG OPTAG SLASHTAG INSTRUMENT CLTAG {$$=0;act_instrument = "";}
 		| OPTAG FIFTHS CLTAG TEXT OPTAG SLASHTAG FIFTHS CLTAG {$$ = 0; key_fifths= atoi($4);}
 		| OPTAG MODE CLTAG TEXT OPTAG SLASHTAG MODE CLTAG {$$ = 0; key_mode=$4;}
+		| OPTAG DURATION CLTAG TEXT OPTAG SLASHTAG DURATION CLTAG {$$ = 0; act_duration = atoi($4);}
 		| OPTAG ROOTSTEP CLTAG TEXT OPTAG SLASHTAG ROOTSTEP CLTAG {$$ = 0; act_root = $4;}
 		| OPTAG KIND CLTAG TEXT OPTAG SLASHTAG KIND CLTAG {$$ = 0; act_kind = $4;}
 		| OPTAG CREDIT attr CLTAG sentence OPTAG SLASHTAG CREDIT CLTAG{
@@ -318,19 +315,25 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 			   	default :
 			   	act_note_val = noteVal(act_note, act_oct, act_alter);
 			}
-			act_length = type_to_int(act_type);
-			if (act_length > subdivision){
-				subdivision = act_length;
-			}
-			note_position = note_position+1;
-			if (act_dot && (act_length*2 > subdivision)){
-				subdivision = act_length * 2;
+			if (strcmp(act_type,"")){
+				act_length = type_to_int(act_type);
+				if (act_length > subdivision){
+					subdivision = act_length;
+				}
+				note_position = note_position+1;
+				if (act_dot && (act_length*2 > subdivision)){
+					subdivision = act_length * 2;
+				}
+			} else {
+				act_length = -1*act_duration;
 			}
 			tmp_note = new_note();
 			tmp_note = mod_note(tmp_note, part, act_note_val, act_ch_mod, act_staff, act_length, act_dot, grace_mod, act_harm_over);
 			add_queue(note_q, tmp_note);
 			act_dot = 0;
 			act_harm_over = 0;
+			act_oct = 0;
+			act_type = "";
 		}
 		| CLTAG body OPTAG SLASHTAG TIME CLTAG {
 			$$ = 0;
@@ -485,7 +488,6 @@ char * chord_grade(chord* c, char ** scale){
 
 int usage(char* prog_name){
 	printf ("usage: %s file.xml [-s subdivision] [-o file.lp]\n", prog_name);
-	printf ("-d subdivision: subdivision in which the notes of the piece should be divided\n");
 	printf ("-k key: key in which the piece should be harmonized\n");
 	printf ("-s harmonization span: base figures taken in account to assign a chord\n");
 	printf ("-o file.lp: name for the output file, default is output.lp\n");
@@ -503,7 +505,6 @@ int main(int argc, char *argv[]) {
 	int c;
 	act_staff = 1;
 	subdivision = 0;
-	opt_subdivision = 0;
 	int harm_span = 1;
 	char * opt_key = "";
 	char * opt_mode = "";
@@ -514,9 +515,6 @@ int main(int argc, char *argv[]) {
       case 'h':
       	usage(argv[0]);
       	return 1;
-      case 'd':
-        opt_subdivision = atoi(optarg);
-        break;
       case 'k':
         opt_key = optarg;
         break;
@@ -554,11 +552,6 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 
-	if (!ispower2(opt_subdivision)){
-		printf("The specified subdivision is not valid, choose a power of 2 between 1 and 32 (both included).\n");
-		return 1;
-	}
-
 	yyin = infile;
 
 	act_voice = 0;
@@ -576,10 +569,6 @@ int main(int argc, char *argv[]) {
 	do {
 		yyparse();
 	} while (!feof(yyin));
-
-	if (opt_subdivision != 0){
-		subdivision = opt_subdivision;
-	}
 
 	f = fopen(outfile, "w");
 	if (f == NULL){
@@ -664,9 +653,13 @@ int main(int argc, char *argv[]) {
 				staff_no = tmp_note-> staff;
 			}
 		}
-		times = subdivide(tmp_note->length, subdivision);
-		if (tmp_note->dotted){
-			times+= times/2;
+		if (tmp_note->length > 0){
+			times = subdivide(tmp_note->length, subdivision);
+			if (tmp_note->dotted){
+				times+= times/2;
+			}
+		} else {
+			times = (tmp_note->length*-1);
 		}
 		pos += times*tmp_note->chordmod;
 		if (grace_overhead != 0){
