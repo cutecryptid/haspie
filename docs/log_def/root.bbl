@@ -74,7 +74,7 @@ I.~Niemelä, ``\BIBforeignlanguage{English}{Logic programs with stable model
   semantics as a constraint programming paradigm},''
   \emph{\BIBforeignlanguage{English}{Annals of Mathematics and Artificial
   Intelligence}}, vol.~25, no. 3-4, pp. 241--273, 1999. [Online]. Available:
-  \url{http://dx.doi.org/10.1023/A%3A1018930122475}
+  \url{http://dx.doi.org/10.1023/A:3A1018930122475}
 \BIBentrySTDinterwordspacing
 
 \bibitem{music21web}
@@ -87,6 +87,12 @@ I.~Niemelä, ``\BIBforeignlanguage{English}{Logic programs with stable model
 \BIBentryALTinterwordspacing
 ``{LilyPond}: Musical notation for everyone,'' accessed: 2015-11-05. [Online].
   Available: \url{http://www.lilypond.org}
+\BIBentrySTDinterwordspacing
+
+\bibitem{potasscoweb}
+\BIBentryALTinterwordspacing
+``{Potassco} - the potsdam answer set solving collection,'' accessed:
+  2016-01-08. [Online]. Available: \url{http://potassco.sourceforge.net/}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}

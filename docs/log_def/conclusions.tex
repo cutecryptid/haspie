@@ -6,9 +6,41 @@
 % Objetivo: Contar cómo está ahora el proyecto, si ha merecido la              %
 %           pena, lo que se ha aprendido, si se aplicaría de nuevo, etc.       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lettrine{E}{n} el proyecto se ha construido una herramienta software capaz de tomar como entrada una partitura polifónica parcial, deducir los acordes correspondientes a la unidad de tiempo deseada, y si el usuario lo desease, completarla respetando las reglas básicas de armonía, de modo similar a los ejercicios habituales en esta disciplina musical. Se ha logrado abarcar la estructura musical de forma tanto horizontal como vertical. Se ha demostrado empíricamente que este problema de armonización se puede especificar en términos de resolución de restricciones. El proyecto hizo uso del paradigma de \textit{Answer Set Programming}, una variante de Programación Lógica de uso frecuente para la Representación del Conocimiento y la resolución de problemas. La principal ventaja de ASP para este caso fue la facilidad que otorgaba el uso de predicados simples a la hora de definir ciertos sucesos dentro de la partitura así como añadir directamente las reglas usadas en armonía bajo la forma de reglas de programación lógica. Esto proporcionó una enorme flexibilidad, ya que ASP es un paradigma totalmente declarativo, en el que sólo se realiza la especificación del problema, y no se describe el método de resolución que se aplica para el mismo. Otra ventaja importante de ASP para este escenario fue la posibilidad de implementar y usar preferencias, ya que algunas reglas armónicas no son estrictas, sino que se busca que se respeten en la medida de lo posible. Se diseñó e implementó un conjunto de módulos que, funcionando como uno solo, son capaces de ofrecer resultados a ejercicios sencillos de armonización aceptables desde el punto de vista de un experto, de modo que el software final puede ser utilizado en el mundo real para ayudar a la composición y al aprendizaje de armonía.
 
- \lettrine{E}{l} trabajo realizado...
+Los módulos implementados, de forma general, para el proyecto son:
+\begin{itemize}
+	\item \textbf{Entrada y preprocesado:} Haciendo uso de un editor musical capaz de exportar al formato de entrada se produce un fichero que este modulo convierte a hechos lógicos.
+	\item \textbf{Armonización:} Escrito en ASP, mediante el uso de software que calcula las restricciones para el fichero de entrada, este módulo produce soluciones al problema de armonización.
+	\item \textbf{Completado:} En caso de que el problema así lo requiera, este módulo completa la partitura en la medida de lo necesario.
+	\item \textbf{Salida y postprocesado:} Tomando como entrada las soluciones en forma de hechos lógicos, produce un fichero en el formato de salida especificado para su posterior visualización.
+\end{itemize}
 
-\section{Evaluación propia}
-\section{Errores y Lecciones Aprendidas}
+Se han mantenido las restricciones establecidas al proyecto, tanto la de no buscar resultados con coherencia melódica como la de no implementar de ningún modo la capacidad de detectar y trabajar con modulación en piezas musicales.
+
+En el estado en el que se encuentra el proyecto, no podría estar más emocionado con sus resultados. Es cierto que flaquea en algunos puntos, especialmente los relacionados con la subdivisión de tiempos fuertes y débiles, y que se ha descuidado un poco la estética de los resultados finales, pero los buenos resultados cuantitativa y cualitativamente cubren de sobra estos escollos.
+ 
+ Desde luego ha merecido la pena embarcarse en este proyecto con el profesor Cabalar, no solo el trabajo ha resultado ser tan interesante y satisfactorio como inicialmente parecía, si no que su buena guía y el trabajo realizado han congeniado lo suficientemente bien como para dar frutos y obtener un resultado excelente.
+ 
+ El mayor remordimiento es que, pese a que el estado sea bueno como para presentar el trabajo ante un tribunal y que ahora mismo tenga aplicabilidad real, aún requerirá algo de trabajo a mayores para que la herramienta esté a un nivel publicable y usable cómodamente en el día a día de los diferentes perfiles para los que está planteada.
+ 
+ Como gran logro indocumentado del proyecto, pues ha sido este quien lo ha propiciado pero no está involucrado directamente en el trabajo realizado en el mismo, ha sido mejorar mis técnicas de desarrollo en múltiples lenguajes y la integración de sistemas muy dispares en uno solo. Además, habiendo trabajado escasamente con anterioridad en \textit{Answer Set Programming} siento que mis habilidades con este conjunto de herramientas y la sintaxis y particularidades de su lenguaje propio han mejorado enormemente. Esto se ha visto reflejado en pequeños proyectos paralelos ideados y planteados durante estos meses de trabajo, que espero poder emprender una vez haya concluido este trabajo.
+ 
+ 
 \section{Trabajo Futuro}
+Las líneas marcadas para el trabajo futuro sobre este proyecto tienen que ver con la estética de los resultados del mismo y la implementación de algún tipo de interfaz más amigable para el usuario. También se pretende mejorar la interpretación de partituras en MusicXML para mejorar los resultados de la armonización y los de la representación de la salida. Por último desea investigar también sobre ampliar el proyecto hacia alguna de las restricciones propuestas inicialmente, como la de contemplar modulación.
+
+\subsection{Estética e Interfaz}
+Ya que la librería en la que se sustenta la representación visual de las partituras en la salida aún se encuentra en desarrollo, se esperará a su anunciada futura versión 3.0 para continuar el trabajo en esta dirección. La propia librería ya debería solucionar en gran medida los problemas de representación, principalmente la inexplicable inclusión de becuadros frente a algunas notas que no tendrían por qué llevarlos o la notación correcta de la clave en cada una de las voces, que a veces da problemas. 
+
+Se quiere además transformar el proyecto a un \textit{plug-in} para MuseScore 2, ya que el programa facilita mucho la creación de este tipo de módulos complementarios. Serviría además para ayudar al usuario a usar el programa, ofreciendo una serie de elementos gráficos con los que interactuar. La gran rapidez de armonización de la herramienta ofrecería resultados prácticamente en vivo, lo cual resulta realmente atractivo. 
+
+\subsection{Procesado y Armonización}
+Se busca implementar en el módulo de entrada una mejor detección del tipo de clave de cada una de las voces, permitiendo a la salida ofrecer un resultado más fidedigno. Además en conjunción con el módulo de armonización se pretende detectar mejor los tiempos débiles y fuertes de la pieza, ya que esta es una de las grandes flaquezas en el estado final del proyecto al no poder identificar algunos patrones más complejos de subdivisión fuerte y débil en conjuntos de figuras como corcheas y semicorcheas.
+
+\subsection{Modulación}
+La modulación fue una de las principales barreras fijadas desde el principio de la planificación del proyecto, principalmente por ser difícil de detectar y complejo lidiar con ella a nivel armónico. Se quiere investigar el comportamiento del proyecto ante esta técnica haciendo uso de nuevas herramientas como \textit{iclingo}, un solucionador del estilo del utilizado en el proyecto pero iterativo, es decir, capaz de calcular nuevas soluciones haciendo uso de resultados obtenidos en iteraciones anteriores que van cambiando el dominio sobre el que se trabaja.
+Otra aproximación planteada, desde un punto de vista más similar al del proyecto sería ser capaz de subdividir la partitura en tramos según armonías, aunque se perdería mucha información y no siempre estos tramos estarían bien delimitados.
+
+\subsection{Publicación}
+Por último, y tras refinar algunos de los pasos citados anteriormente, se desea contactar a interesados en la herramienta del campo de la enseñanza musical para que puedan juzgarla y contribuir a perfeccionarla hasta que sea posible publicarla y, con suerte, ser usada en este campo.

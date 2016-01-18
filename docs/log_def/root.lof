@@ -3,28 +3,47 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Introducci\IeC {\'o}n}{1}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Contextualizaci\IeC {\'o}n}{5}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagrama de subdivisi\IeC {\'o}n de figuras}}{12}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Figuras con sus respectivos silencios, de izquierda a derecha: Redonda, blanca, negra, corchea}}{12}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Ejemplos de tipos de compases: Cuaternario y Ternario}}{13}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces La misma secuencia de notas en clave de Sol y de Fa}}{14}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Escalas de Do Mayor y Do Menor}}{15}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Escala de Do Menor sin armadura y con armadura}}{16}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Acordes de la tonalidad de Do Mayor}}{17}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Ejemplo de polifon\IeC {\'\i }a para Piano (Sonata en Do Mayor, Mozart)}}{17}
+\contentsline {xchapter}{Contextualizaci\IeC {\'o}n}{7}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagrama de subdivisi\IeC {\'o}n de figuras}}{14}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Figuras con sus respectivos silencios, de izquierda a derecha: Redonda, blanca, negra, corchea}}{14}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Ejemplos de tipos de compases: Cuaternario y Ternario}}{15}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces La misma secuencia de notas en clave de Sol y de Fa}}{16}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Escalas de Do Mayor y Do Menor}}{17}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Escala de Do Menor sin armadura y con armadura}}{18}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Acordes de la tonalidad de Do Mayor}}{19}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Ejemplo de polifon\IeC {\'\i }a para Piano (Sonata en Do Mayor, Mozart)}}{19}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Desarrollo}{21}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Ciclo de desarrollo en espiral t\IeC {\'\i }pico}}{22}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Ejemplo de nota representada en MusicXML}}{24}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Gram\IeC {\'a}tica inicial utilizada por el procesador de MusicXML a hechos l\IeC {\'o}gicos}}{26}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagrama del planteamiento inicial de la arquitectura del sistema}}{27}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Diagrama de la arquitectura final del sistema}}{51}
+\contentsline {xchapter}{Desarrollo}{23}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Ciclo de desarrollo en espiral t\IeC {\'\i }pico}}{24}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Diagrama que muestra la secuencia de tareas}}{25}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Ejemplo de nota representada en MusicXML}}{28}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Gram\IeC {\'a}tica inicial utilizada por el procesador de MusicXML a hechos l\IeC {\'o}gicos}}{30}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Diagrama del planteamiento inicial de la arquitectura del sistema}}{31}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Diagrama de la arquitectura final del sistema}}{55}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Evaluaci\IeC {\'o}n}{53}
+\contentsline {xchapter}{Evaluaci\IeC {\'o}n}{57}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusiones}{55}
-\contentsline {figure}{\numberline {1}{\ignorespaces Diagrama de clases de almacenamiento de la Iteraci\IeC {\'o}n 3}}{59}
-\contentsline {figure}{\numberline {2}{\ignorespaces Diagrama de clases de almacenamiento de las iteraciones 4, 5 y 6}}{60}
-\contentsline {figure}{\numberline {3}{\ignorespaces Opciones de uso de la herramienta}}{64}
-\contentsline {figure}{\numberline {4}{\ignorespaces Seleccionando una figura podemos ver sus propiedades, entre otras la casilla de visibilidad}}{68}
-\contentsline {figure}{\numberline {5}{\ignorespaces Desmarcando la casilla de visibilidad, la figura pasa a un color m\IeC {\'a}s claro, indicando que no es visible}}{68}
+\contentsline {xchapter}{Conclusiones}{59}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Diagramas}{63}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Diagrama de clases de almacenamiento de la Iteraci\IeC {\'o}n 3}}{64}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Diagrama de clases de almacenamiento de las iteraciones 4, 5 y 6}}{65}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Diagrama de clases de almacenamiento de las iteraciones 7 y 8}}{65}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Diagrama de clases de almacenamiento del m\IeC {\'o}dulo de armonizaci\IeC {\'o}n de la iteraci\IeC {\'o}n 8}}{66}
+\addvspace {10\p@ }
+\contentsline {xchapter}{An\IeC {\'a}lisis de MusicXML}{67}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Partituras}{69}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Partitura de Greensleeves, por Enrique VIII}}{70}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Partitura de Menuet, por Johann S. Bach}}{71}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Partitura de Joy to the World, por George F. Handel}}{72}
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Partitura de Silent Night (Noche de Paz), por Franz X. Gruber}}{73}
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Partitura de ejemplo con una serie de acordes sencillos}}{74}
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Partitura de ejemplo con algunos silencios reales y otros invisibles}}{75}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Instalaci\IeC {\'o}n}{77}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Manual de uso}{79}
+\contentsline {figure}{\numberline {E.1}{\ignorespaces Opciones de uso de la herramienta}}{80}
+\contentsline {figure}{\numberline {E.2}{\ignorespaces Seleccionando una figura podemos ver sus propiedades, entre otras la casilla de visibilidad}}{84}
+\contentsline {figure}{\numberline {E.3}{\ignorespaces Desmarcando la casilla de visibilidad, la figura pasa a un color m\IeC {\'a}s claro, indicando que no es visible}}{84}

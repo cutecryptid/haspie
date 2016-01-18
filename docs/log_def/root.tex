@@ -5,6 +5,7 @@
 \documentclass[12pt,a4paper,twoside,openright,openbib]{report}
 
 \usepackage{estilo_pfc}
+\usepackage{longtable}
 \usepackage{musixtex}
 \usepackage{cite}
 \usepackage{titlesec}
@@ -68,14 +69,13 @@
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Apéndices, glosarios y bibliografía  %
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+ \appendix
+ \include{appendix}
 
  \nocite*
  \bibliography{bibliography}
  \bibliographystyle{IEEEtran}
- 
- \appendix
- \include{appendix}
+
 
 \end{document}
 

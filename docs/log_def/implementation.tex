@@ -7,8 +7,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Planificación y Presupuesto}
-\lettrine{S}e ha seguido un proceso de desarrollo en espiral con prototipado. El diseño y desarrollo de los diferentes componentes del sistema se presta a este tipo de ciclo ya que permite crear y probar en cada iteración un producto prototipo, centrándose en las primeras iteraciones en diseñar más e implementar menos y en las últimas solo refinar el software final. Cada iteración cuenta con una planificación de objetivos a alcanzar, detalles del trabajo y correcciones realizadas así como pruebas efectuadas y análisis de objetivos logrados en la iteración.
+\lettrine{E}{s} difícil hablar de una planificación del proyecto como tal ya que por las particularidades del proyecto se han amalgamado características de varias metodologías. Lo que sí está claro es que el proyecto seguirá una metodología ágil debido a su carácter de desarrollo evolutivo y orientado a la creación de prototipos funcionales en cada iteración. Se podría considerar que está a medio camino entre SCRUM y un ciclo de desarrollo en espiral con prototipado ya que será un proceso iterativo, pero no es correcto decir que se ha utilizado SCRUM como metodología al no ser fácil repartir las tareas de cada iteración ni tener con quién hacerlo por ser un trabajo desarrollado por un único miembro junto con su director. 
 
+La similaridad con el ciclo de desarrollo en espiral reside en que en cada iteración se pasan por los mismo puntos, revisando y modificando cada uno de los componentes para llegar al prototipo objetivo. Tras el trabajo, dicho prototipo es revisado en la reunión con el ``cliente'', que en este caso es el director del proyecto revisando la funcionalidad implementada y dirigiendo los siguientes pasos.
 
 \begin{figure}
 	\centering
@@ -17,10 +18,33 @@
 	\label{fig:ciclo_espiral}
 \end{figure}
 
-La principal diferencia con un ciclo de desarrollo en espiral convencional es que al no haber un cliente al que presentar el prototipo y los resultados de cada iteración, esta sección se sustituyó con las reuniones periódicas con el tutor, sirviendo, generalmente, cada una de ellas como cierre de iteración y comienzo del siguiente.
+Pese a las dificultades, disponiendo de una agenda de producto similar a la de SCRUM a modo de requisitos, se han podido trazar una serie de iteraciones. Cada iteración cuenta con su agenda de iteración en la cual se detallan los requisitos del prototipo a crear en ese paso haciendo evolucionar cada uno de los componentes. Se habla de hacer evolucionar los componentes y no de incrementarlos porque, pese a que cada iteración ha procurado incrementar la funcionalidad total del sistema, algunos módulos del mismo solo han sido refactorizados en determinados pasos.
+
+En cuanto a la planificación de pruebas del sistema, si bien se ha contado con diferentes entradas con las que probar cada uno de los módulos que se han ido desarrollando junto con el proyecto, no se puede decir que el desarrollo de una herramienta de estas características pueda ser dirigido por la prueba, ya que las soluciones halladas mediante \textit{Answer Set Programming} no pueden ser establecidas de antemano debido a su carácter estocástico.
+
+Se estableció que la duración de cada iteración sería, en promedio, de semana y media. Esto equivale a unas 40 horas de trabajo por iteración, aunque se decidió permitir la flexibilización de las iteraciones ante imprevistos en el desarrollo. Esto no se corresponde con una metodología SCRUM típica en la que habría que desplazar tareas a las siguientes iteraciones, pero al ser solo una persona encargada de todo el trabajo, se decidió dotar a la metodología de cierta flexibilidad para no arrastrar trabajo. No obstante esta flexibilización permite también ganar tiempo, ya que de completarse el trabajo antes de lo previsto se podría acortar el tiempo dedicado a alguna iteración.
+
+Gracias a esta flexibilidad se logró depender solo de completar los objetivos de las diferentes agendas, logrando así independencia del factor tiempo, que ya venía fijado por los plazos de entrega propios del proyecto. 
+
+Debido a estos factores derivados de lo particular de desarrollar un sistema basado en \textit{Answer Set Programming} se carece de una planificación inicial cerrada y completa que marque el tiempo estimado para cada una de las tareas en forma del tradicional diagrama de Gantt. No obstante, a modo de registro sí se ofrece un diagrama similar que muestra el tiempo invertido en cada una de las iteraciones.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{imagenes/diagrama_tareas.pdf}
+	\caption{Diagrama que muestra la secuencia de tareas}
+	\label{fig:tareas}
+\end{figure}
+
+Dado este diagrama es relativamente sencillo calcular el coste del proyecto. Hay que tener en cuenta, no obstante, horas extra de desarrollo que se incluyen en el diagrama y en el presupuesto ya que el trabajo no empezó de cero al haberse realizado dos prácticas durante los años tres y cuatro del grado que se han reutilizado en menor o mayor medida para comenzar el desarrollo del presente trabajo. En la asignatura de ``Representación del Conocimiento y Razonamiento Automático'' se desarrolló una pequeña herramienta en \textit{Answer Programming} capaz de completar y componer pequeñas piezas musicales en forma de \textit{Canon}, mientras que en la asignatura de ``Procesamiento de Lenguajes'' se creó una primera versión del procesador de MusicXML a hechos lógicos. Se ha realizado una estimación de que de no haber trabajado en la práctica de RCRA se habrían necesitado unas 10 horas adicionales en los primeros pasos del desarrollo del módulo de armonización de este proyecto, mientras que de no haber realizado la práctica de PL se habrían necesitado unas 20 horas adicionales.
+
+Sumado a 40 horas por iteración y contando con 8 iteraciones, suman 350 horas de desarrollo. Las reuniones de final de iteración duraron una hora escasa cada una, pero al haber habido más de una por iteración y que las primeras reuniones fueron más extensas al tener que definir y planificar el proyecto se estima que el proyecto contó con unas 12 horas de reuniones para las que hay que sumar el coste por hora del tiempo del director.
+
+Se ha asignado un coste aproximado de hora de trabajo del proyectando de 5.5\euro{}/hora y un coste también aproximado de 9\euro{}/hora para el director del proyecto. Con un cálculo rápido el coste del proyecto suma 1925\euro{} por las horas de desarrollo, 66\euro{} por las horas de reuniones por parte del alumno y 108 por las horas de reuniones por parte del director, haciendo un total de \textbf{2099\euro{}} para el diseño y desarrollo completo del mismo.
+
+El coste de producción del proyecto es esencialmente el mismo que el de desarrollo, ya que las licencias de todo el software utilizado son gratuitas y no requiere ningún tipo de hardware adicional para funcionar. Incluso el editor de partituras que se recomienda utilizar junto con el programa (MuseScore2) es libre y de código abierto.
 
 \section{Iteración 1}
-\subsection{Planificación}
+\subsection{Agenda de Iteración}
 El objetivo de esta primera iteración es identificar los formatos, herramientas y componentes del proyecto, así como el diseño inicial de la arquitectura del proyecto, junto con el desarrollo del procesador de ficheros en formato MusicXML a hechos lógicos. Este primer paso tiene una fuerte carga de contextualización del trabajo de desarrollo así como la creación del espacio de trabajo en el que se sustenta todo el proyecto.
 
 \subsection{Trabajo}
@@ -119,7 +143,7 @@ Además de la adición de la estructura de pila para verificar esto se incluyero
 En esta primera iteración se completaron todos los objetivos marcados en la planificación de la misma. Habiendo preparado correctamente el espacio de trabajo y definido bien los formatos sobre los que se trabajaría y habiendo implementado una primera versión del procesador de MusicXML a hechos lógicos.
 
 \section{Iteración 2}
-\subsection{Planificación}
+\subsection{Agenda de Iteración}
 El objetivo de esta iteración fue implementar una primera versión del pipeline que incluyese un módulo de armonización básica en ASP. Para ello se fijaron una serie de restricciones que simplificaban algunos problemas detectados durante el análisis. Inicialmente no se tendrán en cuenta las notas adyacentes en la partitura ni subdivisiones de las mismas, no obstante y de cara a futuras iteraciones, se establece una figura base como período de análisis horizontal de la melodía y una figura base de subdivisión, aunque para esta iteración ambas se establecerán a negra (\textit{quarter note}) de modo que se asignará el acorde correspondiente a cada golpe rítmico de la partitura teniendo en cuenta las múltiples voces que la componen de manera vertical.
 
 \subsection{Trabajo}
@@ -152,7 +176,7 @@ Este primer prototipo se completó en dos semanas, siendo los mayores problemas 
 
 \section{Iteración 3}
 
-\subsection{Planificación}
+\subsection{Agenda de Iteración}
 El objetivo de esta iteración es completar el desarrollo de un segundo prototipo de la herramienta que incluya las siguientes mejoras:
 \begin{itemize}
 	\item Subdivisión real y automatizada de las notas de la pieza a la longitud de la nota mínima presente en la partitura
@@ -189,7 +213,7 @@ La subdvisión, tanto como fijada por parámetro como automatizada, ha sido impl
 
 \section{Iteración 4}
 
-\subsection{Planificación}
+\subsection{Agenda de Iteración}
 El objetivo de esta iteración es crear un tercer prototipo que busca no sólo refinar la armonización como el anterior si no ampliar funcionalidad de la herramienta. Se busca incorporar un módulo de salida escrito en python al cual el pipeline se encarga de pasarle los datos formateados correctamente para que dicho módulo exporte al formato deseado. 
 
 \subsection{Trabajo}
@@ -217,7 +241,7 @@ Por otra parte, el trabajo a realizar en el módulo de armonización fue más un
 El módulo de salida funcionó excepcionalmente bien, aunque no producía una salida fidedigna al no tener información sobre la longitud original de las notas y algunos detalles como los instrumentos que debían interpretar cada voz y, aunque menos importante, tampoco conservaba ni el nombre de la pieza ni su compositor.
 
 \section{Iteración 5}
-\subsection{Planificación}
+\subsection{Agenda de Iteraciónn}
 El cuarto prototipo tiene como objetivo tener en cuenta los tiempos débiles y fuertes de la partitura para refinar ciertas preferencias ya incluidas anteriormente o posibles nuevas preferencias basadas en dichos tiempos. Para esto será necesario modificar el módulo ASP, el \textit{parser} y el pipeline. Además se busca refinar el módulo de salida para ajustar la representación en partitura de la solución e incluir mejoras visuales. Como en los anteriores, este prototipo corregirá los errores detectados en el anterior.
 
 \subsection{Trabajo}
@@ -255,7 +279,7 @@ La identificación de tiempos débiles y fuertes no se estaba realizando correct
 Al trabajar con diferentes partituras se detectó un inconveniente importante en la identificación de intervalos a completar, y es que al hacer uso de las letras para definir los intervalos, no se podían poner estas marcas de inicio y fin bajo silencios, al no tener sentido que un trozo de letra a cantar figure bajo un silencio. Además resultaba complejo trabajar con intervalos abiertos por alguno de los extremos.
 
 \section{Iteración 6}
-\subsection{Planificación}
+\subsection{Agenda de Iteración}
  En esta iteración se perfeccionarán algunas funcionalidades de los diferentes módulos y se añadirá un sub-módulo de preferencias melódicas al ya creado módulo ASP. El quinto prototipo busca ser, esencialmente, una mejora del anterior que corrija los errores detectados en la anterior evaluación del mismo.
 
 \subsection{Trabajo}
@@ -283,7 +307,7 @@ Se alcanzaron los objetivos establecidos de modo satisfactorio.
 Los módulos de preferencias funcionan pese a que los enlaces de sextas generen mucha carga computacional.
 
 \section{Iteración 7}
-\subsection{Planificación}
+\subsection{Agenda de Iteración}
 En esta iteración se busca mejorar el módulo de procesado para que sea capaz de extraer más información y metadatos de la partitura original y así conseguir una salida más fiel. Además se busca incluir en este mismo módulo la auto-detección de la clave de la partitura basándose en la armadura presente. A mayores se busca un modo más conveniente de incluir voces de una determinada tesitura a la partitura. Como en otras iteraciones se busca corregir los fallos encontrados en las pruebas de la anterior. Por último, de cara a poder resolver ejercicios de armonía en los que ya haya acordes dados en la partitura, se pretende implementar en el procesador de MusicXML a hechos lógicos el reconocimiento de acordes ya presentes.
 
 \subsection{Trabajo}
@@ -346,7 +370,7 @@ Se llegó a la conclusión de que había dos factores ralentizando el proceso:
 \end{itemize}
 
 \section{Iteración 8}
-\subsection{Planificación}
+\subsection{Agenda de Iteración}
 La última iteración que cierra el ciclo de desarrollo busca corregir los problemas encontrados durante las pruebas de la anterior iteración, al ofrecer unos resultados relativamente malos en cuanto a tiempo de ejecución al incorporar secciones a completar en la partitura. Además tiene como objetivo incluir la posibilidad del uso de ficheros de configuración que alteren el comportamiento del módulo de armonización ajustando los diferentes pesos de las preferencias a maximizar o minimizar. Por último, y para comodidad del usuario es necesario mostrar solo los N mejores resultados, permitiendo decidir cuantos resultados desea obtener como máximo.
 
 \subsection{Trabajo}
