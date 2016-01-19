@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.16)  19 JAN 2016 20:32
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.16)  19 JAN 2016 20:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1851,39 +1851,36 @@ LaTeX Info: Redefining \% on input line 10.
  (./draft.aux) (./director-agreement.aux)
 (./dedication.aux) (./gratefulnesses.aux) (./abstract.aux) (./keywords.aux)
 (./introduction.aux) (./contextualization.aux) (./implementation.aux)
-(./evaluation.aux) (./conclusions.aux) (./appendix.aux))
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+(./evaluation.aux) (./conclusions.aux) (./appendix.aux)) ) 
 Here is how much of TeX's memory you used:
  8584 strings out of 493304
  106778 string characters out of 6139870
- 222606 words of memory out of 5000000
+ 222661 words of memory out of 5000000
  11456 multiletter control sequences out of 15000+600000
  38362 words of font info for 136 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  39i,12n,45p,2257b,688s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/eurosym/feybr10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/eurosym/feymr10.pfb></usr/share/texmf/fonts/type1/public/m
-usixtex-fonts/musix20.pfb></usr/share/texmf/fonts/type1/public/musixtex-fonts/m
-usix24.pfb></usr/share/texmf/fonts/type1/public/musixtex-fonts/musixspx.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/urw/avantgar/uagk8a.pfb>
-Output written on root.pdf (113 pages, 2118866 bytes).
+{/usr/share/texlive/t
+exmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbxsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/eurosym/feybr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/eu
+rosym/feymr10.pfb></usr/share/texmf/fonts/type1/public/musixtex-fonts/musix20.p
+fb></usr/share/texmf/fonts/type1/public/musixtex-fonts/musix24.pfb></usr/share/
+texmf/fonts/type1/public/musixtex-fonts/musixspx.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/urw/avantgar/uagk8a.pfb>
+Output written on root.pdf (113 pages, 2119027 bytes).
 PDF statistics:
  707 PDF objects out of 1000 (max. 8388607)
  442 compressed objects within 5 object streams
