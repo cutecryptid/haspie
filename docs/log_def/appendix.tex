@@ -88,7 +88,7 @@ Se detalla una relación de los elementos MusicXML identificados por el procesad
   
     \begin{figure}
     	\centering
-    	\includegraphics[width=0.8\linewidth]{imagenes/scores/Joy_to_the_world.pdf}
+    	\includegraphics[width=0.8\linewidth]{imagenes/scores/Joy_to_the_World.pdf}
     	\caption{Partitura de Joy to the World, por George F. Handel}
     	\label{fig:joy_score}
     \end{figure}
@@ -179,9 +179,23 @@ Lo primero que se debe tener en cuenta es que el fichero de entrada debe proporc
 
 Una vez obtenido el archivo XML que se desea armonizar y/o completar, puede invocarse el comando básico ya mencionado \texttt{haspie.py <fichero.xml>} para obtener una armonización en la que se asignará un acorde a cada tiempo subdividido de la partitura. Es sumamente importante tener en cuenta la subdivisión de las notas de la partitura ya que la herramienta, para funcionar correctamente, subdivide todas las figuras a la nota más breve. Con esta llamada se calculan automáticamente todos los parámetros de armonización de la partitura: Clave y Modo. En la misma consola de comandos se imprime una serie de datos de mayor o menor utilidad para el usuario como el título de la pieza, la clave y modo detectados así como la longitud de la nota más breve de la partitura, usada como subdivisión. 
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imagenes/usage/metainfo.png}
+	\caption{La información relevante de la partitura se muestra al comenzar la armonización}
+	\label{fig:usage_metainfo}
+\end{figure}
+
 Tras la armonización se pedirá al usuario que escoja una de las soluciones propuestas por el módulo de armonización. Para esto se muestran todas numeradas y en orden inverso de optimización, siendo las últimas las mejores, de modo que el usuario solo tiene que introducir el número de aquella que desee utilizar. Si sólo se pulsa Enter, se escogerá por defecto la última ya que debería ser mejor (Aunque podría haber varias soluciones empatadas).
 
-A continuación se pasa al módulo de completado de partitura, ya que no se han especificado voces adicionales ni se ha modificado la partitura para contener secciones a completar, se mostrará una única solución a escoger de modo similar a la armonización. Tras escogerla se genera en la carpeta \texttt{out} el fichero de salida de nombre igual al de entrada, por defecto en formato MusicXML.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{imagenes/usage/harmony_select.png}
+	\caption{Se pide al usuario que fije la armonización a utilizar de entre varias posibles}
+	\label{fig:usage_harmony_select}
+\end{figure}
+
+A continuación se pasa al módulo de completado de partitura, ya que no se han especificado voces adicionales ni se ha modificado la partitura para contener secciones a completar, no se pedirá escoger una solución de modo similar a la armonización, al existir solo un posible resultado. Finalmente, se genera en la carpeta \texttt{out} el fichero de salida de nombre igual al de entrada, por defecto en formato MusicXML.
 
 De todos modos las armonizaciones más frecuentes no suelen ser a tiempo si no a compás o medio compás. Para cambiar este comportamiento se puede hacer uso de la opción \texttt{-s N} donde \texttt{N} indica la cantidad de tiempos subdivididos que se tomarán en cuenta horizontalmente a la hora de asignar un acorde. Por ejemplo, en la pieza \textit{Joy to the World} se usa un compás \textbf{2/4} (es decir, dos negras por compás), pero la nota más breve de la partitura es una semicorchea, haciendo que la longitud, en semicorcheas, de este compás sea de 8. El cálculo es sencillo de realizar, solo hay que dividir la longitud fraccionaria de la nota más breve entre la longitud fraccionaria del compás y multiplicar este resultado por la cantidad de figuras originales del compás. Para este ejemplo podemos calcular $(16/4)*2=8$.
 
@@ -216,14 +230,23 @@ Los silencios completables son silencios especiales que el procesador interpreta
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\linewidth]{imagenes/select_silence.jpg}
+	\includegraphics[width=0.8\linewidth]{imagenes/usage/select_silence.jpg}
 	\caption{Seleccionando una figura podemos ver sus propiedades, entre otras la casilla de visibilidad}
-	\includegraphics[width=0.8\linewidth]{imagenes/invisible_silence.jpg}
+	\includegraphics[width=0.8\linewidth]{imagenes/usage/invisible_silence.jpg}
 	\caption{Desmarcando la casilla de visibilidad, la figura pasa a un color más claro, indicando que no es visible}
 	\label{fig:invisible_silence}
 \end{figure}
 
 Las voces nuevas son líneas melódicas completamente vacías originalmente que el módulo de completado se encarga de rellenar respetando la armonía y la tesitura de la voz. Para hacer esto solo hay que usar la opción \texttt{-v voz1 [voz2]...} que toma tantas voces como se quiera añadir como parámetro. Pueden ser especificadas mediante rango de numérico de notas en la forma \texttt{min,max}, usándose 0 si quiere dejarse uno de los extremos abiertos o mediante nombre si la tesitura (o rango de notas) está definida en el fichero \texttt{asp/include/voice\_types.lp}. En éste figuran las tesituras corales más comunes, pero cualquier nuevo instrumento puede ser definido a gusto del usuario.
+
+En caso de requerir completar la partitura de algún modo, tras la armonización, la herramienta solicitará al usuario que escoja la solución que más le guste, mostrando los errores, acordes y notas de cada una de las mejores soluciones halladas.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{imagenes/usage/completion_select.png}
+	\caption{Se pide al usuario que seleccione la solución que más le guste entre varias posibles}
+	\label{fig:usage_completion_select}
+\end{figure}
 
 Si se quiere obtener el fichero en algún formato de salida diferente a MusicXML este puede ser especificado mediante \texttt{-f formato}, siempre y cuando se dispongan de herramientas para realizar la conversión instaladas en el sistema. Por ejemplo, para exportar a Lilypond usando \texttt{-f ly} precisaríamos de tener instalado el propio entorno de Lilypond en el sistema. Así mismo se puede cambiar el nombre del fichero de salida con la habitual opción \texttt{-o /ruta/de/salida} (La ruta debe existir).
 

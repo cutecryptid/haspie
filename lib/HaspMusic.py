@@ -209,7 +209,8 @@ class ClaspResult:
 
 					voices = {k: sorted(v, key=lambda tup: tup.time) for k, v in voices.items()}
 
-					chords = [Chord(int(ch[0]),ch[1]) for ch in sorted(re.findall('chord\(([0-9]+),([ivxmo7]+)\)', ans))]
+					chords = [Chord(int(ch[0]),ch[1]) for ch in re.findall('chord\(([0-9]+),([ivxmo7]+)\)', ans)]
+					chords.sort(key=lambda x: x.time)
 					errors = [Error(int(er[0]),int(er[1])) for er in re.findall('out_error\(([0-9]+),([0-9]+)\)', ans)]
 					passing = [PassingNote(int(pn[0]),int(pn[1])) for pn in re.findall('out_passing\(([0-9]+),([0-9]+)\)', ans)]
 					instrum = [VoiceType(int(vt[0]),vt[1]) for vt in re.findall('voice_type\(([0-9]+),([a-z]+)\)', ans)]
@@ -270,7 +271,7 @@ class ClaspChords:
 	def parse_chords(self):
 		out = self.raw_output
 		answers = re.split('Answer:\s*[0-9]+', out)
-		min_opt = 9999
+		min_opt = 99999
 		sols = []
 		for ans in answers:
 			if len(ans) > 0:
@@ -280,9 +281,9 @@ class ClaspChords:
 				tmp_chords = [Chord(int(ch[0]),ch[1]) for ch in sorted(re.findall('chord\(([0-9]+),([ivxmo7]+)\)', ans))]
 				tmp_errors = [Error(int(er[0]),int(er[1])) for er in re.findall('out_error\(([0-9]+),([0-9]+)\)', ans)]
 				sols += [ChordSolution(tmp_chords, tmp_opts, tmp_errors, ans)]
-				if sum(tmp_opts) < min_opt:
-					min_opt = sum(tmp_opts)
-		sols = [s for s in sols if sum(s.optimization) == min_opt]
+				if (tmp_opts[0] * 100 + tmp_opts[1] * 50 + tmp_opts[2]) < min_opt:
+					min_opt = (tmp_opts[0] * 100 + tmp_opts[1] * 50 + tmp_opts[2])
+		sols = [s for s in sols if (s.optimization[0] * 100 + s.optimization[1]*50 + s.optimization[2]) == min_opt]
 		return sols
 		
 	def __str__(self):

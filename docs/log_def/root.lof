@@ -22,29 +22,34 @@
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Diagrama de la arquitectura final del sistema}}{55}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Evaluaci\IeC {\'o}n}{57}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Comienzo de Greensleeves sin armonizar}}{58}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Comienzo de Greensleeves armonizado}}{59}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusiones}{59}
+\contentsline {xchapter}{Conclusiones}{61}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Diagramas}{63}
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Diagrama de clases de almacenamiento de la Iteraci\IeC {\'o}n 3}}{64}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Diagrama de clases de almacenamiento de la Iteraci\IeC {\'o}n 4}}{65}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Diagrama de clases de almacenamiento de la Iteraci\IeC {\'o}n 5}}{65}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Diagrama de clases de almacenamiento de las Iteraciones 6, 7 y 8}}{66}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Diagrama de clases de almacenamiento del m\IeC {\'o}dulo de armonizaci\IeC {\'o}n de la iteraci\IeC {\'o}n 8}}{67}
+\contentsline {xchapter}{Diagramas}{65}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Diagrama de clases de almacenamiento de la Iteraci\IeC {\'o}n 3}}{66}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Diagrama de clases de almacenamiento de la Iteraci\IeC {\'o}n 4}}{67}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Diagrama de clases de almacenamiento de la Iteraci\IeC {\'o}n 5}}{67}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Diagrama de clases de almacenamiento de las Iteraciones 6, 7 y 8}}{68}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Diagrama de clases de almacenamiento del m\IeC {\'o}dulo de armonizaci\IeC {\'o}n de la iteraci\IeC {\'o}n 8}}{69}
 \addvspace {10\p@ }
-\contentsline {xchapter}{An\IeC {\'a}lisis de MusicXML}{69}
+\contentsline {xchapter}{An\IeC {\'a}lisis de MusicXML}{71}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Partituras}{71}
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Partitura de Greensleeves, por Enrique VIII}}{72}
-\contentsline {figure}{\numberline {C.2}{\ignorespaces Partitura de Menuet, por Johann S. Bach}}{73}
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Partitura de Joy to the World, por George F. Handel}}{74}
-\contentsline {figure}{\numberline {C.4}{\ignorespaces Partitura de Silent Night (Noche de Paz), por Franz X. Gruber}}{75}
-\contentsline {figure}{\numberline {C.5}{\ignorespaces Partitura de ejemplo con una serie de acordes sencillos}}{76}
-\contentsline {figure}{\numberline {C.6}{\ignorespaces Partitura de ejemplo con algunos silencios reales y otros invisibles}}{77}
+\contentsline {xchapter}{Partituras}{73}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Partitura de Greensleeves, por Enrique VIII}}{74}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Partitura de Menuet, por Johann S. Bach}}{75}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Partitura de Joy to the World, por George F. Handel}}{76}
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Partitura de Silent Night (Noche de Paz), por Franz X. Gruber}}{77}
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Partitura de ejemplo con una serie de acordes sencillos}}{78}
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Partitura de ejemplo con algunos silencios reales y otros invisibles}}{79}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Instalaci\IeC {\'o}n}{79}
+\contentsline {xchapter}{Instalaci\IeC {\'o}n}{81}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Manual de uso}{81}
-\contentsline {figure}{\numberline {E.1}{\ignorespaces Opciones de uso de la herramienta}}{82}
-\contentsline {figure}{\numberline {E.2}{\ignorespaces Seleccionando una figura podemos ver sus propiedades, entre otras la casilla de visibilidad}}{86}
-\contentsline {figure}{\numberline {E.3}{\ignorespaces Desmarcando la casilla de visibilidad, la figura pasa a un color m\IeC {\'a}s claro, indicando que no es visible}}{86}
+\contentsline {xchapter}{Manual de uso}{83}
+\contentsline {figure}{\numberline {E.1}{\ignorespaces Opciones de uso de la herramienta}}{84}
+\contentsline {figure}{\numberline {E.2}{\ignorespaces La informaci\IeC {\'o}n relevante de la partitura se muestra al comenzar la armonizaci\IeC {\'o}n}}{85}
+\contentsline {figure}{\numberline {E.3}{\ignorespaces Se pide al usuario que fije la armonizaci\IeC {\'o}n a utilizar de entre varias posibles}}{86}
+\contentsline {figure}{\numberline {E.4}{\ignorespaces Seleccionando una figura podemos ver sus propiedades, entre otras la casilla de visibilidad}}{88}
+\contentsline {figure}{\numberline {E.5}{\ignorespaces Desmarcando la casilla de visibilidad, la figura pasa a un color m\IeC {\'a}s claro, indicando que no es visible}}{88}
+\contentsline {figure}{\numberline {E.6}{\ignorespaces Se pide al usuario que seleccione la soluci\IeC {\'o}n que m\IeC {\'a}s le guste entre varias posibles}}{89}

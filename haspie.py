@@ -142,6 +142,7 @@ def main():
 	key_value = score_config.get('scoredata', 'key_value')
 	mode = score_config.get('scoredata', 'mode')
 	last_voice = int(score_config.get('scoredata', 'last_voice'))
+	freebeat = int(score_config.get('scoredata', 'freebeat'))
 
 	base = key_to_base(key)
 
@@ -205,10 +206,11 @@ def main():
 		"--const", "subdiv="+subdivision, opt_all)
 
 	asp_proc = subprocess.Popen(asp_note_args, stdout=subprocess.PIPE)
-	t = threading.Timer( timeout, clasp_timeout, [asp_proc] )
-	t.start()
-	t.join()
-	t.cancel()
+	if (args.voices != "" or freebeat == 1):
+		t = threading.Timer( timeout, clasp_timeout, [asp_proc] )
+		t.start()
+		t.join()
+		t.cancel()
 
 	asp_note_out = asp_proc.stdout.read()
 
@@ -218,13 +220,15 @@ def main():
 	res = ClaspResult(asp_note_out,max_optimums)
 	print res
 
-
 	sol_num = len(res.solutions)
 	if sol_num > 0:
-		selected_solution = raw_input('Select a solution to output (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
-		if selected_solution == '':
+		if (args.voices != "" or freebeat == 1):
+			selected_solution = raw_input('Select a solution to output (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
+			if selected_solution == '':
+				selected_solution = sol_num
+			print res.solutions[int(selected_solution)-1]
+		else:
 			selected_solution = sol_num
-		print res.solutions[int(selected_solution)-1]
 
 		output = Out.solution_to_music21(res.solutions[int(selected_solution)-1], int(subdivision), span, base, int(key_value), mode, title, composer)
 		if args.show:

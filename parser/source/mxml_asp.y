@@ -577,6 +577,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	int times;
+	int freebeat = 0;
 	int act_part = 0;
 	int pos = 0;
 	int last_staff = 0;
@@ -678,6 +679,7 @@ int main(int argc, char *argv[]) {
 			    	break;
 			   	case -2:
 			      	fprintf(f, "freebeat(%d, %d).\n", (tmp_note->voice + (tmp_note->staff-1) + voice_mod), pos);
+			      	freebeat = 1;
 			      	break;
 			    default:
 			    	if (tmp_note->grace){
@@ -726,6 +728,7 @@ int main(int argc, char *argv[]) {
 	fprintf(f, "key_value=%d\n", final_fifths);
 	fprintf(f, "mode=%s\n", final_mode);
 	fprintf(f, "last_voice=%d\n", last_voice);
+	fprintf(f, "freebeat=%d\n", freebeat);
 	fclose(f);
 	printf("Extra score information can be found in tmp/score_meta.conf\n");
 	return 0;

@@ -1,21 +1,14 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.9)  19 JAN 2016 10:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.16)  19 JAN 2016 19:06
 entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
 **root.tex
-(C:\Users\Trigork\haspie-haspist\docs\log_def\root.tex
+(./root.tex
 LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
- lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
-ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
-an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
-ishmax, welsh, loaded.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -30,24 +23,23 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\estilo_pfc.sty
+) (./estilo_pfc.sty
 Package: estilo_pfc 
 
 Estilo LaTeX para Proyectos FIC
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -197,7 +189,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -228,7 +220,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -252,58 +244,52 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
-Package: babel 2008/07/08 v3.8m The Babel package
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2013/12/03 3.9h The Babel package
 
-*************************************
-* Local config file bblopts.cfg used
-*
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
-File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\spanish.ldf"
-Language: spanish.ldf 2009/01/02 v5.0h Spanish support from the babel system
+(/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf
+Language: spanish.ldf 2014/01/29 v5.0m Spanish support from the babel system
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
-File: babel.def 2008/07/08 v3.8m Babel common definitions
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2013/12/03 3.9h Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
 )
 \es@datefmt=\count89
 \es@quottoks=\toks16
 \es@quotdepth=\count90
-Package babel Info: Making " an active character on input line 492.
-Package babel Info: Making . an active character on input line 585.
-Package babel Info: Making < an active character on input line 630.
-Package babel Info: Making > an active character on input line 630.
+Package babel Info: Making " an active character on input line 496.
+Package babel Info: Making . an active character on input line 599.
+Package babel Info: Making < an active character on input line 644.
+Package babel Info: Making > an active character on input line 644.
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latexsym.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
 \ex@=\dimen104
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen105
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count91
@@ -344,41 +330,41 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup5
 \symAMSb=\mathgroup6
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks22
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count103
@@ -386,11 +372,11 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen113
 \Gin@req@width=\dimen114
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\hhline.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/tools/hhline.sty
 Package: hhline 1994/05/23 v2.03 Table rule package (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.sty"
-Package: subfigure 2002/07/30 v2.1.4 subfigure package
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip46
 \subfigcapskip=\skip47
 \subfigcaptopadj=\dimen115
@@ -405,11 +391,11 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.cfg")
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg)
 \subfig@top=\skip50
 \subfig@bottom=\skip51
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\longtable.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip52
 \LTright=\skip53
@@ -427,10 +413,10 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count112
 \LT@p@ftn=\toks23
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\minitoc\minitoc.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/minitoc/minitoc.sty
 Package: minitoc 2008/07/16 v60 Package minitoc (JPFD)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\minitoc\mtcmess.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/minitoc/mtcmess.sty
 Package: mtcmess 2006/03/14
 )
 Package minitoc Info: I0001
@@ -449,13 +435,20 @@ Package minitoc Info: I0003
 \mtc@hstrutbox=\box33
 Package minitoc Info: I0002
 (minitoc)             Autoconfiguration of extensions.
+\openout3 = `root.mtc0'.
 
-(C:\Users\Trigork\haspie-haspist\docs\log_def\root.mtc0)
+\openout3 = `root.mtc'.
+
+ (./root.mtc0)
 Package minitoc Info: I0012
 (minitoc)             Long extensions (Unix-like) will be used.
 Package minitoc Info: I0031
 (minitoc)             ==> this version is configured for UNIX-like 
 (minitoc)                 (long extensions) file names.
+\openout3 = `root.mtc'.
+
+\openout3 = `root.mtc0'.
+
 \c@mtc=\count113
 \c@minitocdepth=\count114
 \c@ptc=\count115
@@ -465,13 +458,13 @@ Package minitoc Info: I0010
 (minitoc)             The english language is selected.
 (minitoc)              on input line 4910.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\minitoc\english.mld"
+(/usr/share/texlive/texmf-dist/tex/latex/minitoc/english.mld
 File: english.mld 2006/01/13
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\minitoc\english.mld"
+(/usr/share/texlive/texmf-dist/tex/latex/minitoc/english.mld
 File: english.mld 2006/01/13
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\titlesec\titlesec.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \ttl@box=\box34
 \beforetitleunit=\skip59
@@ -483,7 +476,7 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \titlewidthlast=\dimen121
 \titlewidthfirst=\dimen122
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip61
 \f@ncyO@elh=\skip62
 \f@ncyO@erh=\skip63
@@ -494,169 +487,162 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \f@ncyO@olf=\skip68
 \f@ncyO@orf=\skip69
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cite\cite.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
-LaTeX Info: Redefining \nocite on input line 332.
-Package: cite 2015/02/27  v 5.5
+LaTeX Info: Redefining \nocite on input line 373.
+Package: cite 2010/09/10  v 5.3
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tocbibind\tocbibind.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
 Package tocbibind Info: The document has chapter divisions on input line 50.
 
 
 Package tocbibind Note: Using chapter style headings, unless overridden.
 
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+) (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lettrine\lettrine.sty"
-File: lettrine.sty 2015/02/16 v1.8 (Daniel Flipo)
+(/usr/share/texlive/texmf-dist/tex/latex/lettrine/lettrine.sty
+File: lettrine.sty 2013/03/14 v1.64 (Daniel Flipo)
 \c@DefaultLines=\count117
-\c@DefaultDepth=\count118
 \DefaultFindent=\dimen123
 \DefaultNindent=\dimen124
 \DefaultSlope=\dimen125
-\DiscardVskip=\dimen126
 \L@lbox=\box35
 \L@tbox=\box36
-\c@L@lines=\count119
-\c@L@depth=\count120
-\L@Pindent=\dimen127
-\L@Findent=\dimen128
-\L@Nindent=\dimen129
-\L@lraise=\dimen130
-\L@first=\dimen131
-\L@next=\dimen132
-\L@slope=\dimen133
-\L@height=\dimen134
-\L@novskip=\dimen135
-\LettrineWidth=\dimen136
-\LettrineHeight=\dimen137
-\LettrineDepth=\dimen138
+\c@L@lines=\count118
+\L@Pindent=\dimen126
+\L@Findent=\dimen127
+\L@Nindent=\dimen128
+\L@lraise=\dimen129
+\L@first=\dimen130
+\L@next=\dimen131
+\L@slope=\dimen132
+\L@height=\dimen133
+\LettrineWidth=\dimen134
 
 Loading lettrine.cfg
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lettrine\lettrine.cfg"))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eurosym\eurosym.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/lettrine/lettrine.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/eurosym/eurosym.sty
 Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
 \@eurobox=\box37
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count121
-\Gm@cntv=\count122
-\c@Gm@tempcnt=\count123
-\Gm@bindingoffset=\dimen139
-\Gm@wd@mp=\dimen140
-\Gm@odd@mp=\dimen141
-\Gm@even@mp=\dimen142
-\Gm@layoutwidth=\dimen143
-\Gm@layoutheight=\dimen144
-\Gm@layouthoffset=\dimen145
-\Gm@layoutvoffset=\dimen146
+\Gm@cnth=\count119
+\Gm@cntv=\count120
+\c@Gm@tempcnt=\count121
+\Gm@bindingoffset=\dimen135
+\Gm@wd@mp=\dimen136
+\Gm@odd@mp=\dimen137
+\Gm@even@mp=\dimen138
+\Gm@layoutwidth=\dimen139
+\Gm@layoutheight=\dimen140
+\Gm@layouthoffset=\dimen141
+\Gm@layoutvoffset=\dimen142
 \Gm@dimlist=\toks26
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg")))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\musixtex\musixtex.sty"
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\musixtex\musixtex.tex"
-MusiXTeX(c) 1.17 <2015-05-25>
-\n@i=\count124
-\n@ii=\count125
-\n@iii=\count126
-\n@iv=\count127
-\n@v=\count128
-\n@vi=\count129
-\n@vii=\count130
-\n@viii=\count131
+))
+(/usr/share/texmf/tex/latex/musixtex/musixtex.sty
+(/usr/share/texmf/tex/generic/musixtex/musixtex.tex
+MusiXTeX(c) 1.15 <3 April 2011>
+\n@i=\count122
+\n@ii=\count123
+\n@iii=\count124
+\n@iv=\count125
+\n@v=\count126
+\n@vi=\count127
+\n@vii=\count128
+\n@viii=\count129
 \toks@box=\box38
 \w@rkbox=\box39
 \n@otebox=\box40
-\y@=\dimen147
-\y@i=\dimen148
-\y@ii=\dimen149
-\y@iii=\dimen150
-\y@iv=\dimen151
-\y@v=\dimen152
-\group@no=\count132
-\interinstrument=\dimen153
-\N@s=\count133
-\s@Y=\dimen154
-\lin@pos=\dimen155
-\meet@minus@n@iv=\count134
-\interbeam=\dimen156
-\b@amthick=\dimen157
-\Interligne=\dimen158
-\Internote=\dimen159
+\y@=\dimen143
+\y@i=\dimen144
+\y@ii=\dimen145
+\y@iii=\dimen146
+\y@iv=\dimen147
+\y@v=\dimen148
+\group@no=\count130
+\interinstrument=\dimen149
+\N@s=\count131
+\s@Y=\dimen150
+\lin@pos=\dimen151
+\meet@minus@n@iv=\count132
+\interbeam=\dimen152
+\b@amthick=\dimen153
+\Interligne=\dimen154
+\Internote=\dimen155
 \ch@box=\box41
-\musicsize=\count135
-\qd@skip=\dimen160
-\qn@width=\dimen161
-\wn@width=\dimen162
+\musicsize=\count133
+\qd@skip=\dimen156
+\qn@width=\dimen157
+\wn@width=\dimen158
 \txt@ff=\skip70
 \s@indent=\skip71
 \big@spc=\skip72
-\lthick=\dimen163
+\lthick=\dimen159
 \afterruleskip=\skip73
-\staffbotmarg=\dimen164
-\stafftopmarg=\dimen165
-\line@width=\dimen166
-\interportee=\dimen167
-\noport@@=\count136
-\noinstrum@nt=\count137
-\altportee=\dimen168
-\systemheight=\dimen169
-\altplancher=\dimen170
+\staffbotmarg=\dimen160
+\stafftopmarg=\dimen161
+\line@width=\dimen162
+\interportee=\dimen163
+\noport@@=\count134
+\noinstrum@nt=\count135
+\altportee=\dimen164
+\systemheight=\dimen165
+\altplancher=\dimen166
 \instrum@in@group=\skip74
 \boxitsep=\skip75
-\barsinpi@c@=\count138
-\barno=\count139
-\startbarno=\count140
-\sign@skip=\dimen171
-\maxsign@skip=\dimen172
-\x@skip=\dimen173
-\n@skip=\dimen174
+\barsinpi@c@=\count136
+\barno=\count137
+\startbarno=\count138
+\sign@skip=\dimen167
+\maxsign@skip=\dimen168
+\x@skip=\dimen169
+\n@skip=\dimen170
 \beforeruleskip=\skip76
-\widthtyp@=\count141
-\lastbarno=\count142
+\widthtyp@=\count139
+\lastbarno=\count140
 \cut@v=\skip77
 \init@volta@pos=\skip78
 \volta@startcor=\skip79
 \volta@endcor=\skip80
 \writ@volta@box=\box42
-\barsinlin@=\count143
-\maxbarsinlin@=\count144
+\barsinlin@=\count141
+\maxbarsinlin@=\count142
 \lastbarpos=\skip81
-\ut@ref=\count145
+\ut@ref=\count143
 \meterskip=\skip82
 \t@c=\toks27
 \clef@skip=\skip83
-\noteskip=\dimen175
-\transpose=\count146
-\normaltranspose=\count147
-\locx@skip=\dimen176
-\elemskip=\dimen177
-\@l@mskip=\dimen178
-\inh@alt=\count148
-\st@bot=\dimen179
-\st@top=\dimen180
-\stem@skip=\dimen181
-\s@lope=\dimen182
-\y@vi=\dimen183
-\lift@rest=\dimen184
+\noteskip=\dimen171
+\transpose=\count144
+\normaltranspose=\count145
+\locx@skip=\dimen172
+\elemskip=\dimen173
+\@l@mskip=\dimen174
+\inh@alt=\count146
+\st@bot=\dimen175
+\st@top=\dimen176
+\stem@skip=\dimen177
+\s@lope=\dimen178
+\y@vi=\dimen179
+\lift@rest=\dimen180
 \accshift=\skip84
 \@icresc=\skip85
 \@itrillei=\skip86
@@ -665,134 +651,130 @@ MusiXTeX(c) 1.17 <2015-05-25>
 \@itrilleiv=\skip89
 \@itrillev=\skip90
 \@itrillevi=\skip91
-\tr@number=\count149
+\tr@number=\count147
 \o@swz=\toks28
-\o@number=\count150
-\y@vii=\dimen185
-\y@viii=\dimen186
-\y@ix=\dimen187
-\tuptxtb@x=\box43
-\notes@open=\count151
+\o@number=\count148
+\notes@open=\count149
 \k@ii=\skip92
-\i@ni=\dimen188
-\b@xi=\dimen189
-\b@zi=\dimen190
-\c@xi=\dimen191
+\i@ni=\dimen181
+\b@xi=\dimen182
+\b@zi=\dimen183
+\c@xi=\dimen184
 \c@zi=\skip93
-\d@xi=\dimen192
+\d@xi=\dimen185
 \d@zi=\skip94
-\e@xi=\dimen193
+\e@xi=\dimen186
 \e@zi=\skip95
-\b@pi=\count152
-\b@ni=\count153
-\n@pi=\count154
-\a@si=\count155
-\o@si=\count156
+\b@pi=\count150
+\b@ni=\count151
+\n@pi=\count152
+\a@si=\count153
+\o@si=\count154
 \a@ci=\toks29
 \o@ci=\toks30
 \m@ti=\toks31
 \k@iii=\skip96
-\i@nii=\dimen194
-\b@xii=\dimen195
-\b@zii=\dimen196
-\c@xii=\dimen197
+\i@nii=\dimen187
+\b@xii=\dimen188
+\b@zii=\dimen189
+\c@xii=\dimen190
 \c@zii=\skip97
-\d@xii=\dimen198
+\d@xii=\dimen191
 \d@zii=\skip98
-\e@xii=\dimen199
+\e@xii=\dimen192
 \e@zii=\skip99
-\b@pii=\count157
-\b@nii=\count158
-\n@pii=\count159
-\a@sii=\count160
-\o@sii=\count161
+\b@pii=\count155
+\b@nii=\count156
+\n@pii=\count157
+\a@sii=\count158
+\o@sii=\count159
 \a@cii=\toks32
 \o@cii=\toks33
 \m@tii=\toks34
 \k@iiii=\skip100
-\i@niii=\dimen200
-\b@xiii=\dimen201
-\b@ziii=\dimen202
-\c@xiii=\dimen203
+\i@niii=\dimen193
+\b@xiii=\dimen194
+\b@ziii=\dimen195
+\c@xiii=\dimen196
 \c@ziii=\skip101
-\d@xiii=\dimen204
+\d@xiii=\dimen197
 \d@ziii=\skip102
-\e@xiii=\dimen205
+\e@xiii=\dimen198
 \e@ziii=\skip103
-\b@piii=\count162
-\b@niii=\count163
-\n@piii=\count164
-\a@siii=\count165
-\o@siii=\count166
+\b@piii=\count160
+\b@niii=\count161
+\n@piii=\count162
+\a@siii=\count163
+\o@siii=\count164
 \a@ciii=\toks35
 \o@ciii=\toks36
 \m@tiii=\toks37
 \k@iiv=\skip104
-\i@niv=\dimen206
-\b@xiv=\dimen207
-\b@ziv=\dimen208
-\c@xiv=\dimen209
+\i@niv=\dimen199
+\b@xiv=\dimen200
+\b@ziv=\dimen201
+\c@xiv=\dimen202
 \c@ziv=\skip105
-\d@xiv=\dimen210
+\d@xiv=\dimen203
 \d@ziv=\skip106
-\e@xiv=\dimen211
+\e@xiv=\dimen204
 \e@ziv=\skip107
-\b@piv=\count167
-\b@niv=\count168
-\n@piv=\count169
-\a@siv=\count170
-\o@siv=\count171
+\b@piv=\count165
+\b@niv=\count166
+\n@piv=\count167
+\a@siv=\count168
+\o@siv=\count169
 \a@civ=\toks38
 \o@civ=\toks39
 \m@tiv=\toks40
 \k@iv=\skip108
-\i@nv=\dimen212
-\b@xv=\dimen213
-\b@zv=\dimen214
-\c@xv=\dimen215
+\i@nv=\dimen205
+\b@xv=\dimen206
+\b@zv=\dimen207
+\c@xv=\dimen208
 \c@zv=\skip109
-\d@xv=\dimen216
+\d@xv=\dimen209
 \d@zv=\skip110
-\e@xv=\dimen217
+\e@xv=\dimen210
 \e@zv=\skip111
-\b@pv=\count172
-\b@nv=\count173
-\n@pv=\count174
-\a@sv=\count175
-\o@sv=\count176
+\b@pv=\count170
+\b@nv=\count171
+\n@pv=\count172
+\a@sv=\count173
+\o@sv=\count174
 \a@cv=\toks41
 \o@cv=\toks42
 \m@tv=\toks43
 \k@ivi=\skip112
-\i@nvi=\dimen218
-\b@xvi=\dimen219
-\b@zvi=\dimen220
-\c@xvi=\dimen221
+\i@nvi=\dimen211
+\b@xvi=\dimen212
+\b@zvi=\dimen213
+\c@xvi=\dimen214
 \c@zvi=\skip113
-\d@xvi=\dimen222
+\d@xvi=\dimen215
 \d@zvi=\skip114
-\e@xvi=\dimen223
+\e@xvi=\dimen216
 \e@zvi=\skip115
-\b@pvi=\count177
-\b@nvi=\count178
-\n@pvi=\count179
-\a@svi=\count180
-\o@svi=\count181
+\b@pvi=\count175
+\b@nvi=\count176
+\n@pvi=\count177
+\a@svi=\count178
+\o@svi=\count179
 \a@cvi=\toks44
 \o@cvi=\toks45
 \m@tvi=\toks46
 maxinstruments=6
-\f@xi=\dimen224
+\f@xi=\dimen217
 \f@zi=\skip116
-\f@xii=\dimen225
+\f@xii=\dimen218
 \f@zii=\skip117
-\f@xiii=\dimen226
+\f@xiii=\dimen219
 \f@ziii=\skip118
-\f@xiv=\dimen227
+\f@xiv=\dimen220
 \f@ziv=\skip119
-\f@xv=\dimen228
+\f@xv=\dimen221
 \f@zv=\skip120
-\f@xvi=\dimen229
+\f@xvi=\dimen222
 \f@zvi=\skip121
  max128beams=6
 \g@bi=\skip122
@@ -802,113 +784,64 @@ maxinstruments=6
 \g@biii=\skip126
 \g@hiii=\skip127
  maxgroups=3
-\s@xi=\dimen230
+\s@xi=\dimen223
 \s@si=\toks47
-\s@Yi=\dimen231
+\s@Yi=\dimen224
 \s@ai=\skip128
-\s@yi=\count182
-\s@Ni=\count183
-\s@zi=\count184
+\s@yi=\count180
+\s@Ni=\count181
+\s@zi=\count182
 \s@di=\toks48
-\s@xii=\dimen232
+\s@xii=\dimen225
 \s@sii=\toks49
-\s@Yii=\dimen233
+\s@Yii=\dimen226
 \s@aii=\skip129
-\s@yii=\count185
-\s@Nii=\count186
-\s@zii=\count187
+\s@yii=\count183
+\s@Nii=\count184
+\s@zii=\count185
 \s@dii=\toks50
+\s@xiii=\dimen227
+\s@siii=\toks51
+\s@Yiii=\dimen228
+\s@aiii=\skip130
+\s@yiii=\count186
+\s@Niii=\count187
+\s@ziii=\count188
+\s@diii=\toks52
+\s@xiv=\dimen229
+\s@siv=\toks53
+\s@Yiv=\dimen230
+\s@aiv=\skip131
+\s@yiv=\count189
+\s@Niv=\count190
+\s@ziv=\count191
+\s@div=\toks54
+\s@xv=\dimen231
+\s@sv=\toks55
+\s@Yv=\dimen232
+\s@av=\skip132
+\s@yv=\count192
+\s@Nv=\count193
+\s@zv=\count194
+\s@dv=\toks56
+\s@xvi=\dimen233
+\s@svi=\toks57
 
 ! No room for a new \dimen .
 \ch@ck ...\else \errmessage {No room for a new #3}
                                                   \fi 
-l.4756 \setmaxslurs\maxinstruments
+l.4601 \setmaxslurs\maxinstruments
                                   
 This error message was generated by an \errmessage
 command, so I can't give any explicit help.
 Pretend that you're Hercule Poirot: Examine all clues,
 and deduce the truth by order and method.
 
-\s@xiii=\dimen234
-\s@siii=\toks51
-! No room for a new \dimen .
-\ch@ck ...\else \errmessage {No room for a new #3}
-                                                  \fi 
-l.4756 \setmaxslurs\maxinstruments
-                                  
-(That was another \errmessage.)
-
-\s@Yiii=\dimen235
-\s@aiii=\skip130
-\s@yiii=\count188
-\s@Niii=\count189
-\s@ziii=\count190
-\s@diii=\toks52
-! No room for a new \dimen .
-\ch@ck ...\else \errmessage {No room for a new #3}
-                                                  \fi 
-l.4756 \setmaxslurs\maxinstruments
-                                  
-(That was another \errmessage.)
-
-\s@xiv=\dimen236
-\s@siv=\toks53
-! No room for a new \dimen .
-\ch@ck ...\else \errmessage {No room for a new #3}
-                                                  \fi 
-l.4756 \setmaxslurs\maxinstruments
-                                  
-(That was another \errmessage.)
-
-\s@Yiv=\dimen237
-\s@aiv=\skip131
-\s@yiv=\count191
-\s@Niv=\count192
-\s@ziv=\count193
-\s@div=\toks54
-! No room for a new \dimen .
-\ch@ck ...\else \errmessage {No room for a new #3}
-                                                  \fi 
-l.4756 \setmaxslurs\maxinstruments
-                                  
-(That was another \errmessage.)
-
-\s@xv=\dimen238
-\s@sv=\toks55
-! No room for a new \dimen .
-\ch@ck ...\else \errmessage {No room for a new #3}
-                                                  \fi 
-l.4756 \setmaxslurs\maxinstruments
-                                  
-(That was another \errmessage.)
-
-\s@Yv=\dimen239
-\s@av=\skip132
-\s@yv=\count194
-\s@Nv=\count195
-\s@zv=\count196
-\s@dv=\toks56
-! No room for a new \dimen .
-\ch@ck ...\else \errmessage {No room for a new #3}
-                                                  \fi 
-l.4756 \setmaxslurs\maxinstruments
-                                  
-(That was another \errmessage.)
-
-\s@xvi=\dimen240
-\s@svi=\toks57
-! No room for a new \dimen .
-\ch@ck ...\else \errmessage {No room for a new #3}
-                                                  \fi 
-l.4756 \setmaxslurs\maxinstruments
-                                  
-(That was another \errmessage.)
-
-\s@Yvi=\dimen241
+\s@Yvi=\dimen234
 \s@avi=\skip133
-\s@yvi=\count197
-\s@Nvi=\count198
-\s@zvi=\count199
+\s@yvi=\count195
+\s@Nvi=\count196
+\s@zvi=\count197
 \s@dvi=\toks58
 maxslurs=6
 \tr@xi=\skip134
@@ -950,27 +883,22 @@ maxslurs=6
 \o@swvi=\toks70
  maxoctlines=6
 \outmux=\write4
-\mulooseness=\count200
-\linegoal=\count201
-\l@eftrightbox=\box44
+\mulooseness=\count198
+\linegoal=\count199
+\l@eftrightbox=\box43
 \inmux=\read1
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\musixtex\musixltx.tex"
+(/usr/share/texmf/tex/latex/musixtex/musixltx.tex
 MusiXLaTeX T.61 <25 September 1996>
-)) (C:\Users\Trigork\haspie-haspist\docs\log_def\root.aux
-(C:\Users\Trigork\haspie-haspist\docs\log_def\cover.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\draft.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\director-agreement.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\dedication.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\gratefulnesses.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\abstract.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\keywords.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\introduction.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\contextualization.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\implementation.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\evaluation.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\conclusions.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\appendix.aux))
+)) (./root.aux (./cover.aux)
+LaTeX Info: Redefining \. on input line 10.
+LaTeX Info: Redefining \% on input line 10.
+ (./draft.aux) (./director-agreement.aux)
+(./dedication.aux) (./gratefulnesses.aux) (./abstract.aux) (./keywords.aux)
+(./introduction.aux) (./contextualization.aux) (./implementation.aux)
+(./evaluation.aux) (./conclusions.aux) (./appendix.aux))
+\openout1 = `root.aux'.
+
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
@@ -983,10 +911,12 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
+LaTeX Info: Redefining \. on input line 20.
+LaTeX Info: Redefining \% on input line 20.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count202
+\scratchcounter=\count200
 ! No room for a new \dimen .
 \ch@ck ...\else \errmessage {No room for a new #3}
                                                   \fi 
@@ -994,12 +924,12 @@ l.137 ... \csname newdimen\endcsname \scratchdimen
                                                   
 (That was another \errmessage.)
 
-\scratchdimen=\dimen242
-\scratchbox=\box45
-\nofMPsegments=\count203
-\nofMParguments=\count204
+\scratchdimen=\dimen235
+\scratchbox=\box44
+\nofMPsegments=\count201
+\nofMParguments=\count202
 \everyMPshowfont=\toks71
-\MPscratchCnt=\count205
+\MPscratchCnt=\count203
 ! No room for a new \dimen .
 \ch@ck ...\else \errmessage {No room for a new #3}
                                                   \fi 
@@ -1007,17 +937,60 @@ l.1253 \newdimen\MPscratchDim
                               % will be assigned global
 (That was another \errmessage.)
 
-\MPscratchDim=\dimen243
-\MPnumerator=\count206
-\makeMPintoPDFobject=\count207
+\MPscratchDim=\dimen236
+\MPnumerator=\count204
+\makeMPintoPDFobject=\count205
 \everyMPtoPDFconversion=\toks72
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
-\c@minilofdepth=\count208
-\c@minilotdepth=\count209
-\c@partlofdepth=\count210
-\c@partlotdepth=\count211
-\c@sectlofdepth=\count212
-\c@sectlotdepth=\count213
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\c@minilofdepth=\count206
+\c@minilotdepth=\count207
+\c@partlofdepth=\count208
+\c@partlotdepth=\count209
+\c@sectlofdepth=\count210
+\c@sectlotdepth=\count211
 Package minitoc(hints) Info: I0049
 (minitoc(hints))             ==> You requested the hints option. 
 (minitoc(hints))             Some hints are eventually given below.
@@ -1066,8 +1039,11 @@ Package minitoc(hints) Warning: W0099
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(C:\Users\Trigork\haspie-haspist\docs\log_def\cover.tex
-<imagenes/anagramaUDC.png, id=1, 890.965pt x 114.975pt>
+\openout4 = `root.mx1'.
+
+\openout2 = `cover.aux'.
+
+(./cover.tex <imagenes/anagramaUDC.png, id=1, 890.965pt x 114.975pt>
 File: imagenes/anagramaUDC.png Graphic file (type png)
 
 <use imagenes/anagramaUDC.png>
@@ -1075,41 +1051,51 @@ Package pdftex.def Info: imagenes/anagramaUDC.png used on input line 3.
 (pdftex.def)             Requested size: 142.26378pt x 18.35777pt.
 LaTeX Font Info:    Try loading font information for U+lasy on input line 12.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
+(/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Try loading font information for U+msa on input line 12.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 12.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Trigork/haspie-h
-aspist/docs/log_def/imagenes/anagramaUDC.png>]) [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./imagenes/anagramaUDC.png
+>]) [2
 
 ]
-(C:\Users\Trigork\haspie-haspist\docs\log_def\draft.tex) [3
+\openout2 = `draft.aux'.
+
+
+(./draft.tex) [3
 
 ] [4
 
 ]
-(C:\Users\Trigork\haspie-haspist\docs\log_def\director-agreement.tex) [5
+\openout2 = `director-agreement.aux'.
+
+ (./director-agreement.tex) [5
+
+] [6
 
 ]
-[6
+\openout2 = `dedication.aux'.
 
-] (C:\Users\Trigork\haspie-haspist\docs\log_def\dedication.tex) [7
+ (./dedication.tex)
+[7
 
 ] [8
 
 ]
-(C:\Users\Trigork\haspie-haspist\docs\log_def\gratefulnesses.tex)
+\openout2 = `gratefulnesses.aux'.
+
+ (./gratefulnesses.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 3--40
 
 
@@ -1119,12 +1105,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--40
 
 ] [10
 
-] (C:\Users\Trigork\haspie-haspist\docs\log_def\abstract.tex [1
+]
+\openout2 = `abstract.aux'.
 
-])
-[2
+ (./abstract.tex [1
 
-] (C:\Users\Trigork\haspie-haspist\docs\log_def\keywords.tex
+]) [2
+
+]
+\openout2 = `keywords.aux'.
+
+ (./keywords.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
 
@@ -1134,153 +1125,363 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
 ] [4
 
-] (C:\Users\Trigork\haspie-haspist\docs\log_def\root.toc [1
+] (./root.toc
+LaTeX Info: Redefining \. on input line 2.
+LaTeX Info: Redefining \% on input line 2.
+ [1
 
-] [2])
+]
+LaTeX Info: Redefining \. on input line 74.
+LaTeX Info: Redefining \% on input line 74.
+ [2])
 \tf@toc=\write5
+\openout5 = `root.toc'.
 
-[3] [4
+LaTeX Info: Redefining \. on input line 51.
+LaTeX Info: Redefining \% on input line 51.
+ [3]
+LaTeX Info: Redefining \. on input line 51.
+LaTeX Info: Redefining \% on input line 51.
+ [4
 
-] (C:\Users\Trigork\haspie-haspist\docs\log_def\root.lof [5])
+] (./root.lof
+LaTeX Info: Redefining \. on input line 2.
+LaTeX Info: Redefining \% on input line 2.
+ [5])
 \tf@lof=\write6
- [6]
-[7
+\openout6 = `root.lof'.
 
-] (C:\Users\Trigork\haspie-haspist\docs\log_def\introduction.tex
+LaTeX Info: Redefining \. on input line 52.
+LaTeX Info: Redefining \% on input line 52.
+ [6]
+LaTeX Info: Redefining \. on input line 54.
+LaTeX Info: Redefining \% on input line 54.
+ [7
+
+]
+\openout2 = `introduction.aux'.
+
+
+(./introduction.tex
 Cap\'{\i }tulo 1.
 LaTeX Font Info:    Try loading font information for OT1+pag on input line 11.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pag.fd"
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pag.fd
 File: ot1pag.fd 2001/06/04 font definitions for OT1/pag.
 ) [1
 
 
 
-] [2]
-[3] [4]) [5]
-(C:\Users\Trigork\haspie-haspist\docs\log_def\contextualization.tex [6
+]
+LaTeX Info: Redefining \. on input line 24.
+LaTeX Info: Redefining \% on input line 24.
+ [2]
+LaTeX Info: Redefining \. on input line 31.
+LaTeX Info: Redefining \% on input line 31.
+ [3]
+LaTeX Info: Redefining \. on input line 42.
+LaTeX Info: Redefining \% on input line 42.
+ [4])
+LaTeX Info: Redefining \. on input line 63.
+LaTeX Info: Redefining \% on input line 63.
+
+[5]
+\openout2 = `contextualization.aux'.
+
+ (./contextualization.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [6
 
 
 
 ]
 Cap\'{\i }tulo 2.
-[7] [8] [9] [10] [11] [12]
-<imagenes/music_tree.pdf, id=121, 723.70375pt x 412.54124pt>
+[7]
+LaTeX Info: Redefining \. on input line 36.
+LaTeX Info: Redefining \% on input line 36.
+ [8]
+LaTeX Info: Redefining \. on input line 47.
+LaTeX Info: Redefining \% on input line 47.
+ [9]
+LaTeX Info: Redefining \. on input line 67.
+LaTeX Info: Redefining \% on input line 67.
+ [10]
+LaTeX Info: Redefining \. on input line 82.
+LaTeX Info: Redefining \% on input line 82.
+ [11]
+LaTeX Info: Redefining \. on input line 98.
+LaTeX Info: Redefining \% on input line 98.
+ [12]
+<imagenes/music_tree.pdf, id=122, 723.70375pt x 412.54124pt>
 File: imagenes/music_tree.pdf Graphic file (type pdf)
 
 <use imagenes/music_tree.pdf>
 Package pdftex.def Info: imagenes/music_tree.pdf used on input line 105.
 (pdftex.def)             Requested size: 330.05322pt x 188.1472pt.
- bar 1 bar 2 [13] bar 1 bar 2 [14 <C:/Users/Trigork/haspie-haspist/docs/log_def
-/imagenes/music_tree.pdf>] [15] bar 1 bar 2 bar 1
-bar 1
+ bar 1 bar 2
+LaTeX Info: Redefining \. on input line 129.
+LaTeX Info: Redefining \% on input line 129.
+ [13] bar 1 bar 2
+LaTeX Info: Redefining \. on input line 155.
+LaTeX Info: Redefining \% on input line 155.
+ [14 <./imagenes/music_tree.pdf>]
+LaTeX Info: Redefining \. on input line 164.
+LaTeX Info: Redefining \% on input line 164.
+ [15] bar 1 bar 2 bar 1 bar 1
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+LaTeX Info: Redefining \. on input line 213.
+LaTeX Info: Redefining \% on input line 213.
 [16] bar 1 bar 1
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17] [18] bar 1 bar 1 bar 2 [19] [20]) [21]
-(C:\Users\Trigork\haspie-haspist\docs\log_def\implementation.tex [22
+LaTeX Info: Redefining \. on input line 242.
+LaTeX Info: Redefining \% on input line 242.
+[17]
+LaTeX Info: Redefining \. on input line 253.
+LaTeX Info: Redefining \% on input line 253.
+ [18] bar 1 bar 1 bar 2
+LaTeX Info: Redefining \. on input line 307.
+LaTeX Info: Redefining \% on input line 307.
+ [19]
+LaTeX Info: Redefining \. on input line 321.
+LaTeX Info: Redefining \% on input line 321.
+ [20])
+LaTeX Info: Redefining \. on input line 64.
+LaTeX Info: Redefining \% on input line 64.
+ [21]
+\openout2 = `implementation.aux'.
+
+ (./implementation.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [22
 
 
 
 ]
 Cap\'{\i }tulo 3.
-<imagenes/espiral.jpg, id=179, 568.37344pt x 382.42876pt>
+<imagenes/espiral.jpg, id=180, 568.37344pt x 382.42876pt>
 File: imagenes/espiral.jpg Graphic file (type jpg)
 
 <use imagenes/espiral.jpg>
 Package pdftex.def Info: imagenes/espiral.jpg used on input line 16.
 (pdftex.def)             Requested size: 330.05322pt x 222.08308pt.
- [23] [24 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/espiral.jpg>]
-<imagenes/diagrama_tareas.pdf, id=186, 726.715pt x 507.88846pt>
+ [23]
+LaTeX Info: Redefining \. on input line 29.
+LaTeX Info: Redefining \% on input line 29.
+ [24 <./imagenes/espiral.jpg>]
+<imagenes/diagrama_tareas.pdf, id=187, 726.715pt x 507.88846pt>
 File: imagenes/diagrama_tareas.pdf Graphic file (type pdf)
 
 <use imagenes/diagrama_tareas.pdf>
 Package pdftex.def Info: imagenes/diagrama_tareas.pdf used on input line 33.
 (pdftex.def)             Requested size: 330.05322pt x 230.67113pt.
- [25 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/diagrama_tareas.pdf
->] [26] [27] [28] [29] [30]
-<imagenes/arquitectura_inicial.pdf, id=235, 845.0471pt x 245.91875pt>
+LaTeX Info: Redefining \. on input line 40.
+LaTeX Info: Redefining \% on input line 40.
+ [25 <./imagenes/diagrama_tareas.pdf>]
+LaTeX Info: Redefining \. on input line 52.
+LaTeX Info: Redefining \% on input line 52.
+
+[26]
+LaTeX Info: Redefining \. on input line 58.
+LaTeX Info: Redefining \% on input line 58.
+ [27]
+LaTeX Info: Redefining \. on input line 84.
+LaTeX Info: Redefining \% on input line 84.
+ [28]
+LaTeX Info: Redefining \. on input line 130.
+LaTeX Info: Redefining \% on input line 130.
+ [29]
+LaTeX Info: Redefining \. on input line 130.
+LaTeX Info: Redefining \% on input line 130.
+ [30]
+<imagenes/arquitectura_inicial.pdf, id=237, 845.0471pt x 245.91875pt>
 File: imagenes/arquitectura_inicial.pdf Graphic file (type pdf)
 
 <use imagenes/arquitectura_inicial.pdf>
 Package pdftex.def Info: imagenes/arquitectura_inicial.pdf used on input line 1
 37.
 (pdftex.def)             Requested size: 330.05322pt x 96.0505pt.
- [31 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/arquitectura_inicia
-l.pdf>] [32]
+LaTeX Info: Redefining \. on input line 145.
+LaTeX Info: Redefining \% on input line 145.
+ [31 <./imagenes/arquitectura_inicial.pdf>]
+LaTeX Info: Redefining \. on input line 153.
+LaTeX Info: Redefining \% on input line 153.
+ [32]
 Overfull \hbox (9.09949pt too wide) in paragraph at lines 156--157
-[]\twelverm La formu-la em-plea-da pa-ra de-ri-var los gra-dos de la es-ca-la 
-es $[(\OML/cmm/m/it/12 valor \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 base\twelverm 
-)\OML/cmm/m/it/12 mod\twelverm 12]$
+[]\twelverm La f^^Sormu-la em-plea-da pa-ra de-ri-var los gra-dos de la es-ca-l
+a es $[(\OML/cmm/m/it/12 valor \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 base\twelv
+erm )\OML/cmm/m/it/12 mod\twelverm 12]$
 
 \hbox(9.0+3.0)x412.56497, glue set - 1.0 []
 
+LaTeX Info: Redefining \. on input line 159.
+LaTeX Info: Redefining \% on input line 159.
 [33]
 Underfull \hbox (badness 10000) in paragraph at lines 162--163
 
 
 \hbox(0.0+0.0)x412.56497 []
 
-[34] [35] [36] [37] [38] [39] [40] [41] [42]
+LaTeX Info: Redefining \. on input line 168.
+LaTeX Info: Redefining \% on input line 168.
+[34]
+LaTeX Info: Redefining \. on input line 175.
+LaTeX Info: Redefining \% on input line 175.
+ [35]
+LaTeX Info: Redefining \. on input line 191.
+LaTeX Info: Redefining \% on input line 191.
+ [36]
+LaTeX Info: Redefining \. on input line 198.
+LaTeX Info: Redefining \% on input line 198.
+ [37]
+LaTeX Info: Redefining \. on input line 208.
+LaTeX Info: Redefining \% on input line 208.
+ [38]
+LaTeX Info: Redefining \. on input line 221.
+LaTeX Info: Redefining \% on input line 221.
+ [39]
+LaTeX Info: Redefining \. on input line 228.
+LaTeX Info: Redefining \% on input line 228.
+ [40]
+LaTeX Info: Redefining \. on input line 246.
+LaTeX Info: Redefining \% on input line 246.
+ [41]
+LaTeX Info: Redefining \. on input line 257.
+LaTeX Info: Redefining \% on input line 257.
+ [42]
 Overfull \hbox (24.60587pt too wide) in paragraph at lines 259--260
 \twelverm pre-di-ca-dos que ma-ti-zan los di-fe-ren-tes erro-res de la par-ti-t
 u-ra \OT1/cmtt/m/n/12 error[]in[]strong(V,G,B)\twelverm ,
 
 \hbox(8.33331+2.66666)x412.56497, glue set - 1.0 []
 
-[43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54]
-<imagenes/arquitectura_final.pdf, id=346, 1096.095pt x 245.91875pt>
+LaTeX Info: Redefining \. on input line 266.
+LaTeX Info: Redefining \% on input line 266.
+[43]
+LaTeX Info: Redefining \. on input line 280.
+LaTeX Info: Redefining \% on input line 280.
+ [44]
+LaTeX Info: Redefining \. on input line 289.
+LaTeX Info: Redefining \% on input line 289.
+ [45]
+LaTeX Info: Redefining \. on input line 293.
+LaTeX Info: Redefining \% on input line 293.
+ [46]
+LaTeX Info: Redefining \. on input line 308.
+LaTeX Info: Redefining \% on input line 308.
+ [47]
+LaTeX Info: Redefining \. on input line 324.
+LaTeX Info: Redefining \% on input line 324.
+ [48]
+LaTeX Info: Redefining \. on input line 345.
+LaTeX Info: Redefining \% on input line 345.
+ [49]
+LaTeX Info: Redefining \. on input line 353.
+LaTeX Info: Redefining \% on input line 353.
+ [50]
+LaTeX Info: Redefining \. on input line 358.
+LaTeX Info: Redefining \% on input line 358.
+ [51]
+LaTeX Info: Redefining \. on input line 375.
+LaTeX Info: Redefining \% on input line 375.
+ [52]
+LaTeX Info: Redefining \. on input line 386.
+LaTeX Info: Redefining \% on input line 386.
+ [53]
+LaTeX Info: Redefining \. on input line 392.
+LaTeX Info: Redefining \% on input line 392.
+ [54]
+<imagenes/arquitectura_final.pdf, id=348, 1096.095pt x 245.91875pt>
 File: imagenes/arquitectura_final.pdf Graphic file (type pdf)
 
 <use imagenes/arquitectura_final.pdf>
 Package pdftex.def Info: imagenes/arquitectura_final.pdf used on input line 397
 .
 (pdftex.def)             Requested size: 330.05322pt x 74.05011pt.
- [55 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/arquitectura_final.
-pdf>]) [56]
-(C:\Users\Trigork\haspie-haspist\docs\log_def\evaluation.tex
+LaTeX Info: Redefining \. on input line 403.
+LaTeX Info: Redefining \% on input line 403.
+ [55 <./imagenes/arquitectura_final.pdf>])
+LaTeX Info: Redefining \. on input line 65.
+LaTeX Info: Redefining \% on input line 65.
+[56]
+\openout2 = `evaluation.aux'.
+
+ (./evaluation.tex
 Cap\'{\i }tulo 4.
-) [57
+
+<imagenes/evaluation/greensleeves_orig.png, id=389, 755.82375pt x 474.77374pt>
+File: imagenes/evaluation/greensleeves_orig.png Graphic file (type png)
+
+<use imagenes/evaluation/greensleeves_orig.png>
+Package pdftex.def Info: imagenes/evaluation/greensleeves_orig.png used on inpu
+t line 22.
+(pdftex.def)             Requested size: 330.05322pt x 207.3218pt.
+ [57
 
 
 
-] (C:\Users\Trigork\haspie-haspist\docs\log_def\conclusions.tex [58
+]
+<imagenes/evaluation/greensleeves_harm.png, id=393, 757.83125pt x 457.71pt>
+File: imagenes/evaluation/greensleeves_harm.png Graphic file (type png)
+
+<use imagenes/evaluation/greensleeves_harm.png>
+Package pdftex.def Info: imagenes/evaluation/greensleeves_harm.png used on inpu
+t line 29.
+(pdftex.def)             Requested size: 330.05322pt x 199.34668pt.
+) [58 <./imagenes/evaluation/greensleeves_orig.png>]
+LaTeX Info: Redefining \. on input line 66.
+LaTeX Info: Redefining \% on input line 66.
+ [59 <./imagenes/evaluation/greensleeves_harm.png>]
+\openout2 = `conclusions.aux'.
+
+
+(./conclusions.tex [60
 
 
 
 ]
 Cap\'{\i }tulo 5.
-[59] [60] [61]) [62] (C:\Users\Trigork\haspie-haspist\docs\log_def\appendix.tex
+[61] [62]
+LaTeX Info: Redefining \. on input line 40.
+LaTeX Info: Redefining \% on input line 40.
+ [63])
+LaTeX Info: Redefining \. on input line 67.
+LaTeX Info: Redefining \% on input line 67.
+ [64]
+\openout2 = `appendix.aux'.
+
+ (./appendix.tex
 Ap\'{e}ndice A.
-<imagenes/third_iter.pdf, id=406, 491.8375pt x 491.8375pt>
+<imagenes/third_iter.pdf, id=418, 491.8375pt x 491.8375pt>
 File: imagenes/third_iter.pdf Graphic file (type pdf)
 
 <use imagenes/third_iter.pdf>
 Package pdftex.def Info: imagenes/third_iter.pdf used on input line 7.
 (pdftex.def)             Requested size: 330.05322pt x 330.06224pt.
- [63
+ [65
 
 
 
 ]
-<imagenes/fourth_iter.pdf, id=410, 712.6625pt x 521.95pt>
+<imagenes/fourth_iter.pdf, id=422, 712.6625pt x 521.95pt>
 File: imagenes/fourth_iter.pdf Graphic file (type pdf)
 
 <use imagenes/fourth_iter.pdf>
 Package pdftex.def Info: imagenes/fourth_iter.pdf used on input line 14.
 (pdftex.def)             Requested size: 330.05322pt x 241.72462pt.
 
-<imagenes/fifth_iter.pdf, id=411, 853.1875pt x 531.9875pt>
+<imagenes/fifth_iter.pdf, id=423, 853.1875pt x 531.9875pt>
 File: imagenes/fifth_iter.pdf Graphic file (type pdf)
 
 <use imagenes/fifth_iter.pdf>
 Package pdftex.def Info: imagenes/fifth_iter.pdf used on input line 20.
 (pdftex.def)             Requested size: 330.05322pt x 205.8021pt.
 
-<imagenes/sixth_seventh_eighth_iters.pdf, id=412, 973.6375pt x 803.0pt>
+<imagenes/sixth_seventh_eighth_iters.pdf, id=424, 973.6375pt x 803.0pt>
 File: imagenes/sixth_seventh_eighth_iters.pdf Graphic file (type pdf)
 
 <use imagenes/sixth_seventh_eighth_iters.pdf>
@@ -1288,18 +1489,20 @@ Package pdftex.def Info: imagenes/sixth_seventh_eighth_iters.pdf used on input
 line 26.
 (pdftex.def)             Requested size: 330.05322pt x 272.2077pt.
 
-<imagenes/chord_diagram.pdf, id=413, 501.875pt x 531.9875pt>
+<imagenes/chord_diagram.pdf, id=425, 501.875pt x 531.9875pt>
 File: imagenes/chord_diagram.pdf Graphic file (type pdf)
 
 <use imagenes/chord_diagram.pdf>
 Package pdftex.def Info: imagenes/chord_diagram.pdf used on input line 32.
 (pdftex.def)             Requested size: 330.05322pt x 349.87086pt.
- [64 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/third_iter.pdf>] [6
-5 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/fourth_iter.pdf> <C:/U
-sers/Trigork/haspie-haspist/docs/log_def/imagenes/fifth_iter.pdf>] [66 <C:/User
-s/Trigork/haspie-haspist/docs/log_def/imagenes/sixth_seventh_eighth_iters.pdf>]
- [67 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/chord_diagram.pdf>]
- [68
+ [66 <./imagenes/third_iter.pdf>]
+LaTeX Info: Redefining \. on input line 37.
+LaTeX Info: Redefining \% on input line 37.
+ [67 <./imagenes/fourth_iter.pdf> <./imagenes/fifth_iter.pdf>] [68 <./imagenes/
+sixth_seventh_eighth_iters.pdf>]
+LaTeX Info: Redefining \. on input line 37.
+LaTeX Info: Redefining \% on input line 37.
+ [69 <./imagenes/chord_diagram.pdf>] [70
 
 ]
 Ap\'{e}ndice B.
@@ -1320,9 +1523,9 @@ Overfull \hbox (19.66478pt too wide) in alignment at lines 63--69
 
 \hbox(0.0+0.0)x412.56497 []
 
-[69] [70]
+[71] [72]
 Ap\'{e}ndice C.
-<imagenes/scores/Greensleeves.pdf, id=457, 597.23125pt x 845.1575pt>
+<imagenes/scores/Greensleeves.pdf, id=468, 597.23125pt x 845.1575pt>
 File: imagenes/scores/Greensleeves.pdf Graphic file (type pdf)
 
 <use imagenes/scores/Greensleeves.pdf>
@@ -1330,7 +1533,7 @@ Package pdftex.def Info: imagenes/scores/Greensleeves.pdf used on input line 77
 .
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
 
-<imagenes/scores/menuet_bach.pdf, id=458, 597.23125pt x 845.1575pt>
+<imagenes/scores/menuet_bach.pdf, id=469, 597.23125pt x 845.1575pt>
 File: imagenes/scores/menuet_bach.pdf Graphic file (type pdf)
 
 <use imagenes/scores/menuet_bach.pdf>
@@ -1338,15 +1541,15 @@ Package pdftex.def Info: imagenes/scores/menuet_bach.pdf used on input line 84.
 
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
 
-<imagenes/scores/Joy_to_the_world.pdf, id=459, 597.23125pt x 845.1575pt>
-File: imagenes/scores/Joy_to_the_world.pdf Graphic file (type pdf)
+<imagenes/scores/Joy_to_the_World.pdf, id=470, 597.23125pt x 845.1575pt>
+File: imagenes/scores/Joy_to_the_World.pdf Graphic file (type pdf)
 
-<use imagenes/scores/Joy_to_the_world.pdf>
-Package pdftex.def Info: imagenes/scores/Joy_to_the_world.pdf used on input lin
+<use imagenes/scores/Joy_to_the_World.pdf>
+Package pdftex.def Info: imagenes/scores/Joy_to_the_World.pdf used on input lin
 e 91.
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
 
-<imagenes/scores/silent_night.pdf, id=460, 597.23125pt x 845.1575pt>
+<imagenes/scores/silent_night.pdf, id=471, 597.23125pt x 845.1575pt>
 File: imagenes/scores/silent_night.pdf Graphic file (type pdf)
 
 <use imagenes/scores/silent_night.pdf>
@@ -1354,7 +1557,7 @@ Package pdftex.def Info: imagenes/scores/silent_night.pdf used on input line 98
 .
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
 
-<imagenes/scores/simple_chords.pdf, id=461, 597.23125pt x 845.1575pt>
+<imagenes/scores/simple_chords.pdf, id=472, 597.23125pt x 845.1575pt>
 File: imagenes/scores/simple_chords.pdf Graphic file (type pdf)
 
 <use imagenes/scores/simple_chords.pdf>
@@ -1362,27 +1565,31 @@ Package pdftex.def Info: imagenes/scores/simple_chords.pdf used on input line 1
 05.
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
 
-<imagenes/scores/freetimerests.pdf, id=462, 597.23125pt x 845.1575pt>
+<imagenes/scores/freetimerests.pdf, id=473, 597.23125pt x 845.1575pt>
 File: imagenes/scores/freetimerests.pdf Graphic file (type pdf)
 
 <use imagenes/scores/freetimerests.pdf>
 Package pdftex.def Info: imagenes/scores/freetimerests.pdf used on input line 1
 12.
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
- [71
+ [73
 
-] [72 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/scores/Greensleeve
-s.pdf>] [73 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/scores/menue
-t_bach.pdf>] [74 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/scores/
-Joy_to_the_world.pdf>] [75 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagen
-es/scores/silent_night.pdf>]
-[76 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/scores/simple_chords
-.pdf>] [77 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/scores/freeti
-merests.pdf>] [78
+] [74 <./imagenes/scores/Greensleeves.pdf>]
+LaTeX Info: Redefining \. on input line 117.
+LaTeX Info: Redefining \% on input line 117.
+ [75 <./imagenes/scores/menuet_bach.pdf>] [76 <./imagenes/scores/Joy_to_the_Wor
+ld.pdf>]
+LaTeX Info: Redefining \. on input line 117.
+LaTeX Info: Redefining \% on input line 117.
+ [77 <./imagenes/scores/silent_night.pdf>] [78 <./imagenes/scores/simple_chords
+.pdf>]
+LaTeX Info: Redefining \. on input line 117.
+LaTeX Info: Redefining \% on input line 117.
+ [79 <./imagenes/scores/freetimerests.pdf>] [80
 
 ]
 Ap\'{e}ndice D.
-[79] [80]
+[81] [82]
 Ap\'{e}ndice E.
 
 Overfull \hbox (50.56026pt too wide) in paragraph at lines 173--173
@@ -1510,108 +1717,134 @@ ref folder[]
 
 \hbox(8.33331+2.66666)x412.56497 []
 
-[81
+<imagenes/usage/metainfo.png, id=597, 766.865pt x 120.45pt>
+File: imagenes/usage/metainfo.png Graphic file (type png)
 
-] [82] [83] [84]
-<imagenes/select_silence.jpg, id=597, 702.625pt x 228.855pt>
-File: imagenes/select_silence.jpg Graphic file (type jpg)
+<use imagenes/usage/metainfo.png>
+Package pdftex.def Info: imagenes/usage/metainfo.png used on input line 184.
+(pdftex.def)             Requested size: 330.05322pt x 51.8421pt.
+ [83
 
-<use imagenes/select_silence.jpg>
-Package pdftex.def Info: imagenes/select_silence.jpg used on input line 219.
+] [84]
+<imagenes/usage/harmony_select.png, id=604, 645.41125pt x 355.3275pt>
+File: imagenes/usage/harmony_select.png Graphic file (type png)
+
+<use imagenes/usage/harmony_select.png>
+Package pdftex.def Info: imagenes/usage/harmony_select.png used on input line 1
+93.
+(pdftex.def)             Requested size: 330.05322pt x 181.70801pt.
+LaTeX Info: Redefining \. on input line 204.
+LaTeX Info: Redefining \% on input line 204.
+ [85 <./imagenes/usage/metainfo.png>]
+[86 <./imagenes/usage/harmony_select.png>]
+LaTeX Info: Redefining \. on input line 230.
+LaTeX Info: Redefining \% on input line 230.
+ [87]
+<imagenes/usage/select_silence.jpg, id=614, 702.625pt x 228.855pt>
+File: imagenes/usage/select_silence.jpg Graphic file (type jpg)
+
+<use imagenes/usage/select_silence.jpg>
+Package pdftex.def Info: imagenes/usage/select_silence.jpg used on input line 2
+33.
 (pdftex.def)             Requested size: 330.05322pt x 107.50598pt.
 
-<imagenes/invisible_silence.jpg, id=598, 702.625pt x 228.855pt>
-File: imagenes/invisible_silence.jpg Graphic file (type jpg)
+<imagenes/usage/invisible_silence.jpg, id=615, 702.625pt x 228.855pt>
+File: imagenes/usage/invisible_silence.jpg Graphic file (type jpg)
 
-<use imagenes/invisible_silence.jpg>
-Package pdftex.def Info: imagenes/invisible_silence.jpg used on input line 221.
-
+<use imagenes/usage/invisible_silence.jpg>
+Package pdftex.def Info: imagenes/usage/invisible_silence.jpg used on input lin
+e 235.
 (pdftex.def)             Requested size: 330.05322pt x 107.50598pt.
 
+<imagenes/usage/completion_select.png, id=616, 814.04124pt x 323.2075pt>
+File: imagenes/usage/completion_select.png Graphic file (type png)
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[85] [86 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/select_silence.
-jpg> <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/invisible_silence.j
-pg>]) (C:\Users\Trigork\haspie-haspist\docs\log_def\root.bbl
-** WARNING: IEEEtran.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-** WARNING: IEEEtran.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-** WARNING: IEEEtran.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-** WARNING: IEEEtran.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-** WARNING: IEEEtran.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-** WARNING: IEEEtran.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-[87
+<use imagenes/usage/completion_select.png>
+Package pdftex.def Info: imagenes/usage/completion_select.png used on input lin
+e 246.
+(pdftex.def)             Requested size: 330.05322pt x 131.04134pt.
+ [88 <./imagenes/usage/select_silence.jpg> <./imagenes/usage/invisible_silence.
+jpg>]
+LaTeX Info: Redefining \. on input line 255.
+LaTeX Info: Redefining \% on input line 255.
+ [89 <./imagenes/usage/completion_select.png>]) (./root.bbl [90
 
 
-])
+]
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `English'. Using the pattern for
+** the default language instead.
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `English'. Using the pattern for
+** the default language instead.
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `English'. Using the pattern for
+** the default language instead.
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `English'. Using the pattern for
+** the default language instead.
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `English'. Using the pattern for
+** the default language instead.
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `English'. Using the pattern for
+** the default language instead.
+[91])
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the root.maf file.
+\openout3 = `root.maf'.
+
 
 
 Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the root.log file.
 
-[88] (C:\Users\Trigork\haspie-haspist\docs\log_def\root.aux
-(C:\Users\Trigork\haspie-haspist\docs\log_def\cover.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\draft.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\director-agreement.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\dedication.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\gratefulnesses.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\abstract.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\keywords.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\introduction.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\contextualization.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\implementation.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\evaluation.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\conclusions.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\appendix.aux)) ) 
+LaTeX Info: Redefining \. on input line 80.
+LaTeX Info: Redefining \% on input line 80.
+[92] (./root.aux (./cover.aux)
+LaTeX Info: Redefining \. on input line 10.
+LaTeX Info: Redefining \% on input line 10.
+ (./draft.aux) (./director-agreement.aux)
+(./dedication.aux) (./gratefulnesses.aux) (./abstract.aux) (./keywords.aux)
+(./introduction.aux) (./contextualization.aux) (./implementation.aux)
+(./evaluation.aux) (./conclusions.aux) (./appendix.aux))
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 8184 strings out of 493921
- 102648 string characters out of 3144871
- 208106 words of memory out of 3000000
- 10924 multiletter control sequences out of 15000+200000
- 47379 words of font info for 167 fonts, out of 3000000 for 9000
- 841 hyphenation exceptions out of 8191
- 36i,12n,45p,2257b,620s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files
- (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmtt12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
-eurosym/feybr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/euros
-ym/feymr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/musixtex-f
-onts/musix20.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/musixtex
--fonts/musix24.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/musixt
-ex-fonts/musixspx.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/avantg
-ar/uagk8a.pfb>
-Output written on root.pdf (109 pages, 1869189 bytes).
+ 8554 strings out of 493304
+ 105853 string characters out of 6139870
+ 222606 words of memory out of 5000000
+ 11431 multiletter control sequences out of 15000+600000
+ 38362 words of font info for 136 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 39i,12n,45p,2257b,688s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/eurosym/feybr10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/eurosym/feymr10.pfb></usr/share/texmf/fonts/type1/public/m
+usixtex-fonts/musix20.pfb></usr/share/texmf/fonts/type1/public/musixtex-fonts/m
+usix24.pfb></usr/share/texmf/fonts/type1/public/musixtex-fonts/musixspx.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/urw/avantgar/uagk8a.pfb>
+Output written on root.pdf (113 pages, 2006424 bytes).
 PDF statistics:
- 679 PDF objects out of 1000 (max. 8388607)
+ 702 PDF objects out of 1000 (max. 8388607)
+ 442 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

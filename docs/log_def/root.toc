@@ -77,15 +77,15 @@
 \contentsline {subsection}{\numberline {3.9.3}Pruebas}{56}
 \contentsline {subsection}{\numberline {3.9.4}Resultados}{56}
 \contentsline {chapter}{\numberline {4}Evaluaci\IeC {\'o}n}{57}
-\contentsline {chapter}{\numberline {5}Conclusiones}{59}
-\contentsline {section}{\numberline {5.1}Trabajo Futuro}{61}
-\contentsline {subsection}{\numberline {5.1.1}Est\IeC {\'e}tica e Interfaz}{61}
-\contentsline {subsection}{\numberline {5.1.2}Procesado y Armonizaci\IeC {\'o}n}{62}
-\contentsline {subsection}{\numberline {5.1.3}Modulaci\IeC {\'o}n}{62}
-\contentsline {subsection}{\numberline {5.1.4}Publicaci\IeC {\'o}n}{62}
-\contentsline {chapter}{\numberline {A}Diagramas}{63}
-\contentsline {chapter}{\numberline {B}An\IeC {\'a}lisis de MusicXML}{69}
-\contentsline {chapter}{\numberline {C}Partituras}{71}
-\contentsline {chapter}{\numberline {D}Instalaci\IeC {\'o}n}{79}
-\contentsline {chapter}{\numberline {E}Manual de uso}{81}
-\contentsline {chapter}{Bibliograf\'{\i }a}{87}
+\contentsline {chapter}{\numberline {5}Conclusiones}{61}
+\contentsline {section}{\numberline {5.1}Trabajo Futuro}{63}
+\contentsline {subsection}{\numberline {5.1.1}Est\IeC {\'e}tica e Interfaz}{63}
+\contentsline {subsection}{\numberline {5.1.2}Procesado y Armonizaci\IeC {\'o}n}{64}
+\contentsline {subsection}{\numberline {5.1.3}Modulaci\IeC {\'o}n}{64}
+\contentsline {subsection}{\numberline {5.1.4}Publicaci\IeC {\'o}n}{64}
+\contentsline {chapter}{\numberline {A}Diagramas}{65}
+\contentsline {chapter}{\numberline {B}An\IeC {\'a}lisis de MusicXML}{71}
+\contentsline {chapter}{\numberline {C}Partituras}{73}
+\contentsline {chapter}{\numberline {D}Instalaci\IeC {\'o}n}{81}
+\contentsline {chapter}{\numberline {E}Manual de uso}{83}
+\contentsline {chapter}{Bibliograf\'{\i }a}{91}
