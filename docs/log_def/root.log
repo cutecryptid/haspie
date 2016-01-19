@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.9)  18 JAN 2016 23:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.9)  19 JAN 2016 10:23
 entering extended mode
 **root.tex
 (C:\Users\Trigork\haspie-haspist\docs\log_def\root.tex
@@ -1255,273 +1255,283 @@ Cap\'{\i }tulo 4.
 Cap\'{\i }tulo 5.
 [59] [60] [61]) [62] (C:\Users\Trigork\haspie-haspist\docs\log_def\appendix.tex
 Ap\'{e}ndice A.
-<imagenes/first_iters.pdf, id=406, 491.8375pt x 491.8375pt>
-File: imagenes/first_iters.pdf Graphic file (type pdf)
+<imagenes/third_iter.pdf, id=406, 491.8375pt x 491.8375pt>
+File: imagenes/third_iter.pdf Graphic file (type pdf)
 
-<use imagenes/first_iters.pdf>
-Package pdftex.def Info: imagenes/first_iters.pdf used on input line 7.
+<use imagenes/third_iter.pdf>
+Package pdftex.def Info: imagenes/third_iter.pdf used on input line 7.
 (pdftex.def)             Requested size: 330.05322pt x 330.06224pt.
  [63
 
 
 
 ]
-<imagenes/second_iters.pdf, id=410, 712.6625pt x 521.95pt>
-File: imagenes/second_iters.pdf Graphic file (type pdf)
+<imagenes/fourth_iter.pdf, id=410, 712.6625pt x 521.95pt>
+File: imagenes/fourth_iter.pdf Graphic file (type pdf)
 
-<use imagenes/second_iters.pdf>
-Package pdftex.def Info: imagenes/second_iters.pdf used on input line 14.
+<use imagenes/fourth_iter.pdf>
+Package pdftex.def Info: imagenes/fourth_iter.pdf used on input line 14.
 (pdftex.def)             Requested size: 330.05322pt x 241.72462pt.
 
-<imagenes/last_iters.pdf, id=411, 973.6375pt x 803.0pt>
-File: imagenes/last_iters.pdf Graphic file (type pdf)
+<imagenes/fifth_iter.pdf, id=411, 853.1875pt x 531.9875pt>
+File: imagenes/fifth_iter.pdf Graphic file (type pdf)
 
-<use imagenes/last_iters.pdf>
-Package pdftex.def Info: imagenes/last_iters.pdf used on input line 20.
+<use imagenes/fifth_iter.pdf>
+Package pdftex.def Info: imagenes/fifth_iter.pdf used on input line 20.
+(pdftex.def)             Requested size: 330.05322pt x 205.8021pt.
+
+<imagenes/sixth_seventh_eighth_iters.pdf, id=412, 973.6375pt x 803.0pt>
+File: imagenes/sixth_seventh_eighth_iters.pdf Graphic file (type pdf)
+
+<use imagenes/sixth_seventh_eighth_iters.pdf>
+Package pdftex.def Info: imagenes/sixth_seventh_eighth_iters.pdf used on input 
+line 26.
 (pdftex.def)             Requested size: 330.05322pt x 272.2077pt.
 
-<imagenes/chord_diagram.pdf, id=412, 501.875pt x 531.9875pt>
+<imagenes/chord_diagram.pdf, id=413, 501.875pt x 531.9875pt>
 File: imagenes/chord_diagram.pdf Graphic file (type pdf)
 
 <use imagenes/chord_diagram.pdf>
-Package pdftex.def Info: imagenes/chord_diagram.pdf used on input line 26.
+Package pdftex.def Info: imagenes/chord_diagram.pdf used on input line 32.
 (pdftex.def)             Requested size: 330.05322pt x 349.87086pt.
- [64 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/first_iters.pdf>] [
-65 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/second_iters.pdf> <C:
-/Users/Trigork/haspie-haspist/docs/log_def/imagenes/last_iters.pdf>] [66 <C:/Us
-ers/Trigork/haspie-haspist/docs/log_def/imagenes/chord_diagram.pdf>]
+ [64 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/third_iter.pdf>] [6
+5 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/fourth_iter.pdf> <C:/U
+sers/Trigork/haspie-haspist/docs/log_def/imagenes/fifth_iter.pdf>] [66 <C:/User
+s/Trigork/haspie-haspist/docs/log_def/imagenes/sixth_seventh_eighth_iters.pdf>]
+ [67 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/chord_diagram.pdf>]
+ [68
+
+]
 Ap\'{e}ndice B.
 
-Overfull \hbox (19.66478pt too wide) in alignment at lines 36--57
+Overfull \hbox (19.66478pt too wide) in alignment at lines 42--63
  [] [] [] [] 
 
 \hbox(0.0+0.0)x412.56497 []
 
 
-Underfull \vbox (badness 10000) detected at line 57
+Underfull \vbox (badness 10000) detected at line 63
 
 \vbox(12.59605+0.0)x412.56497 []
 
 
-Overfull \hbox (19.66478pt too wide) in alignment at lines 57--63
+Overfull \hbox (19.66478pt too wide) in alignment at lines 63--69
  [] [] [] [] 
 
 \hbox(0.0+0.0)x412.56497 []
 
-[67
-
-] [68]
+[69] [70]
 Ap\'{e}ndice C.
-<imagenes/scores/Greensleeves.pdf, id=445, 597.23125pt x 845.1575pt>
+<imagenes/scores/Greensleeves.pdf, id=457, 597.23125pt x 845.1575pt>
 File: imagenes/scores/Greensleeves.pdf Graphic file (type pdf)
 
 <use imagenes/scores/Greensleeves.pdf>
-Package pdftex.def Info: imagenes/scores/Greensleeves.pdf used on input line 71
+Package pdftex.def Info: imagenes/scores/Greensleeves.pdf used on input line 77
 .
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
 
-<imagenes/scores/menuet_bach.pdf, id=446, 597.23125pt x 845.1575pt>
+<imagenes/scores/menuet_bach.pdf, id=458, 597.23125pt x 845.1575pt>
 File: imagenes/scores/menuet_bach.pdf Graphic file (type pdf)
 
 <use imagenes/scores/menuet_bach.pdf>
-Package pdftex.def Info: imagenes/scores/menuet_bach.pdf used on input line 78.
+Package pdftex.def Info: imagenes/scores/menuet_bach.pdf used on input line 84.
 
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
 
-<imagenes/scores/Joy_to_the_world.pdf, id=447, 597.23125pt x 845.1575pt>
+<imagenes/scores/Joy_to_the_world.pdf, id=459, 597.23125pt x 845.1575pt>
 File: imagenes/scores/Joy_to_the_world.pdf Graphic file (type pdf)
 
 <use imagenes/scores/Joy_to_the_world.pdf>
 Package pdftex.def Info: imagenes/scores/Joy_to_the_world.pdf used on input lin
-e 85.
+e 91.
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
 
-<imagenes/scores/silent_night.pdf, id=448, 597.23125pt x 845.1575pt>
+<imagenes/scores/silent_night.pdf, id=460, 597.23125pt x 845.1575pt>
 File: imagenes/scores/silent_night.pdf Graphic file (type pdf)
 
 <use imagenes/scores/silent_night.pdf>
-Package pdftex.def Info: imagenes/scores/silent_night.pdf used on input line 92
+Package pdftex.def Info: imagenes/scores/silent_night.pdf used on input line 98
 .
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
 
-<imagenes/scores/simple_chords.pdf, id=449, 597.23125pt x 845.1575pt>
+<imagenes/scores/simple_chords.pdf, id=461, 597.23125pt x 845.1575pt>
 File: imagenes/scores/simple_chords.pdf Graphic file (type pdf)
 
 <use imagenes/scores/simple_chords.pdf>
-Package pdftex.def Info: imagenes/scores/simple_chords.pdf used on input line 9
-9.
+Package pdftex.def Info: imagenes/scores/simple_chords.pdf used on input line 1
+05.
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
 
-<imagenes/scores/freetimerests.pdf, id=450, 597.23125pt x 845.1575pt>
+<imagenes/scores/freetimerests.pdf, id=462, 597.23125pt x 845.1575pt>
 File: imagenes/scores/freetimerests.pdf Graphic file (type pdf)
 
 <use imagenes/scores/freetimerests.pdf>
 Package pdftex.def Info: imagenes/scores/freetimerests.pdf used on input line 1
-06.
+12.
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
- [69
+ [71
 
-] [70 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/scores/Greensleeve
-s.pdf>] [71 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/scores/menue
-t_bach.pdf>] [72 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/scores/
-Joy_to_the_world.pdf>] [73 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagen
+] [72 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/scores/Greensleeve
+s.pdf>] [73 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/scores/menue
+t_bach.pdf>] [74 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/scores/
+Joy_to_the_world.pdf>] [75 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagen
 es/scores/silent_night.pdf>]
-[74 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/scores/simple_chords
-.pdf>] [75 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/scores/freeti
-merests.pdf>] [76
+[76 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/scores/simple_chords
+.pdf>] [77 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/scores/freeti
+merests.pdf>] [78
 
 ]
 Ap\'{e}ndice D.
-[77] [78]
+[79] [80]
 Ap\'{e}ndice E.
 
-Overfull \hbox (50.56026pt too wide) in paragraph at lines 167--167
+Overfull \hbox (50.56026pt too wide) in paragraph at lines 173--173
 []\OT1/cmtt/m/n/12 usage: usage.py [-h] [-n N] [-s S] [-v V [V ...]] [-S] [-f x
 ml|pdf|midi|ly][] 
 
 \hbox(8.33331+2.66666)x412.56497 []
 
 
-Overfull \hbox (56.73526pt too wide) in paragraph at lines 167--167
+Overfull \hbox (56.73526pt too wide) in paragraph at lines 173--173
 []                \OT1/cmtt/m/n/12 [-o output/dir/for/file] [-t T] [-k A~G+-?] 
 [-m major|minor][] 
 
 \hbox(8.33331+2.66666)x412.56497 []
 
 
-Overfull \hbox (1.16023pt too wide) in paragraph at lines 167--167
+Overfull \hbox (1.16023pt too wide) in paragraph at lines 173--173
 []                \OT1/cmtt/m/n/12 [-M] [-6] [-O O] [-c config_file_name.lp] XM
 L_SCORE[] 
 
 \hbox(8.33331+2.66666)x412.56497 []
 
 
-Overfull \hbox (62.91026pt too wide) in paragraph at lines 167--167
+Overfull \hbox (62.91026pt too wide) in paragraph at lines 173--173
 []    \OT1/cmtt/m/n/12 -n N, --num_sols N    max number of ASP solutions, by de
 fault all of them[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (62.91026pt too wide) in paragraph at lines 167--167
+Overfull \hbox (62.91026pt too wide) in paragraph at lines 173--173
 []    \OT1/cmtt/m/n/12 -s S, --span S        horizontal span to consider while 
 harmonizing, this[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (7.33524pt too wide) in paragraph at lines 167--167
+Overfull \hbox (7.33524pt too wide) in paragraph at lines 173--173
 []                          \OT1/cmtt/m/n/12 takes in account subdivision, by d
 efault 1[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (62.91026pt too wide) in paragraph at lines 167--167
+Overfull \hbox (62.91026pt too wide) in paragraph at lines 173--173
 []                          \OT1/cmtt/m/n/12 extra instruments, these can be in
 put by name or by[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (69.08527pt too wide) in paragraph at lines 167--167
+Overfull \hbox (69.08527pt too wide) in paragraph at lines 173--173
 []                          \OT1/cmtt/m/n/12 numerical note range (i.e soprano,
 guitar,(65,90)...)[] 
 
 \hbox(8.33331+2.66666)x412.56497 []
 
 
-Overfull \hbox (44.38525pt too wide) in paragraph at lines 167--167
+Overfull \hbox (44.38525pt too wide) in paragraph at lines 173--173
 []                          \OT1/cmtt/m/n/12 to leave one of the sides (or both
 ) of the range[] 
 
 \hbox(8.33331+2.66666)x412.56497 []
 
 
-Overfull \hbox (75.26027pt too wide) in paragraph at lines 167--167
+Overfull \hbox (75.26027pt too wide) in paragraph at lines 173--173
 []    \OT1/cmtt/m/n/12 -S, --show            show result in editor instead of w
 riting it to a file[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (38.21025pt too wide) in paragraph at lines 167--167
+Overfull \hbox (38.21025pt too wide) in paragraph at lines 173--173
 []    \OT1/cmtt/m/n/12 -t T, --timeout T     maximum time (in seconds) allowed 
 to search for[] 
 
 \hbox(8.33331+1.66667)x412.56497 []
 
 
-Overfull \hbox (62.91026pt too wide) in paragraph at lines 167--167
+Overfull \hbox (62.91026pt too wide) in paragraph at lines 173--173
 []                          \OT1/cmtt/m/n/12 key in which the score should be h
 armonized, if not[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (44.38525pt too wide) in paragraph at lines 167--167
+Overfull \hbox (44.38525pt too wide) in paragraph at lines 173--173
 []                          \OT1/cmtt/m/n/12 mode of the scale, if not specifie
 d, parser will[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (32.03525pt too wide) in paragraph at lines 167--167
+Overfull \hbox (32.03525pt too wide) in paragraph at lines 173--173
 []    \OT1/cmtt/m/n/12 -M, --melodious       turns on melodic preferences in AS
 P for a more[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (32.03525pt too wide) in paragraph at lines 167--167
+Overfull \hbox (32.03525pt too wide) in paragraph at lines 173--173
 []    \OT1/cmtt/m/n/12 -6, --sixthslink      turns on sixth-four chord linking 
 in ASP for a[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (62.91026pt too wide) in paragraph at lines 167--167
+Overfull \hbox (62.91026pt too wide) in paragraph at lines 173--173
 []                          \OT1/cmtt/m/n/12 max number of optimum solutions to
  display in score[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (81.43527pt too wide) in paragraph at lines 167--167
+Overfull \hbox (81.43527pt too wide) in paragraph at lines 173--173
 []                          \OT1/cmtt/m/n/12 reads preference order and weights
  for parameters from[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (19.68524pt too wide) in paragraph at lines 167--167
+Overfull \hbox (19.68524pt too wide) in paragraph at lines 173--173
 []                          \OT1/cmtt/m/n/12 the desired *.lp file stored in /p
 ref folder[] 
 
 \hbox(8.33331+2.66666)x412.56497 []
 
-[79
+[81
 
-] [80] [81] [82]
-<imagenes/select_silence.jpg, id=586, 702.625pt x 228.855pt>
+] [82] [83] [84]
+<imagenes/select_silence.jpg, id=597, 702.625pt x 228.855pt>
 File: imagenes/select_silence.jpg Graphic file (type jpg)
 
 <use imagenes/select_silence.jpg>
-Package pdftex.def Info: imagenes/select_silence.jpg used on input line 213.
+Package pdftex.def Info: imagenes/select_silence.jpg used on input line 219.
 (pdftex.def)             Requested size: 330.05322pt x 107.50598pt.
 
-<imagenes/invisible_silence.jpg, id=587, 702.625pt x 228.855pt>
+<imagenes/invisible_silence.jpg, id=598, 702.625pt x 228.855pt>
 File: imagenes/invisible_silence.jpg Graphic file (type jpg)
 
 <use imagenes/invisible_silence.jpg>
-Package pdftex.def Info: imagenes/invisible_silence.jpg used on input line 215.
+Package pdftex.def Info: imagenes/invisible_silence.jpg used on input line 221.
 
 (pdftex.def)             Requested size: 330.05322pt x 107.50598pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[83] [84 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/select_silence.
+[85] [86 <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/select_silence.
 jpg> <C:/Users/Trigork/haspie-haspist/docs/log_def/imagenes/invisible_silence.j
 pg>]) (C:\Users\Trigork\haspie-haspist\docs\log_def\root.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
@@ -1542,7 +1552,7 @@ pg>]) (C:\Users\Trigork\haspie-haspist\docs\log_def\root.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
-[85
+[87
 
 
 ])
@@ -1555,7 +1565,7 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the root.log file.
 
-[86] (C:\Users\Trigork\haspie-haspist\docs\log_def\root.aux
+[88] (C:\Users\Trigork\haspie-haspist\docs\log_def\root.aux
 (C:\Users\Trigork\haspie-haspist\docs\log_def\cover.aux)
 (C:\Users\Trigork\haspie-haspist\docs\log_def\draft.aux)
 (C:\Users\Trigork\haspie-haspist\docs\log_def\director-agreement.aux)
@@ -1568,43 +1578,40 @@ Package minitoc(hints) Warning: W0024
 (C:\Users\Trigork\haspie-haspist\docs\log_def\implementation.aux)
 (C:\Users\Trigork\haspie-haspist\docs\log_def\evaluation.aux)
 (C:\Users\Trigork\haspie-haspist\docs\log_def\conclusions.aux)
-(C:\Users\Trigork\haspie-haspist\docs\log_def\appendix.aux))
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+(C:\Users\Trigork\haspie-haspist\docs\log_def\appendix.aux)) ) 
 Here is how much of TeX's memory you used:
- 8178 strings out of 493921
- 102414 string characters out of 3144871
- 208073 words of memory out of 3000000
- 10919 multiletter control sequences out of 15000+200000
+ 8184 strings out of 493921
+ 102648 string characters out of 3144871
+ 208106 words of memory out of 3000000
+ 10924 multiletter control sequences out of 15000+200000
  47379 words of font info for 167 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  36i,12n,45p,2257b,620s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/eurosym/feybr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
-/type1/public/eurosym/feymr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
-1/public/musixtex-fonts/musix20.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
-pe1/public/musixtex-fonts/musix24.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/musixtex-fonts/musixspx.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
-ts/type1/urw/avantgar/uagk8a.pfb>
-Output written on root.pdf (107 pages, 1865704 bytes).
+{C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmtt12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
+eurosym/feybr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/euros
+ym/feymr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/musixtex-f
+onts/musix20.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/musixtex
+-fonts/musix24.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/musixt
+ex-fonts/musixspx.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/avantg
+ar/uagk8a.pfb>
+Output written on root.pdf (109 pages, 1869189 bytes).
 PDF statistics:
- 666 PDF objects out of 1000 (max. 8388607)
+ 679 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

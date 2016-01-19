@@ -84,8 +84,8 @@
 \contentsline {subsection}{\numberline {5.1.3}Modulaci\IeC {\'o}n}{62}
 \contentsline {subsection}{\numberline {5.1.4}Publicaci\IeC {\'o}n}{62}
 \contentsline {chapter}{\numberline {A}Diagramas}{63}
-\contentsline {chapter}{\numberline {B}An\IeC {\'a}lisis de MusicXML}{67}
-\contentsline {chapter}{\numberline {C}Partituras}{69}
-\contentsline {chapter}{\numberline {D}Instalaci\IeC {\'o}n}{77}
-\contentsline {chapter}{\numberline {E}Manual de uso}{79}
-\contentsline {chapter}{Bibliograf\'{\i }a}{85}
+\contentsline {chapter}{\numberline {B}An\IeC {\'a}lisis de MusicXML}{69}
+\contentsline {chapter}{\numberline {C}Partituras}{71}
+\contentsline {chapter}{\numberline {D}Instalaci\IeC {\'o}n}{79}
+\contentsline {chapter}{\numberline {E}Manual de uso}{81}
+\contentsline {chapter}{Bibliograf\'{\i }a}{87}
