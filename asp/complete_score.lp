@@ -52,10 +52,10 @@ out_figure(V,-1,D,FB) :- rest(V,B), figure(V,D,FB), B >= FB, B < FB + D.
 voice_limit_low(V,VL) :-  voice(V), voice_type(V, VT), voice_low(VT, VL).
 voice_limit_high(V,VH) :-  voice(V), voice_type(V, VT), voice_high(VT, VH).
 
-out_error(V,FB) :- error_in_strong(V,G,B), figure(V,D,FB), B >= FB, B < FB + D.
-out_error_weak(V,FB) :- error_in_weak(V,G,B), figure(V,D,FB), B >= FB, B < FB + D.
+out_error(V,FB) :- D{error(V,G,FB..FB+D-1)}D, figure(V,D,FB), error_in_strong(V,G,FB).
+out_error_weak(V,FB) :- D{error(V,G,FB..FB+D-1)}D, figure(V,D,FB), error_in_weak(V,G,FB).
 
-out_passing(V,N,D,B) :- out_error_weak(V,B), out_figure(V,N,D,B), out_figure(V,N2,D2,B2), B2 = B+D, beat(B+D), 
+out_passing(V,B) :- out_error_weak(V,B), out_figure(V,N,D,B), out_figure(V,N2,D2,B2), B2 = B+D, beat(B+D), 
 						out_grade(V,G2,O2,B+D), belongs(G2,C), chord(HT,C), beat_belongs_htime(B+D,HT).
 
 #const note_errorinstrongw = 1.
@@ -68,9 +68,9 @@ out_passing(V,N,D,B) :- out_error_weak(V,B), out_figure(V,N,D,B), out_figure(V,N
 #const note_errorinweakp = 2.
 #const repeatedgradep = 1.
 
-#minimize[error_in_strong(_,_,_) = note_errorinstrongw @ note_errorinstrongp].
+#minimize[out_error(_,_) = note_errorinstrongw @ note_errorinstrongp].
 #minimize[unison(_,_,_) = unisonw @ unisonp].
-#minimize[error_in_weak(_,_,_) = note_errorinweakw @ note_errorinweakp].
+#minimize[out_error_weak(_,_) = note_errorinweakw @ note_errorinweakp].
 #minimize[repeated_grade(_,_,_) = repeatedgradew @ repeatedgradep].
 
 #hide.
@@ -79,4 +79,5 @@ out_passing(V,N,D,B) :- out_error_weak(V,B), out_figure(V,N,D,B), out_figure(V,N
 #show real_measure/3.
 #show out_figure/4.
 #show out_error/2.
+#show out_error_weak/2.
 #show out_passing/2.

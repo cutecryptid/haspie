@@ -23,13 +23,12 @@
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Diagrama de la arquitectura final del sistema}}{55}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Evaluaci\IeC {\'o}n}{59}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Comienzo de Greensleeves sin armonizar}}{60}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Comienzo de Greensleeves armonizado}}{61}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Comienzo de Menuet sin armonizar}}{61}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Comienzo de Menuet armonizado}}{61}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Comienzo de Joy to the World sin armonizar}}{62}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces La salida de Joy to the World produce un error de clave en la voz de la Soprano}}{62}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Comienzo de Joy to the World armonizado}}{62}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Comienzo de Greensleeves armonizado}}{60}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Comienzo de Menuet armonizado}}{61}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces La salida de Joy to the World produce un error de clave en la voz de la Soprano}}{61}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Comienzo de Joy to the World armonizado}}{61}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces La salida de Twinkle Twinkle Little Star produce un error de clave en la partitura de la mano derecha del piano}}{62}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Comienzo de Twinkle Twinkle Little Star armonizado}}{62}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Conclusiones}{65}
 \addvspace {10\p@ }
@@ -47,8 +46,9 @@
 \contentsline {figure}{\numberline {C.2}{\ignorespaces Partitura de Menuet, por Johann S. Bach}}{79}
 \contentsline {figure}{\numberline {C.3}{\ignorespaces Partitura de Joy to the World, por George F. Handel}}{80}
 \contentsline {figure}{\numberline {C.4}{\ignorespaces Partitura de Silent Night (Noche de Paz), por Franz X. Gruber}}{81}
-\contentsline {figure}{\numberline {C.5}{\ignorespaces Partitura de ejemplo con una serie de acordes sencillos}}{82}
-\contentsline {figure}{\numberline {C.6}{\ignorespaces Partitura de ejemplo con algunos silencios reales y otros invisibles}}{83}
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Partitura de la pieza popular infantil Twinkle Twinkle Little Star (Brilla Brilla Estrellita)}}{82}
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Partitura de ejemplo con una serie de acordes sencillos}}{83}
+\contentsline {figure}{\numberline {C.7}{\ignorespaces Partitura de ejemplo con algunos silencios reales y otros invisibles}}{84}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Instalaci\IeC {\'o}n}{85}
 \addvspace {10\p@ }

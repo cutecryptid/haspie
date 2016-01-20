@@ -60,7 +60,7 @@ def main():
 	parser.add_argument('-o', '--output', metavar='output/dir/for/file', nargs=1, default="out", type=str,
 	                   help='output file name for the result')
 	parser.add_argument('-t', '--timeout', metavar='T', nargs=1, default=5, type=int,
-	                   help='maximum time (in seconds) allowed to search for optimum')
+	                   help='maximum time (in seconds) allowed to search for optimum when searching for all optimums')
 	parser.add_argument('-k', '--key', metavar='A~G+-?', nargs=1, default="",
 	                   help='key in which the score should be harmonized, if not specified, parser will autodetect it')
 	parser.add_argument('-m', '--mode', metavar='major|minor', nargs=1, default="", choices=['major', 'minor'],
@@ -69,6 +69,8 @@ def main():
 	                   help='turns on melodic preferences in ASP for a more melodic result')
 	parser.add_argument('-6', '--sixthslink', action='store_true', default=False,
 	                   help='turns on sixth-four chord linking in ASP for a more natural result (very heavy)')
+	parser.add_argument('-a', '--all_optimums', action='store_true', default=False,
+						help='turns on the search for all optimums when completing and not just the first found, disabled by default')
 	parser.add_argument('-O', '--max_optimums', metavar='O', nargs=1, default=10, type=int,
 	                   help='max number of optimum solutions to display in score completion, by default it\'s 10')
 	parser.add_argument('-c', '--config', metavar='config_file_name.lp', nargs=1, default="",
@@ -83,7 +85,7 @@ def main():
 		n = args.num_sols[0]
 
 	opt_all = ""
-	if n == 0:
+	if args.all_optimums:
 		opt_all = "--opt-all"
 	mode = args.mode
 	if args.mode != "":
@@ -177,7 +179,7 @@ def main():
 		"asp/include/chord_conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", extra_voices,
 		"asp/generated_logic_music/" + lp_outname,"-n", str(n), 
 		"--const", "span=" + str(span), "--const", "base="+ str(base), 
-		"--const", "subdiv="+subdivision, opt_all)
+		"--const", "subdiv="+subdivision)
 
 	asp_proc = subprocess.Popen(asp_chord_args, stdout=subprocess.PIPE)
     

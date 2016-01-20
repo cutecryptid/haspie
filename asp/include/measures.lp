@@ -28,6 +28,6 @@ subdivision(2,B) :- real_measure(_,_,BP), harm_span(16), beat(B), B>=BP.
 strong_beat(B) :- measure(BN,BP), B >= BP, ((B-1) \ BN) == 0, beat(B).
 
 strong_beat(B) :- measure(BN,BP), B >= BP, (B \ 2) == 1, (BN \ 3) != 0, beat(B), subdivision(2,B).
-strong_beat(B) :- measure(BN,BP), B >= BP, (B \ 3) == 1, (BN \ 2) != 0, beat(B), subdivision(3,B).
+strong_beat(B) :- measure(BN,BP), B >= BP, (B \ 3) == 1, (BN \ 2) != 0, beat(B), subdivision(3,B). 
 
 weak_beat(B) :- not strong_beat(B), beat(B).

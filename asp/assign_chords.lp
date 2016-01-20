@@ -35,7 +35,8 @@ passing_note(V,N,B) :- chord(T,C), out_note(V,N,B), htime(T), out_grade(V,G,O,B)
 error_in_strong(V,G,B) :- error(V,G,B), beat(B), strong_beat(B), out_note(V,N,B). %not support_note(V,N,B)
 error_in_weak(V,G,B) :- error(V,G,B), beat(B), weak_beat(B), out_note(V,N,B).
 
-out_error(V,FB) :- error_in_strong(V,G,B), figure(V,D,FB), B >= FB, B < FB + D.
+out_error(V,FB) :- D{error(V,G,FB..FB+D-1)}D, figure(V,D,FB), error_in_strong(V,G,FB).
+out_error_weak(V,FB) :- D{error(V,G,FB..FB+D-1)}D, figure(V,D,FB), error_in_weak(V,G,FB).
 
 same_chord(HT1,HT2) :- htime(HT1), htime(HT2), htime(HT1+1), HT1+1 == HT2,
 						chord(HT1,C1), chord(HT2,C2), C1 == C2, pos_chord(C1), pos_chord(C2).
@@ -48,10 +49,11 @@ same_chord(HT1,HT2) :- htime(HT1), htime(HT2), htime(HT1+1), HT1+1 == HT2,
 #const samechordp = 2.
 #const errorinweakp = 1.
 
-#minimize[error_in_strong(_,_,_)=errorinstrongw @ errorinstrongp].
+#minimize[out_error(_,_)=errorinstrongw @ errorinstrongp].
 #minimize[same_chord(_,_)=samechordw @ samechordp].
-#minimize[error_in_weak(_,_,_)=errorinweakw @ errorinweakp].
+#minimize[out_error_weak(_,_)=errorinweakw @ errorinweakp].
 
 #hide.
 #show chord/2.
 #show out_error/2.
+#show out_error_weak/2.

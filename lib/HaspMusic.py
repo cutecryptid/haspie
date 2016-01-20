@@ -137,7 +137,7 @@ class HaspSolution:
 				else:
 					ret += ", " + str(note)
 			ret += "]\n"
-		ret += "OPT: " + str(self.optimization)
+		ret += "Optimization: " + str(self.optimization)
 		return ret
 
 class ClaspResult:
@@ -254,8 +254,7 @@ class ChordSolution:
 			ret += "\n"
 		for ch in self.chords:
 			ret += str(ch) + " "
-		ret += "\nOptimization - Errors: " + str(self.optimization[0]) + " // Repeated Chord: " + str(self.optimization[1])
-		ret += " // Errors (weak beat): " + str(self.optimization[2]) + "\n"
+		ret += "\nOptimization: " + str(self.optimization)
 		return ret
 
 
