@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.16)  19 JAN 2016 20:37
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.16)  20 JAN 2016 13:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1197,227 +1197,243 @@ LaTeX Info: Redefining \% on input line 1.
 ]
 Cap\'{\i }tulo 2.
 [7]
-LaTeX Info: Redefining \. on input line 36.
-LaTeX Info: Redefining \% on input line 36.
+LaTeX Info: Redefining \. on input line 38.
+LaTeX Info: Redefining \% on input line 38.
  [8]
-LaTeX Info: Redefining \. on input line 47.
-LaTeX Info: Redefining \% on input line 47.
+LaTeX Info: Redefining \. on input line 49.
+LaTeX Info: Redefining \% on input line 49.
  [9]
-LaTeX Info: Redefining \. on input line 67.
-LaTeX Info: Redefining \% on input line 67.
+LaTeX Info: Redefining \. on input line 70.
+LaTeX Info: Redefining \% on input line 70.
  [10]
-LaTeX Info: Redefining \. on input line 82.
-LaTeX Info: Redefining \% on input line 82.
+LaTeX Info: Redefining \. on input line 85.
+LaTeX Info: Redefining \% on input line 85.
  [11]
-LaTeX Info: Redefining \. on input line 98.
-LaTeX Info: Redefining \% on input line 98.
+LaTeX Info: Redefining \. on input line 101.
+LaTeX Info: Redefining \% on input line 101.
  [12]
 <imagenes/music_tree.pdf, id=122, 723.70375pt x 412.54124pt>
 File: imagenes/music_tree.pdf Graphic file (type pdf)
 
 <use imagenes/music_tree.pdf>
-Package pdftex.def Info: imagenes/music_tree.pdf used on input line 105.
+Package pdftex.def Info: imagenes/music_tree.pdf used on input line 109.
 (pdftex.def)             Requested size: 330.05322pt x 188.1472pt.
  bar 1 bar 2
-LaTeX Info: Redefining \. on input line 129.
-LaTeX Info: Redefining \% on input line 129.
- [13] bar 1 bar 2
-LaTeX Info: Redefining \. on input line 155.
-LaTeX Info: Redefining \% on input line 155.
- [14 <./imagenes/music_tree.pdf>]
-LaTeX Info: Redefining \. on input line 164.
-LaTeX Info: Redefining \% on input line 164.
- [15] bar 1 bar 2 bar 1 bar 1
+LaTeX Info: Redefining \. on input line 134.
+LaTeX Info: Redefining \% on input line 134.
+ [13]
+LaTeX Info: Redefining \. on input line 134.
+LaTeX Info: Redefining \% on input line 134.
+ [14 <./imagenes/music_tree.pdf>] <imagenes/triplets.png, id=152, 923.45pt x 58
+8.1975pt>
+File: imagenes/triplets.png Graphic file (type png)
+
+<use imagenes/triplets.png>
+Package pdftex.def Info: imagenes/triplets.png used on input line 139.
+(pdftex.def)             Requested size: 165.02347pt x 105.1081pt.
+
+<imagenes/duplets.png, id=154, 1076.02pt x 587.19376pt>
+File: imagenes/duplets.png Graphic file (type png)
+
+<use imagenes/duplets.png>
+Package pdftex.def Info: imagenes/duplets.png used on input line 140.
+(pdftex.def)             Requested size: 189.78265pt x 103.55786pt.
+ bar 1 bar 2
+LaTeX Info: Redefining \. on input line 169.
+LaTeX Info: Redefining \% on input line 169.
+ [15 <./imagenes/triplets.png> <./imagenes/duplets.png>]
+LaTeX Info: Redefining \. on input line 179.
+LaTeX Info: Redefining \% on input line 179.
+ [16] bar 1 bar 2 bar 1 bar 1
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-LaTeX Info: Redefining \. on input line 213.
-LaTeX Info: Redefining \% on input line 213.
-[16] bar 1 bar 1
+LaTeX Info: Redefining \. on input line 227.
+LaTeX Info: Redefining \% on input line 227.
+[17] bar 1 bar 1
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Info: Redefining \. on input line 242.
-LaTeX Info: Redefining \% on input line 242.
-[17]
-LaTeX Info: Redefining \. on input line 253.
-LaTeX Info: Redefining \% on input line 253.
- [18] bar 1 bar 1 bar 2
-LaTeX Info: Redefining \. on input line 307.
-LaTeX Info: Redefining \% on input line 307.
- [19]
+LaTeX Info: Redefining \. on input line 256.
+LaTeX Info: Redefining \% on input line 256.
+[18]
+LaTeX Info: Redefining \. on input line 267.
+LaTeX Info: Redefining \% on input line 267.
+ [19] bar 1 bar 1 bar 2
 LaTeX Info: Redefining \. on input line 321.
 LaTeX Info: Redefining \% on input line 321.
- [20])
+ [20]
+LaTeX Info: Redefining \. on input line 336.
+LaTeX Info: Redefining \% on input line 336.
+ [21])
 LaTeX Info: Redefining \. on input line 64.
 LaTeX Info: Redefining \% on input line 64.
- [21]
+ [22]
 \openout2 = `implementation.aux'.
 
  (./implementation.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [22
+Cap\'{\i }tulo 3.
+<imagenes/espiral.jpg, id=185, 568.37344pt x 382.42876pt>
+File: imagenes/espiral.jpg Graphic file (type jpg)
+
+<use imagenes/espiral.jpg>
+Package pdftex.def Info: imagenes/espiral.jpg used on input line 17.
+(pdftex.def)             Requested size: 330.05322pt x 222.08308pt.
+ [23
 
 
 
 ]
-Cap\'{\i }tulo 3.
-<imagenes/espiral.jpg, id=180, 568.37344pt x 382.42876pt>
-File: imagenes/espiral.jpg Graphic file (type jpg)
-
-<use imagenes/espiral.jpg>
-Package pdftex.def Info: imagenes/espiral.jpg used on input line 16.
-(pdftex.def)             Requested size: 330.05322pt x 222.08308pt.
- [23]
-LaTeX Info: Redefining \. on input line 29.
-LaTeX Info: Redefining \% on input line 29.
+LaTeX Info: Redefining \. on input line 30.
+LaTeX Info: Redefining \% on input line 30.
  [24 <./imagenes/espiral.jpg>]
-<imagenes/diagrama_tareas.pdf, id=187, 726.715pt x 507.88846pt>
+<imagenes/diagrama_tareas.pdf, id=192, 726.715pt x 507.88846pt>
 File: imagenes/diagrama_tareas.pdf Graphic file (type pdf)
 
 <use imagenes/diagrama_tareas.pdf>
-Package pdftex.def Info: imagenes/diagrama_tareas.pdf used on input line 33.
+Package pdftex.def Info: imagenes/diagrama_tareas.pdf used on input line 34.
 (pdftex.def)             Requested size: 330.05322pt x 230.67113pt.
-LaTeX Info: Redefining \. on input line 40.
-LaTeX Info: Redefining \% on input line 40.
+LaTeX Info: Redefining \. on input line 41.
+LaTeX Info: Redefining \% on input line 41.
  [25 <./imagenes/diagrama_tareas.pdf>]
-LaTeX Info: Redefining \. on input line 52.
-LaTeX Info: Redefining \% on input line 52.
+LaTeX Info: Redefining \. on input line 56.
+LaTeX Info: Redefining \% on input line 56.
 
 [26]
-LaTeX Info: Redefining \. on input line 58.
-LaTeX Info: Redefining \% on input line 58.
+LaTeX Info: Redefining \. on input line 62.
+LaTeX Info: Redefining \% on input line 62.
  [27]
-LaTeX Info: Redefining \. on input line 84.
-LaTeX Info: Redefining \% on input line 84.
+LaTeX Info: Redefining \. on input line 88.
+LaTeX Info: Redefining \% on input line 88.
  [28]
-LaTeX Info: Redefining \. on input line 130.
-LaTeX Info: Redefining \% on input line 130.
+LaTeX Info: Redefining \. on input line 135.
+LaTeX Info: Redefining \% on input line 135.
  [29]
-LaTeX Info: Redefining \. on input line 130.
-LaTeX Info: Redefining \% on input line 130.
+LaTeX Info: Redefining \. on input line 135.
+LaTeX Info: Redefining \% on input line 135.
  [30]
-<imagenes/arquitectura_inicial.pdf, id=237, 845.0471pt x 245.91875pt>
+<imagenes/arquitectura_inicial.pdf, id=242, 845.0471pt x 245.91875pt>
 File: imagenes/arquitectura_inicial.pdf Graphic file (type pdf)
 
 <use imagenes/arquitectura_inicial.pdf>
 Package pdftex.def Info: imagenes/arquitectura_inicial.pdf used on input line 1
-37.
+42.
 (pdftex.def)             Requested size: 330.05322pt x 96.0505pt.
-LaTeX Info: Redefining \. on input line 145.
-LaTeX Info: Redefining \% on input line 145.
+LaTeX Info: Redefining \. on input line 151.
+LaTeX Info: Redefining \% on input line 151.
  [31 <./imagenes/arquitectura_inicial.pdf>]
-LaTeX Info: Redefining \. on input line 153.
-LaTeX Info: Redefining \% on input line 153.
+LaTeX Info: Redefining \. on input line 162.
+LaTeX Info: Redefining \% on input line 162.
  [32]
-Overfull \hbox (9.09949pt too wide) in paragraph at lines 156--157
+Overfull \hbox (9.09949pt too wide) in paragraph at lines 165--166
 []\twelverm La f^^Sormu-la em-plea-da pa-ra de-ri-var los gra-dos de la es-ca-l
 a es $[(\OML/cmm/m/it/12 valor \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 base\twelv
 erm )\OML/cmm/m/it/12 mod\twelverm 12]$
 
 \hbox(9.0+3.0)x412.56497, glue set - 1.0 []
 
-LaTeX Info: Redefining \. on input line 159.
-LaTeX Info: Redefining \% on input line 159.
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 162--163
-
-
-\hbox(0.0+0.0)x412.56497 []
-
 LaTeX Info: Redefining \. on input line 168.
 LaTeX Info: Redefining \% on input line 168.
-[34]
-LaTeX Info: Redefining \. on input line 175.
-LaTeX Info: Redefining \% on input line 175.
+[33]
+LaTeX Info: Redefining \. on input line 176.
+LaTeX Info: Redefining \% on input line 176.
+ [34]
+LaTeX Info: Redefining \. on input line 184.
+LaTeX Info: Redefining \% on input line 184.
  [35]
-LaTeX Info: Redefining \. on input line 191.
-LaTeX Info: Redefining \% on input line 191.
+LaTeX Info: Redefining \. on input line 204.
+LaTeX Info: Redefining \% on input line 204.
  [36]
-LaTeX Info: Redefining \. on input line 198.
-LaTeX Info: Redefining \% on input line 198.
+LaTeX Info: Redefining \. on input line 210.
+LaTeX Info: Redefining \% on input line 210.
  [37]
-LaTeX Info: Redefining \. on input line 208.
-LaTeX Info: Redefining \% on input line 208.
+LaTeX Info: Redefining \. on input line 220.
+LaTeX Info: Redefining \% on input line 220.
  [38]
-LaTeX Info: Redefining \. on input line 221.
-LaTeX Info: Redefining \% on input line 221.
+LaTeX Info: Redefining \. on input line 236.
+LaTeX Info: Redefining \% on input line 236.
  [39]
-LaTeX Info: Redefining \. on input line 228.
-LaTeX Info: Redefining \% on input line 228.
+LaTeX Info: Redefining \. on input line 247.
+LaTeX Info: Redefining \% on input line 247.
  [40]
-LaTeX Info: Redefining \. on input line 246.
-LaTeX Info: Redefining \% on input line 246.
+LaTeX Info: Redefining \. on input line 265.
+LaTeX Info: Redefining \% on input line 265.
  [41]
-LaTeX Info: Redefining \. on input line 257.
-LaTeX Info: Redefining \% on input line 257.
+LaTeX Info: Redefining \. on input line 278.
+LaTeX Info: Redefining \% on input line 278.
  [42]
-Overfull \hbox (24.60587pt too wide) in paragraph at lines 259--260
+Overfull \hbox (24.60587pt too wide) in paragraph at lines 279--280
 \twelverm pre-di-ca-dos que ma-ti-zan los di-fe-ren-tes erro-res de la par-ti-t
 u-ra \OT1/cmtt/m/n/12 error[]in[]strong(V,G,B)\twelverm ,
 
 \hbox(8.33331+2.66666)x412.56497, glue set - 1.0 []
 
-LaTeX Info: Redefining \. on input line 266.
-LaTeX Info: Redefining \% on input line 266.
+LaTeX Info: Redefining \. on input line 290.
+LaTeX Info: Redefining \% on input line 290.
 [43]
-LaTeX Info: Redefining \. on input line 280.
-LaTeX Info: Redefining \% on input line 280.
- [44]
-LaTeX Info: Redefining \. on input line 289.
-LaTeX Info: Redefining \% on input line 289.
- [45]
-LaTeX Info: Redefining \. on input line 293.
-LaTeX Info: Redefining \% on input line 293.
- [46]
 LaTeX Info: Redefining \. on input line 308.
 LaTeX Info: Redefining \% on input line 308.
+ [44]
+LaTeX Info: Redefining \. on input line 314.
+LaTeX Info: Redefining \% on input line 314.
+ [45]
+LaTeX Info: Redefining \. on input line 318.
+LaTeX Info: Redefining \% on input line 318.
+ [46]
+LaTeX Info: Redefining \. on input line 336.
+LaTeX Info: Redefining \% on input line 336.
  [47]
-LaTeX Info: Redefining \. on input line 324.
-LaTeX Info: Redefining \% on input line 324.
+LaTeX Info: Redefining \. on input line 354.
+LaTeX Info: Redefining \% on input line 354.
  [48]
-LaTeX Info: Redefining \. on input line 345.
-LaTeX Info: Redefining \% on input line 345.
- [49]
-LaTeX Info: Redefining \. on input line 353.
-LaTeX Info: Redefining \% on input line 353.
- [50]
-LaTeX Info: Redefining \. on input line 358.
-LaTeX Info: Redefining \% on input line 358.
- [51]
 LaTeX Info: Redefining \. on input line 375.
 LaTeX Info: Redefining \% on input line 375.
+ [49]
+LaTeX Info: Redefining \. on input line 383.
+LaTeX Info: Redefining \% on input line 383.
+ [50]
+LaTeX Info: Redefining \. on input line 391.
+LaTeX Info: Redefining \% on input line 391.
+ [51]
+LaTeX Info: Redefining \. on input line 409.
+LaTeX Info: Redefining \% on input line 409.
  [52]
-LaTeX Info: Redefining \. on input line 386.
-LaTeX Info: Redefining \% on input line 386.
+LaTeX Info: Redefining \. on input line 421.
+LaTeX Info: Redefining \% on input line 421.
  [53]
-LaTeX Info: Redefining \. on input line 392.
-LaTeX Info: Redefining \% on input line 392.
+LaTeX Info: Redefining \. on input line 427.
+LaTeX Info: Redefining \% on input line 427.
  [54]
-<imagenes/arquitectura_final.pdf, id=348, 1096.095pt x 245.91875pt>
+<imagenes/arquitectura_final.pdf, id=353, 1096.095pt x 245.91875pt>
 File: imagenes/arquitectura_final.pdf Graphic file (type pdf)
 
 <use imagenes/arquitectura_final.pdf>
-Package pdftex.def Info: imagenes/arquitectura_final.pdf used on input line 397
+Package pdftex.def Info: imagenes/arquitectura_final.pdf used on input line 432
 .
 (pdftex.def)             Requested size: 330.05322pt x 74.05011pt.
-LaTeX Info: Redefining \. on input line 403.
-LaTeX Info: Redefining \% on input line 403.
- [55 <./imagenes/arquitectura_final.pdf>])
+LaTeX Info: Redefining \. on input line 438.
+LaTeX Info: Redefining \% on input line 438.
+ [55 <./imagenes/arquitectura_final.pdf>]
+LaTeX Info: Redefining \. on input line 454.
+LaTeX Info: Redefining \% on input line 454.
+
+[56])
 LaTeX Info: Redefining \. on input line 65.
 LaTeX Info: Redefining \% on input line 65.
-[56]
+ [57]
 \openout2 = `evaluation.aux'.
 
  (./evaluation.tex
-Cap\'{\i }tulo 4.
-[57
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [58
 
 
 
 ]
-<imagenes/evaluation/greensleeves_orig.png, id=392, 755.82375pt x 474.77374pt>
+Cap\'{\i }tulo 4.
+[59]
+<imagenes/evaluation/greensleeves_orig.png, id=405, 755.82375pt x 474.77374pt>
 File: imagenes/evaluation/greensleeves_orig.png Graphic file (type png)
 
 <use imagenes/evaluation/greensleeves_orig.png>
@@ -1425,7 +1441,7 @@ Package pdftex.def Info: imagenes/evaluation/greensleeves_orig.png used on inpu
 t line 24.
 (pdftex.def)             Requested size: 330.05322pt x 207.3218pt.
 
-<imagenes/evaluation/greensleeves_harm.png, id=393, 757.83125pt x 457.71pt>
+<imagenes/evaluation/greensleeves_harm.png, id=406, 757.83125pt x 457.71pt>
 File: imagenes/evaluation/greensleeves_harm.png Graphic file (type png)
 
 <use imagenes/evaluation/greensleeves_harm.png>
@@ -1433,7 +1449,7 @@ Package pdftex.def Info: imagenes/evaluation/greensleeves_harm.png used on inpu
 t line 31.
 (pdftex.def)             Requested size: 330.05322pt x 199.34668pt.
 
-<imagenes/evaluation/menuet_orig.png, id=394, 747.79375pt x 271.0125pt>
+<imagenes/evaluation/menuet_orig.png, id=407, 747.79375pt x 271.0125pt>
 File: imagenes/evaluation/menuet_orig.png Graphic file (type png)
 
 <use imagenes/evaluation/menuet_orig.png>
@@ -1441,7 +1457,7 @@ Package pdftex.def Info: imagenes/evaluation/menuet_orig.png used on input line
  38.
 (pdftex.def)             Requested size: 330.05322pt x 119.61804pt.
 
-<imagenes/evaluation/menuet_harm.png, id=395, 750.805pt x 266.9975pt>
+<imagenes/evaluation/menuet_harm.png, id=408, 750.805pt x 266.9975pt>
 File: imagenes/evaluation/menuet_harm.png Graphic file (type png)
 
 <use imagenes/evaluation/menuet_harm.png>
@@ -1449,7 +1465,7 @@ Package pdftex.def Info: imagenes/evaluation/menuet_harm.png used on input line
  45.
 (pdftex.def)             Requested size: 330.05322pt x 117.37332pt.
 
-<imagenes/evaluation/joy_orig.png, id=396, 747.79375pt x 429.605pt>
+<imagenes/evaluation/joy_orig.png, id=409, 747.79375pt x 429.605pt>
 File: imagenes/evaluation/joy_orig.png Graphic file (type png)
 
 <use imagenes/evaluation/joy_orig.png>
@@ -1457,7 +1473,7 @@ Package pdftex.def Info: imagenes/evaluation/joy_orig.png used on input line 51
 .
 (pdftex.def)             Requested size: 330.05322pt x 189.61674pt.
 
-<imagenes/evaluation/joy_harm_err.png, id=397, 746.79pt x 180.675pt>
+<imagenes/evaluation/joy_harm_err.png, id=410, 746.79pt x 180.675pt>
 File: imagenes/evaluation/joy_harm_err.png Graphic file (type png)
 
 <use imagenes/evaluation/joy_harm_err.png>
@@ -1465,351 +1481,357 @@ Package pdftex.def Info: imagenes/evaluation/joy_harm_err.png used on input lin
 e 58.
 (pdftex.def)             Requested size: 330.05322pt x 79.85011pt.
 
-<imagenes/evaluation/joy_harm.png, id=398, 740.7675pt x 382.42876pt>
+<imagenes/evaluation/joy_harm.png, id=411, 740.7675pt x 382.42876pt>
 File: imagenes/evaluation/joy_harm.png Graphic file (type png)
 
 <use imagenes/evaluation/joy_harm.png>
 Package pdftex.def Info: imagenes/evaluation/joy_harm.png used on input line 65
 .
 (pdftex.def)             Requested size: 330.05322pt x 170.39325pt.
-) [58 <./imagenes/evaluation/greensleeves_orig.png>]
-LaTeX Info: Redefining \. on input line 66.
-LaTeX Info: Redefining \% on input line 66.
- [59 <./imagenes/evaluation/greensleeves_harm.png> <./imagenes/evaluation/menue
-t_orig.png> <./imagenes/evaluation/menuet_harm.png>] [60 <./imagenes/evaluation
+ [60 <./imagenes/evaluation/greensleeves_orig.png>]
+LaTeX Info: Redefining \. on input line 84.
+LaTeX Info: Redefining \% on input line 84.
+ [61 <./imagenes/evaluation/greensleeves_harm.png> <./imagenes/evaluation/menue
+t_orig.png> <./imagenes/evaluation/menuet_harm.png>] [62 <./imagenes/evaluation
 /joy_orig.png> <./imagenes/evaluation/joy_harm_err.png> <./imagenes/evaluation/
 joy_harm.png>]
+LaTeX Info: Redefining \. on input line 90.
+LaTeX Info: Redefining \% on input line 90.
+ [63])
+LaTeX Info: Redefining \. on input line 66.
+LaTeX Info: Redefining \% on input line 66.
+ [64]
 \openout2 = `conclusions.aux'.
 
  (./conclusions.tex
 Cap\'{\i }tulo 5.
-[61
+[65
 
 
 
-] [62]
-LaTeX Info: Redefining \. on input line 40.
-LaTeX Info: Redefining \% on input line 40.
- [63])
+] [66]
+LaTeX Info: Redefining \. on input line 42.
+LaTeX Info: Redefining \% on input line 42.
+ [67])
 LaTeX Info: Redefining \. on input line 67.
 LaTeX Info: Redefining \% on input line 67.
- [64]
+ [68]
 \openout2 = `appendix.aux'.
 
  (./appendix.tex
 Ap\'{e}ndice A.
-<imagenes/third_iter.pdf, id=423, 491.8375pt x 491.8375pt>
+<imagenes/third_iter.pdf, id=440, 491.8375pt x 491.8375pt>
 File: imagenes/third_iter.pdf Graphic file (type pdf)
 
 <use imagenes/third_iter.pdf>
-Package pdftex.def Info: imagenes/third_iter.pdf used on input line 7.
+Package pdftex.def Info: imagenes/third_iter.pdf used on input line 8.
 (pdftex.def)             Requested size: 330.05322pt x 330.06224pt.
- [65
+ [69
 
 
 
 ]
-<imagenes/fourth_iter.pdf, id=427, 712.6625pt x 521.95pt>
+<imagenes/fourth_iter.pdf, id=444, 712.6625pt x 521.95pt>
 File: imagenes/fourth_iter.pdf Graphic file (type pdf)
 
 <use imagenes/fourth_iter.pdf>
-Package pdftex.def Info: imagenes/fourth_iter.pdf used on input line 14.
+Package pdftex.def Info: imagenes/fourth_iter.pdf used on input line 15.
 (pdftex.def)             Requested size: 330.05322pt x 241.72462pt.
 
-<imagenes/fifth_iter.pdf, id=428, 853.1875pt x 531.9875pt>
+<imagenes/fifth_iter.pdf, id=445, 853.1875pt x 531.9875pt>
 File: imagenes/fifth_iter.pdf Graphic file (type pdf)
 
 <use imagenes/fifth_iter.pdf>
-Package pdftex.def Info: imagenes/fifth_iter.pdf used on input line 20.
+Package pdftex.def Info: imagenes/fifth_iter.pdf used on input line 21.
 (pdftex.def)             Requested size: 330.05322pt x 205.8021pt.
 
-<imagenes/sixth_seventh_eighth_iters.pdf, id=429, 973.6375pt x 803.0pt>
+<imagenes/sixth_seventh_eighth_iters.pdf, id=446, 973.6375pt x 803.0pt>
 File: imagenes/sixth_seventh_eighth_iters.pdf Graphic file (type pdf)
 
 <use imagenes/sixth_seventh_eighth_iters.pdf>
 Package pdftex.def Info: imagenes/sixth_seventh_eighth_iters.pdf used on input 
-line 26.
+line 27.
 (pdftex.def)             Requested size: 330.05322pt x 272.2077pt.
 
-<imagenes/chord_diagram.pdf, id=430, 501.875pt x 531.9875pt>
+<imagenes/chord_diagram.pdf, id=447, 501.875pt x 531.9875pt>
 File: imagenes/chord_diagram.pdf Graphic file (type pdf)
 
 <use imagenes/chord_diagram.pdf>
-Package pdftex.def Info: imagenes/chord_diagram.pdf used on input line 32.
+Package pdftex.def Info: imagenes/chord_diagram.pdf used on input line 33.
 (pdftex.def)             Requested size: 330.05322pt x 349.87086pt.
- [66 <./imagenes/third_iter.pdf>]
-LaTeX Info: Redefining \. on input line 37.
-LaTeX Info: Redefining \% on input line 37.
- [67 <./imagenes/fourth_iter.pdf> <./imagenes/fifth_iter.pdf>] [68 <./imagenes/
+ [70 <./imagenes/third_iter.pdf>]
+LaTeX Info: Redefining \. on input line 38.
+LaTeX Info: Redefining \% on input line 38.
+ [71 <./imagenes/fourth_iter.pdf> <./imagenes/fifth_iter.pdf>] [72 <./imagenes/
 sixth_seventh_eighth_iters.pdf>]
-LaTeX Info: Redefining \. on input line 37.
-LaTeX Info: Redefining \% on input line 37.
- [69 <./imagenes/chord_diagram.pdf>] [70
+LaTeX Info: Redefining \. on input line 38.
+LaTeX Info: Redefining \% on input line 38.
+ [73 <./imagenes/chord_diagram.pdf>] [74
 
 ]
 Ap\'{e}ndice B.
 
-Overfull \hbox (19.66478pt too wide) in alignment at lines 42--63
+Overfull \hbox (19.66478pt too wide) in alignment at lines 44--65
  [] [] [] [] 
 
 \hbox(0.0+0.0)x412.56497 []
 
 
-Underfull \vbox (badness 10000) detected at line 63
+Underfull \vbox (badness 10000) detected at line 65
 
 \vbox(12.59605+0.0)x412.56497 []
 
 
-Overfull \hbox (19.66478pt too wide) in alignment at lines 63--69
+Overfull \hbox (19.66478pt too wide) in alignment at lines 65--71
  [] [] [] [] 
 
 \hbox(0.0+0.0)x412.56497 []
 
-[71] [72]
+[75] [76]
 Ap\'{e}ndice C.
-<imagenes/scores/Greensleeves.pdf, id=473, 597.23125pt x 845.1575pt>
+<imagenes/scores/Greensleeves.pdf, id=491, 597.23125pt x 845.1575pt>
 File: imagenes/scores/Greensleeves.pdf Graphic file (type pdf)
 
 <use imagenes/scores/Greensleeves.pdf>
-Package pdftex.def Info: imagenes/scores/Greensleeves.pdf used on input line 77
+Package pdftex.def Info: imagenes/scores/Greensleeves.pdf used on input line 80
 .
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
 
-<imagenes/scores/menuet_bach.pdf, id=474, 597.23125pt x 845.1575pt>
+<imagenes/scores/menuet_bach.pdf, id=492, 597.23125pt x 845.1575pt>
 File: imagenes/scores/menuet_bach.pdf Graphic file (type pdf)
 
 <use imagenes/scores/menuet_bach.pdf>
-Package pdftex.def Info: imagenes/scores/menuet_bach.pdf used on input line 84.
+Package pdftex.def Info: imagenes/scores/menuet_bach.pdf used on input line 87.
 
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
 
-<imagenes/scores/Joy_to_the_World.pdf, id=475, 597.23125pt x 845.1575pt>
+<imagenes/scores/Joy_to_the_World.pdf, id=493, 597.23125pt x 845.1575pt>
 File: imagenes/scores/Joy_to_the_World.pdf Graphic file (type pdf)
 
 <use imagenes/scores/Joy_to_the_World.pdf>
 Package pdftex.def Info: imagenes/scores/Joy_to_the_World.pdf used on input lin
-e 91.
+e 94.
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
 
-<imagenes/scores/silent_night.pdf, id=476, 597.23125pt x 845.1575pt>
+<imagenes/scores/silent_night.pdf, id=494, 597.23125pt x 845.1575pt>
 File: imagenes/scores/silent_night.pdf Graphic file (type pdf)
 
 <use imagenes/scores/silent_night.pdf>
-Package pdftex.def Info: imagenes/scores/silent_night.pdf used on input line 98
-.
+Package pdftex.def Info: imagenes/scores/silent_night.pdf used on input line 10
+1.
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
 
-<imagenes/scores/simple_chords.pdf, id=477, 597.23125pt x 845.1575pt>
+<imagenes/scores/simple_chords.pdf, id=495, 597.23125pt x 845.1575pt>
 File: imagenes/scores/simple_chords.pdf Graphic file (type pdf)
 
 <use imagenes/scores/simple_chords.pdf>
 Package pdftex.def Info: imagenes/scores/simple_chords.pdf used on input line 1
-05.
+08.
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
 
-<imagenes/scores/freetimerests.pdf, id=478, 597.23125pt x 845.1575pt>
+<imagenes/scores/freetimerests.pdf, id=496, 597.23125pt x 845.1575pt>
 File: imagenes/scores/freetimerests.pdf Graphic file (type pdf)
 
 <use imagenes/scores/freetimerests.pdf>
 Package pdftex.def Info: imagenes/scores/freetimerests.pdf used on input line 1
-12.
+15.
 (pdftex.def)             Requested size: 330.05322pt x 467.06908pt.
- [73
+ [77
 
-] [74 <./imagenes/scores/Greensleeves.pdf>]
-LaTeX Info: Redefining \. on input line 117.
-LaTeX Info: Redefining \% on input line 117.
- [75 <./imagenes/scores/menuet_bach.pdf>] [76 <./imagenes/scores/Joy_to_the_Wor
+] [78 <./imagenes/scores/Greensleeves.pdf>]
+LaTeX Info: Redefining \. on input line 120.
+LaTeX Info: Redefining \% on input line 120.
+ [79 <./imagenes/scores/menuet_bach.pdf>] [80 <./imagenes/scores/Joy_to_the_Wor
 ld.pdf>]
-LaTeX Info: Redefining \. on input line 117.
-LaTeX Info: Redefining \% on input line 117.
- [77 <./imagenes/scores/silent_night.pdf>] [78 <./imagenes/scores/simple_chords
+LaTeX Info: Redefining \. on input line 120.
+LaTeX Info: Redefining \% on input line 120.
+ [81 <./imagenes/scores/silent_night.pdf>] [82 <./imagenes/scores/simple_chords
 .pdf>]
-LaTeX Info: Redefining \. on input line 117.
-LaTeX Info: Redefining \% on input line 117.
- [79 <./imagenes/scores/freetimerests.pdf>] [80
+LaTeX Info: Redefining \. on input line 120.
+LaTeX Info: Redefining \% on input line 120.
+ [83 <./imagenes/scores/freetimerests.pdf>] [84
 
 ]
 Ap\'{e}ndice D.
-[81] [82]
+[85] [86]
 Ap\'{e}ndice E.
 
-Overfull \hbox (50.56026pt too wide) in paragraph at lines 173--173
+Overfull \hbox (50.56026pt too wide) in paragraph at lines 178--178
 []\OT1/cmtt/m/n/12 usage: usage.py [-h] [-n N] [-s S] [-v V [V ...]] [-S] [-f x
 ml|pdf|midi|ly][] 
 
 \hbox(8.33331+2.66666)x412.56497 []
 
 
-Overfull \hbox (56.73526pt too wide) in paragraph at lines 173--173
+Overfull \hbox (56.73526pt too wide) in paragraph at lines 178--178
 []                \OT1/cmtt/m/n/12 [-o output/dir/for/file] [-t T] [-k A~G+-?] 
 [-m major|minor][] 
 
 \hbox(8.33331+2.66666)x412.56497 []
 
 
-Overfull \hbox (1.16023pt too wide) in paragraph at lines 173--173
+Overfull \hbox (1.16023pt too wide) in paragraph at lines 178--178
 []                \OT1/cmtt/m/n/12 [-M] [-6] [-O O] [-c config_file_name.lp] XM
 L_SCORE[] 
 
 \hbox(8.33331+2.66666)x412.56497 []
 
 
-Overfull \hbox (62.91026pt too wide) in paragraph at lines 173--173
+Overfull \hbox (62.91026pt too wide) in paragraph at lines 178--178
 []    \OT1/cmtt/m/n/12 -n N, --num_sols N    max number of ASP solutions, by de
 fault all of them[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (62.91026pt too wide) in paragraph at lines 173--173
+Overfull \hbox (62.91026pt too wide) in paragraph at lines 178--178
 []    \OT1/cmtt/m/n/12 -s S, --span S        horizontal span to consider while 
 harmonizing, this[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (7.33524pt too wide) in paragraph at lines 173--173
+Overfull \hbox (7.33524pt too wide) in paragraph at lines 178--178
 []                          \OT1/cmtt/m/n/12 takes in account subdivision, by d
 efault 1[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (62.91026pt too wide) in paragraph at lines 173--173
+Overfull \hbox (62.91026pt too wide) in paragraph at lines 178--178
 []                          \OT1/cmtt/m/n/12 extra instruments, these can be in
 put by name or by[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (69.08527pt too wide) in paragraph at lines 173--173
+Overfull \hbox (69.08527pt too wide) in paragraph at lines 178--178
 []                          \OT1/cmtt/m/n/12 numerical note range (i.e soprano,
 guitar,(65,90)...)[] 
 
 \hbox(8.33331+2.66666)x412.56497 []
 
 
-Overfull \hbox (44.38525pt too wide) in paragraph at lines 173--173
+Overfull \hbox (44.38525pt too wide) in paragraph at lines 178--178
 []                          \OT1/cmtt/m/n/12 to leave one of the sides (or both
 ) of the range[] 
 
 \hbox(8.33331+2.66666)x412.56497 []
 
 
-Overfull \hbox (75.26027pt too wide) in paragraph at lines 173--173
+Overfull \hbox (75.26027pt too wide) in paragraph at lines 178--178
 []    \OT1/cmtt/m/n/12 -S, --show            show result in editor instead of w
 riting it to a file[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (38.21025pt too wide) in paragraph at lines 173--173
+Overfull \hbox (38.21025pt too wide) in paragraph at lines 178--178
 []    \OT1/cmtt/m/n/12 -t T, --timeout T     maximum time (in seconds) allowed 
 to search for[] 
 
 \hbox(8.33331+1.66667)x412.56497 []
 
 
-Overfull \hbox (62.91026pt too wide) in paragraph at lines 173--173
+Overfull \hbox (62.91026pt too wide) in paragraph at lines 178--178
 []                          \OT1/cmtt/m/n/12 key in which the score should be h
 armonized, if not[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (44.38525pt too wide) in paragraph at lines 173--173
+Overfull \hbox (44.38525pt too wide) in paragraph at lines 178--178
 []                          \OT1/cmtt/m/n/12 mode of the scale, if not specifie
 d, parser will[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (32.03525pt too wide) in paragraph at lines 173--173
+Overfull \hbox (32.03525pt too wide) in paragraph at lines 178--178
 []    \OT1/cmtt/m/n/12 -M, --melodious       turns on melodic preferences in AS
 P for a more[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (32.03525pt too wide) in paragraph at lines 173--173
+Overfull \hbox (32.03525pt too wide) in paragraph at lines 178--178
 []    \OT1/cmtt/m/n/12 -6, --sixthslink      turns on sixth-four chord linking 
 in ASP for a[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (62.91026pt too wide) in paragraph at lines 173--173
+Overfull \hbox (62.91026pt too wide) in paragraph at lines 178--178
 []                          \OT1/cmtt/m/n/12 max number of optimum solutions to
  display in score[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (81.43527pt too wide) in paragraph at lines 173--173
+Overfull \hbox (81.43527pt too wide) in paragraph at lines 178--178
 []                          \OT1/cmtt/m/n/12 reads preference order and weights
  for parameters from[] 
 
 \hbox(7.33333+2.66666)x412.56497 []
 
 
-Overfull \hbox (19.68524pt too wide) in paragraph at lines 173--173
+Overfull \hbox (19.68524pt too wide) in paragraph at lines 178--178
 []                          \OT1/cmtt/m/n/12 the desired *.lp file stored in /p
 ref folder[] 
 
 \hbox(8.33331+2.66666)x412.56497 []
 
-<imagenes/usage/metainfo.png, id=602, 766.865pt x 120.45pt>
+<imagenes/usage/metainfo.png, id=619, 766.865pt x 120.45pt>
 File: imagenes/usage/metainfo.png Graphic file (type png)
 
 <use imagenes/usage/metainfo.png>
-Package pdftex.def Info: imagenes/usage/metainfo.png used on input line 184.
+Package pdftex.def Info: imagenes/usage/metainfo.png used on input line 189.
 (pdftex.def)             Requested size: 330.05322pt x 51.8421pt.
- [83
+ [87
 
-] [84]
-<imagenes/usage/harmony_select.png, id=609, 645.41125pt x 355.3275pt>
+] [88]
+<imagenes/usage/harmony_select.png, id=627, 645.41125pt x 355.3275pt>
 File: imagenes/usage/harmony_select.png Graphic file (type png)
 
 <use imagenes/usage/harmony_select.png>
 Package pdftex.def Info: imagenes/usage/harmony_select.png used on input line 1
-93.
+98.
 (pdftex.def)             Requested size: 330.05322pt x 181.70801pt.
-LaTeX Info: Redefining \. on input line 204.
-LaTeX Info: Redefining \% on input line 204.
- [85 <./imagenes/usage/metainfo.png>]
-[86 <./imagenes/usage/harmony_select.png>]
-LaTeX Info: Redefining \. on input line 230.
-LaTeX Info: Redefining \% on input line 230.
- [87]
-<imagenes/usage/select_silence.jpg, id=619, 702.625pt x 228.855pt>
+LaTeX Info: Redefining \. on input line 209.
+LaTeX Info: Redefining \% on input line 209.
+ [89 <./imagenes/usage/metainfo.png>]
+[90 <./imagenes/usage/harmony_select.png>]
+LaTeX Info: Redefining \. on input line 235.
+LaTeX Info: Redefining \% on input line 235.
+ [91]
+<imagenes/usage/select_silence.jpg, id=637, 702.625pt x 228.855pt>
 File: imagenes/usage/select_silence.jpg Graphic file (type jpg)
 
 <use imagenes/usage/select_silence.jpg>
 Package pdftex.def Info: imagenes/usage/select_silence.jpg used on input line 2
-33.
+38.
 (pdftex.def)             Requested size: 330.05322pt x 107.50598pt.
 
-<imagenes/usage/invisible_silence.jpg, id=620, 702.625pt x 228.855pt>
+<imagenes/usage/invisible_silence.jpg, id=638, 702.625pt x 228.855pt>
 File: imagenes/usage/invisible_silence.jpg Graphic file (type jpg)
 
 <use imagenes/usage/invisible_silence.jpg>
 Package pdftex.def Info: imagenes/usage/invisible_silence.jpg used on input lin
-e 235.
+e 240.
 (pdftex.def)             Requested size: 330.05322pt x 107.50598pt.
 
-<imagenes/usage/completion_select.png, id=621, 814.04124pt x 323.2075pt>
+<imagenes/usage/completion_select.png, id=639, 814.04124pt x 323.2075pt>
 File: imagenes/usage/completion_select.png Graphic file (type png)
 
 <use imagenes/usage/completion_select.png>
 Package pdftex.def Info: imagenes/usage/completion_select.png used on input lin
-e 246.
+e 251.
 (pdftex.def)             Requested size: 330.05322pt x 131.04134pt.
- [88 <./imagenes/usage/select_silence.jpg> <./imagenes/usage/invisible_silence.
+ [92 <./imagenes/usage/select_silence.jpg> <./imagenes/usage/invisible_silence.
 jpg>]
-LaTeX Info: Redefining \. on input line 255.
-LaTeX Info: Redefining \% on input line 255.
- [89 <./imagenes/usage/completion_select.png>]) (./root.bbl [90
+LaTeX Info: Redefining \. on input line 260.
+LaTeX Info: Redefining \% on input line 260.
+ [93 <./imagenes/usage/completion_select.png>]) (./root.bbl [94
 
 
 ]
@@ -1831,7 +1853,7 @@ LaTeX Info: Redefining \% on input line 255.
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
-[91])
+[95])
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the root.maf file.
@@ -1845,45 +1867,48 @@ Package minitoc(hints) Warning: W0024
 
 LaTeX Info: Redefining \. on input line 80.
 LaTeX Info: Redefining \% on input line 80.
-[92] (./root.aux (./cover.aux)
+[96] (./root.aux (./cover.aux)
 LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
  (./draft.aux) (./director-agreement.aux)
 (./dedication.aux) (./gratefulnesses.aux) (./abstract.aux) (./keywords.aux)
 (./introduction.aux) (./contextualization.aux) (./implementation.aux)
-(./evaluation.aux) (./conclusions.aux) (./appendix.aux)) ) 
+(./evaluation.aux) (./conclusions.aux) (./appendix.aux))
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 8584 strings out of 493304
- 106778 string characters out of 6139870
- 222661 words of memory out of 5000000
- 11456 multiletter control sequences out of 15000+600000
+ 8659 strings out of 493304
+ 108638 string characters out of 6139870
+ 223449 words of memory out of 5000000
+ 11529 multiletter control sequences out of 15000+600000
  38362 words of font info for 136 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  39i,12n,45p,2257b,688s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/t
-exmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmbxsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
-12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/eurosym/feybr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/eu
-rosym/feymr10.pfb></usr/share/texmf/fonts/type1/public/musixtex-fonts/musix20.p
-fb></usr/share/texmf/fonts/type1/public/musixtex-fonts/musix24.pfb></usr/share/
-texmf/fonts/type1/public/musixtex-fonts/musixspx.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/urw/avantgar/uagk8a.pfb>
-Output written on root.pdf (113 pages, 2119027 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/eurosym/feybr10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/eurosym/feymr10.pfb></usr/share/texmf/fonts/type1/public/m
+usixtex-fonts/musix20.pfb></usr/share/texmf/fonts/type1/public/musixtex-fonts/m
+usix24.pfb></usr/share/texmf/fonts/type1/public/musixtex-fonts/musixspx.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/urw/avantgar/uagk8a.pfb>
+Output written on root.pdf (117 pages, 2274492 bytes).
 PDF statistics:
- 707 PDF objects out of 1000 (max. 8388607)
- 442 compressed objects within 5 object streams
+ 725 PDF objects out of 1000 (max. 8388607)
+ 452 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
- 146 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

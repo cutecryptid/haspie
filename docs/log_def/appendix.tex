@@ -1,5 +1,6 @@
 \newpage
 \chapter{Diagramas}
+\label{chap:diagrams}
 La herramienta no hace un uso intensivo de la orientación a objetos, en lo referente a herencia, composición, clases abstractas y similares. No obstante sí que existe una jerarquía de objetos de almacenamiento y representación de los hechos lógicos representados a la salida de los diferentes módulos. Con respecto al diagrama de secuencia, su ausencia es justificable ya que no ilustra nada ni sirve a ningún propósito real. El diagrama de arquitectura aclara mucho mejor el funcionamiento y el flujo de datos entre los módulos del sistema que cualquier diagrama de secuencia, ya que los diferentes módulos se invocan secuencialmente y la salida de cada uno se recibe en el pipeline y se pasa al siguiente módulo hasta terminar.
 
 \begin{figure}[th]
@@ -35,6 +36,7 @@ La herramienta no hace un uso intensivo de la orientación a objetos, en lo refe
 \end{figure}
 
 \chapter{Análisis de MusicXML}
+\label{chap:musicxml_analysis}
 Se detalla una relación de los elementos MusicXML identificados por el procesador y se especifica la finalidad de los mismos. Se indica también, el tipo de cada elemento procesado (Etiqueta, Etiqueta Autocerrada o Atributo) y, con fines organizativos, la etiqueta con la que están relacionados de forma directa.
 
  \begin{center}
@@ -70,6 +72,7 @@ Se detalla una relación de los elementos MusicXML identificados por el procesad
  \end{center} 
  
  \chapter{Partituras}
+ \label{chap:scores}
  Además de las utilizadas en la evaluación del sistema, se utilizaron algunas otras partituras durante el desarrollo del proyecto, algunas descartadas por incompatibilidad y otras por no servir de ejemplo para la evaluación.
  
  \begin{figure}
@@ -115,17 +118,19 @@ Se detalla una relación de los elementos MusicXML identificados por el procesad
  \end{figure}
  
 \chapter{Instalación}
+\label{chap:installation}
 Se recomienda la instalación de la herramienta en un sistema operativo Linux. Esto se debe a que las librerías Flex y Bison se  compilan fácilmente en dicha plataforma. No obstante se proporciona el código fuente completo, por lo tanto es posible compilarlo para otros sistemas operativos.
 
-El requisito es tener instalado Python 2.7, las ultimas versiones de Flex y Bison, además de un compilador de C (gcc sirve perfectamente). A mayores es necesario descargar tanto gringo 3.0.5 como clingo 3.0.5 de la página en Sourceforge del grupo Potassco y el módulo Music21 en su versión 2.1.2 o superior de la página de la librería. Todas estas herramientas, compiladores y librerías deben ser accesibles mediante en el \texttt{PATH} del sistema operativo.
+El requisito es tener instalado Python 2.7, las ultimas versiones de Flex y Bison, además de un compilador de C (gcc sirve perfectamente). A mayores es necesario descargar tanto gringo 3.0.5 como clingo 3.0.5 de la página en Sourceforge del grupo Potassco\cite{potasscoweb} y el módulo Music21 en su versión 2.1.2 o superior de la página de la librería. Todas estas herramientas, compiladores y librerías deben ser accesibles mediante en el \texttt{PATH} del sistema operativo.
 
-La instalación de tanto gringo como clingo no tiene mayor complicación, sólo deben ubicarse en alguna carpeta accesible y añadir dicha ruta al \texttt{PATH}. En la página web de Music21 se incluyen instrucciones para su instalación automatizada en el sistema. Se aconseja, no obstante instalar primero diferentes herramientas para transformación y visualización o reproducción de los diferentes formatos (Léase PDF, MIDI, Lilypond, etc.) ya que de este modo, la instalación de Music21 las reconocerá y podrán ser usadas sin configuración posterior. Si se desean cambiar las preferencias sobre estas herramientas vinculadas a Music21, ha de editarse el fichero \texttt{.music21rc} presente en la carpeta \texttt{home} del usuario activo del sistema.
+La instalación de tanto gringo como clingo no tiene mayor complicación, sólo deben ubicarse en alguna carpeta accesible y añadir dicha ruta al \texttt{PATH}. En la página web de Music21\cite{music21web} se incluyen instrucciones para su instalación automatizada en el sistema. Se aconseja, no obstante instalar primero diferentes herramientas para transformación y visualización o reproducción de los diferentes formatos (Léase PDF, MIDI, Lilypond, etc.) ya que de este modo, la instalación de Music21 las reconocerá y podrán ser usadas sin configuración posterior. Si se desean cambiar las preferencias sobre estas herramientas vinculadas a Music21, ha de editarse el fichero \texttt{.music21rc} presente en la carpeta \texttt{home} del usuario activo del sistema.
 	
 Se recomienda la instalación de un editor de partituras para poder manipular correctamente los ficheros de entrada y salida de la herramienta, esto es opcional, pero resulta conveniente. En el desarrollo se ha utilizado MuseScore 2 al ser \textit{OpenSource} y gratuito, pero cualquier editor que pueda importar y exportar ficheros en formato MusicXML servirá.
 
 Con la herramienta, además del código fuente, se ofrece el procesador MusicXML a hechos lógicos precompilado, si no funcionase este archivo siempre puede compilarse el mencionado código fuente haciendo uso del archivo Makefile presente en la carpeta \texttt{parser/source}. un simple comando \texttt{make} desde esa ruta es suficiente. El archivo binario compilado del procesador debe estar presente en la carpeta \texttt{parser} para que la herramienta funcione correctamente.
 
 \chapter{Manual de uso}
+\label{chap:usage}
 Esta herramienta está pensada para ser usada desde la línea de comandos en sistemas operativos Linux. El comando básico para su ejecución es \texttt{python haspie.py <fichero.xml>} y las opciones que permite la herramienta, junto con una pequeña explicación de cada una de ellas, pueden ser invocadas mediante la opción \texttt{-h}, como es habitual. No obstante se detalla una ejecución completa a modo de guía de uso.
 
 \begin{figure}

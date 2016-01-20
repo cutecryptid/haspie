@@ -26,21 +26,25 @@ En el estado en el que se encuentra el proyecto, no podría estar más emocionad
  
  Como gran logro indocumentado del proyecto, pues ha sido este quien lo ha propiciado pero no está involucrado directamente en el trabajo realizado en el mismo, ha sido mejorar mis técnicas de desarrollo en múltiples lenguajes y la integración de sistemas muy dispares en uno solo. Además, habiendo trabajado escasamente con anterioridad en \textit{Answer Set Programming} siento que mis habilidades con este conjunto de herramientas y la sintaxis y particularidades de su lenguaje propio han mejorado enormemente. Esto se ha visto reflejado en pequeños proyectos paralelos ideados y planteados durante estos meses de trabajo, que espero poder emprender una vez haya concluido este trabajo.
  
- 
 \section{Trabajo Futuro}
-Las líneas marcadas para el trabajo futuro sobre este proyecto tienen que ver con la estética de los resultados del mismo y la implementación de algún tipo de interfaz más amigable para el usuario. También se pretende mejorar la interpretación de partituras en MusicXML para mejorar los resultados de la armonización y los de la representación de la salida. Por último desea investigar también sobre ampliar el proyecto hacia alguna de las restricciones propuestas inicialmente, como la de contemplar modulación.
+\label{sec:future_work}
+Las líneas marcadas para el trabajo futuro sobre este proyecto tienen que ver principalmente con solucionar o mejorar algunos de los puntos mencionados en la sección \ref{sec:known_issues} Errores Conocidos. La guía principal sobre el trabajo pendiente tiene que ver con la estética de los resultados del mismo e incluye la implementación de algún tipo de interfaz más amigable para el usuario. También se pretende mejorar la interpretación de partituras en MusicXML para mejorar los resultados de la armonización y los de la representación de la salida. Por último desea investigar también sobre ampliar el proyecto hacia alguna de las restricciones propuestas inicialmente, como la de contemplar modulación.
 
 \subsection{Estética e Interfaz}
+\label{subsec:look_interface}
 Ya que la librería en la que se sustenta la representación visual de las partituras en la salida aún se encuentra en desarrollo, se esperará a su anunciada futura versión 3.0 para continuar el trabajo en esta dirección. La propia librería ya debería solucionar en gran medida los problemas de representación, principalmente la inexplicable inclusión de becuadros frente a algunas notas que no tendrían por qué llevarlos o la notación correcta de la clave en cada una de las voces, que a veces da problemas. 
 
 Se quiere además transformar el proyecto a un \textit{plug-in} para MuseScore 2, ya que el programa facilita mucho la creación de este tipo de módulos complementarios. Serviría además para ayudar al usuario a usar el programa, ofreciendo una serie de elementos gráficos con los que interactuar. La gran rapidez de armonización de la herramienta ofrecería resultados prácticamente en vivo, lo cual resulta realmente atractivo. 
 
 \subsection{Procesado y Armonización}
-Se busca implementar en el módulo de entrada una mejor detección del tipo de clave de cada una de las voces, permitiendo a la salida ofrecer un resultado más fidedigno. Además en conjunción con el módulo de armonización se pretende detectar mejor los tiempos débiles y fuertes de la pieza, ya que esta es una de las grandes flaquezas en el estado final del proyecto al no poder identificar algunos patrones más complejos de subdivisión fuerte y débil en conjuntos de figuras como corcheas y semicorcheas.
+\label{subsec:parsing_harm}
+Se busca implementar en el módulo de entrada una mejor detección del tipo de clave de cada una de las voces, permitiendo a la salida ofrecer un resultado más fidedigno. Además en conjunción con el módulo de armonización se pretende detectar mejor los tiempos débiles y fuertes de la pieza, ya que esta es una de las grandes flaquezas en el estado final del proyecto al no poder identificar algunos patrones más complejos de subdivisión fuerte y débil en conjuntos de figuras como corcheas y semicorcheas. Por último, aunque esto quizas sea lo más complicado, se intentará atacar el problema de la detección y la correcta interpretación de los tresillos y otras figuras irregulares.
 
 \subsection{Modulación}
+\label{subsec:future_modulation}
 La modulación fue una de las principales barreras fijadas desde el principio de la planificación del proyecto, principalmente por ser difícil de detectar y complejo lidiar con ella a nivel armónico. Se quiere investigar el comportamiento del proyecto ante esta técnica haciendo uso de nuevas herramientas como \textit{iclingo}, un solucionador del estilo del utilizado en el proyecto pero iterativo, es decir, capaz de calcular nuevas soluciones haciendo uso de resultados obtenidos en iteraciones anteriores que van cambiando el dominio sobre el que se trabaja.
 Otra aproximación planteada, desde un punto de vista más similar al del proyecto sería ser capaz de subdividir la partitura en tramos según armonías, aunque se perdería mucha información y no siempre estos tramos estarían bien delimitados.
 
 \subsection{Publicación}
+\label{subsec:releasing}
 Por último, y tras refinar algunos de los pasos citados anteriormente, se desea contactar a interesados en la herramienta del campo de la enseñanza musical para que puedan juzgarla y contribuir a perfeccionarla hasta que sea posible publicarla y, con suerte, ser usada en este campo.
