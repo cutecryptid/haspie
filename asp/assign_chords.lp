@@ -42,17 +42,17 @@ out_error_weak(V,FB) :- D{error(V,G,FB..FB+D-1)}D, figure(V,D,FB), error_in_weak
 same_chord(HT1,HT2) :- htime(HT1), htime(HT2), htime(HT1+1), HT1+1 == HT2,
 						chord(HT1,C1), chord(HT2,C2), C1 == C2, pos_chord(C1), pos_chord(C2).
 
-#const errorinstrongw = 1.
-#const samechordw = 1.
-#const errorinweakw = 1.
+#const chord_errorinstrongw = 1.
+#const chord_samechordw = 1.
+#const chord_errorinweakw = 1.
 
-#const errorinstrongp = 3.
-#const samechordp = 2.
-#const errorinweakp = 1.
+#const chord_errorinstrongp = 3.
+#const chord_samechordp = 2.
+#const chord_errorinweakp = 1.
 
-#minimize[out_error(_,_)=errorinstrongw @ errorinstrongp].
-#minimize[same_chord(_,_)=samechordw @ samechordp].
-#minimize[out_error_weak(_,_)=errorinweakw @ errorinweakp].
+#minimize[out_error(_,_)=chord_errorinstrongw @ chord_errorinstrongp].
+#minimize[same_chord(_,_)=chord_samechordw @ chord_samechordp].
+#minimize[out_error_weak(_,_)=chord_errorinweakw @ chord_errorinweakp].
 
 #hide.
 #show chord/2.

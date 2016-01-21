@@ -18,68 +18,91 @@
  Para la evaluación se han realizado armonizaciones de todas las piezas y se han medido los tiempos y la calidad de las mismas, además se han realizado pruebas de completado de un compás en cada pieza junto con la inclusión de una nueva voz, también se han medido calidad y tiempo. Por último, con la última partitura se han realizado pruebas para comprobar hasta donde funciona bien en cuestión temporal, para ello se ha ido vaciando porcentualmente una de las voces para ser completada y después se han ido añadiendo diferentes voces. Las figuras de esta sección sirven para ilustrar algunos resultados obtenidos, se puede comparar con las partituras originales presentes en el Apéndice \ref{chap:scores} Partituras.
  
  Nótese que debido al carácter no-determinista de \textit{Answer Set Programming} y a los tiempos de entrada y salida estos tiempos sirven para dar una idea aproximada de los tiempos de funcionamiento de la herramienta. Para suavizar los valores dispares se ha ejecutado cada medida 100 veces, se ha restado el tiempo de usuario y se ha calculado el tiempo promedio. 
- 
 
-  \begin{figure}
-  	\centering
-  	\includegraphics[width=0.8\linewidth]{imagenes/evaluation/greensleeves_harm.png}
-  	\caption{Comienzo de Greensleeves armonizado}
-  	\label{fig:greensleeves_harm}
-  \end{figure}
-  
-     \begin{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{imagenes/evaluation/greensleeves_harm.png}
+	\caption{Comienzo de Greensleeves armonizado}
+	\label{fig:greensleeves_harm}
+\end{figure}
+
+\begin{figure}
+   	\centering
+   	\includegraphics[width=0.4\linewidth]{imagenes/evaluation/greensleeves_measure.png}
+   	\includegraphics[width=0.4\linewidth]{imagenes/evaluation/greensleeves_measure_melodious.png}
+   	\caption{Compás de Greensleeves completado sin y con preferencias melódicas activadas}
+   	\label{fig:greensleeves_measure}
+\end{figure}
+
+\begin{figure}
+    	\centering
+    	\includegraphics[width=0.8\linewidth]{imagenes/evaluation/joy_harm_err.png}
+    	\caption{La salida de Joy to the World produce un error de clave en la voz de la Soprano}
+    	\label{fig:joy_harm_err}
+\end{figure}
+
+\begin{figure}
+    	\centering
+    	\includegraphics[width=0.8\linewidth]{imagenes/evaluation/menuet_extra_bass.png}
+    	\caption{Menuet con una voz de Bajo adicional (sin preferencias melódicas)}
+    	\label{fig:menuet_extra_bass}
+\end{figure}
+
+\begin{figure}
+    	\centering
+    	\includegraphics[width=0.8\linewidth]{imagenes/evaluation/joy_harm.png}
+    	\caption{Comienzo de Joy to the World armonizado}
+    	\label{fig:joy_harm}
+\end{figure}
+
+\begin{figure}
      	\centering
-     	\includegraphics[width=0.4\linewidth]{imagenes/evaluation/greensleeves_measure.png}
-     	\includegraphics[width=0.4\linewidth]{imagenes/evaluation/greensleeves_measure_melodious.png}
-     	\caption{Compás de Greensleeves completado sin y con preferencias melódicas activadas}
-     	\label{fig:greensleeves_measure}
-     \end{figure}
-     
-    \begin{figure}
-    	\centering
-    	\includegraphics[width=0.8\linewidth]{imagenes/evaluation/menuet_harm.png}
-    	\caption{Comienzo de Menuet armonizado}
-    	\label{fig:menuet_harm}
-    \end{figure}
-  
-        \begin{figure}
-        	\centering
-        	\includegraphics[width=0.8\linewidth]{imagenes/evaluation/joy_harm_err.png}
-        	\caption{La salida de Joy to the World produce un error de clave en la voz de la Soprano}
-        	\label{fig:joy_harm_err}
-        \end{figure}
-     
-      \begin{figure}
-      	\centering
-      	\includegraphics[width=0.8\linewidth]{imagenes/evaluation/joy_harm.png}
-      	\caption{Comienzo de Joy to the World armonizado}
-      	\label{fig:joy_harm}
-      \end{figure}
-  
-    \begin{figure}
-    	\centering
-    	\includegraphics[width=0.8\linewidth]{imagenes/evaluation/twinkle_harm_err.png}
-    	\caption{La salida de Twinkle Twinkle Little Star produce un error de clave en la partitura de la mano derecha del piano}
-    	\label{fig:twinkle_harm_err}
-    \end{figure}
-    
-        \begin{figure}
-        	\centering
-        	\includegraphics[width=0.8\linewidth]{imagenes/evaluation/twinkle_harm.png}
-        	\caption{Comienzo de Twinkle Twinkle Little Star armonizado}
-        	\label{fig:twinkle_harm}
-        \end{figure}
-  
-  \begin{center}
-  	\begin{tabular}{ | l | c | c | c | }
-  		\hline
-  		Pieza & T. Armonización & T. Compás & T. Nueva voz \\ \hline \hline
-  		Greensleeves & 1.016s & 1.926s & 0 \\ \hline
-  		Menuet & 0.631s & 0.717s & 0 \\ \hline
-  		Joy to the World & 4.381s & 0 & 0 \\ \hline
-  		Twinkle Twinkle & 0.685s & 0 & 0 \\ \hline
-  	\end{tabular}
-  \end{center}
+     	\includegraphics[width=0.8\linewidth]{imagenes/evaluation/twinkle_harm.png}
+     	\caption{Comienzo de Twinkle Twinkle Little Star armonizado}
+     	\label{fig:twinkle_harm}
+\end{figure}
+
+\begin{figure}
+   	\centering
+   	\includegraphics[width=0.4\linewidth]{imagenes/evaluation/twinkle_measure.png}
+   	\includegraphics[width=0.4\linewidth]{imagenes/evaluation/twinkle_measure_melodious.png}
+   	\caption{Compás de Twinkle Twinkle Little Star completado sin y con preferencias melódicas activadas}
+   	\label{fig:twinkle_measure}
+\end{figure}
+
+\begin{center}
+	\begin{tabular}{ | l | c | c | c | }
+		\hline
+		Pieza 			& T. Armonización 	& T. Compás & T. Nueva voz \\ \hline \hline
+		Greensleeves 	& 1.016s 			& 1.926s	& 4m 49.032s \\ \hline
+		Menuet 			& 0.631s 			& 0.726s 	& 3m 50.376s \\ \hline
+		Joy to the World& 2.381s 			& 3.813s	& 7m 17.115s \\ \hline
+		Twinkle Twinkle & 0.685s 			& 0.716s 	& 2m 31.299s \\ \hline
+	\end{tabular}
+\end{center}
+
+Cuantitativamente, los resultados del sistema son los esperados. Los tiempos de armonización de partituras son excepcionalmente buenos y los de completado de secciones obtienen resultados muy interesantes ya que para un compás vacío se puede observar un escaso segundo de diferencia. No obstante, se ha podido comprobar que el crecimiento de tiempo necesario para completar una partitura no es lineal, ya que al haber cada vez más figuras que completar, surgen más posibilidades combinatorias.
+
+Esto queda reflejado en el tiempo necesario para añadir una nueva voz a la partitura, que crece hasta el orden de los minutos para una voz. No resulta problemático, ya que teniendo en cuenta la cantidad de posibilidades sigue siendo un orden de tiempo aceptable para hallar el mejor resultado posible, si tenemos en cuenta que podemos especificar un timeout, podríamos obtener un resultado aceptable (por ejemplo una voz nueva con una ratio de errores por nota de alrededor del 10\%) en prácticamente la mitad de tiempo.
+
+Las pruebas de carga sobre Twinkle Twinkle Little Star se han realizado primero vaciando progresivamente una de las voces. La pieza cuenta con 24 compases, se han vaciado 4 compases en cada iteración, aunque no se ha vaciado del todo la voz ya que eso corresponde al siguiente punto. Por último se han ido añadiendo voces, una voz de una tesitura diferente en cada iteración.
+\begin{center}
+	\begin{tabular}{ | l | r | }
+		\hline
+		Prueba & Tiempo \\ \hline
+		4 compases  & 1.481s \\ \hline
+		8 compases 	& 2.394s \\ \hline
+		12 compases	& 3.978s \\ \hline
+		16 compases & 3.982s \\ \hline
+		20 compases & 5.966s \\ \hline
+		1 voz & 2m 31.299s \\ \hline
+		2 voces  &  \\ \hline
+		3 voces  &  \\ \hline
+	\end{tabular}
+\end{center}
+
+Puede resultar curioso que una pieza casi vacía (como en el ejemplo de 20 compases vacíos) siga en el orden de segundos mientras que una voz nueva se va a los minutos. La explicación de esto radica en las figuras completables contra las nuevas voces. Las figuras completables cuentan con un patrón rítmico determinado al que se ajustan las notas, reduciendo drásticamente la cantidad de notas que hay que calcular para la solución. En una nueva voz no existe este patronaje rítmico, las figuras son siempre la figura base con la que se ha armonizado y subdividido internamente toda la pieza, resultando siempre en tener que calcular el máximo de notas en cada voz. Para solucionar esto se pueden incluir voces nuevas en la partitura directamente en el editor, especificando los patrones rítmicos, en lugar de a través de la línea de comandos.
   
   \section{Problemas conocidos}
   \label{sec:known_issues}

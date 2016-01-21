@@ -206,9 +206,7 @@ def main():
 			"--const", "span=" + str(span), "--const", "base="+ str(base), 
 			"--const", "subdiv="+subdivision, opt_all)
 
-		asp_proc = subprocess.Popen(asp_note_args, stdout=subprocess.PIPE)
-
-		asp_note_out = asp_proc.stdout.read()
+		asp_proc = subprocess.call(asp_note_args)
 
 		if (re.search("UNSATISFIABLE",asp_note_out) != None):
 			sys.exit("UNSATISFIABLE, stopping execution.")
