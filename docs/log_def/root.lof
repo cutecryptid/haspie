@@ -24,11 +24,12 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Evaluaci\IeC {\'o}n}{59}
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Comienzo de Greensleeves armonizado}}{60}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Comienzo de Menuet armonizado}}{61}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces La salida de Joy to the World produce un error de clave en la voz de la Soprano}}{61}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Comienzo de Joy to the World armonizado}}{61}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces La salida de Twinkle Twinkle Little Star produce un error de clave en la partitura de la mano derecha del piano}}{62}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Comienzo de Twinkle Twinkle Little Star armonizado}}{62}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Comp\IeC {\'a}s de Greensleeves completado sin y con preferencias mel\IeC {\'o}dicas activadas}}{61}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Comienzo de Menuet armonizado}}{61}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces La salida de Joy to the World produce un error de clave en la voz de la Soprano}}{61}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Comienzo de Joy to the World armonizado}}{62}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces La salida de Twinkle Twinkle Little Star produce un error de clave en la partitura de la mano derecha del piano}}{62}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Comienzo de Twinkle Twinkle Little Star armonizado}}{62}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Conclusiones}{65}
 \addvspace {10\p@ }
@@ -49,13 +50,14 @@
 \contentsline {figure}{\numberline {C.5}{\ignorespaces Partitura de la pieza popular infantil Twinkle Twinkle Little Star (Brilla Brilla Estrellita)}}{82}
 \contentsline {figure}{\numberline {C.6}{\ignorespaces Partitura de ejemplo con una serie de acordes sencillos}}{83}
 \contentsline {figure}{\numberline {C.7}{\ignorespaces Partitura de ejemplo con algunos silencios reales y otros invisibles}}{84}
+\contentsline {figure}{\numberline {C.8}{\ignorespaces Partitura de ejemplo con acordes definidos por la quinta para ser completada.}}{85}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Instalaci\IeC {\'o}n}{85}
+\contentsline {xchapter}{Instalaci\IeC {\'o}n}{87}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Manual de uso}{87}
-\contentsline {figure}{\numberline {E.1}{\ignorespaces Opciones de uso de la herramienta}}{88}
-\contentsline {figure}{\numberline {E.2}{\ignorespaces La informaci\IeC {\'o}n relevante de la partitura se muestra al comenzar la armonizaci\IeC {\'o}n}}{89}
-\contentsline {figure}{\numberline {E.3}{\ignorespaces Se pide al usuario que fije la armonizaci\IeC {\'o}n a utilizar de entre varias posibles}}{90}
-\contentsline {figure}{\numberline {E.4}{\ignorespaces Seleccionando una figura podemos ver sus propiedades, entre otras la casilla de visibilidad}}{92}
-\contentsline {figure}{\numberline {E.5}{\ignorespaces Desmarcando la casilla de visibilidad, la figura pasa a un color m\IeC {\'a}s claro, indicando que no es visible}}{92}
-\contentsline {figure}{\numberline {E.6}{\ignorespaces Se pide al usuario que seleccione la soluci\IeC {\'o}n que m\IeC {\'a}s le guste entre varias posibles}}{93}
+\contentsline {xchapter}{Manual de uso}{89}
+\contentsline {figure}{\numberline {E.1}{\ignorespaces Opciones de uso de la herramienta}}{90}
+\contentsline {figure}{\numberline {E.2}{\ignorespaces La informaci\IeC {\'o}n relevante de la partitura se muestra al comenzar la armonizaci\IeC {\'o}n}}{91}
+\contentsline {figure}{\numberline {E.3}{\ignorespaces Se pide al usuario que fije la armonizaci\IeC {\'o}n a utilizar de entre varias posibles}}{92}
+\contentsline {figure}{\numberline {E.4}{\ignorespaces Seleccionando una figura podemos ver sus propiedades, entre otras la casilla de visibilidad}}{94}
+\contentsline {figure}{\numberline {E.5}{\ignorespaces Desmarcando la casilla de visibilidad, la figura pasa a un color m\IeC {\'a}s claro, indicando que no es visible}}{94}
+\contentsline {figure}{\numberline {E.6}{\ignorespaces Se pide al usuario que seleccione la soluci\IeC {\'o}n que m\IeC {\'a}s le guste entre varias posibles}}{95}

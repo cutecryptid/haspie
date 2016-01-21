@@ -1,3 +1,6 @@
+scale_grade(1..7).
+non_scale_grade(8;10;11;13;14).
+
 % translate semitone value to chord (minor mode)
 grade(V,1,T) :- sem_tones(V,3,T).
 grade(V,2,T) :- sem_tones(V,5,T).

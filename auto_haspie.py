@@ -6,6 +6,7 @@ import os
 import threading
 import errno
 import ConfigParser
+import time
 sys.path.append('./lib') 
 from HaspMusic import ClaspResult
 from HaspMusic import ClaspChords
@@ -16,7 +17,6 @@ def clasp_timeout(p):
     if p.poll() is None:
         try:
             p.kill()
-            print 'Timeout reached, terminating clasp'
         except OSError as e:
             if e.errno != errno.ESRCH:
                 print 'All options explored before timeout'
@@ -47,6 +47,8 @@ def main():
 	parser = argparse.ArgumentParser(description='haspie - Harmonizing music with ASP')
 	parser.add_argument('xml_score', metavar='XML_SCORE',
 	                   help='input musicXML score for armonizing')
+	parser.add_argument('-T', '--repetitions', metavar='N', nargs=1, default=0, type=int,
+	                   help='loop the program N times and average the resulting time')
 	parser.add_argument('-n', '--num_sols', metavar='N', nargs=1, default=0, type=int,
 	                   help='max number of ASP solutions, by default all of them')
 	parser.add_argument('-s', '--span', metavar='S', nargs=1, default=1, type=int,
@@ -131,115 +133,98 @@ def main():
 	if args.output == "out":
 		final_out = "./out/" + outname + "." + fmt
 	lp_outname = outname + ".lp"
-	xml_parser_args = ("parser/mxml_asp", infile, "-o", "asp/generated_logic_music/" + lp_outname, "-s", str(span), "-k", str(key), "-m", str(mode))
-	xml_parser_ret = subprocess.call(xml_parser_args)
-	
-	score_config = ConfigParser.ConfigParser()
-	score_config.read('./tmp/score_meta.cfg')
 
-	title = score_config.get('meta', 'title')
-	composer = score_config.get('meta', 'composer')
-	subdivision = score_config.get('scoredata', 'base_note')
-	key = score_config.get('scoredata', 'key_name')
-	key_value = score_config.get('scoredata', 'key_value')
-	mode = score_config.get('scoredata', 'mode')
-	last_voice = int(score_config.get('scoredata', 'last_voice'))
-	freebeat = int(score_config.get('scoredata', 'freebeat'))
+	start = time.time()
+	for x in range(args.repetitions[0]):
+		xml_parser_args = ("parser/mxml_asp", infile, "-o", "asp/generated_logic_music/" + lp_outname, "-s", str(span), "-k", str(key), "-m", str(mode))
+		xml_parser_ret = subprocess.call(xml_parser_args)
+		
+		score_config = ConfigParser.ConfigParser()
+		score_config.read('./tmp/score_meta.cfg')
 
-	base = key_to_base(key)
+		title = score_config.get('meta', 'title')
+		composer = score_config.get('meta', 'composer')
+		subdivision = score_config.get('scoredata', 'base_note')
+		key = score_config.get('scoredata', 'key_name')
+		key_value = score_config.get('scoredata', 'key_value')
+		mode = score_config.get('scoredata', 'mode')
+		last_voice = int(score_config.get('scoredata', 'last_voice'))
+		freebeat = int(score_config.get('scoredata', 'freebeat'))
 
-	extra_voices = ""
-	if args.voices != "":
-		f = open('./tmp/extra_voices.lp', 'w')
-		extra_voices = "tmp/extra_voices.lp"
-		i = 1
-		for v in args.voices:
-			f.write("voice(" + str(last_voice+i) +").\n")
-			name = re.search("([a-zA-Z\_\-]+)", v)
-			vrange = re.findall("([0-9]+)", v)
-			if name != None:
-				f.write("voice_type("+ str(last_voice+i) + ", " + name.group(0) +").\n")
-			elif name == None:
-				f.write("voice_type("+ str(last_voice+i) + ", piano).\n")
-			elif len(vrange) == 2:
-				vrange = sorted(vrange)
-				if (vrange[0] != "0"):
-					f.write("voice_limit_low("+ str(last_voice+i) + ", " + vrange[0] +").\n")
-				if (vrange[1] != "0"):
-					f.write("voice_limit_high("+ str(last_voice+i) + ", " + vrange[1] +").\n")
-			else:
-				print "Voice limit for voice "+str(last_voice+1)+" has not been properly specified, please refer to usage.\n"
-			i += 1
-		f.close()
+		base = key_to_base(key)
 
-	if xml_parser_ret != 0:
-		sys.exit("Parsing error, stopping execution.")
+		extra_voices = ""
+		if args.voices != "":
+			f = open('./tmp/extra_voices.lp', 'w')
+			extra_voices = "tmp/extra_voices.lp"
+			i = 1
+			for v in args.voices:
+				f.write("voice(" + str(last_voice+i) +").\n")
+				name = re.search("([a-zA-Z\_\-]+)", v)
+				vrange = re.findall("([0-9]+)", v)
+				if name != None:
+					f.write("voice_type("+ str(last_voice+i) + ", " + name.group(0) +").\n")
+				elif name == None:
+					f.write("voice_type("+ str(last_voice+i) + ", piano).\n")
+				elif len(vrange) == 2:
+					vrange = sorted(vrange)
+					if (vrange[0] != "0"):
+						f.write("voice_limit_low("+ str(last_voice+i) + ", " + vrange[0] +").\n")
+					if (vrange[1] != "0"):
+						f.write("voice_limit_high("+ str(last_voice+i) + ", " + vrange[1] +").\n")
+				i += 1
+			f.close()
 
-	asp_chord_args = ("clingo", config, "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
-		"asp/include/chord_conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", extra_voices,
-		"asp/generated_logic_music/" + lp_outname,"-n", str(n), 
-		"--const", "span=" + str(span), "--const", "base="+ str(base), 
-		"--const", "subdiv="+subdivision)
+		if xml_parser_ret != 0:
+			sys.exit("Parsing error, stopping execution.")
 
-	asp_proc = subprocess.Popen(asp_chord_args, stdout=subprocess.PIPE)
-    
-	asp_chord_out = asp_proc.stdout.read()
+		asp_chord_args = ("clingo", config, "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
+			"asp/include/chord_conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", extra_voices,
+			"asp/generated_logic_music/" + lp_outname,"-n", str(n), 
+			"--const", "span=" + str(span), "--const", "base="+ str(base), 
+			"--const", "subdiv="+subdivision)
 
-	if (re.search("UNSATISFIABLE",asp_chord_out) != None):
-		sys.exit("UNSATISFIABLE, stopping execution.")
+		asp_proc = subprocess.Popen(asp_chord_args, stdout=subprocess.PIPE)
+	    
+		asp_chord_out = asp_proc.stdout.read()
 
-	chords = ClaspChords(asp_chord_out)
-	print chords
-	
-	sol_num = len(chords.chord_solutions)
-	selected_solution = raw_input('Select a chord solution for this score (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
-	if selected_solution == '':
+		if (re.search("UNSATISFIABLE",asp_chord_out) != None):
+			sys.exit("UNSATISFIABLE, stopping execution.")
+
+		chords = ClaspChords(asp_chord_out)
+		
+		sol_num = len(chords.chord_solutions)
 		selected_solution = sol_num
-	print chords.chord_solutions[int(selected_solution)-1]
 
-	assig_chords = open("tmp/assigned_chords.lp", "w")
-	assig_chords.write(HaspMusic.asp_clean_chords(chords.chord_solutions[int(selected_solution)-1].raw_ans))
-	assig_chords.close()
+		assig_chords = open("tmp/assigned_chords.lp", "w")
+		assig_chords.write(HaspMusic.asp_clean_chords(chords.chord_solutions[int(selected_solution)-1].raw_ans))
+		assig_chords.close()
 
-	asp_note_args = ("clingo", config, sixthslink, melodious, "asp/complete_score.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
-		"asp/include/conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", "tmp/assigned_chords.lp", extra_voices,
-		"asp/generated_logic_music/" + lp_outname,"-n", str(n), 
-		"--const", "span=" + str(span), "--const", "base="+ str(base), 
-		"--const", "subdiv="+subdivision, opt_all)
+		asp_note_args = ("clingo", config, sixthslink, melodious, "asp/complete_score.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
+			"asp/include/conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", "tmp/assigned_chords.lp", extra_voices,
+			"asp/generated_logic_music/" + lp_outname,"-n", str(n), 
+			"--const", "span=" + str(span), "--const", "base="+ str(base), 
+			"--const", "subdiv="+subdivision, opt_all)
 
-	asp_proc = subprocess.Popen(asp_note_args, stdout=subprocess.PIPE)
-	if (args.voices != "" or freebeat == 1):
-		t = threading.Timer( timeout, clasp_timeout, [asp_proc] )
-		t.start()
-		t.join()
-		t.cancel()
+		asp_proc = subprocess.Popen(asp_note_args, stdout=subprocess.PIPE)
 
-	asp_note_out = asp_proc.stdout.read()
+		asp_note_out = asp_proc.stdout.read()
 
-	if (re.search("UNSATISFIABLE",asp_note_out) != None):
-		sys.exit("UNSATISFIABLE, stopping execution.")
+		if (re.search("UNSATISFIABLE",asp_note_out) != None):
+			sys.exit("UNSATISFIABLE, stopping execution.")
 
-	res = ClaspResult(asp_note_out,max_optimums)
-	print res
+		res = ClaspResult(asp_note_out,max_optimums)
 
-	sol_num = len(res.solutions)
-	if sol_num > 0:
-		if (args.voices != "" or freebeat == 1):
-			selected_solution = raw_input('Select a solution to output (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
-			if selected_solution == '':
-				selected_solution = sol_num
-			print res.solutions[int(selected_solution)-1]
-		else:
+		sol_num = len(res.solutions)
+		if sol_num > 0:
 			selected_solution = sol_num
 
-		output = Out.solution_to_music21(res.solutions[int(selected_solution)-1], int(subdivision), span, base, int(key_value), mode, title, composer)
-		if args.show:
-			output.show(fmt)
-		else:
-			print "Writing output file to", final_out
+			output = Out.solution_to_music21(res.solutions[int(selected_solution)-1], int(subdivision), span, base, int(key_value), mode, title, composer)
 			output.write(fp=final_out, fmt=fmt)
-	else:
-		print "Timeout was to short or something went wrong, no solutions were found.\n"
+		else:
+			print "Timeout was to short or something went wrong, no solutions were found.\n"
+	end = time.time()
+	print "Average time - " + str((end-start)/float(args.repetitions[0]))
 
 if __name__ == "__main__":
     main()

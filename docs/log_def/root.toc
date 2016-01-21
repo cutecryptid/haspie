@@ -16,23 +16,13 @@
 \contentsline {subsubsection}{\numberline {2.1.2.3}MIDI}{9}
 \contentsline {subsection}{\numberline {2.1.3}Software}{10}
 \contentsline {subsubsection}{\numberline {2.1.3.1}Herramientas}{10}
-\contentsline {paragraph}{\numberline {2.1.3.1.1}Flex y Bison}{10}
-\contentsline {paragraph}{\numberline {2.1.3.1.2}Music21}{10}
 \contentsline {subsubsection}{\numberline {2.1.3.2}Composici\IeC {\'o}n Asistida}{10}
-\contentsline {paragraph}{\numberline {2.1.3.2.1}MuseScore}{10}
-\contentsline {paragraph}{\numberline {2.1.3.2.2}Sibelius}{10}
-\contentsline {paragraph}{\numberline {2.1.3.2.3}Finale}{11}
 \contentsline {subsubsection}{\numberline {2.1.3.3}Sistemas Inteligentes}{11}
-\contentsline {paragraph}{\numberline {2.1.3.3.1}EMI y Emily Howell}{11}
-\contentsline {paragraph}{\numberline {2.1.3.3.2}ANTON}{11}
-\contentsline {paragraph}{\numberline {2.1.3.3.3}Vox Populi}{12}
-\contentsline {paragraph}{\numberline {2.1.3.3.4}CHORAL}{12}
-\contentsline {paragraph}{\numberline {2.1.3.3.5}CHASP}{12}
 \contentsline {section}{\numberline {2.2}Contextualizaci\IeC {\'o}n musical}{12}
 \contentsline {subsection}{\numberline {2.2.1}Ritmo y Figuras}{13}
 \contentsline {subsection}{\numberline {2.2.2}Melod\IeC {\'\i }a y pentagrama}{16}
-\contentsline {subsection}{\numberline {2.2.3}Armon\IeC {\'\i }a}{19}
-\contentsline {subsection}{\numberline {2.2.4}Modulaci\IeC {\'o}n}{22}
+\contentsline {subsection}{\numberline {2.2.3}Armon\IeC {\'\i }a}{18}
+\contentsline {subsection}{\numberline {2.2.4}Modulaci\IeC {\'o}n}{21}
 \contentsline {subsection}{\numberline {2.2.5}Tesitura}{22}
 \contentsline {chapter}{\numberline {3}Desarrollo}{23}
 \contentsline {section}{\numberline {3.1}Planificaci\IeC {\'o}n y Presupuesto}{23}
@@ -87,6 +77,6 @@
 \contentsline {chapter}{\numberline {A}Diagramas}{69}
 \contentsline {chapter}{\numberline {B}An\IeC {\'a}lisis de MusicXML}{75}
 \contentsline {chapter}{\numberline {C}Partituras}{77}
-\contentsline {chapter}{\numberline {D}Instalaci\IeC {\'o}n}{85}
-\contentsline {chapter}{\numberline {E}Manual de uso}{87}
-\contentsline {chapter}{Bibliograf\'{\i }a}{95}
+\contentsline {chapter}{\numberline {D}Instalaci\IeC {\'o}n}{87}
+\contentsline {chapter}{\numberline {E}Manual de uso}{89}
+\contentsline {chapter}{Bibliograf\'{\i }a}{97}

@@ -53,46 +53,34 @@ Estos mensajes pueden ser codificados en ficheros para reproducción, edición o
 \subsection{Software}
 \label{subsec:software}
 \subsubsection{Herramientas}
-\paragraph{Flex y Bison}
-Flex y Bison son utilidades Unix que permiten escribir \textit{parsers} veloces para casi cualquier formato de archivo. Implementan procesado \textit{Look-Ahead-Left-Right} de gramáticas libres de contexto no ambiguas.
-
-\paragraph{Music21}
-Music21 es un conjunto de herramientas que sirve de ayuda a estudiantes y músicos a responder preguntas sobre música rápida y eficazmente. No sólo posee una base de datos bastante completa para realizar análisis musicológicos sino que contiene herramientas para la composición programática de música.
+\begin{itemize}
+	\item \textbf{Flex y Bison} son utilidades Unix que permiten escribir \textit{parsers} veloces para casi cualquier formato de archivo. Implementan procesado \textit{Look-Ahead-Left-Right} de gramáticas libres de contexto no ambiguas.
+	\item \textbf{Music21} es un conjunto de herramientas que sirve de ayuda a estudiantes y músicos a responder preguntas sobre música rápida y eficazmente. No sólo posee una base de datos bastante completa para realizar análisis musicológicos sino que contiene herramientas para la composición programática de música.
+\end{itemize}
 
 \subsubsection{Composición Asistida}
 Dentro de la composición asistida encontramos principalmente software de composición general en forma de editores de partituras que incorporan herramientas para ayudar al compositor en el proceso. Estas herramientas pueden ser corrección de la métrica de los compases, transposición de secciones de la canción, cambios de tonalidad, construcción de acordes dada una nota generadora, etc.
 
-\paragraph{MuseScore}
-MuseScore es un editor \textit{WYSIWYG} capaz de exportar a varios formatos de representación musical digital, tales como MIDI, LilyPond o MusicXML.
+\begin{itemize}
+ \item \textbf{Musescore 2} es un editor \textit{WYSIWYG} capaz de exportar a varios formatos de representación musical digital, tales como MIDI, LilyPond o MusicXML.
+\item \textbf{Sibelius} permite trabajar con gran variedad de modos de entrada de notas para sus partituras, desde los formatos convencionales hasta a través de instrumentos con salida MIDI o mediante el escaneado de partituras en papel haciendo uso de OCR.
+\item \textbf{Finale} destaca por la cantidad de ajustes que permite realizar sobre el pentagrama a un nivel de detalle muy fino, aunque presenta una curva de aprendizaje muy elevada. Sus principales características  tienen que ver con la visualización del pentagrama, ya que posee \textit{plug-ins} que se encargan de que el espacio entre las notas sea el correcto o que no haya colisiones entre notas de diferentes voces entre otros. 
+\end{itemize}
 
-\paragraph{Sibelius}
-Sibelius permite trabajar con gran variedad de modos de entrada de notas para sus partituras, desde los formatos convencionales hasta a través de instrumentos con salida MIDI o mediante el escaneado de partituras en papel haciendo uso de OCR.
-
-\paragraph{Finale}
-Finale destaca por la cantidad de ajustes que permite realizar sobre el pentagrama a un nivel de detalle muy fino, aunque presenta una curva de aprendizaje muy elevada. Sus principales características  tienen que ver con la visualización del pentagrama, ya que posee \textit{plug-ins} que se encargan de que el espacio entre las notas sea el correcto o que no haya colisiones entre notas de diferentes voces entre otros. 
 
 \subsubsection{Sistemas Inteligentes}
 La música si bien puede modelarse de forma matemática, con reglas estrictas que derivan en algoritmos de composición, requiere creatividad. Un algoritmo determinista no puede ser creativo, ya que para la misma entrada, siempre producirá la misma salida. Si bien existe la composición algorítmica como aproximación a la música compuesta por ordenadores, no es relevante para este trabajo.
 
 Dentro de la inteligencia artificial, se han realizado aproximaciones a la composición musical desde gran parte de las ramas principales del campo
 
-\paragraph{EMI y Emily Howell}
-Desarrollado por David Cope, EMI o Experiments in Music Composition es un sistema capaz de identificar el estilo presente en una partitura incompleta y completar la cantidad de notas restantes que el compositor requiera. El trabajo de Cope estudia la posibilidad de emplear gramáticas y diccionarios en la composición musical. EMI derivó en el software Emily Howell.
-Emily Howell utiliza EMI para crear y actualizar su base de datos, pero cuenta con una interfaz a través de la cual se puede modificar, a través de \textit{feedback}, la composición. Cope enriqueció y pulió Emily Howell con su propio estilo musical para crear varios discos que después fueron publicados.
-
-\paragraph{ANTON}
-ANTON es un sistema de composición rítmica, melódica y armónica basado en Answer Set Programming. ANTON compone breves piezas musicales desde cero o partiendo de partituras incompletas utilizando un estilo basado en el del compositor renacentista Giovanni Pierluigi da Palestrina. Recibe como entrada ficheros con las notas codificadas como hechos lógicos para después rellenar las secciones incompletas o añadir nuevas notas hasta que la pieza está completa. ANTON crea y completa dichas piezas teniendo en cuenta el número de tiempos rítmicos de las mismas y seleccionando la nota correspondiente de acuerdo a la nota  o estado anterior
-
-\paragraph{Vox Populi}
-Vox Populi utiliza algoritmos evolutivos para componer música en tiempo real. En este sistema, se parte de una población de acordes codificados mediante el protocolo MIDI para después mutarlos y seleccionar los mejores acordes a criterios puramente físicos relevantes para la música. Su interfaz gráfica permite al usuario controlar la función de \textit{fitness} del proceso evolutivo así como los atributos del sonido producido.
-
-
-\paragraph{CHORAL}
-CHORAL es un sistema experto que funciona como armonizador en el estilo clásico de Johann Sebastian Bach. Las reglas que utiliza el sistema representan conocimiento musical desde varios puntos de vista de la coral. El programa armoniza melodías corales mediante un sistema de generación y prueba con \textit{backtracking}. La base de conocimiento de CHORAL permite realizar modulaciones propias del estilo, crear patrones rítmicos e impone restricciones complejas para mantener el interés melódico en las voces intermedias.
-
-\paragraph{CHASP}
-CHASP es una herramienta creada por el grupo Potassco para calcular progresiones de acordes mediante Answer Set Programming partiendo de cero, pudiendo especificar clave y duración. A diferencia del presente proyecto no toma un fichero de entrada para armonizar piezas, pero sí que es capaz de dotar a la salida del programa de diferentes estilos rítimicos.
-
+\begin{itemize}
+	\item \textbf{EMI y Emily Howell} Desarrollado por David Cope, EMI o Experiments in Music Composition es un sistema capaz de identificar el estilo presente en una partitura incompleta y completar la cantidad de notas restantes que el compositor requiera. El trabajo de Cope estudia la posibilidad de emplear gramáticas y diccionarios en la composición musical. EMI derivó en el software Emily Howell.
+	Emily Howell utiliza EMI para crear y actualizar su base de datos, pero cuenta con una interfaz a través de la cual se puede modificar, a través de \textit{feedback}, la composición. Cope enriqueció y pulió Emily Howell con su propio estilo musical para crear varios discos que después fueron publicados.
+	\item \textbf{ANTON} es un sistema de composición rítmica, melódica y armónica basado en Answer Set Programming. ANTON compone breves piezas musicales desde cero o partiendo de partituras incompletas utilizando un estilo basado en el del compositor renacentista Giovanni Pierluigi da Palestrina. Recibe como entrada ficheros con las notas codificadas como hechos lógicos para después rellenar las secciones incompletas o añadir nuevas notas hasta que la pieza está completa. ANTON crea y completa dichas piezas teniendo en cuenta el número de tiempos rítmicos de las mismas y seleccionando la nota correspondiente de acuerdo a la nota  o estado anterior
+	\item \textbf{Vox Populi} utiliza algoritmos evolutivos para componer música en tiempo real. En este sistema, se parte de una población de acordes codificados mediante el protocolo MIDI para después mutarlos y seleccionar los mejores acordes a criterios puramente físicos relevantes para la música. Su interfaz gráfica permite al usuario controlar la función de \textit{fitness} del proceso evolutivo así como los atributos del sonido producido.
+	\item \textbf{CHORAL} es un sistema experto que funciona como armonizador en el estilo clásico de Johann Sebastian Bach. Las reglas que utiliza el sistema representan conocimiento musical desde varios puntos de vista de la coral. El programa armoniza melodías corales mediante un sistema de generación y prueba con \textit{backtracking}. La base de conocimiento de CHORAL permite realizar modulaciones propias del estilo, crear patrones rítmicos e impone restricciones complejas para mantener el interés melódico en las voces intermedias.
+	\item \textbf{CHASP} es una herramienta creada por el grupo Potassco para calcular progresiones de acordes mediante Answer Set Programming partiendo de cero, pudiendo especificar clave y duración. A diferencia del presente proyecto no toma un fichero de entrada para armonizar piezas, pero sí que es capaz de dotar a la salida del programa de diferentes estilos rítimicos.
+\end{itemize} 
 
 \section{Contextualización musical}
 \label{sec:musical_context}

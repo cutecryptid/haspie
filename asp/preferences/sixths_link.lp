@@ -13,12 +13,12 @@ sixth_link(B1,B2) :- beat(B1), beat(B1+1), B1+1 == B2, second_inversion(C1,B1), 
 #const sixthlinkw = 1.
 
 #const note_errorinstrongp = 8.
-#const unisonp = 7.
-#const melodicjumpp = 6.
-#const sixthlinkp = 5.
-#const conttendencyp = 4.
-#const sametendencyp = 3.
-#const note_errorinweakp = 2.
-#const repeatedgradep = 1.
+#const repeatedgradep = 7.
+#const unisonp = 6.
+#const melodicjumpp = 5.
+#const sixthlinkp = 4.
+#const conttendencyp = 3.
+#const sametendencyp = 2.
+#const note_errorinweakp = 1.
 
 #maximize[sixth_link(_,_) = sixthlinkw @ sixthlinkp].

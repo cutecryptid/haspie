@@ -25,8 +25,9 @@ freebeat(V,B) :- not busybeat(V,B), beat(B), voice(V).
 
 beat_belongs_htime(((((T-1)*span)+1)..(T*span)),T) :- htime(T).
 error(V,G,B) :- chord(T,C), htime(T), grade(V,G,B), voice(V), not belongs(G,C), beat_belongs_htime(B,T), beat(B).
-
 error(V,G,B) :- chord(T,C), htime(T), ex_grade(V,G,B), voice(V), not belongs(G,C), beat_belongs_htime(B,T).
+error(V,G,B) :- grade(V,G,B), non_scale_grade(G), voice(V), beat(B).
+error(V,G,B) :- ex_grade(V,G,B), non_scale_grade(G), voice(V), beat(B).
 repeated_grade(V1,V2,B) :- out_grade(V1,G,O1,B), out_grade(V2,G,O2,B), voice(V1), voice(V2), V1 != V2.
 unison(V1,V2,B) :- out_note(V1,N,B), out_note(V2,N,B), voice(V1), voice(V2), V1 != V2.
 passing_note(V,N,B) :- chord(T,C), out_note(V,N,B), htime(T), out_grade(V,G,O,B), voice(V), not belongs(G,C),

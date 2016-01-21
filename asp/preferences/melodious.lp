@@ -19,12 +19,13 @@ melodic_jump(V,J,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2), (B1+1) == B2, b
 #const sametendency = 1.
 
 #const note_errorinstrongp = 7.
-#const unisonp = 6.
-#const melodicjumpp = 5.
-#const conttendencyp = 4.
-#const sametendencyp = 3.
-#const mote_errorinweakp = 2.
-#const repeatedgradep = 1.
+#const repeatedgradep = 6.
+#const unisonp = 5.
+#const melodicjumpp = 4.
+#const conttendencyp = 3.
+#const sametendencyp = 2.
+#const mote_errorinweakp = 1.
+
 
 #minimize[melodic_jump(_,J,_,_) = (J * melodicjumpw) @ melodicjumpp].
 #maximize[cont_tendency(_,_,_,_) = conttendencyp @ conttendencyp].
