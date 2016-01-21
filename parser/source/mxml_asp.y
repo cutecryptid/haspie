@@ -366,7 +366,7 @@ part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG {
 			if (strcmp(act_instrument, "piano") == 0){
 				act_voice = act_voice+1;
 				tmp_voice = new_voice();
-				mod_voice(tmp_voice, act_voice, act_instrument, voice_low, voice_high);
+				mod_voice(tmp_voice, act_voice, "piano_bass", voice_low, voice_high);
 				add_queue(voice_q, tmp_voice);
 			}
 		}
@@ -623,7 +623,7 @@ int main(int argc, char *argv[]) {
 				tmp_voice = pop_queue(voice_q);
 				fprintf(f, "voice_type(%d, %s).\n", (tmp_voice->part_id + (tmp_note->staff-1) + voice_mod), tmp_voice->instrument);
 				if (strcmp(tmp_voice->instrument, "piano") == 0){
-					fprintf(f, "voice_type(%d, %s).\n", (tmp_voice->part_id + (tmp_note->staff) + voice_mod), tmp_voice->instrument);
+					fprintf(f, "voice_type(%d, %s).\n", (tmp_voice->part_id + (tmp_note->staff) + voice_mod), "piano_bass");
 				}
 				if (tmp_voice -> limit_low != 0){
 					fprintf(f, "voice_limit_low(%d, %d).\n", (tmp_voice->part_id + (tmp_note->staff-1) + voice_mod), tmp_voice->limit_low);

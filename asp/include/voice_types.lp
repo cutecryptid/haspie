@@ -8,3 +8,6 @@ voice_low(mezzosoprano,57). voice_high(mezzosoprano,81).
 voice_low(soprano,60). voice_high(soprano,84).
 
 voice_low(violonchelo,40). voice_high(violonchelo,67).
+
+voice_low(piano,57). voice_high(piano,77).
+voice_low(piano_bass,40). voice_high(piano_bass,60).

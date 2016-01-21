@@ -59,8 +59,8 @@ def main():
 	                   help='output file format for the result')
 	parser.add_argument('-o', '--output', metavar='output/dir/for/file', nargs=1, default="out", type=str,
 	                   help='output file name for the result')
-	parser.add_argument('-t', '--timeout', metavar='T', nargs=1, default=5, type=int,
-	                   help='maximum time (in seconds) allowed to search for optimum when searching for all optimums')
+	parser.add_argument('-t', '--timeout', metavar='T', nargs=1, default=0, type=int,
+	                   help='maximum time (in seconds) allowed to search for optimum when searching for all optimums, by default there is no time limit')
 	parser.add_argument('-k', '--key', metavar='A~G+-?', nargs=1, default="",
 	                   help='key in which the score should be harmonized, if not specified, parser will autodetect it')
 	parser.add_argument('-m', '--mode', metavar='major|minor', nargs=1, default="", choices=['major', 'minor'],
@@ -103,7 +103,7 @@ def main():
 		final_out = args.output[0]
 
 	timeout = args.timeout
-	if args.timeout != 5:
+	if args.timeout != 0:
 		timeout = args.timeout[0]
 
 	key = args.key
@@ -205,14 +205,15 @@ def main():
 		"asp/include/conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", "tmp/assigned_chords.lp", extra_voices,
 		"asp/generated_logic_music/" + lp_outname,"-n", str(n), 
 		"--const", "span=" + str(span), "--const", "base="+ str(base), 
-		"--const", "subdiv="+subdivision, opt_all)
+		"--const", "subdiv="+subdivision)
 
 	asp_proc = subprocess.Popen(asp_note_args, stdout=subprocess.PIPE)
-	if (args.voices != "" or freebeat == 1):
-		t = threading.Timer( timeout, clasp_timeout, [asp_proc] )
-		t.start()
-		t.join()
-		t.cancel()
+	if (timeout > 0):
+		if (args.voices != "" or freebeat == 1):
+			t = threading.Timer( timeout, clasp_timeout, [asp_proc] )
+			t.start()
+			t.join()
+			t.cancel()
 
 	asp_note_out = asp_proc.stdout.read()
 
