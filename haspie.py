@@ -207,8 +207,7 @@ def main():
 		"--const", "span=" + str(span), "--const", "base="+ str(base), 
 		"--const", "subdiv="+subdivision)
 
-	asp_proc = subprocess.call(asp_note_args)
-	
+	asp_proc = subprocess.Popen(asp_note_args, stdout=subprocess.PIPE)
 	if (timeout > 0):
 		if (args.voices != "" or freebeat == 1):
 			t = threading.Timer( timeout, clasp_timeout, [asp_proc] )
