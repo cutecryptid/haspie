@@ -21,6 +21,23 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{anton-composing}
+G.~{Boenn}, M.~{Brain}, M.~{De Vos}, and J.~{ffitch}, ``{Automatic Music
+  Composition using Answer Set Programming},'' \emph{ArXiv e-prints}, Jun.
+  2010.
+
+\bibitem{potasscoweb}
+\BIBentryALTinterwordspacing
+``{Potassco} - the potsdam answer set solving collection,'' accessed:
+  2016-01-08. [Online]. Available: \url{http://potassco.sourceforge.net/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{music21web}
+\BIBentryALTinterwordspacing
+``{music21} a toolkit for computer-aided musicology,'' accessed: 2015-11-05.
+  [Online]. Available: \url{http://web.mit.edu/music21/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{teoria-musical}
 E.~Herrera, \emph{Teoría Musical Y Armonía Moderna - Volumen 1},
   1st~ed.\hskip 1em plus 0.5em minus 0.4em\relax Antoni Bosch, 2015.
@@ -32,13 +49,6 @@ E.~Herrera, \emph{Teoría Musical Y Armonía Moderna - Volumen 1},
 G.~Boenn, M.~Brain, M.~De~Vos, and J.~Ffitch, ``Automatic music composition
   using answer set programming,'' \emph{Theory and Practice of Logic
   Programming}, vol.~11, no. 2-3, pp. 397--427, 2011.
-
-\bibitem{anton-composing}
-------, ``\BIBforeignlanguage{English}{Anton: Composing logic and logic
-  composing},'' in \emph{\BIBforeignlanguage{English}{Logic Programming and
-  Nonmonotonic Reasoning}}, ser. Lecture Notes in Computer Science, E.~Erdem,
-  F.~Lin, and T.~Schaub, Eds.\hskip 1em plus 0.5em minus 0.4em\relax Springer
-  Berlin Heidelberg, 2006, vol. 5753, pp. 542--547.
 
 \bibitem{vox-populi}
 A.~Moroni, J.~Manzolli, and R.~Gudwin, ``Vox populi: An interactive
@@ -77,22 +87,10 @@ I.~Niemelä, ``\BIBforeignlanguage{English}{Logic programs with stable model
   \url{http://dx.doi.org/10.1023/A:3A1018930122475}
 \BIBentrySTDinterwordspacing
 
-\bibitem{music21web}
-\BIBentryALTinterwordspacing
-``{music21} a toolkit for computer-aided musicology,'' accessed: 2015-11-05.
-  [Online]. Available: \url{http://web.mit.edu/music21/}
-\BIBentrySTDinterwordspacing
-
 \bibitem{lilypondweb}
 \BIBentryALTinterwordspacing
 ``{LilyPond}: Musical notation for everyone,'' accessed: 2015-11-05. [Online].
   Available: \url{http://www.lilypond.org}
-\BIBentrySTDinterwordspacing
-
-\bibitem{potasscoweb}
-\BIBentryALTinterwordspacing
-``{Potassco} - the potsdam answer set solving collection,'' accessed:
-  2016-01-08. [Online]. Available: \url{http://potassco.sourceforge.net/}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}

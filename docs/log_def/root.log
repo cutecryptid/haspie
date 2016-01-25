@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.16)  21 JAN 2016 19:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.16)  25 JAN 2016 19:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1518,24 +1518,24 @@ LaTeX Info: Redefining \. on input line 90.
 LaTeX Info: Redefining \% on input line 90.
  [63 <./imagenes/evaluation/twinkle_measure.png> <./imagenes/evaluation/twinkle
 _measure_melodious.png>]
-LaTeX Info: Redefining \. on input line 114.
-LaTeX Info: Redefining \% on input line 114.
- [64])
+LaTeX Info: Redefining \. on input line 108.
+LaTeX Info: Redefining \% on input line 108.
+ [64]
+LaTeX Info: Redefining \. on input line 119.
+LaTeX Info: Redefining \% on input line 119.
+ [65])
 LaTeX Info: Redefining \. on input line 66.
 LaTeX Info: Redefining \% on input line 66.
- [65]
+ [66]
 \openout2 = `conclusions.aux'.
 
  (./conclusions.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [66
-
-
-
-]
 Cap\'{\i }tulo 5.
-[67] [68]
+[67
+
+
+
+] [68]
 LaTeX Info: Redefining \. on input line 42.
 LaTeX Info: Redefining \% on input line 42.
  [69])
@@ -1904,19 +1904,14 @@ LaTeX Info: Redefining \% on input line 275.
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
+[99]
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
-** WARNING: IEEEtran.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-** WARNING: IEEEtran.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-[99])
+)
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the root.maf file.
@@ -1942,10 +1937,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 8675 strings out of 493304
- 109588 string characters out of 6139870
+ 8676 strings out of 493304
+ 109614 string characters out of 6139870
  223460 words of memory out of 5000000
- 11541 multiletter control sequences out of 15000+600000
+ 11542 multiletter control sequences out of 15000+600000
  38362 words of font info for 136 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  39i,12n,45p,2257b,688s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1968,7 +1963,7 @@ t/fonts/type1/public/eurosym/feymr10.pfb></usr/share/texmf/fonts/type1/public/m
 usixtex-fonts/musix20.pfb></usr/share/texmf/fonts/type1/public/musixtex-fonts/m
 usix24.pfb></usr/share/texmf/fonts/type1/public/musixtex-fonts/musixspx.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/avantgar/uagk8a.pfb>
-Output written on root.pdf (121 pages, 2264010 bytes).
+Output written on root.pdf (121 pages, 2266628 bytes).
 PDF statistics:
  772 PDF objects out of 1000 (max. 8388607)
  483 compressed objects within 5 object streams

@@ -97,13 +97,17 @@ Las pruebas de carga sobre Twinkle Twinkle Little Star se han realizado primero 
 		16 compases & 3.982s \\ \hline
 		20 compases & 5.966s \\ \hline
 		1 voz & 2m 31.299s \\ \hline
-		2 voces  &  \\ \hline
-		3 voces  &  \\ \hline
+		2 voces & 25m 17.298s  \\ \hline
 	\end{tabular}
 \end{center}
 
-Puede resultar curioso que una pieza casi vacía (como en el ejemplo de 20 compases vacíos) siga en el orden de segundos mientras que una voz nueva se va a los minutos. La explicación de esto radica en las figuras completables contra las nuevas voces. Las figuras completables cuentan con un patrón rítmico determinado al que se ajustan las notas, reduciendo drásticamente la cantidad de notas que hay que calcular para la solución. En una nueva voz no existe este patronaje rítmico, las figuras son siempre la figura base con la que se ha armonizado y subdividido internamente toda la pieza, resultando siempre en tener que calcular el máximo de notas en cada voz. Para solucionar esto se pueden incluir voces nuevas en la partitura directamente en el editor, especificando los patrones rítmicos, en lugar de a través de la línea de comandos.
-  
+No se realizaron ejecuciones con más de dos voces adicionales ya que el tiempo de ejecución ya se dispara a las decenas de minutos y no se consideró relevante, se puede establecer el límite del funcionamiento usable en dos voces si se interrumpe la ejecución o en una voz completa. Puede resultar curioso que una pieza casi vacía (como en el ejemplo de 20 compases vacíos) siga en el orden de segundos mientras que una voz nueva se va a los minutos. La explicación de esto radica en las figuras completables contra las nuevas voces. Las figuras completables cuentan con un patrón rítmico determinado al que se ajustan las notas, reduciendo drásticamente la cantidad de notas que hay que calcular para la solución. En una nueva voz no existe este patronaje rítmico, las figuras son siempre la figura base con la que se ha armonizado y subdividido internamente toda la pieza, resultando siempre en tener que calcular el máximo de notas en cada voz. Para solucionar esto se pueden incluir voces nuevas en la partitura directamente en el editor, especificando los patrones rítmicos, en lugar de a través de la línea de comandos.
+
+\section{Comparativa}
+El presente proyecto es un sistema relativamente único en cuanto a qué hace y cómo lo hace. La única herramienta comparable sería el software ANTON \cite{anton-composing} ya que ambos tienen su fundamento en \textit{Answer Set Programming}, pueden trabajar sobre partituras ya creadas y funcionan mediante módulos destinados a las diferentes partes del proceso de composición. La gran diferencia radica en que ANTON es un sistema mucho más complejo que el presente, permitiendo componer no solo armónica sino también melódicamente y, a mayores, ANTON contempla la creación de patrones rítmicos. Por otra parte, el proyecto aquí creado ahonda más en la armonía que ANTON, permitiendo simplemente armonizar una pieza completa y completar partituras de cualquier número de voces y estilos, mientras que ANTON se limita a la composición de piezas de dos voces en un estilo renacentista concreto.
+
+Ya que ANTON trabaja siempre con dos voces resulta algo complejo comparar tiempos de ejecución, pero las pruebas realizadas al sistema para duetos de 32 compases completamente nuevos daban resultados en el orden de los minutos. El sistema actual presenta un rendimiento similar a la hora de crear una segunda voz para convertir una pieza monofónica en un dueto, pero al no contemplar ritmo y necesitar la primera voz para componerla, puede verse la inferioridad del sistema frente a ANTON.
+
   \section{Problemas conocidos}
   \label{sec:known_issues}
   Las diferentes pruebas han revelado ciertos problemas que se producen si no siempre, sí lo hacen con una frecuencia relativamente alta y que por diseño de la herramienta no han sido atacados. En la sección de \ref{sec:future_work} Trabajo Futuro en el catulo \ref{chap:conclusiones} Conclusion se detalla cuales de ellos se pretenden arreglar a corto o medio plazo.

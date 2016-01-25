@@ -67,7 +67,8 @@
 \contentsline {subsection}{\numberline {3.9.3}Pruebas}{56}
 \contentsline {subsection}{\numberline {3.9.4}Resultados}{57}
 \contentsline {chapter}{\numberline {4}Evaluaci\IeC {\'o}n}{59}
-\contentsline {section}{\numberline {4.1}Problemas conocidos}{64}
+\contentsline {section}{\numberline {4.1}Comparativa}{64}
+\contentsline {section}{\numberline {4.2}Problemas conocidos}{65}
 \contentsline {chapter}{\numberline {5}Conclusiones}{67}
 \contentsline {section}{\numberline {5.1}Trabajo Futuro}{69}
 \contentsline {subsection}{\numberline {5.1.1}Est\IeC {\'e}tica e Interfaz}{69}
