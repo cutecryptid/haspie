@@ -275,7 +275,7 @@ block : OPTAG REST SLASHTAG CLTAG {
 		| OPTAG MODE CLTAG TEXT OPTAG SLASHTAG MODE CLTAG {$$ = 0; key_mode=$4;}
 		| OPTAG DURATION CLTAG TEXT OPTAG SLASHTAG DURATION CLTAG {$$ = 0; act_duration = atoi($4);}
 		| OPTAG ROOTSTEP CLTAG TEXT OPTAG SLASHTAG ROOTSTEP CLTAG {$$ = 0; act_root = $4;}
-		| OPTAG KIND CLTAG TEXT OPTAG SLASHTAG KIND CLTAG {$$ = 0; act_kind = $4;}
+		| OPTAG KIND attr CLTAG TEXT OPTAG SLASHTAG KIND CLTAG {$$ = 0; act_kind = $5;}
 		| OPTAG CREDIT attr CLTAG sentence OPTAG SLASHTAG CREDIT CLTAG{
 			$$ = 0;
 			if (strcmp(justify, "center") == 0 && strcmp(valign, "top") == 0){

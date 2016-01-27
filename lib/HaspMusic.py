@@ -278,6 +278,7 @@ class ClaspChords:
 				str_opts = [a for a in str_opts if len(a) > 0]
 				tmp_opts = map(int, str_opts)
 				tmp_chords = [Chord(int(ch[0]),ch[1]) for ch in sorted(re.findall('chord\(([0-9]+),([ivxmo7]+)\)', ans))]
+				tmp_chords.sort(key=lambda x: x.time)
 				tmp_errors = [Error(int(er[0]),int(er[1])) for er in re.findall('out_error\(([0-9]+),([0-9]+)\)', ans)]
 				sols += [ChordSolution(tmp_chords, tmp_opts, tmp_errors, ans)]
 				if (tmp_opts[0] * 100 + tmp_opts[1] * 50 + tmp_opts[2]) < min_opt:

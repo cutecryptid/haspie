@@ -7,7 +7,7 @@ pos_grade(1..7).
 pos_oct(0..8).
 
 % number of voices that play at least one note
-voice(V) :- grade(V,_,_).
+voice(V) :- figure(V,_,_).
 htime(T/span) :- grade(_,_,T), T/span != 0.
 htime(T/span) :- rest(_,T), T/span != 0.
 beat(B) :- grade(_,_,B).

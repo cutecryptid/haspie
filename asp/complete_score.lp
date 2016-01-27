@@ -7,7 +7,7 @@ pos_grade(1..7).
 pos_oct(0..8).
 
 % number of voices that play at least one note
-voice(V) :- grade(V,_,_).
+voice(V) :- figure(V,_,_).
 htime(T/span) :- grade(_,_,T), T/span != 0.
 htime(T/span) :- rest(_,T), T/span != 0.
 beat(B) :- grade(_,_,B).
@@ -80,10 +80,7 @@ out_passing(V,B) :- out_error_weak(V,B), out_figure(V,N,D,B), out_figure(V,N2,D2
 #minimize[out_error_weak(_,_) = note_errorinweakw @ note_errorinweakp].
 
 #hide.
-#show chord/2.
+#show voice/1.
 #show voice_type/2.
-#show real_measure/3.
-#show out_figure/4.
-#show out_error/2.
-#show out_error_weak/2.
-#show out_passing/2.
+#show voice_low/2.
+#show voice_high/2.
