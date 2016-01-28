@@ -1,0 +1,17 @@
+\beamer@endinputifotherversion {3.24pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Motivation}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Background}{5}{0}{1}
+\beamer@subsectionintoc {1}{2}{Goals}{6}{0}{1}
+\beamer@sectionintoc {2}{Musical Introduction}{7}{0}{2}
+\beamer@sectionintoc {3}{Demo}{11}{0}{3}
+\beamer@sectionintoc {4}{The Project}{12}{0}{4}
+\beamer@subsectionintoc {4}{1}{Architecture}{12}{0}{4}
+\beamer@subsectionintoc {4}{2}{ASP Core}{14}{0}{4}
+\beamer@subsectionintoc {4}{3}{Input}{21}{0}{4}
+\beamer@subsectionintoc {4}{4}{Pipeline}{23}{0}{4}
+\beamer@subsectionintoc {4}{5}{Output}{24}{0}{4}
+\beamer@subsectionintoc {4}{6}{Results}{25}{0}{4}
+\beamer@subsectionintoc {4}{7}{Future Work}{27}{0}{4}
+\beamer@subsectionintoc {4}{8}{Planning and Costs}{28}{0}{4}
+\beamer@subsectionintoc {4}{9}{Conclusions}{31}{0}{4}

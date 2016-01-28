@@ -1,0 +1,18 @@
+\frametitle{Rules and Constraints}
+\begin{example}[Note Representation]
+\begin{verbatim}
+figure(1,1,22).
+note(1, 72, 22).
+\end{verbatim}
+\end{example}
+\begin{example}[Chord Assignation]
+\begin{verbatim}
+1 { chord(HT,C) : pos_chord(C) } 1 :- htime(HT).
+\end{verbatim}
+\end{example}
+\begin{example}[Score Completion Constraint]
+\begin{verbatim}
+:- freefigure(V,D,FB), ex_grade(V,G1,B1), ex_grade(V,G2,B2),
+   B1 >= FB,B2 >= FB,B1 < FB+D,B2 < FB+D,B1 != B2,G1 != G2.
+\end{verbatim}
+\end{example}
