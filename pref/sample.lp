@@ -18,11 +18,9 @@
 %Score completion preferences
 %----------------------------
 %Order of relevance (higher means more relevant), all of them should be different
-#const note_errorinstrong = 9.
-#const note_repeatedgrade = 8.
-#const unison = 7.
-%Only if -M option is being used
-#const sameconsecnotep = 6.
+#const note_errorinstrong = 8.
+#const note_repeatedgrade = 7.
+#const unison = 6.
 %Only if -M option is being used
 #const melodicjump = 5.
 %Only if -6 option is being used
@@ -38,8 +36,6 @@
 %Use 0 to turn an optimization off
 #const note_errorinstrongw = 1.
 #const unisonw = 1.
-%Only if -M option is being used
-#const sameconsecnotew = 6.
 #const repeatedgradew = 1.
 %Only if -M option is being used
 #const melodicjumpw = 1.

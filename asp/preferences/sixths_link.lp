@@ -12,10 +12,9 @@ sixth_link(B1,B2) :- beat(B1), beat(B1+1), B1+1 == B2, second_inversion(C1,B1), 
 
 #const sixthlinkw = 1.
 
-#const note_errorinstrongp = 9.
-#const repeatedgradep = 8.
-#const unisonp = 7.
-#const sameconsecnotep = 6.
+#const note_errorinstrongp = 8.
+#const repeatedgradep = 7.
+#const unisonp = 6.
 #const melodicjumpp = 5.
 #const sixthlinkp = 4.
 #const conttendencyp = 3.
