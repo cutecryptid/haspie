@@ -34,9 +34,6 @@ error(V,G,B) :- chord(T,C), htime(T), ex_grade(V,G,B), voice(V), not belongs(G,C
 error(V,G,B) :- grade(V,G,B), non_scale_grade(G), voice(V), beat(B).
 error(V,G,B) :- ex_grade(V,G,B), non_scale_grade(G), voice(V), beat(B).
 
-strong_outer_entity(V,G,B) :- ex_grade(V,G,B), non_scale_grade(G), voice(V), beat(B), strong_beat(B), out_note(V,N,B).
-figure_outer_entity(V,G,B) :- strong_outer_entity(V,G,B), figure(V,D,FB), B >= FB, B < FB+D.
-
 repeated_grade(V1,V2,B) :- out_grade(V1,G,O1,B), out_grade(V2,G,O2,B), voice(V1), voice(V2), V1 != V2.
 unison(V1,V2,B) :- out_note(V1,N,B), out_note(V2,N,B), voice(V1), voice(V2), V1 != V2.
 

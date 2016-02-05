@@ -21,10 +21,31 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{experiments-musical-intelligence}
+D.~Cope, \emph{Experiments in Musical Intelligence}, 2nd~ed.\hskip 1em plus
+  0.5em minus 0.4em\relax A-R Editions, 1996.
+
 \bibitem{anton-composing}
 G.~{Boenn}, M.~{Brain}, M.~{De Vos}, and J.~{ffitch}, ``{Automatic Music
   Composition using Answer Set Programming},'' \emph{ArXiv e-prints}, Jun.
   2010.
+
+\bibitem{palestrina-rules}
+G.~H. Knud~Jeppesen, \emph{Counterpoint: the polyphonic vocal style of the
+  sixteenth century}, 1st~ed.\hskip 1em plus 0.5em minus 0.4em\relax Englewood
+  Cliffs, N. J., Prentice-Hall, 1990.
+
+\bibitem{Brewka:2011:ASP:2043174.2043195}
+\BIBentryALTinterwordspacing
+G.~Brewka, T.~Eiter, and M.~Truszczy\'{n}ski, ``Answer set programming at a
+  glance,'' \emph{Commun. ACM}, vol.~54, no.~12, pp. 92--103, Dec. 2011.
+  [Online]. Available: \url{http://doi.acm.org/10.1145/2043174.2043195}
+\BIBentrySTDinterwordspacing
+
+\bibitem{vox-populi}
+A.~Moroni, J.~Manzolli, and R.~Gudwin, ``Vox populi: An interactive
+  evolutionary system for algorithmic music composition,'' \emph{Leonardo Music
+  Journal}, vol.~10, pp. 49--45, 2000.
 
 \bibitem{potasscoweb}
 \BIBentryALTinterwordspacing
@@ -49,15 +70,6 @@ E.~Herrera, \emph{Teoría Musical Y Armonía Moderna - Volumen 1},
 G.~Boenn, M.~Brain, M.~De~Vos, and J.~Ffitch, ``Automatic music composition
   using answer set programming,'' \emph{Theory and Practice of Logic
   Programming}, vol.~11, no. 2-3, pp. 397--427, 2011.
-
-\bibitem{vox-populi}
-A.~Moroni, J.~Manzolli, and R.~Gudwin, ``Vox populi: An interactive
-  evolutionary system for algorithmic music composition,'' \emph{Leonardo Music
-  Journal}, vol.~10, pp. 49--45, 2000.
-
-\bibitem{experiments-musical-intelligence}
-D.~Cope, \emph{Experiments in Musical Intelligence}, 2nd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax A-R Editions, 1996.
 
 \bibitem{genetic-music}
 V.~Tran, ``Music composition using artificial intelligence,'' 2009.

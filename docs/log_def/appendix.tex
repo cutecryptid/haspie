@@ -148,48 +148,50 @@ Esta herramienta está pensada para ser usada desde la línea de comandos en sis
 
 \begin{figure}
 	\begin{verbatim}
-usage: usage.py [-h] [-n N] [-s S] [-v V [V ...]] [-S] [-f xml|pdf|midi|ly]
-                [-o output/dir/for/file] [-t T] [-k A~G+-?] [-m major|minor]
-                [-M] [-6] [-O O] [-c config_file_name.lp] XML_SCORE
+usage: haspie.py [-h] [-n N] [-s S] [-v V [V ...]] [-S] [-f xml|pdf|midi|ly]
+                 [-o output/dir/for/file] [-t T] [-k A~G+-?] [-m major|minor]
+                 [-M] [-6] [-a] [-O O] [-c config_file_name.lp]
+                 XML_SCORE
 haspie - Harmonizing music with ASP
 positional arguments:
   XML_SCORE             input musicXML score for armonizing
 optional arguments:
-    -h, --help            show this help message and exit
-    -n N, --num_sols N    max number of ASP solutions, by default all of them
-    -s S, --span S        horizontal span to consider while harmonizing, this
-                          takes in account subdivision, by default 1
-    -v V [V ...], --voices V [V ...]
-                          extra instruments, these can be input by name or by
-                          numerical note range (i.e soprano,guitar,(65,90)...)
-                          to leave one of the sides (or both) of the range
-                          unespecified use 0
-    -S, --show            show result in editor instead of writing it to a file
-                          in the desired format
-    -f xml|pdf|midi|ly, --format xml|pdf|midi|ly
-                          output file format for the result
-    -o output/dir/for/file, --output output/dir/for/file
-                          output file name for the result
-    -t T, --timeout T     maximum time (in seconds) allowed to search for 
-                          optimum
-    -k A~G+-?, --key A~G+-?
-                          key in which the score should be harmonized, if not
-                          specified, parser will autodetect it
-    -m major|minor, --mode major|minor
-                          mode of the scale, if not specified, parser will 
-                          autodetect it
-    -M, --melodious       turns on melodic preferences in ASP for a more
-                          melodic result
-    -6, --sixthslink      turns on sixth-four chord linking in ASP for a
-                          more natural result (very heavy)
-    -a, --all_optimums    turns on the search for all optimums when completing
-                          and not just the first found, disabled by default
-    -O O, --max_optimums O
-                          max number of optimum solutions to display in score
-                          completion, by default it's 10
-    -c config_file_name.lp, --config config_file_name.lp
-                          reads preference order and weights for parameters from 
-                          the desired *.lp file stored in /pref folder
+  -h, --help            show this help message and exit
+  -n N, --num_sols N    max number of ASP solutions, by default all of them
+  -s S, --span S        horizontal span to consider while harmonizing, this
+                        takes in account subdivision, by default 1
+  -v V [V ...], --voices V [V ...]
+                        extra instruments, these can be input by name or by
+                        numerical note range (i.e soprano,guitar,(65,90)...)
+                        to leave one of the sides of the range unespecified
+                        use 0
+  -S, --show            show result in editor instead of writing it to a file
+                        in the desired format
+  -f xml|pdf|midi|ly, --format xml|pdf|midi|ly
+                        output file format for the result
+  -o output/dir/for/file, --output output/dir/for/file
+                        output file name for the result
+  -t T, --timeout T     maximum time (in seconds) allowed to search for
+                        optimum when searching for all optimums, by default
+                        there is no time limit
+  -k A~G+-?, --key A~G+-?
+                        key in which the score should be harmonized, if not
+                        specified, parser will autodetect it
+  -m major|minor, --mode major|minor
+                        mode of the scale, if not specified, parser will
+                        autodetect it
+  -M, --melodious       turns on melodic preferences in ASP for a more melodic
+                        result
+  -6, --sixthslink      turns on sixth-four chord linking in ASP for a more
+                        natural result (very heavy)
+  -a, --all_optimums    turns on the search for all optimums when completing
+                        and not just the first found, disabled by default
+  -O O, --max_optimums O
+                        max number of optimum solutions to display in score
+                        completion, by default it's 10
+  -c config_file_name.lp, --config config_file_name.lp
+                        reads preference order and weights for parameters from
+                        the desired *.lp file stored in /pref folder
 	\end{verbatim}
 	\label{fig:usage}
 	\caption{Opciones de uso de la herramienta}

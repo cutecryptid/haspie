@@ -1,4 +1,4 @@
-\chapter{Desarrollo}
+\chapter{Trabajo Desarrollado}
 \label{chap:desarrollo}
 \vspace{0.5cm}
 
@@ -6,28 +6,23 @@
 % Objetivo: Exponer las partes relevantes de la implementación                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Planificación y Presupuesto}
-\label{sec:planning}
-\lettrine{E}{s} difícil hablar de una planificación del proyecto como tal ya que por las particularidades del proyecto se han amalgamado características de varias metodologías. Lo que sí está claro es que el proyecto seguirá una metodología ágil debido a su carácter de desarrollo evolutivo y orientado a la creación de prototipos funcionales en cada iteración. Se podría considerar que está a medio camino entre SCRUM y un ciclo de desarrollo en espiral con prototipado ya que será un proceso iterativo, pero no es correcto decir que se ha utilizado SCRUM como metodología al no ser fácil repartir las tareas de cada iteración ni tener con quién hacerlo por ser un trabajo desarrollado por un único miembro junto con su director. 
+\section{Metodología}
+\label{sec:metodology}
+\lettrine{E}{s} difícil hablar de una planificación del proyecto como tal ya que por sus particularidades se han amalgamado características de varias metodologías. Lo que sí está claro es que el proyecto ha seguido una metodología ágil debido a su carácter de desarrollo evolutivo y orientado a la creación de prototipos funcionales en cada iteración. Se podría considerar que está a medio camino entre SCRUM y un ciclo de desarrollo en espiral con prototipado, ya que ha sido un proceso iterativo. Sin embargo, no es correcto decir que se ha utilizado SCRUM como metodología al no ser fácil repartir las tareas de cada iteración ni tener con quién hacerlo por ser un trabajo desarrollado por un único alumno junto con su director. 
 
-La similaridad con el ciclo de desarrollo en espiral reside en que en cada iteración se pasan por los mismo puntos, revisando y modificando cada uno de los componentes para llegar al prototipo objetivo. Tras el trabajo, dicho prototipo es revisado en la reunión con el ``cliente'', que en este caso es el director del proyecto revisando la funcionalidad implementada y dirigiendo los siguientes pasos.
+La similaridad con el ciclo de desarrollo en espiral reside en que en cada iteración se pasan por los mismo puntos, revisando y modificando cada uno de los componentes para llegar al prototipo objetivo. Tras el trabajo, dicho prototipo es revisado en la reunión con el ``cliente'', que en este caso es el director del proyecto, revisando la funcionalidad implementada y dirigiendo los siguientes pasos.
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.8\linewidth]{imagenes/espiral.jpg}
-	\caption{Ciclo de desarrollo en espiral típico}
-	\label{fig:ciclo_espiral}
-\end{figure}
+Pese a las dificultades, disponiendo de una agenda de producto similar a la de SCRUM a modo de requisitos, se han podido trazar una serie de iteraciones. Cada iteración cuenta con su agenda de iteración en la cual se detallan los requisitos del prototipo a crear en ese paso haciendo evolucionar cada uno de los componentes. Se habla de hacer evolucionar los componentes y no de incrementarlos porque, pese a que cada iteración ha procurado incrementar la funcionalidad total del sistema, algunos módulos del mismo han sido refactorizados\footnote{Es decir, se ha cambiado su diseño, sin alterar su propósito funcional} en determinados pasos.
 
-Pese a las dificultades, disponiendo de una agenda de producto similar a la de SCRUM a modo de requisitos, se han podido trazar una serie de iteraciones. Cada iteración cuenta con su agenda de iteración en la cual se detallan los requisitos del prototipo a crear en ese paso haciendo evolucionar cada uno de los componentes. Se habla de hacer evolucionar los componentes y no de incrementarlos porque, pese a que cada iteración ha procurado incrementar la funcionalidad total del sistema, algunos módulos del mismo solo han sido refactorizados en determinados pasos.
+En cuanto a la planificación de pruebas del sistema, si bien se ha contado con diferentes entradas con las que probar cada uno de los módulos que se han ido desarrollando junto con el proyecto, no se puede decir que el desarrollo de una herramienta de estas características pueda ser dirigido por la prueba, ya que las soluciones halladas mediante \textit{Answer Set Programming} no pueden ser establecidas de antemano debido a su carácter no determinitsa.
 
-En cuanto a la planificación de pruebas del sistema, si bien se ha contado con diferentes entradas con las que probar cada uno de los módulos que se han ido desarrollando junto con el proyecto, no se puede decir que el desarrollo de una herramienta de estas características pueda ser dirigido por la prueba, ya que las soluciones halladas mediante \textit{Answer Set Programming} no pueden ser establecidas de antemano debido a su carácter estocástico.
-
-Se estableció que la duración de cada iteración sería, en promedio, de semana y media. Esto equivale a unas 40 horas de trabajo por iteración, aunque se decidió permitir la flexibilización de las iteraciones ante imprevistos en el desarrollo. Esto no se corresponde con una metodología SCRUM típica en la que habría que desplazar tareas a las siguientes iteraciones, pero al ser solo una persona encargada de todo el trabajo, se decidió dotar a la metodología de cierta flexibilidad para no arrastrar trabajo. No obstante esta flexibilización permite también ganar tiempo, ya que de completarse el trabajo antes de lo previsto se podría acortar el tiempo dedicado a alguna iteración.
+Se estableció que la duración de cada iteración sería, en promedio, de semana y media. Esto equivale a unas 40 horas de trabajo por iteración, aunque se decidió permitir la flexibilización de las iteraciones ante imprevistos en el desarrollo. Esto no se corresponde con una metodología SCRUM típica en la que habría que desplazar tareas a las siguientes iteraciones, pero al ser solo una persona encargada de todo el trabajo, se decidió dotar a la metodología de cierta flexibilidad para no arrastrar trabajo. No obstante, esta flexibilización permite también ganar tiempo, ya que de completarse el trabajo antes de lo previsto se podría acortar el tiempo dedicado a alguna iteración.
 
 Gracias a esta flexibilidad se logró depender solo de completar los objetivos de las diferentes agendas, logrando así independencia del factor tiempo, que ya venía fijado por los plazos de entrega propios del proyecto. 
 
-Debido a estos factores derivados de lo particular de desarrollar un sistema basado en \textit{Answer Set Programming} se carece de una planificación inicial cerrada y completa que marque el tiempo estimado para cada una de las tareas en forma del tradicional diagrama de Gantt. No obstante, a modo de registro sí se ofrece un diagrama similar que muestra el tiempo invertido en cada una de las iteraciones.
+\section{Planificación}
+\label{sec:planning}
+Debido a estos factores derivados de lo particular de desarrollar un sistema basado en \textit{Answer Set Programming}, se carece de una planificación inicial cerrada y completa que marque el tiempo estimado para cada una de las tareas en forma del tradicional diagrama de Gantt. No obstante, a modo de registro, sí se ofrece un diagrama similar que muestra el tiempo invertido en cada una de las iteraciones (Figura \ref{fig:tareas}).
 
 \begin{figure}
 	\centering
@@ -36,327 +31,116 @@ Debido a estos factores derivados de lo particular de desarrollar un sistema bas
 	\label{fig:tareas}
 \end{figure}
 
-Dado este diagrama es relativamente sencillo calcular el coste del proyecto. Hay que tener en cuenta, no obstante, horas extra de desarrollo que se incluyen en el diagrama y en el presupuesto ya que el trabajo no empezó de cero al haberse realizado dos prácticas durante los años tres y cuatro del grado que se han reutilizado en menor o mayor medida para comenzar el desarrollo del presente trabajo. En la asignatura de ``Representación del Conocimiento y Razonamiento Automático'' se desarrolló una pequeña herramienta en \textit{Answer Programming} capaz de completar y componer pequeñas piezas musicales en forma de \textit{Canon}, mientras que en la asignatura de ``Procesamiento de Lenguajes'' se creó una primera versión del procesador de MusicXML a hechos lógicos. Se ha realizado una estimación de que de no haber trabajado en la práctica de RCRA se habrían necesitado unas 10 horas adicionales en los primeros pasos del desarrollo del módulo de armonización de este proyecto, mientras que de no haber realizado la práctica de PL se habrían necesitado unas 20 horas adicionales.
+Dado este diagrama, es relativamente sencillo realizar una primera estimación del coste del proyecto. Hay que tener en cuenta, no obstante, horas extra de desarrollo que se incluyen en el diagrama y en el presupuesto ya que el trabajo no empezó de cero, al haberse realizado dos prácticas durante los años tres y cuatro del grado que se han reutilizado en menor o mayor medida para comenzar el desarrollo del presente trabajo. En la asignatura de ``Representación del Conocimiento y Razonamiento Automático'' se desarrolló una pequeña herramienta en \textit{Answer Programming} capaz de completar y componer pequeñas piezas musicales en forma de \textit{Canon}, mientras que en la asignatura de ``Procesamiento de Lenguajes'' se creó una primera versión del procesador de MusicXML a hechos lógicos. Se ha realizado una estimación de que, de no haber trabajado en la práctica de RCRA, se habrían necesitado unas 10 horas adicionales en los primeros pasos del desarrollo del módulo de armonización de este proyecto, mientras que de no haber realizado la práctica de PL se habrían necesitado unas 20 horas adicionales.
 
-Sumado a 40 horas por iteración y contando con 8 iteraciones, suman 350 horas de desarrollo. Las reuniones de final de iteración duraron una hora escasa cada una, pero al haber habido más de una por iteración y que las primeras reuniones fueron más extensas al tener que definir y planificar el proyecto se estima que el proyecto contó con unas 12 horas de reuniones para las que hay que sumar el coste por hora del tiempo del director.
+Sumado a 40 horas por iteración y contando con 8 iteraciones, arrojan un total de 350 horas de desarrollo. Las reuniones de final de iteración duraron una hora escasa cada una, pero al haber habido más de una por iteración y que las primeras reuniones fueron más extensas al tener que definir y planificar el proyecto se estima que el proyecto contó con unas 12 horas de reuniones para las que hay que sumar el coste por hora del tiempo del director.
 
 Se ha asignado un coste aproximado de hora de trabajo del proyectando de 5.5\euro{}/hora y un coste también aproximado de 9\euro{}/hora para el director del proyecto. Con un cálculo rápido el coste del proyecto suma 1925\euro{} por las horas de desarrollo, 66\euro{} por las horas de reuniones por parte del alumno y 108\euro{} por las horas de reuniones por parte del director, haciendo un total de \textbf{2099\euro{}} para el diseño y desarrollo completo del mismo.
 
 El coste de producción del proyecto es esencialmente el mismo que el de desarrollo, ya que las licencias de todo el software utilizado son gratuitas y no requiere ningún tipo de hardware adicional para funcionar. Incluso el editor de partituras que se recomienda utilizar junto con el programa (MuseScore2) es libre y de código abierto.
 
-\section{Iteración 1}
-\label{sec:first_iteration}
-\subsection{Agenda de Iteración}
-\label{subsec:first_iteration_backlog}
-El objetivo de esta primera iteración es identificar los formatos, herramientas y componentes del proyecto, así como el diseño inicial de la arquitectura del proyecto, junto con el desarrollo del procesador de ficheros en formato MusicXML a hechos lógicos. Este primer paso tiene una fuerte carga de contextualización del trabajo de desarrollo así como la creación del espacio de trabajo en el que se sustenta todo el proyecto.
-
-\subsection{Trabajo}
-\label{subsec:first_iteration_work}
-Como software de entrada para las partituras se escogió MuseScore, principalmente por ser \textit{opensource} y por su sencillez. MuseScore no posee una curva de aprendizaje difícil, ya que la introducción de las notas se puede hacer de forma visual en su interfaz mediante el ratón o con el teclado y no requiere mayor preparación para crear y exportar una pieza musical sencilla. Su soporte para \textit{plugins} también resulta interesante, ya que el proyecto podría llegar a transformarse en un \textit{plugin} para la herramienta si se desease una mayor integración con la misma. MuseScore además ofrece soporte para los tres formatos de ficheros musicales contemplados, así como para PDF y otros formatos finales de imagen.
-
-Para el formato de entrada y salida, se compararon las propiedades de MIDI, LilyPond y MusicXML. Los tres formatos ofrecen posibilidades de edición, aunque cada uno sirve a un propósito diferente. MIDI no trabaja con ficheros textuales, sino que codifica de forma binaria toda la información de los eventos de la canción, LilyPond es un formato de texto plano pensado para que el usuario pueda editarlo a mano cómodamente, como si programase. Posee una estructura de marcado a través de etiquetas de solo apertura o autocerradas y trabaja con identaciones para formar la jerarquía del fichero, esto requiere al usuario escribir mucho menos, pero puede suponer problemas para un \textit{parser} convencional debido a que la identación de LilyPond no está estandarizada. Por último MusicXML se presenta como el formato idóneo para la tarea, ya que al ser una extensión de XML, está orientado a que una máquina pueda leerlo y crear una estructura en memoria con toda la información que necesita para poder extraer los datos de la partitura. Además, la implementación de un \textit{parser} de un lenguaje etiquetado como XML es un problema convencional y fácilmente abarcable.
-
-En cuanto a la tecnología escogida para diseñar y construir el procesador de XML a ASP se optó por las bibliotecas Flex y Bison para C. EL principal motivo para ello fue que fueron las tecnologías empleadas en la asignatura Procesamiento de Lenguajes y durante una de las prácticas de la misma se desarrolló una primera versión de este mismo procesador que ahora se usa en el proyecto. Además Flex y Bison garantizan velocidad y eficiencia en el procesado. Por último pero no menos importante, y ya que el proyecto se está enfocando desde un punto de vista de desarrollo ágil, actualizar los ficheros de código de Flex y Bison es realmente sencillo, lo cual permitirá añadir nuevos elementos a reconocer cuando sea necesario.
-
-Analizando la especificación del esquema de MusicXML de cara a desarrollar el \textit{parser} se identificaron las diferentes partes del mismo. MusicXML incluye información tanto musical como de representación gráfica de los diferentes elementos de la partitura. Todos esta información gráfica es generada automáticamente por el software que exporta el fichero MusicXML (MuseScore para el caso) y resulta irrelevante a la hora de extraer los hechos lógicos presentes en la partitura, por tanto se decidió obviarla. 
-
-MusicXML declara inicialmente el número de voces presente en la partitura mediante la etiqueta part-list y sus etiquetas anidadas score-part. Más adelante, las etiquetas part se encargan de contener los compases mediante la etiqueta measure que a su vez contienen las etiquetas note. Son estas últimas etiquetas las que hay que desglosar para extraer los hechos lógicos, aunque la información de las etiquetas measure también es relevante, así como poder asignar un identificador a cada voz de la partitura para poder diferenciarlas a nivel lógico.
+\section{Desarrollo}
+\label{sec:development}
+La arquitectura de haspie es un sencillo pipeline escrito en Python con un único camino que se ejecuta siempre que se llama a la herramienta, este pipeline se encarga de llamar a cada uno de los submódulos, enmascarando así el comportamiento interno de cada uno de ellos. Este pipeline además permite en su llamada a través de línea de comandos especificar diferentes opciones que se pasan después a cada submódulo de forma individual, estas opciones pueden verse en detalle en el anexo \ref{chap:usage}.
 
 \begin{figure}[h]
 	\centering
-	\begin{verbatim}
-	<note default-x="74.65" default-y="-25.00">
-	    <pitch>
-	        <step>A</step>
-	        <octave>4</octave>
-	    </pitch>
-	    <duration>1</duration>
-	    <voice>1</voice>
-	    <type>quarter</type>
-	    <stem>up</stem>
-	</note>
-	\end{verbatim}
-	\caption{Ejemplo de nota representada en MusicXML}
-	\label{fig:nota_musicxml}
+	\includegraphics[width=0.8\linewidth]{imagenes/arquitectura_final.pdf}
+	\caption{Arquitectura del sistema}
+	\label{fig:arquitectura_final}
 \end{figure}
 
-La etiqueta note posee dos parámetros visuales, default-x y default-y,  que indican su posición en coordenadas x e y, como ya se ha comentado antes, esta información es meramente visual. La etiqueta pitch describe el sonido de la nota mediante el nombre de la nota usando notación internacional y la octava de la nota. Duration especifica la duración en tiempos del compás de la nota actual, voice asigna este sonido a la voz correspondiente, type indica la figura mediante el sistema fraccionario y stem dice si la plica de la nota es ascendente o descendente, de nuevo esto es meramente visual.
+\subsection{Entrada}
+La entrada del sistema se realiza en formato MusicXML y el pipeline pasa la ruta del archivo especificado al módulo de entrada: un \textit{parser} escrito en C junto con las librerías Flex y Bison que se encarga de transformar los elementos de la partitura a hechos lógicos en Answer Set Programming. Este conversor no solo traduce las figuras y silencios a hechos sino que además:
+\begin{itemize}
+ 	\item Subdivide todas las figuras de la partitura a la duración de la nota más breve de la pieza. Esta división es necesaria para que los módulos ASP puedan encajar correctamente todos los sonidos que se producen en cada tiempo de las diferentes voces de la pieza
+ 	\item Crea hechos lógicos adicionales \texttt{figure} que indican la duración original de cada una de las figuras con el fin de conservar esta información para que la pieza pueda ser reconstruida tras su procesado.
+ 	\item Itendifica las definiciones de la métrica de los compases que aparecen a lo largo de la partitura y convertirlos a los hechos lógicos correspondientes de modo que se pueda identificar correctamente el tipo de subdivisión de la partitura
+ 	\item Interpreta los nombres de los diferentes instrumentos de cada parte de la pieza y asigna hechos que vinculan cada una de las voces a un nombre instrumento o tipo de voz para poder detectar su tesitura
+ 	\item Lee la armadura de la partitura y determina la tonalidad y modo más probables correspondientes a la misma
+ 	\item Detecta el nombre y el autor de la partitura para poder representarlos en la salida
+\end{itemize}
+Aquellos datos procesados que no se convierten en hechos lógicos y se añaden al fichero ASP que servirá de entrada al núcleo dle programa se anotan en un fichero de configuración temporal que sirve a los distintos módulos del sistema para su funcionamiento.
 
-Ya que, inicialmente, el armonizador solo contemplará partituras uniformes (es decir, con un solo tipo de figura presente), unicamente necesitamos saber la voz, el compás, el tiempo en el que ocurre la nota relativo al compás y el sonido de la nota.
+El \textit{parser} funciona de un modo convencional, identificando las etiquetas relevantes que contienen la información necesaria para crear los hechos lógicos y almacenándolos en tipos de datos propio que se corrersponden con los elementos de la partitura tales como tipos de compás, anotaciones de acordes, nombres de instrumentos, nuevas voces, notas o silencios. A su vez, estos datos se almacenan en diferentes estructuras de cola (una para cada tipo de dato) mientras que se va procesando toda la pieza para calcular la longitud de la figura más breve. Una vez se ha terminado de leer la partitura, se extraen los datos de cada una de las colas y se procesan junto con la información general extraida al procesar toda la pieza para escribir los diferentes hechos lógicos en el fichero correspndiente o los metadatos y otros valores de salida en el fichero de configuración.
 
-Con esta información en mente se procedió a desarrollar una versión actualizada del procesador de MusicXML a hechos en ASP. Se hizo uso de Flex para el análisis léxico y de Bison para el análisis sintáctico. El primer paso fue identificar los diferentes tags relevantes para el análisis léxico, estos son note para las notas, step para el ritmo, rest para los silencios, chord para los acordes, octave para la octava de cada nota, alteration para identificar sostenidos y bemoles, part para las diferentes voces de la pieza y por último elementos relevantes para el análisis de XML pero carentes de significado real para los hechos lógicos de la partitura tales como la apertura y cierre de etiquetas, campos textuales o símbolos varios.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{imagenes/example_notes.png}
+	\includegraphics[width=0.4\linewidth]{imagenes/logic_facts_score.png}
+	\caption{Una pieza simple transformada a hechos lógicos}
+	\label{fig:simple-piece-facts}
+\end{figure}
 
-En el código de Bison se diseñó la gramática primero y se integró junto con el código C encargado de tomar los datos extraídos por el \textit{parser} y exportarlos a un fichero de hechos lógicos listo para ser interpretado. La gramática diseñada para ello parte de una regla inicial que puede derivar en un bloque compuesto por etiquetas anidadas o en un error si el fichero no tiene el formato y estructura adecuados. La gramática inicial empleada fue la siguiente:
+Además cuenta con parámetros en su llamada que modifican la salida producida:
+\begin{itemize}
+	\item \textbf{\texttt{-k}} Indica manualmente la clave en la que se armonizará la pieza en vez de detectarse automáticamente
+	\item \textbf{\texttt{-s}} Especifica la cantidad de figuras consecutivas que se tienen en cuenta para la armonización
+	\item \textbf{\texttt{-o}} Indica el nombre del fichero de hechos lógicos de salida	
+\end{itemize}
+
+\subsection{Núcleo ASP}
+Los hechos lógicos creados por el \textit{parser} son la entrada directa del armonizador, una de las mitades del núcleo de procesado ASP de haspie.
+Este módulo utiliza los hechos lógicos para expandir las reglas generales con las que cuenta, infiere nuevos predicados intermedios y asigna acordes de entre los posibles a cada tiempo de armonización especificado. Los posibles acordes se especifican en un archivo denominado \texttt{major\_chords} o \texttt{minor\_chords} según el modo en el que se esté realizando la armonización. Los acordes contemplados inicialmente por la herramienta son los acordes fundamentales de tres notas de la tonalidad, aunque se incluyó el de Dominante séptima\footnote{Acorde de cuatro notas que incorpora una nota adicional que forma un intervalo de séptima con la nota dominante de la tonalidad} para dotar al sistema de mayor naturalidad.
 
 \begin{figure}
 	\centering
 	\begin{verbatim}
-	S : version doctype block
-	    block
-	version : 	OPTAG QUES TEXT attr QUES CLTAG
-	doctype : 	OPTAG EXCL DOCTYPE doctags docurl CLTAG
-	doctags : 	/*...*/
-	            TEXT doctags
-	docurl : 	/*...*/
-	            KVOTHE TEXT docwords KVOTHE docurl
-	docwords : 	/*...*/
-	            SLASHTAG docwords
-	            TEXT docwords
-	block : OPTAG REST SLASHTAG CLTAG
-	        OPTAG TEXT attr SLASHTAG CLTAG
-	        OPTAG ALTER CLTAG TEXT OPTAG SLASHTAG ALTER CLTAG
-	        OPTAG CHORD SLASHTAG CLTAG
-	        OPTAG OCTA CLTAG TEXT OPTAG SLASHTAG OCTA CLTAG
-	        OPTAG STEP CLTAG TEXT OPTAG SLASHTAG STEP CLTAG
-	        part1 part2
-	part1 : OPTAG NOTE attr
-	        OPTAG PART_ID KVOTHE TEXT KVOTHE
-	        OPTAG TEXT attr
-	part2 : CLTAG body OPTAG SLASHTAG NOTE CLTAG
-	        CLTAG OPTAG SLASHTAG TEXT CLTAG
-	        CLTAG body OPTAG SLASHTAG TEXT CLTAG
-	        TEXT EQUAL KVOTHE TEXT KVOTHE attr
-	body : 	body block
-	        body TEXT
-	        block
-	        TEXT
+		1 { chord(HT,C) : pos_chord(C) } 1 :- htime(HT).
 	\end{verbatim}
-	\caption{Gramática inicial utilizada por el procesador de MusicXML a hechos lógicos}
-	\label{fig:gramatica_inicial}
+	\label{fig:chord-assig}
+	\caption{Asignación de un único posible acorde a cada intervalo de armonización}
 \end{figure}
-
-Los bloques de etiquetas se descomponen en tokens según su contenido o en dos partes (part1 y part2) dependiendo de si la etiqueta es autocerrada o no. Los errores que se pueden encontrar en este punto son que la etiqueta se abra pero no se cierre o que haya elementos de más no reconocidos tras la segunda parte de la misma. Las dos partes de cada etiqueta no autocerrada se corresponden respectivamente con la apertura de la etiqueta (part1) y con el contenido y cierre de la misma (part2). Por último se hace uso de una regla recursiva que permite anidar los bloques de etiquetas y contenido.
-
-Se ha incluido en este procesador un par de opciones que pueden ser utilizadas en la llamada del mismo mediante línea de comando y que resultarían útiles más adelante. La opción -o permite especificar el nombre del fichero de salida resultante, mientras que la opción -s permite establecer una subdivisión arbitraria para las notas de la partitura.
-
-\subsection{Pruebas}
-\label{subsec:first_iteration_test}
-Las pruebas realizadas al \textit{parser} revelaron que existía un problema de análisis al no poder verificar de forma sencilla que cada etiqueta se cerraba de modo correcto, es decir, que el nombre de la etiqueta que cierra un bloque sea el mismo del que la abrió, se implementó una pila en C para esta tarea. La implementación se realizó de modo que la pila no tuviese un tipo definido de partida, por flexibilidad, mediante el uso de punteros a void y el \textit{typecast} de los mismos en ejecución, aunque en el caso del \textit{parser}, solo se usó el tipo char*.
-
-La implementación de la misma se hace mediante estructuras típicas de C enlazadas mediante punteros unidireccionales y el acceso a los datos de la pila se realiza mediante los conocidos métodos para operar con este tipo de datos (new, isEmpty, push, pop, etc.) 
-
-Además de la adición de la estructura de pila para verificar esto se incluyeron más opciones de error en varias de las reglas gramaticales de modo que resultase más fácil la depuración del \textit{parser}. Esto reveló que había fallos en ejecución, ya que los resultados no eran los esperados. Este problema se debía a que la recursión se realizaba inicialmente mediante la posibilidad de que block derivase en otro block, así que se descompuso esta regla en un nuevo elemento body que añadía un paso más y abstraía los bloques de etiquetas y contenido pero a un nivel de granularidad algo más pequeño que \textit{body} en sí. Tras la inclusión de este paso intermedio, el \textit{parser} aún no terminaba de comportarse como era esperado y hubo que incluir reglas específicas para comprobar tags con formatos especiales tales como $<$?xml version$>$ o $<$!DOCTYPE$>$. Por último se comprobó que el \textit{parser} no contemplaba inicialmente tags autocerrados en su forma $<$tag$>$$<$/tag$>$ es decir, sin contenido. Al corregir estos detalles, cualquier pieza musical era transformada a hechos musicales a la perfección.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\linewidth]{imagenes/arquitectura_inicial.pdf}
-	\caption{Diagrama del planteamiento inicial de la arquitectura del sistema}
-	\label{fig:arquitectura_inicial}
+	\begin{verbatim}
+		octave(V,((N - base) / 12),T) :- note(V,N,T), N >= 0.
+		sem_tones(V,((N - base) \ 12),T) :- note(V,N,T), N >= 0.
+		grade(V,1,T) :- sem_tones(V,3,T).
+		grade(V,2,T) :- sem_tones(V,5,T).
+		grade(V,3,T) :- sem_tones(V,7,T).
+		grade(V,4,T) :- sem_tones(V,8,T).
+		grade(V,5,T) :- sem_tones(V,10,T).
+		grade(V,6,T) :- sem_tones(V,0,T).
+		grade(V,7,T) :- sem_tones(V,2,T).
+	\end{verbatim}
+	\label{fig:grade-infer}
+	\caption{Reglas de inferencia de Octava y Grado para una nota en el modo mayor.}
 \end{figure}
 
-\subsection{Resultados}
-\label{subsec:first_iteration_results}
-En esta primera iteración se completaron todos los objetivos marcados en la planificación de la misma. Habiendo preparado correctamente el espacio de trabajo y definido bien los formatos sobre los que se trabajaría y habiendo implementado una primera versión del procesador de MusicXML a hechos lógicos.
-
-\section{Iteración 2}
-\label{sec:second_iteration}
-\subsection{Agenda de Iteración}
-\label{subsec:second_iteration_backlog}
-El objetivo de esta iteración fue implementar una primera versión del pipeline que incluyese un módulo de armonización básica en ASP. Para ello se fijaron una serie de restricciones que simplificaban algunos problemas detectados durante el análisis. Inicialmente no se tendrán en cuenta las notas adyacentes en la partitura ni subdivisiones de las mismas, no obstante y de cara a futuras iteraciones, se establece una figura base como período de análisis horizontal de la melodía y una figura base de subdivisión, aunque para esta iteración ambas se establecerán a negra (\textit{quarter note}) de modo que se asignará el acorde correspondiente a cada golpe rítmico de la partitura teniendo en cuenta las múltiples voces que la componen de manera vertical.
-
-\subsection{Trabajo}
-\label{subsec:second_iteration_work}
-Se modificó el procesador de MXML a ASP y se ha incluido una opción para subdividir la partitura de forma automática en base a la nota más breve de la partitura o forzar toda la partitura a un solo tipo de figura omitiendo aquellas figuras de menor duración, aunque esto lleve a resultados incorrectos musicalmente. La salida deseada y el formato de entrada para el módulo de procesado ASP usan el formato \texttt{note(voz, tono, tiempo)} siendo voz el número de la voz que interpreta la nota, tono un valor numérico asociado a la nota, no en frecuencia sino calculado como el número semitonos a partir de una nota base A0, es decir, el La más grave que puede interpretar MIDI; y tiempo la posición de la nota en la partitura.
-
-Para el desarrollo del módulo de procesado ASP se sigue el proceso conocido como \textit{Generate and Test}, muy habitual en el paradigma. Como su nombre indica, consta de dos partes: generación y prueba. En la generación se usan reglas que definen todas los resultados posibles del problema para después, en la fase de prueba, restringirlos mediante reglas que prohíben total o parcialmente ciertas combinaciones al exponerse a hechos lógicos aportados por el procesador de MXML a ASP. Esta metodología se usó desde el principio en cada iteración a partir de la presente para desarrollar la parte en ASP correspondiente ya que aunque las reglas de generación permanecerán intactas, estas serán revisadas por si fuera necesario cambiarlas o añadir alguna regla nueva.
-
-En esta primera aproximación, las reglas de generación establecen los posibles acordes que compondrán la solución y se realiza una asignación acorde-unidad rítmica (como ya se comentó, la unidad rítmica base inicialmente será la negra) en base a las notas presentes para un instante dado en cada voz. Para realizar esto es necesario interpretar cual es el grado de cada nota presente en la escala de la pieza, (de nuevo, por restricciones iniciales se considera Do mayor) ya que de este modo podremos especificar una serie de reglas que abstraigan el hecho de qué nota suena en si y lo sustituyan por qué grados aparecen en cada momento dado de la partitura, pudiendo deducir así qué acorde es el más correcto de entre todas las posibilidades, a más notas presentes de la escala correcta, menos posibilidades, de aparecer notas no pertenecientes a la escala, no se podrá resolver el acorde y el programa se detendrá con un error.
-
-La fórmula empleada para derivar los grados de la escala es $[(valor-base) mod 12]$ siendo valor el valor númerico asignado a la nota y base la nota de la que se parte para calcular los grados. Esta expresión resulta en los semitonos de distancia entre la nota base y la nota actual. La operación de módulo es necesaria para abstraer la octava a la que pertenece la nota, aunque más adelante esto pueda ser un hecho relevante. Con una comparación directa del valor obtenido con una distribución dada según el modo (Mayor o Menor) de la escala es posible asignar los grados correspondientes a cada nota. Por último se generan hechos que indican cuantas voces toman parte en la pieza, así como los tiempos en los que suena al menos una nota.
-
-Se crearon dos ficheros a mayores que especifican los acordes a considerar, otorgándole un nombre en notación numérica romana y creando múltiples predicados que especifican qué grados de la escala pertenecen a dicho acorde. De este modo no es necesario especificar en ningún momento cuantas notas tendrán los acordes con los que se trabaje, y aunque principalmente se trabajará con acordes de tres notas, esto permitiría ampliar la complejidad en el futuro al incluir acordes de dos o cuatro notas. Teniendo en cuenta los posibles acordes, y mediante una restricción de cardinalidad, se generan todas las soluciones iniciales, haciendo que solo se asigne un acorde a cada tiempo en el que suena al menos una nota. A mayores se especifica una restricción de integridad que anula cualquier solución en la que, para un tiempo en el que esté presente una nota concreta, el acorde asignado en la solución comprobada no contenga esa nota. 
-
-A mayores se ha incluído como parte de esta iteración, el diseño e implementación de un pipeline en python que automatice las llamadas al procesador MXML a ASP y al módulo de armonización. En este primer prototipo se implementó una pequeña funcionalidad de interpretación de la salida del módulo ASP a un vector de soluciones. En futuras iteraciones, se añadirá más funcionalidad a dicho pipeline, como más opciones de entrada o diferentes representaciones de las soluciones ofrecidas por el módulo ASP haciendo uso de alguna librería que permita representar de nuevo la partitura en el formato deseado. El pipeline agrega y combina las diferentes opciones de los módulos a los que llama, en este caso se incluyeron únicamente las opciones -n, que especifica a clingo cuantas soluciones mostrar, y -m, encargada de alternar entre los modos de armonización mayor y menor. El pipeline no contepla aún opciones relacionadas con el módulo de procesado ya que la opción -s incluida en la anterior iteración está fijada a 1 por las restricciones especificadas para este prototipo. 
-
-\subsection{Pruebas}
-\label{subsec:second_iteration_test}
-Se han realizado pruebas individuales a los módulos de procesado y armonización, además se han realizado pruebas al pipeline creado, sirviendo de este modo de pruebas de integración de los diferentes módulos y de la herramienta al completo.
-
-Para el procesador se han probado múltiples ficheros de entrada así como las distintas opciones que contempla. No presenta problemas para ficheros MusicXML estándar generados por Musescore y programas similares, ante la ausencia de fichero, ficheros incompletos, ficheros XML que no sean MusicXML o ficheros que directamente no sean XML el procesador detiene la ejecución y produce el mensaje de error adecuado en cada caso. En cuanto a las tres opciones que presenta esta primera versión, la opción de ayuda -h detiene la ejecución independientemente de la presencia de otros parámetros y muestra el modo de uso del módulo parser por sí solo, la opción para especificar el fichero de salida -o funciona correctamente en cualquier caso, excepto cuando el directorio especificado para almacenar el fichero de salida no existe. En la siguiente iteración se planteará la posibilidad de dejar esto de este modo intencionadamente o si forzar la creación de los directorios necesarios. Por último la opción de subdivisión -s, que para este primer prototipo ha de ser especificada manualmente o dejada en su valor por defecto funciona para cualquier valor. Esto no es del todo correcto ya que la subdivisión solo debería ser posible para potencias de 2, en el segundo prototipo se corregiría esto.
-
-El módulo de armonización no presenta una gran complejidad de prueba ya que solo depende del fichero de entrada. Si este no está presente no produce resultado alguno, y en caso de estarlo y no ser correcto, produce un resultado de insatisfacibilidad. En caso de existir alguna solución esta es correctamente devuelta por pantalla. Las diferentes piezas probadas, pese a ser sencillas por las limitaciones de este primer prototipo, ofrecieron resultados de armonización correctos.
-
-Por último, en las realizadas para el pipeline se analizaron las diferentes opciones y casos de entrada de la herramienta. Ante los casos erróneos donde el módulo de procesado fallaba y no generaba fichero LP de salida, el pipeline no detenía la ejecución y llamaba al módulo ASP igualmente, aunque este fallaba al no tener un fichero de hechos lógicos con el que funcionar, no obstante el pipeline si que debería comprobar esto y por tanto se corrigió. Con ficheros de entrada adecuados el pipeline realizaba una ejecución completa y recogía los resultados ofrecidos por el módulo ASP, ofreciendo por pantalla una representación más amigable así como un resultado de satisfacibilidad. La opción -m (alternar entre modo mayor y menor) funcionaba como se esperaba, restringiendo los dos posibles valores de la opción a los especificados (``major'' o ``minor'') y deteniendo la ejecución en caso de encontrar un valor incorrecto, mientras que la opción -n (número de soluciones exploradas) restringe también correctamente los valores de N a únicamente enteros y no hace falta mayor comprobación ya que cualquier valor entero es válido como opción para el módulo ASP. Ambas opciones producían el efecto deseado en la ejecución del pipeline.
-
-\subsection{Resultados}
-\label{subsec:second_iteration_results}
-Este primer prototipo se completó en dos semanas, siendo los mayores problemas de la iteración la falta de soltura con el paradigma y el lenguaje, así como detalles técnicos de falta de librerías y software. Se logró implementar una versión inicial del pipeline junto con una temprana pero funcional versión del módulo de armonización.
-
-
-\section{Iteración 3}
-\label{sec:third_iteration}
-\subsection{Agenda de Iteración}
-\label{subsec:third_iteration_backlog}
-El objetivo de esta iteración es completar el desarrollo de un segundo prototipo de la herramienta que incluya las siguientes mejoras:
-\begin{itemize}
-	\item Subdivisión real y automatizada de las notas de la pieza a la longitud de la nota mínima presente en la partitura
-	\item Especificación en el pipeline de la longitud del tiempo de análisis horizontal
-	\item Inclusión de la posibilidad de realizar análisis horizontal en ASP
-	\item Flexibilización de los resultados del módulo de armonización, es decir, en vez de prohibir las soluciones erróneas, se anotarán los errores en la partitura y se escogerá aquella solución que minimice el número de errores
-\end{itemize}
-Además se incluirán en este prototipo las correcciones a los errores de ejecución de los módulos no corregidos en el primero.
-
-\subsection{Trabajo}
-\label{subsec:third_iteration_work}
-Se modificó el \textit{parser} substancialmente ya que este imprimía a un fichero según procesaba las notas. Esto no planteaba problema alguno si la subdivisión se especificaba de antemano mediante el parámetro correspondiente, pero sí que resultaba complicado mantener esta aproximación si la unidad de subdivisión debía calcularse al mismo tiempo que se procesaba la partitura en MXML. Se plantearon dos soluciones, o bien incluir en el pipeline en python un análisis previo a la conversión de MXML a hechos en ASP que dedujese cual era la nota de menor longitud y la usase como parámetro en la llamada al \textit{parser} o bien se modificaba el comportamiento del anterior para realizar simultáneamente ambas tareas. 
-
-Se optó por la segunda opción por motivos de coherencia con el sistema, es decir, no incluir funcionalidad innecesaria y replicada en el pipeline, cuya tarea es simplemente manejar las entradas y salidas de los diferentes módulos, y por motivos de eficiencia, ya que como se ha mencionado no hay necesidad de procesar el mismo fichero dos veces, siendo una de ellas en un lenguaje interpretado en vez de compilado, lo que añadiría un sobrecoste temporal evitable.
-
-Los cambios implementados en el \textit{parser} implicaron principalmente incluir un nuevo tipo de dato nota para almacenar la información de las notas de la partitura y una nueva pila que contuviese las notas extraídas del MXML. Una vez procesado todo el fichero de entrada, hallada la nota más breve y almacenadas las notas en la pila, ésta se vacía y se imprimen en el fichero de hechos lógicos de salida teniendo en cuenta la subdivisión pertinente, bien sea esta la calculada o la especificada por parámetro. En caso de especificar una subdivisión no válida, es decir, de mayor longitud que alguna de las notas presentes en la partitura, se imprime por pantalla un mensaje de error y la nota no es subdividida. Esto produce comportamientos no deseados a la hora de realizar la deducción de la armonía, ya que es necesario trabajar siempre con piezas con notas de longitudes iguales a lo largo de toda la partitura.
-
-El módulo de armonización incluye una nueva constante que indica la longitud del intervalo de tiempo mínimo de análisis armónico horizontal, a su vez es posible especificar en la llamada al módulo el valor de esta constante. Se ha modificado, por tanto, la regla que restringe las posibles soluciones para analizar en dichos intervalos de tiempo. Además dicha regla se ha suavizado y en vez de ser una restricción de integridad, esta activa un nuevo predicado error(voz, grado, tiempo) que indica los grados erróneos presentes en la partitura que no encajan con el acorde asignado para la solución. Posteriormente se realiza un proceso de optimización consistente en la minimización de el número de estos predicados de error, es decir, aquellas soluciones con menor número de errores serán las óptimas. Además en caso de no encontrar una solución con cero errores, los errores aparecen también en la salida para que el usuario pueda conocer qué tiempos contienen notas equivocadas.
-
-Se han incluido en el pipeline opciones tanto para indicar al procesador de MusicXML a hechos lógicos una subdivisión específica (opción -d) como para indicar al módulo de armonización el intervalo horizontal de armonización (opción -s). Se han implementado en el pipeline, con vistas al futuro de módulo de salida, una serie de clases para almacenar los resultados y poder devolverlos más tarde en el formato más conveniente. \texttt{Error} y \texttt{Chord} son clases para almacenar y representar los acordes asignados en la solución así como los errores presentes en la partitura, es decir, aquellas notas que no encajan con los acordes asignados. A su vez, HaspSolution es una clase orientada a almacenar y representar soluciones completas incluyendo una colección de objetos \texttt{Chord} y otra de objetos Error, así como el grado de optimizazión de dicha solución. Por último, la clase \texttt{ClaspResult} almacena la salida sin procesar de una ejecución del módulo ASP, aunque cuando esta es instanciada, dicha salida se procesa y se crean una colección de objetos \texttt{HaspSolution} conteniendo sólo aquellas soluciones que alcancen un cierto valor de optimización. La relación entre las clases así como sus métodos se detallan en el diagrama de clase pertinente.
-
-\subsection{Pruebas}
-\label{subsec:third_iteration_test}
-Se han continuado con las pruebas a los diferentes módulos, dando por válidos los resultados de las pruebas de la anterior iteración se procedió a probar las nuevas funcionalidades de cada módulo.
-
-En el \textit{parser} se comprobó que la autosubdivisión funcionaba correctamente al introducir partituras con diferentes longitudes de notas, además en caso de forzar una subdivisión incorrecta se producía el mensaje de aviso adecuado explicando el problema. Si la subdivisión forzada era correcta funcionaba como debía. El nuevo tipo de datos, nota, así como la pila para almacenar las diferentes notas de la partitura fueron probados junto con esta nueva funcionalidad, ya que fueron implementados expresamente para su funcionamiento.
-
-En el módulo ASP se probaron piezas más y menos complejas, algunas creadas de forma artificial para producir errores y se vio que el nuevo análisis funcionaba y detectaba dichos errores, no obstante seguía produciendo soluciones válidas marcando aquellas notas erróneas.
-
-En cuanto al pipeline se comprobó que las nuevas opciones en la llamada a éste funcionasen correctamente, ya que las dos nuevas opciones son simplemente parámetros que se pasan más adelante al módulo \textit{parser} o al módulo ASP, bastó con realizar una comprobación de validez del valor pasado en la llamada. Se probaron además las cuatro clases de almacenamiento de las soluciones diseñadas e implementadas para este prototipo, siendo \texttt{ClaspOutput} la única que tuvo que ser probada más exhaustivamente ya que es la que realiza el procesado de la salida del módulo ASP, el resto simplemente cuentan con constructores y funciones de representación textual. 
-
-\subsection{Resultados}
-\label{subsec:third_iteration_result}
-Durante el desarrollo se cumplieron los objetivos marcados en la planificación.
-
-La subdvisión, tanto como fijada por parámetro como automatizada, ha sido implementada y probada freciendo resultados correctos. El análisis horizontal produce los resultados esperados para las longitudes especificadas. Los resultados de aquellas piezas creadas expresamente para fallar ya no detienen el programa si no que se ofrecen resultados marcando los errores. Se han corregido errores detectados en la iteración anterior.
-
-\section{Iteración 4}
-\label{sec:fourth_iteration}
-\subsection{Agenda de Iteración}
-\label{subsec:fourth_iteration_backlog}
-El objetivo de esta iteración es crear un tercer prototipo que busca no sólo refinar la armonización como el anterior si no ampliar funcionalidad de la herramienta. Se busca incorporar un módulo de salida escrito en python al cual el pipeline se encarga de pasarle los datos formateados correctamente para que dicho módulo exporte al formato deseado. 
-
-\subsection{Trabajo}
-\label{subsec:fourth_iteration_work}
-El módulo ASP se ha aumentado para incluir generación de notas en un número de voces adicionales que puede ser especificado por parámetro. Además se creó un fichero de conversiones encargado de traducir valores de notas a grados, octavas y viceversa. De este modo los grados generados durante el procesado de la partitura pueden ser traducidos de vuelta a un valor de nota para que el módulo de salida llamado desde el pipeline reconstruya la pieza. Para la generación de notas en las nuevas voces se ha impuesto una única restricción fuerte, que dos notas consecutivas no realicen un salto melódico de dos octavas o más, mientras que mediante predicados de minimización se controla la cantidad de saltos de una quinta realizados por una misma voz.
-
-Se ha diseñado implementado una nueva clase de almacenamiento \texttt{Note} y se ha incluido un método a \texttt{HaspSolution} que transforma una solución al tipo de dato requerido por el \textit{toolkit} Music21 para producir los diferentes formatos de salida. El almacenado de las notas en la coleccion de voces se ha realizado mediante una estructura de diccionario, utilizando el identificador numérico de la voz como índice, resultando muy cómodo añadir ordenadamente a cada entrada en el diccionario los objetos \texttt{Note} o futuros objetos similares, al ser colecciones multi-tipo.
-
-Se ha optado por incorporar \textbf{Music21} al módulo de salida principalmente por la cantidad de formatos con los que puede trabajar, tanto en entrada como en salida, y aunque lo ideal será exportar un fichero MusicXML, la idea de poder generar PDF, MIDI o Lilypond resulta más que atractiva. Este módulo toma un objeto \texttt{ClaspResult} como entrada y haciendo uso del método de una de los objetos \texttt{HaspSolution} contenidos en él, representa dicha solución en el formato adecuado. Music21 posee una representación interna de representación de objetos musicales demasiado compleja como para utilizarla directamente con la salida del módulo de armonización, no obstante la conversión de los objetos de almacenamiento definidos es relativamente sencilla y gracias a esto resultó cómodo construir una serie de métodos en el módulo de salida que contruyesen la partitura en términos de Music21 para poder ser representada. 
-
-En el \textit{pipeline} se ha incluido una opción para especificar el número de voces adicionales que deben ser añadidas y otra opción para especificar el formato de salida. Este componente ahora se encarga también de llamar al módulo de salida.
-Además la llamada al módulo de salida produce un objeto de partitura Music21 que puede ser manejado de diferentes modos según nuevos parámetros, -f permite especificar el formato de salida (Principalmente PDF, MIDI o XML) siempre y cuando se disponga de herramientas en el PC para generar dicho formato. Por otra parte, usando la opción -S se puede pedir al pipeline que no genere un fichero nuevo, si no uno temporal para mostrar o reproducir al terminar la ejecución. La opción -o permite especificar el nombre del fichero, de no estar presente, tomará el mismo nombre que el del fichero MusicXML de entrada.
-
-\subsection{Pruebas}
-\label{subsec:fourth_iteration_test}
-Se probó el nuevo conjunto de acordes con las piezas utilizadas anteriormente y se vio que estos nuevos acordes se tomaban en consideración correctamente a la hora de armonizar.
-
-Así mismo se probaron clases de almacenamiento de modo individual y en combinación unas con otras a traves del parser. Se hizo especial hincapié en el nuevo método de procesado de la salida de la clase \texttt{HaspSolution}. Las clases de almacenamiento dieron ligeros problemas que se solucionaron inmediatamente quedando corregidas y funcionales.
-
-El módulo de saida se probó exhaustivamente pero no produjo ningún fallo que no se puediera depurar en el momento.
-
-\subsection{Resultados}
-\label{subsec:fourth_iteration_result}
-Esta iteración resulto excepcionalmente corta y se alcanzaron los objetivos relativamente rápido, ya que la decisión de usar Music21 se tomó bastante más rápido de lo esperado al ver que se adaptaba especialmente bien al trabajo a realizar.
-
-Por otra parte, el trabajo a realizar en el módulo de armonización fue más un estudio sobre el papel para incorporar los nuevos cambios. Las voces nuevas se añadían correctamente, aunque los tiempos de ejecución se disparaban en algunos casos para partituras muy largas. Los nuevos acordes se usaban con buena frecuencia, ya que son más fáciles de encajar al tener más notas posibles.
-
-El módulo de salida funcionó excepcionalmente bien, aunque no producía una salida fidedigna al no tener información sobre la longitud original de las notas y algunos detalles como los instrumentos que debían interpretar cada voz y, aunque menos importante, tampoco conservaba ni el nombre de la pieza ni su compositor.
-
-\section{Iteración 5}
-\label{sec:fifth_iteration}
-\subsection{Agenda de Iteración}
-\label{subsec:fifth_iteration_backlog}
-El cuarto prototipo tiene como objetivo tener en cuenta los tiempos débiles y fuertes de la partitura para refinar ciertas preferencias ya incluidas anteriormente o posibles nuevas preferencias basadas en dichos tiempos. Para esto será necesario modificar el módulo ASP, el \textit{parser} y el pipeline. Además se busca refinar el módulo de salida para ajustar la representación en partitura de la solución e incluir mejoras visuales. Como en los anteriores, este prototipo corregirá los errores detectados en el anterior.
-
-\subsection{Trabajo}
-\label{subsec:fifth_iteration_work}
-En el procesador de MusicXML a hechos lógicos se han incluido dos nuevas funciones principales: 
-\begin{itemize}
-	\item \textbf{Análisis de medida de compás:} Determinar cuantas figuras de qué longitud posee el tipo de compás base de la pieza.
-	\item \textbf{Distincisón de tipos de silencios:} Diferenciar silencios completables de aquellos que deben ser respetados como silencios.
-\end{itemize}
-La primera atiende a la necesidad de indicarle al módulo ASP la métrica del compás, así como su subdivisión para poder identificar tiempos débiles y fuertes, mientras que la segunda atiende a la carencia de una manera sencilla de representar en música con un símbolo aquellos huecos que siendo silencios en la partitura original deben ser completados por el módulo ASP y no ser tratados como silencios en sí. 
-
-Para la métrica del compás, se implementó en el procesador la capacidad de itentificar las diferentes métricas de compases así como el tiempo en el que ocurren, aunque por comodidad y sencillez, se ha asumido que un cambio rítmico en el compás debe ocurrir en todas las voces a la vez. Esto crea predicados \texttt{measure(T,N)} que indican para un tiempo T, el número N de figuras que componen el compás. No es necesario especificar la longitud de la figura base ya que esta se fija y normaliza durante el análisis de la partitura. De este modo, aunque el compás fuese un 4/4 (compases de cuatro negras), si la subdivisión detectada y empleada es de corchea, será traducido a 8/8 (compases de ocho corcheas). 
-
-Para poder especificar en el editor de partituras silencios ``verdaderos'' y silencios completables se ha optado por una solución relativamente sencilla, no sólo de identificar por el \textit{parser} si no también fácil de usar por el usuario final de la herramienta. Mediante la notación de letras de la pieza, se pueden indicar en cada voz los intervalos de tiempo en los cuales los silencios deben ser tratados como completables. Para ello solo hace falta escribir los símbolos \texttt{[} y \texttt{]} al principio y final del intervalo respectivamente. Para poder detectar este intervalo se incorporó un tipo de dato cola genérica al procesador para poder interpretar bien el momento de inicio y de cierre de estos símbolos y marcar así los intervalos a completar de manera adecuada.
-
-En el módulo de armonización se han definido acordemente varios predicados nuevos, como \texttt{busybeat(V,B)} siendo B un tiempo de la voz V que indica aquellos tiempos en los que inicialmente ya hay una nota o silencio, todos aquellos \texttt{beat(B)} que no son \texttt{busybeat(V,B)} son \texttt{freebeat(V,B)}, y deben ser completados. Además se han definido los predicados \texttt{strong\_beat(B)}, \texttt{semistrong\_beat(B)} y \texttt{weak\_beat(B)} que corresponden a los tiempos fuertes, semifuertes y débiles de cada compás en la partitura. Gracias a esto se han creado predicados que matizan los diferentes errores de la partitura \texttt{error\_in\_strong(V,G,B)}, \texttt{error\_in\_semistrong(V,G,B)} y \texttt{error\_in\_weak(V,G,B)} que definen en qué tipo de tiempo ocurren los errores de la pieza y permite minimizarlos con diferentes prioridad (a más fortaleza de tiempo, más prioridad). Por último y para dar más flexibilidad en la búsqueda de la armonización correcta se ha incluído el acorde de dominante séptima (V7) en los modos mayor y menor.
-
-Se ha incluido una clase de almacenamiento \texttt{Rest} para diferenciarla de \texttt{Note} y no tener que usar valores negativos en el valor del objeto \texttt{Note}. Ya que las entradas del diccionario que representa las diferentes voces de la partitura puede almacenar cualquier combinación de tipos de elementos, se seguirá una convención para poder almacenarlos e iterar sobre ellos sin problema.
-
-El módulo de salida se ha refinado para representar mejor las notas incluyendo información del tipo de compás, clave y duración de las figuras. Además se colorean en rojo los errores detectados y se anotan en los tiempos adecuados los acordes inferidos por el módulo ASP.
-
-Por último, el pipeline cuenta con una nueva opción -t, que permite especificar un tiempo máximo de búsqueda del óptimo en el módulo ASP, ya que para piezas largas, el espacio de búsqueda crece muchísimo y es necesario poder limitar el tiempo de ejecución. Además, al final de la ejecución, y tras enumerar todas las soluciones escogidas por el módulo ASP, permite al usuario escoger qué solución exportar o mostrar, teniendo por defecto la última, ya que se supone más refinada.
-
-\subsection{Pruebas}
-\label{subsec:fifth_iteration_test}
-Las pruebas realizadas esta iteración se centraron en verificar que el procesador identificase de modo correcto los tipos de compás y los tiempos completables. Se plantearon casos de partituras solo con silencios completables, solo con silencios ``verdaderos'' y otras mixtas. Todas ofrecieron los resultados esperados.
-
-En cuanto al módulo de armonización se probó que los tiempos marcados como \texttt{freebeat} se completasen correctamente haciendo uso de las piezas creadas para probar también el procesador. Así mismo se verificó que se produjesen los resultados de subdivisión en tiempos fuertes y débiles adecuados.
-
-Se probó la nueva opción de timeout del pipeline, comprobando que aceptaba valores numéricos correctamente y que esto se reflejaba en el tiempo de búsqueda de las diferentes soluciones. 
-
-\subsection{Resultados}
-\label{subsec:fifth_iteration_result}
-Se cumplieron los objetivos marcados para esta iteración, pero la reunión con el tutor al final de esta reveló unos errores de diseño que serían corregidos en la siguiente.
-
-La identificación de tiempos débiles y fuertes no se estaba realizando correctamente en términos musicales al faltar un dato importante: el tipo de subdivisión del compás. Siendo esta binaria o ternaria según el tipo de compás, la figura base del mismo y el intervalo de armonización. Al no tenerse en cuenta no podía ofrecer resultados realmente buenos en este aspecto.
-
-Al trabajar con diferentes partituras se detectó un inconveniente importante en la identificación de intervalos a completar, y es que al hacer uso de las letras para definir los intervalos, no se podían poner estas marcas de inicio y fin bajo silencios, al no tener sentido que un trozo de letra a cantar figure bajo un silencio. Además resultaba complejo trabajar con intervalos abiertos por alguno de los extremos.
-
-\section{Iteración 6}
-\label{sec:sixth_iteration}
-\subsection{Agenda de Iteración}
-\label{subsec:sixth_iteration_backlog}
- En esta iteración se perfeccionarán algunas funcionalidades de los diferentes módulos y se añadirá un sub-módulo de preferencias melódicas al ya creado módulo ASP. El quinto prototipo busca ser, esencialmente, una mejora del anterior que corrija los errores detectados en la anterior evaluación del mismo.
-
-\subsection{Trabajo}
-\label{subsec:sixth_iteration_work}
-Para facilitar la entrada de silencios que representan huecos completables por el módulo ASP se ha cambiado el enfoque, y se ha abandonado el delimitado de secciones completables con corchetes en las letras de la canción por suponer algunos problemas al no poder ubicar dichas letras en tiempos en los que haya un silencio, por claridad y por no interferir con las posibles letras de una partitura real no creada ni modificada textit{ad-hoc} para el programa. MusicXML permite marcar elementos de la partitura como no visibles, esto solo afecta a la hora de imprimir en papel dicha partitura y a nivel musical no interfiere con ningún elemento. Además, la visibilidad de una nota o silencio puede ser fácilmente alterada en cualquier editor de partituras desmarcando una casilla al clicar sobre dicho elemento, lo cual facilita mucho el marcado de estos tiempos completables. Esto se reflejó en el procesador de MusicXML a hechos lógicos, que en vez de contemplar los dos símbolos utilizados anteriormente, ahora solo tiene que comprobar la visibilidad de un elemento para determinar si asignar un tiempo completable a dicho tiempo.
-
-Para refinar la subdivisión en tiempos débiles y fuertes, se reimplementaron tanto en el módulo ASP como en el procesador de hechos lógicos a MusicXML, esto fue debido a que no es sencillo establecer dichos tiempos aritméticamente sólo teniendo en cuenta la cantidad de notas del compás, sino que también se ha de tener en cuenta el tipo y subdivisión del compás con respecto a la nota de referencia usada para armonizar. Para esto es importante no normalizar el compás leído en el fichero XML y generar nuevos predicados indicando los valores del compás sin modificar. En el módulo ASP se ha incluido, de modo similar a los acordes, una tabla de tipos de compás y su subdivisión teniendo en cuenta el compás y la longitud del tiempo de armonización. Se han incluido en dicha tabla los compases más habituales, pero de nuevo, al igual que con los acordes incluidos en los ficheros correspondientes, pueden ser ampliados si el usuario lo necesitase. Una vez inferido el tipo de subdivisión del compás, calcular los tiempos débiles y fuertes se puede realizar de forma aritmética, de modo similar a como se hacía en el prototipo anterior. Debido a la pérdida de información resultante de uniformizar las notas de la partitura no es posible detectar los subtiempos fuertes y débiles dentro de secuencias de corcheas, semicorcheas, etc. Además se ha optado por descartar la inferencia de tiempos semifuertes ya que solo añadían complejidad a la búsqueda del óptimo y no aportaban mejores resultados, los que en el prototipo anterior eran semifuertes, en este son directamente tiempos fuertes.
-
-Se creó un sub-módulo ASP de preferencias melódicas que busca alcanzar una optimización mayor a la hora de generar nuevas voces o cubrir tiempos completables con algunas mejoras que atienden, principalmente, a la secuencia de notas de una misma voz. Se ha definido el salto melódico de forma genérica y éste es minimizado en notas consecutivas usando el tamaño del salto como peso a la hora de minimizarlo, con esto se logra una melodía más continua y sin saltos erráticos, al mismo tiempo que se limita el espacio de búsqueda considerablemente. Se ha inferido un nuevo predicado tendencia que analiza, dado un par de notas de una voz, si la tendencia melódica es ascendente, descendente o no varía. Además se ha definido otros predicados relacionados que analizan si la tendencia entre dos voces diferentes es la misma o si es contraria, maximizando estos predicados se consigue un ligero efecto de imitación de tendencia entre voces.
-
-Se estudió la posibilidad de incluir también en este sub-módulo de preferencias melódicas la detección de patrones secuenciales armónicos y melódicos comunes como las secuencias de sextas, que siguen un determinado patrón de saltos melódicos en cada voz y que sería interesante completar de forma correcta para buscar una mayor naturalidad en las líneas melódicas de la pieza a la hora de completarla. Para implementarlo se ha incluido en el módulo una asignación de acordes a tiempo con su propia detección de errores (aunque estos acordes y errores no se representan en la salida). Con estos acordes se pueden analizar los saltos armónicos presentes entre las diferentes voces de la partitura y deducir la inversión del acorde. Solo se trabaja con las inversiones primera y segunda por sencillez, ya que solo se busca el enlace entre estos acordes. Dentro de las dos posibles segundas inversiones solo se tiene en cuenta a su vez la  de cuarta y sexta, por ser la más usada en enlaces armónicos. Posteriormente se maximiza el enlace entre la primera y segunda inversión o entre segundas inversiones consecutivas.
-
-Se ha descartado la detección de apoyaturas con el fin de no contemplarlas como errores por un motivo similar, al uniformizar la longitud de las figuras de la partitura, no es posible detectarlas bien, ya que una de las características de las apoyaturas es que ``roban'' brevemente el tiempo fuerte a una nota representativa del acorde de la armonía. Para detectar dicha brevedad sería necesario conservar la longitud original de las notas, lo que imposibilitaría una armonización correcta.
-
-En el módulo de salida se ha incluido la representación mediante nombre del acorde y no mediante el numeral romano.
-
-En el pipeline se ha incluido una nueva opción -M que permite activar o desactivar este módulo de preferencias melódicas a gusto del usuario. 
-
-\subsection{Pruebas}
-\label{subsec:sixth_iteration_test}
-Al incluir nuevas piezas para probar los diferentes módulos se encontraron problemas con aquellas voces capaces de producir acordes en una sola voz, es decir, las de instrumentos polifónicos. Tal y como estaba diseñado inicialmente el procesador de MusicXML a hechos lógicos (pensado principalmente para música coral) se pasó por alto esta posibilidad. En la siguiente iteración se buscará un modo de identificar estos elementos en el procesador y transformarlos en un nuevo objeto de almacenamiento \texttt{VoiceChord}
-
-Al realizar las pruebas de las nuevas funcionalidades incluídas en el módulo de armonización, se detectó que las preferencias de sextas causaban una gran carga computacional al tener que calcular una armonización a tiempo independientemente de la usada en el módulo de armonización en sí. Por esto, las reglas correspondientes a la detección y maximización de enlaces de sextas se separaron de las preferencias melódicas de carácter más general. 
-
-\subsection{Resultados}
-\label{subsec:sixth_iteration_results}
-Se alcanzaron los objetivos establecidos de modo satisfactorio.
-Los módulos de preferencias funcionan pese a que los enlaces de sextas generen mucha carga computacional.
-
-\section{Iteración 7}
-\label{sec:seventh_iteration}
-\subsection{Agenda de Iteración}
-\label{subsec:seventh_iteration_backlog}
-En esta iteración se busca mejorar el módulo de procesado para que sea capaz de extraer más información y metadatos de la partitura original y así conseguir una salida más fiel. Además se busca incluir en este mismo módulo la auto-detección de la clave de la partitura basándose en la armadura presente. A mayores se busca un modo más conveniente de incluir voces de una determinada tesitura a la partitura. Como en otras iteraciones se busca corregir los fallos encontrados en las pruebas de la anterior. Por último, de cara a poder resolver ejercicios de armonía en los que ya haya acordes dados en la partitura, se pretende implementar en el procesador de MusicXML a hechos lógicos el reconocimiento de acordes ya presentes.
-
-\subsection{Trabajo}
-\label{subsec:seventh_iteration_work}
-Se incluyeron en el \textit{parser} nuevos \textit{tokens} y reglas en la gramática para poder extraer metadatos y otra información de la partitura y exportarlos a un fichero temporal usado por el módulo de salida. Los diferentes datos extraídos para cada partitura son:
-\begin{itemize}
-	\item \textbf{title:} Título
-	\item \textbf{composer:} Compositor
-	\item \textbf{base\_note:} Longitud de la nota más breve presente
-	\item \textbf{key\_name:} Nombre de la clave en la que se armonizará la pieza
-	\item \textbf{mode:} Modo (mayor o menor)
-	\item \textbf{last\_voice:} Número que identifica cual es la última voz presente
-\end{itemize}
-Los dos primeros atienden a una cuestión estética, simplemente sirven para que el módulo de salida disponga de esta información y pueda completarla a la hora de reconstruir la partitura. Los tres siguientes son datos relevantes para el módulo de armonización, mientras que el último sirve para añadir voces nuevas correctamente a la partitura. Tuvieron que incluirse reglas especiales en la gramática para poder reconocer conjuntos de múltiples palabras.
-
-El procesador extrae una nueva pieza de información de la partitura, conocida como \texttt{figure}. Figure en la forma \texttt{figure(voice,duration,beat)} es un hecho lógico que describe la duración de una figura para un pulso de una voz dada. De este modo, pese a subdividir las notas a la longitud de la más breve para el análisis, se pueden recomponer en la salida fidedignamente. Además esta nueva información puede usarse en la generación de nuevas notas en la pieza. Se han incluido reglas para reconocer los acordes presentes en la partitura y estos se plasman en el fichero de salida.
-
-En el módulo de armonización se ha incluido un nuevo archivo similar al de acordes o tipos de compases que describe las diferentes tesituras de las voces presentes en la partitura. Este documento es ampliable al igual que los mencionados para incluir nuevos instrumentos o tesituras. Se han definido los principales tipos de voz coral (tanto masculinos como femeninos) y sus rangos de notas más frecuentes. 
-
-\begin{center}
+Para ello, lo más importante es la conversión de los valores de las notas a grados de la escala junto con su octava, lo cual es posible conociendo la tonalidad y el modo. Con las notas transformadas en grados y todos los posibles acordes asignados, se cuantifican los errores cometidos, esto es, en vez de prohibir que se produzcan errores, se marcan aquellas notas que no pertenecen al acorde como error y se clasifican en errores fuertes y débiles atendiendo al tipo de tiempo del compás en el que coincide el error. El cálculo del tipo y subdivisión del compás, y por tanto de sus tiempos débiles y fuertes se realiza gracias a los hechos lógicos referentes al tipo de compás de la partitura y al intervalo de armonización de la misma.
+Mediante un predicado de optimización que minimiza los errores en tiempos fuertes, los acordes repetidos en tiempos de armonización consecutivos y los errores cometidos en tiempos débiles (inicialmente en ese orden de importancia) se busca la mejor armonización posible.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{imagenes/harmonized_example.png}
+	\includegraphics[width=0.4\linewidth]{imagenes/chord_facts.png}
+	\caption{Acordes anotados sobre una pieza sencilla y los hechos lógicos correspondientes a esos acordes}
+	\label{fig:simple-piece-chords}
+\end{figure}
+
+De vuelta al pipeline, los mejores resultados son transformados a una representación objetual en python (Ver sección \ref{subsec:store_classes}) para almacenar la información de los diferentes elementos y poder representarlos de manera sencilla. 
+
+A continuación se pide al usuario que escoja un resultado de entre los mejores posibles, mostrándole la secuencia de acordes y especificando las notas erróneas, así como el grado de optimización del resultado. Una vez escogida la armonización deseada, se crea un fichero temporal con los acordes de la solución que se pasa, en conjunto con el fichero de hechos lógicos original al módulo de completado de partituras.
+
+Con ambos ficheros de hechos lógicos, se llama al módulo de completado de partituras, que actuará en caso de existir voces nuevas que completar o secciones en blanco que rellenar. Los intervalos a rellenar están representados por el hecho lógico especial \texttt{freebeat} que indica que ese tiempo no contiene una nota sino un hueco intencialmente blanco. No obstante, estos hechos van acompañados de un hecho \texttt{figure} al igual que las notas o silencios, de modo que se puede especificar el patrón rítmico de la sección a completar.
+El módulo de completado de partituras funciona de un modo similar al de acordes, asignando nuevas notas a los espacios en los cuales se le pida que lo haga. La principal diferencia es que no cuenta con un fichero de notas posibles como el módulo de armonización con los acordes, sino que utiliza el valor numérico de la nota directamente. 
+
+\begin{figure}
+	\centering
+	\begin{verbatim}
+		1 { freebeatfigure(V,N,1,FB) : N=VL..VH } 1 :- freebeat(V,FB),
+		                 voice_limit_low(V,VL), voice_limit_high(V,VH).
+	\end{verbatim}
+	\label{fig:note-assig}
+	\caption{Asignación de nuevas notas a espacios en blanco, respetando la tesitura especificada}
+\end{figure}
+
+Para limitar el espacio de búsqueda, estos valores son únicamente los comprendidos entre los límites definidos por la tesitura del instrumento de la voz que se esta está completando. De manera parecida al fichero de definición de los acordes de cada modo, se han definido las tesituras de algunas de las voces corales más frecuentes junto con algunos instrumentos como el violín o el violonchelo, así mismo este fichero puede ser fácilmente editado por el usuario para incluír nuevas tesituras o instrumentos.
+
+\begin{figure}
+	\centering
 	\begin{tabular}{ | l | c | c | }
 		\hline
 		Tesitura & Nota mínima & Nota máxima \\ \hline \hline
@@ -369,46 +153,220 @@ En el módulo de armonización se ha incluido un nuevo archivo similar al de aco
 		Mezzo-Soprano & 57 & 81 \\ \hline
 		Soprano & 60 & 84 \\ \hline
 	\end{tabular}
-\end{center}
+	\label{fig:tesiturae}
+	\caption{Relación de tesituras corales y sus límites inferior y superior}
+\end{figure}
 
-Además el módulo de armonización tiene en cuenta los nuevos hechos \texttt{figure} y los utiliza para generar correctamente las secciones a completar. Es decir, si se especifica un patrón en los tramos a rellenar, las nuevas notas generadas seguirán dicho patrón. Para las voces nuevas donde no existen dichos patrones se asigna la nota más breve ya que crear patrones rítmicos es muy costoso computacionalmente se estudia la posibilidad de crearlos mediante un postprocesado en el módulo de salida en futuras iteraciones. Se ha eliminado la constante \texttt{extra\_voices} al funcionar de un modo diferente la inclusión de voces nuevas en la partitura. Para este mismo módulo se corrigió el archivo de preferencias de enlace de sextas, ahora separado del archivo de preferencias melódicas. Por último se ha adaptado la salida para trabjar con un nuevo predicado \texttt{out\_figure(voz, nota, duración, pulso)} que conjuga las notas con las figuras para producir un unico predicado conjunto con toda la información necesaria.
+Estas nuevas notas se transforman a grados y octavas como ya se hace con las notas de entrada del módulo de armonización para poder ser cotejadas contra la armonía especificada por el módulo anterior. Del mismo modo que en el módulo de armonización se cuantifican y categorizan los errores porducidos por estas nuevas notas en relación a la armonía establecida y, minimizándolos, se buscan los mejores resultados. Gracias a los hechos lógicos \texttt{figure} de la entrada, el módulo de completado reconstruye las figuras originales.
 
-Al fijar determinados acordes en la entrada, los tiempos de armonización en los que se debería asignar un acorde, debido a como funciona la regla de asignación de estos, no asigna uno nuevo, funcionando como se espera.
+\begin{figure}
+	\centering
+	\begin{verbatim}
+		octave_jump(V,B1,B2) :- ex_note(V,N1,B1), ex_note(V,N2,B2),
+		                     (B1+1) == B2, N2 > (N1+12), beat(B1+1).
+		octave_jump(V,B1,B2) :- ex_note(V,N1,B1), ex_note(V,N2,B2),
+		                     (B1+1) == B2, N2 < (N1-12), beat(B1+1).
+		:- octave_jump(_,_,_).
+	\end{verbatim}
+	\label{fig:octave-jump}
+	\caption{Definición de salto de octava para las notas generadas y restricción que lo prohibe}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{imagenes/incomplete_score.png}
+	\includegraphics[width=0.4\linewidth]{imagenes/incomplete_facts.png}
+	\includegraphics[width=0.6\linewidth]{imagenes/completed_score.png}
+	\caption{Partitura armonizada con un tiempo incompleto y resultado del completado}
+	\label{fig:simple-piece-complete}
+\end{figure}
+
+Repitiendo el proceso anterior, el pipeline procesa la salida de clasp y la almacena en las clases de almacenamiento correspondientes. Tras esto muestra las mejores soluciones de completado al usuario y permite escoger una de ellas. Al hacerlo los objetos de almacenamiento generados se pasan al módulo de salida para su representación final.
+
+\subsection{Módulos de Preferencias}
+Se han especificado, a mayores de los módulos principales ya descritos, dos submódulos adicionales que mejoran los resultados del módulo completador de partituras.
+
+El primero es un módulo de preferncias melódicas. Sirve para compensar la ausencia de composición melódica en haspie creando partituras más cantables o melódicas. Contiene reglas que:
+\begin{itemize}
+	\item Definen la tendencia de una voz ya existente en la partitura y permiten al completador de partituras componer de forma que se imite dicha tendencia
+	\item Miden los saltos melódicos entre las notas de una misma voz e intentan acortarlos haciendo que la progresión melódica sea más cantable.
+\end{itemize}
+
+Para la tendencia, se mide si en un intervalo determinado, el valor de notas consecutivas crece o decrece y mediante una regla que establece el tipo de tendencia (semejante u opuesta) al procesar multiples voces al mismo tiempo. Por otra parte, para los saltos melódicos se crean nuevos predicados \texttt{melodic\_jump} teniendo en cuenta la diferencia de los valores de notas consecutivas en una misma voz.
+
+\begin{figure} [h]
+	\centering
+	\begin{verbatim}
+		melodic_jump(V,J,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2),
+		                       (B1+1) == B2, beat(B1+1), J = #abs(N1-N2). 
+	\end{verbatim}
+	\label{fig:melodic-jump}
+	\caption{Definición de salto melódico}
+\end{figure}
+
+
+El segundo módulo detecta progresiones de un determinado tipo de acordes (inversiones de cuarta y sexta). Este tipo de progresión es muy común en música coral, y por tanto, los resultados usando este módulo con piezas corales resultan mucho más realistas. Para esto se realiza una armonización a tiempo, es decir, se asigna un acorde a cada instante de la pieza y se intentan detectar estas progresiones concretas de acordes con el fin de crearlas o continuarlas si ya existen con la ayuda de las nuevas notas generadas. Es debido a esta armonización a tiempo que este módulo es tremendamente pesado computacionalmente.
+
+\subsection{Ficheros de Configuración}
+Las reglas de optimización, ya sean maximización o minimización, presentes en los módulos y submódulos ASP asignan un peso y un orden de relevancia a los predicados que se cuantifican de cara a la optimización. Este peso por defecto puede ser sobreescrito mediante ficheros de configuración. Cambiando el peso de cada hecho se altera como de importante es la aparición de cada uno de esos hechos, mientras que cambiando el orden de relavancia se determina como se realizará el proceso de optimización al completo.
+Se presenta un fichero de configuración de ejemplo comentado para que el usuario pueda cambiar el funcionamiento de la herramienta a su antojo, produciendo cambios drásticos en el estilo con un esfuerzo mínimo y permitiendo almacenar estas preferencias en un fichero que determine su estilo personal de composición.
+
+\subsection{Clases de Almacenamiento}
+\label{subsec:store_classes}
+Para poder almacenar temporalmente los resultados de los dos submódulos ASP de haspie se diseñaron e implementaron clases de almacenamiento que se corresponden con los diferentes hechos lógicos que los módulos ofrecen en su salida. El diagrama de clases de estos objetos de almacenamiento puede consultarse en el anexo \ref{chap:diagrams}. Se dividen en dos jerarquías, una para los resultados del módulo de armonización y otra, considerablemente más grande para el módulo de completado de partituras. 
+En cuanto al módulo de armonización, éste cuenta con las siguiente clases:
+\begin{itemize}
+	\item \texttt{\textbf{ClaspChords:}} Almacena todas las solcuiones del armonizador, tanto en texto plano como en un array de objetos \texttt{ChordSolution}. Posee un método para transformar la salida de clasp a los diferentes objetos de la jerarquía.
+	\item \texttt{\textbf{ChordSolution:}} Contiene dos listas ordenadas, una de objetos \texttt{Error} y otra de objetos \texttt{Chord}, y un valor de optimización que mide como de buena es la solución.
+	\item \texttt{\textbf{Error:}} Representa una nota errónea en la partitura, especificando voz y tiempo para ubicarla en ella, así como el grado musical que produce el error.
+	\item \texttt{\textbf{Chord:}} Representa un acorde en la pieza, especificando el nombre del mismo y el tiempo al que ha sido asignado.
+\end{itemize}
+
+Las clases para almacenar la información de la salida del módulo de completado de partituras siguen una estructura similar al de armonización, pero la jerarquía es algo más compleja al tener mucha más información que representar:
+\begin{itemize}
+	\item \texttt{\textbf{ClaspResult:}} Funciona de modo muy similar a \texttt{ClaspChords}. Almacena todas las solcuiones del completador de partituras, tanto en texto plano como en un array de objetos \texttt{HaspSolution}. Posee un método para transformar la salida de clasp a los diferentes objetos de la jerarquía. 
+	\item \texttt{\textbf{HaspSolution:}} De forma parecida a \texttt{ChordSolution}, almacena los diferentes objetos de la solución. La principal diferencia radica en que hace uso de un diccionario de datos, siendo los índices cada una de las voces de la pieza y almacenando en la entrada de cada índice una lista ordenada de los diferentes objetos de la partitura.
+	\item \texttt{\textbf{Error:}} Funciona igual que \texttt{Error} en la jerarquía de clases del módulo de armonización. Representa una nota errónea en la partitura, especificando voz y tiempo para ubicarla en ella, así como el grado musical que produce el error.
+	\item \texttt{\textbf{PassingNote:}} Nota errónea que cumple unas características particulares, como su ubicación en un tiempo débil de la partitura. Especifica la voz y el tiempo en el que se produce, de modo similar a \texttt{Error}.
+	\item \texttt{\textbf{Chord:}} Similar a \texttt{Chord} en la jerarquía de clases del módulo de armonización. Representa un acorde en la pieza, especificando el nombre del mismo y el tiempo al que ha sido asignado.
+	\item \texttt{\textbf{VoiceType:}} Indica el nombre asignado a una voz, es decir, el instrumento que la interpreta.
+	\item \texttt{\textbf{Note:}} Especifica la voz y tiempo en los que suena la nota, así como su valor numérico y duración.
+	\item \texttt{\textbf{Rest:}} Especifica la voz y tiempo en los que se produce el silencio así como su duración.
+	\item \texttt{\textbf{Measure:}} Indica la métrica del y cantidad de notas del tipo de compás así como el tiempo en el que aparece. Se interpreta que el cambio de tipo de compás se produce en todas las voces a la vez.
+	\item \texttt{\textbf{VoiceChord:}} Representa un conjunto de notas que suenan en un mismo tiempo de una sola voz, produciendo un acorde (Por ejemplo en instrumentos polifónicos como el piano o la guitarra). Contiene un array de objetos \texttt{Note} ordenados por su valor numérico, así como la voz y el tiempo en el que se produce junto con su duración.
+\end{itemize}
+
+
+\subsection{Salida}
+El último módulo al que llama al pipeline. Haciendo uso de los objetos de representación interna, el módulo de salida genera un fichero en el formato deseado por el usuario. 
+Para la implementación de este módulo se ha hecho uso de la librería Music21\footnote{http://web.mit.edu/music21/} desarrollada por miembros del MIT. Se traduce la representación interna de la partitura que el pipeline pasa al módulo de salida a la representación propia de Music21 para después con una simple llamada, reproducir o almacenar el resultado.
+En este proceso de conversión, no solo se traducen las notas, voces y anotaciones de compás al formato propio de Music21, sino que además se combinan algunos de ellos para enriquecer la salida.
+\begin{itemize}
+	\item Los acordes, especificados en forma de grado de la tonalidad, se traducen al nombre y tipo de acorde correspondiente para ser anotados en la partitura
+	\item Los errores en tiempos fuertes se marcan en la partitura coloreando en rojo las notas que los contienen
+	\item Los errores en tiempos débiles se marcan en azul en la partitura indicando que son notas de paso o adornos
+\end{itemize}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\linewidth]{imagenes/example_final_score.png}
+	\caption{Partitura de ejemplo armonizada y con notas de paso coloreadas en azul}
+	\label{fig:simple-piece-final}
+\end{figure}
+
+
+\section{Iteraciones}
+Se detalla un breve resumen de cada una de las iteraciones de desarrollo del proyecto, indicando cuales fueron los progresos, cambios y refactorizaciones en cada una de ellas.
+
+\subsection{Iteración 1}
+\label{subsec:first_iteration}
+Se analizaron y escogieron las diferentes tecnologías que se usarían en cada uno de los módulos de la herramienta. 
+Como software de entrada para las partituras se escogió MuseScore 2, principalmente por ser \textit{opensource} y por su sencillez. Para el formato de entrada y salida, se compararon las propiedades de MIDI, LilyPond y MusicXML. Los tres formatos ofrecen posibilidades de edición, aunque cada uno sirve a un propósito diferente. MusicXML se presentó como el formato idóneo para la tarea, ya que al ser una extensión de XML, está orientado a que una máquina pueda procesarlo y crear una estructura en memoria con toda la información que necesita para poder extraer los datos de la partitura. Además, la implementación del \textit{parser} para un lenguaje etiquetado como XML es un problema convencional y relativamente sencillo.
+
+Para el procesador de XML a hechos ASP se optó por las bibliotecas Flex y Bison para C. EL principal motivo para ello fue que fueron las tecnologías empleadas en la asignatura Procesamiento de Lenguajes y durante una de las prácticas de la misma se desarrolló una primera versión de este mismo procesador que ahora se usa en el proyecto. Además Flex y Bison garantizan velocidad y eficiencia en el procesado. Por último pero no menos importante, y ya que el proyecto se está enfocando desde un punto de vista de desarrollo ágil, actualizar los ficheros de código de Flex y Bison es realmente sencillo, lo cual permitiría añadir nuevos elementos a reconocer cuando sea necesario.
+
+Se procedió a desarrollar una versión actualizada de dicho parser. Las pruebas realizadas al \textit{parser} revelaron que existía un problema de análisis al no poder verificar de forma sencilla que cada etiqueta se cerraba de modo correcto, es decir, que el nombre de la etiqueta que cierra un bloque sea el mismo del que la abrió, se implementó una pila en C para esta tarea. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{imagenes/arquitectura_inicial.pdf}
+	\caption{Diagrama del planteamiento inicial de la arquitectura del sistema}
+	\label{fig:arquitectura_inicial}
+\end{figure}
+
+\subsection{Iteración 2}
+\label{sec:second_iteration}
+Se modificó el procesador de MXML a ASP y se incluyó una opción para subdividir la partitura de forma automática en base a la nota más breve de la partitura o forzar toda la partitura a un solo tipo de figura omitiendo aquellas figuras de menor duración.
+
+En esta primera aproximación, se crearon las primeras reglas del módulo de armonización, que realizan una asignación acorde-unidad rítmica en base a las notas presentes para un instante dado en cada voz. Se crearon dos ficheros a mayores que especifican los acordes a considerar por la herramienta, según si la armonización se realiza en modo mayor o menor. 
+
+A mayores se incluyó como parte de esta iteración, el diseño e implementación de un pipeline en python que automatiza las llamadas al procesador MXML a hechos ASP y al módulo de armonización. En este primer prototipo se implementó una pequeña funcionalidad de interpretación de la salida del módulo ASP a un vector de soluciones.
+
+
+\subsection{Iteración 3}
+\label{subsec:third_iteration}
+Se modificó el \textit{parser} substancialmente ya que este imprimía a un fichero según procesaba las notas. Esto no planteaba problema alguno si la subdivisión se especificaba de antemano mediante el parámetro correspondiente, pero sí que resultaba complicado mantener esta aproximación si la unidad de subdivisión debía calcularse al mismo tiempo que se procesaba la partitura en MusicXML. Se plantearon dos soluciones: o bien incluir en el pipeline en python un análisis previo a la conversión de MXML a hechos en ASP que dedujese cual era la nota de menor longitud y la usase como parámetro en la llamada al \textit{parser} o bien se modificaba el comportamiento del anterior para realizar simultáneamente ambas tareas. 
+
+Se optó por la segunda opción por motivos de coherencia con el sistema, es decir, no incluir funcionalidad innecesaria y replicada en el pipeline, cuya tarea es simplemente manejar las entradas y salidas de los diferentes módulos, y por motivos de eficiencia, ya que como se ha mencionado no hay necesidad de procesar el mismo fichero dos veces, siendo una de ellas en un lenguaje interpretado en vez de compilado, lo que añadiría un sobrecoste temporal evitable.
+
+Los cambios implementados en el \textit{parser} conllevaron incluir un nuevo tipo de dato nota para almacenar la información de las notas de la partitura y una nueva pila que contuviese las notas extraídas del MXML.
+
+En el módulo de armonización se incluyó una nueva constante que indica la longitud del intervalo de tiempo mínimo de análisis armónico horizontal. Se modificaron, por tanto, las reglas de asignación de acordes para poder usar el intervalo especificado. Además se suavizaron las restricciones que podaban las soluciones erróneas y en vez de ello, generan un nuevo predicado error(voz, grado, tiempo) que indica los grados erróneos presentes en la partitura que no encajan con el acorde asignado para la solución. 
+
+ Se han implementado en el pipeline, con vistas al futuro de módulo de salida, una serie de clases para procesar y almacenar los resultados de clasp y poder devolverlos más tarde en el formato más conveniente. Concretamente, en esta iteración se implementaron las primeras versiones de \texttt{Error}, \texttt{Chord}, \texttt{HaspSolution} y \texttt{ClaspResult}.
+
+\subsection{Iteración 4}
+\label{sec:fourth_iteration}
+El módulo ASP se ha aumentado para incluir generación de notas en un número de voces adicionales que puede ser especificado por parámetro. Además se refactorizaron algunas reglas y se creó un fichero de conversiones encargado de traducir valores de notas a grados, octavas y viceversa. Para la generación de notas en las nuevas voces se ha impuesto una única restricción fuerte: que dos notas consecutivas no realicen un salto melódico de más de una octava.
+
+Se optó por incorporar \textbf{Music21} al módulo de salida. Principalmente por la cantidad de formatos con los que puede trabajar, tanto en entrada como en salida, y aunque lo ideal será exportar un fichero MusicXML, la idea de poder generar PDF, MIDI o Lilypond resulta más que atractiva. Este módulo toma un objeto \texttt{HaspSolution} y, previa transformación a la representación interna de Music21, lo representa en el formato adecuado para ser reproducido o almacenado.  
+
+En el \textit{pipeline} se ha incluyó la opción de especificar el número de voces adicionales que deben ser añadidas y otra opción para especificar el formato de salida. A mayores, se incluyó una llamada al módulo de salida en el pipeline.
+
+\subsection{Iteración 5}
+\label{subsec:fifth_iteration}
+En el procesador de MusicXML a hechos lógicos ASP se han incluido dos nuevas funciones principales: 
+\begin{itemize}
+	\item \textbf{Análisis de medida de compás:} Determinar cuantas figuras de qué longitud posee el tipo de compás base de la pieza.
+	\item \textbf{Distincisón de tipos de silencios:} Diferenciar silencios completables de aquellos que deben ser respetados como silencios.
+\end{itemize}
+
+Para la métrica del compás, se implementó en el procesador la capacidad de identificar los diferentes tipos de compases así como el tiempo en el que ocurren, aunque por comodidad y sencillez, se ha asumido que un cambio rítmico en el compás debe ocurrir en todas las voces a la vez. El tipo de compás además es modificado según la nota mñas breve de la partitura para que no existan problemas a la hora de comparar la cantidad y el tipo de figuras del compás.
+
+Para poder especificar en el editor de partituras silencios ``verdaderos'' y silencios completables se optó por una solución relativamente sencilla, no sólo de identificar por el \textit{parser} si no también fácil de usar por el usuario final de la herramienta. Mediante la notación de letras de la pieza, se pueden indicar en cada voz los intervalos de tiempo en los cuales los silencios deben ser tratados como completables. Para ello solo hace falta escribir los símbolos \texttt{[} y \texttt{]} al principio y final del intervalo respectivamente. Para poder detectar este intervalo se incorporó un tipo de dato cola genérica al procesador para poder interpretar bien el momento de inicio y de cierre de estos símbolos y marcar así los intervalos a completar de manera adecuada.
+
+En el módulo de armonización se han definido acordemente varios predicados nuevos, que representan los tiempos completables de cada voz. A mayores de crearon reglas para identificar la subdivisión de los compases con el fin de inferir los tiempos fuertes y débiles de cada compás en la partitura. Gracias a esto se han creado predicados que matizan los diferentes errores de la partitura según el tipo de tiempo en el que ocurren los errores de la pieza y permite minimizarlos con diferentes prioridad (a más fortaleza de tiempo, más prioridad). Por último y para dar más flexibilidad en la búsqueda de la armonización correcta se ha incluído el acorde de dominante séptima (V7) en los modos mayor y menor.
+
+Se ha incluido una clase de almacenamiento \texttt{Rest} para diferenciarla de \texttt{Note}. Ya que las entradas del diccionario que representa las diferentes voces de la partitura puede almacenar cualquier combinación de tipos de elementos, se estableció una convención para poder almacenarlos e iterar sobre ellos sin problema.
+
+El módulo de salida se ha refinado para representar mejor las notas incluyendo información del tipo de compás, clave y duración de las figuras. Además se colorean en rojo los errores detectados y se anotan en los tiempos adecuados los acordes inferidos por el módulo ASP.
+
+Por último, el pipeline cuenta con una nueva opción que permite especificar un tiempo máximo de búsqueda del óptimo en el módulo ASP, ya que para piezas largas, el espacio de búsqueda crece muchísimo y es necesario poder limitar el tiempo de ejecución.
+
+\subsection{Iteración 6}
+\label{sec:sixth_iteration}
+
+Para facilitar la entrada de silencios que representan huecos completables por el módulo ASP se cambió el enfoque, y se abandonó el delimitado de secciones completables con corchetes en las letras de la canción por suponer algunos problemas al no poder ubicar dichas letras en tiempos en los que haya un silencio, por claridad y por no interferir con las posibles letras de una partitura real no creada ni modificada \textit{ad-hoc} para el programa. MusicXML permite marcar elementos de la partitura como no visibles, esto solo afecta a la hora de imprimir en papel dicha partitura y a nivel musical no interfiere con ningún elemento. Además, la visibilidad de una nota o silencio puede ser fácilmente alterada en cualquier editor de partituras desmarcando una casilla al clicar sobre dicho elemento, lo cual facilita mucho el marcado de estos tiempos completables. Esto se reflejó en el procesador de MusicXML a hechos lógicos, que en vez de contemplar los dos símbolos utilizados anteriormente, ahora solo tiene que comprobar la visibilidad de un elemento para determinar si asignar un tiempo completable a dicho tiempo.
+
+Para refinar la subdivisión en tiempos débiles y fuertes, se reimplementaron tanto en el módulo ASP como en el procesador de hechos lógicos a MusicXML, esto fue debido a que no es sencillo establecer dichos tiempos aritméticamente sólo teniendo en cuenta la cantidad de notas del compás, sino que también se ha de tener en cuenta el tipo y subdivisión del compás con respecto a la nota de referencia usada para armonizar. Para esto es importante no normalizar el compás leído en el fichero XML y generar nuevos predicados indicando los valores del compás sin modificar. En el módulo ASP se ha incluido, de modo similar a los acordes, una tabla de tipos de compás y su subdivisión teniendo en cuenta el compás y la longitud del tiempo de armonización. Se han incluido en dicha tabla los compases más habituales. 
+
+Se creó el sub-módulo ASP de preferencias melódicas que busca alcanzar una optimización mayor a la hora de generar nuevas voces o cubrir tiempos completables con algunas mejoras que atienden, principalmente, a la secuencia de notas de una misma voz. Se incluyó también en este sub-módulo de preferencias melódicas la detección de patrones de secuencias de sextas.
+
+Se ha descartado la detección de apoyaturas con el fin de no contemplarlas como errores por un motivo similar, al uniformizar la longitud de las figuras de la partitura, no es posible detectarlas bien, ya que una de las características de las apoyaturas es que ``roban'' brevemente el tiempo fuerte a una nota representativa del acorde de la armonía.
+
+\subsection{Iteración 7}
+\label{subsec:seventh_iteration}
+
+Se incluyeron en el \textit{parser} nuevos \textit{tokens} y reglas en la gramática para poder extraer metadatos y otra información de la partitura y exportarlos a un fichero temporal usado por el módulo de salida. Los diferentes datos extraídos para cada partitura son:
+\begin{itemize}
+	\item \textbf{title:} Título
+	\item \textbf{composer:} Compositor
+	\item \textbf{base\_note:} Longitud de la nota más breve presente
+	\item \textbf{key\_name:} Nombre de la clave en la que se armonizará la pieza
+	\item \textbf{mode:} Modo (mayor o menor)
+	\item \textbf{last\_voice:} Número que identifica cual es la última voz presente
+\end{itemize}
+
+El procesador extrae una nueva pieza de información de la partitura, conocida como \texttt{figure}. Figure es un hecho lógico que describe la duración de una figura para un pulso de una voz dada. De este modo, pese a subdividir las notas a la longitud de la más breve para el análisis, se pueden recomponer en la salida fidedignamente. Se han incluido reglas adicionales para reconocer los acordes presentes en la partitura y estos se plasman en el fichero de salida.
+
+En el módulo de armonización se ha incluido un nuevo archivo similar al de acordes o tipos de compases que describe las diferentes tesituras de las voces presentes en la partitura. Este documento es ampliable al igual que los mencionados para incluir nuevos instrumentos o tesituras. Se han definido los principales tipos de voz coral (tanto masculinos como femeninos) y sus rangos de notas más frecuentes. 
+
+Además el módulo de armonización se añadieron reglas para tener en cuenta los nuevos hechos \texttt{figure} y utilizarlos para generar los patrones rítmicos adecuados en las secciones a completar. Para este mismo módulo se corrigió el archivo de preferencias de enlace de sextas, ahora separado del archivo de preferencias melódicas. Por último se ha adaptado la salida para trabjar con un nuevo hecho lógico que conjuga las notas con las figuras para producir un unico hechoconjunto con toda la información necesaria.
 
 Se ha definido una nueva clase \texttt{VoiceChord}, que representa un acorde realizado por un solo instrumento polifónico ya que los este tipo de acordes producían fallos en la anterior iteración. Para su correcto funcionamiento se modificó la pequeña rutina de transformación de hechos lógicos de la salida del módulo de armonización para tener en cuenta la posibilidad de que existiesen varias notas en un mismo pulso de una voz y agregarlas en un objeto VoiceChord.
 
-En el módulo de salida se han corregido algunos errores encontrados en las iteraciones anteriores y haciendo uso de los nuevos predicados \texttt{figure} y \texttt{out\_figure} se puede reconstruir la partitura mucho mejor que antes. Además el módulo de salida tiene en cuenta y representa correctamente el nuevo elemento \texttt{VoiceChord} y la partitura además se escribe en la clave especificada o detectada por el procesador. Por último, se ha incluido una nueva funcionalidad para leer del archivo de temporal de configuracion de la partitura los metadatos de título y compositor, junto con los nombres de los instrumentos de cada pentagrama, que son asignados a cada una de las voces de la partitura de salida.
+En el módulo de salida se han corregido algunos errores encontrados en las iteraciones anteriores y haciendo uso de los nuevos hechos lógicos de la iteración, se puede reconstruir la partitura mucho mejor que antes. Además el módulo de salida tiene en cuenta y representa correctamente el nuevo elemento \texttt{VoiceChord} y en la partitura además se escribe en la clave especificada o detectada por el procesador. Por último, se ha incluido una nueva funcionalidad para leer del archivo de temporal de configuracion de la partitura los metadatos de título y compositor, junto con los nombres de los instrumentos de cada pentagrama, que son asignados a cada una de las voces de la partitura de salida.
 
-Los nuevos datos extraídos por el procesador son leídos desde el pipeline y son pasados a los subsiguientes módulos de armonización y salida respectivamente. Se ha modificado el parámetro -v del pipeline y su efecto en el resto de módulos. En vez de especificar una cantidad de voces a añadir, toma como mínimo un argumento indicando la tesitura (por nombre) o el rango de notas para las nuevas voces. El pipeline se encarga de crear, a partir de los datos de este parámetro -v un nuevo fichero temporal \texttt{extra\_voices.lp} que será incluido en la llamada del módulo de armonización para que dichas nuevas voces se tengan en cuenta. Las voces se identifican mediante un número tal y como se hacía en anteriores iteraciones pero se añade un \texttt{voice\_type(voz,tipo)} que da un nombre de una tesitura a cada voz (por defecto piano al ser la más extensa y común) y se añade un predicado \texttt{voice\_limit\_low(voz, límite)} que establece el límite de valor de nota inferior y otro \texttt{voice\_limit\_high(voz, límite)} que hace lo mismo para el límite superior. Estos predicados son opcionales y no aparecen si el valor correspondiente a ellos es cero o se especifica un nombre de tesitura, obviamente para que los límites puedan ser asignados correctamente, el nombre de la tesitura debe figurar en el archivo \texttt{voice\_types.lp}. Se incluyó una opción -k que permite especificar manualmente la clave de la partitura mediante la letra de nota base de la escala en la que se quiere armonizar la pieza. De no ser especificada esta se calcula automáticamente, como ya sucedía con el parámetro -d usado para especificar la longitud fraccionaria de la nota en la cual se debían subdividir todas las de la partitura. Cuenta además con una opción nueva -6 que permite incluir la preferencia de los enlaces de sextas, que pese a estar corregida, sigue siendo muy costosa por tener que realizar una armonización a tiempo independientemente del intervalo de armonización fijado, este archivo de preferencias ya se separó del de preferencias melódicas en la iteración anterior, pero fue en esta cuando se incluyó en el pipeline una opción para activarlo.
+Los nuevos datos extraídos por el procesador son leídos desde el pipeline y son pasados a los subsiguientes módulos de armonización y salida respectivamente. Se ha modificado el parámetro -v del pipeline y su efecto en el resto de módulos. En vez de especificar una cantidad de voces a añadir, toma como mínimo un argumento indicando la tesitura (por nombre) o el rango de notas para las nuevas voces. El pipeline se encarga de crear, a partir de los datos de este parámetro -v un nuevo fichero temporal \texttt{extra\_voices.lp} que será incluido en la llamada del módulo de armonización para que dichas nuevas voces se tengan en cuenta. Se incluyó una opción que permite especificar manualmente la clave de la partitura mediante la letra de nota base de la escala en la que se quiere armonizar la pieza. De no ser especificada esta se calcula automáticamente. Cuenta además con otra opción que permite incluir la preferencia de los enlaces de sextas.
 
-\subsection{Pruebas}
-\label{subsec:seventh_iteration_tests}
-En el módulo de armonización se verificó que las notas generadas en los huecos a completar estuviesen comprendidas entre las de la tesitura especificada. En la salida de este módulo se pudo comprobar que no solo las figuras generadas se combinaban correctamente con las notas generadas de modo similar a prototipos anteriores en predicados \texttt{out\_figure} si no que además las notas de entrada que no tenían que ser modificadas también lo hacían, facilitando la reconstrucción al módulo de salida.
-
-La clase \texttt{VoiceChord} funcionó como se esperaba, pero durante las pruebas de la misma se encontraron problemas con las voces de instrumentos con varios pentagramas, ya que MusicXML no las organiza en diferentes voces sino en diferentes etiquetas \texttt{staff} dentro de una misma voz. De modo similar a la anterior iteración, este error se encontró al empezar a utilizar instrumentos no solo polifónicos si no con varios pentagramas asignados a un sólo instrumento, error arrastrado del enfoque inicial de utilizar la herramienta para música coral.
-
-El módulo de salida funcionó correctamente, pero reveló que en algún punto del proceso los valores de ciertas notas con alteraciones no se estaban calculando correctamente, es decir ciertas notas con sostenido aparecían como notas sin alterar, produciendo errores en la armonía.
-
-En el pipeline se probaron exhaustivamente las diferentes opciones incluidas, la inclusión de nuevas voces (opción -v) fue la que más problemas planteó pero se corrigieron durante este ciclo de pruebas. La opción -k no presentó mayor complicación y funcionó correctamente desde el principio, modificando la clave de armonización a la especificada en la opción o fallando si el valor no era correcto. La nueva opción -6 para activar las preferencias referentes a los enlaces de sextas funcionó correctamente pese a que su uso producía una gran carga computacional y ralentizaba demasiado el proceso de completado de partituras incluso en tramos pequeños.
-
-\subsection{Resultados}
-\label{subsec:seventh_iteration_results}
-En término general, salvando los errores encontrados durante estas pruebas, se completaron los objetivos planteados para esta iteración y dejando un prototipo funcional. No obstante este prototipo presentaba un gran problema y es que al pedirle completar voces enteras especificando una tesitura, tardaba demasiado en ofrecer soluciones. Manipulando el valor del \textit{timeout} y con diferentes métodos de depuración del módulo ASP se comprobó que realmente parecía quedarse colgado buscando soluciones. Este resultado era inaceptable así que se buscó una refactorización del código que produjese buenos resultados temporales.
-
-Se llegó a la conclusión de que había dos factores ralentizando el proceso:
+Tras probar el prototipo de esta iteración se llegó a la conclusión de que había dos factores ralentizando el proceso:
 \begin{itemize}
 	\item La armonización se realizaba junto con el completado de voces y espacios en blanco, con lo cual ASP debía generar todas las posibles combinaciones de notas para todas las posibles armonizaciones.
 	\item La generación de notas se calculaba para cualquier rango y después se restringía para la tesitura correcta en vez de generar notas entre los límites de la tesitura. 
 \end{itemize}
 
-\section{Iteración 8}
-\label{sec:eighth_iteration}
-\subsection{Agenda de Iteración}
-\label{subsec:eighth_iteration_backlog}
-La última iteración que cierra el ciclo de desarrollo busca corregir los problemas encontrados durante las pruebas de la anterior iteración, al ofrecer unos resultados relativamente malos en cuanto a tiempo de ejecución al incorporar secciones a completar en la partitura. Además tiene como objetivo incluir la posibilidad del uso de ficheros de configuración que alteren el comportamiento del módulo de armonización ajustando los diferentes pesos de las preferencias a maximizar o minimizar. Por último, y para comodidad del usuario es necesario mostrar solo los N mejores resultados, permitiendo decidir cuantos resultados desea obtener como máximo.
-
-\subsection{Trabajo}
-\label{subsec:eighth_iteration_work}
+\subsection{Iteración 8}
+\label{subsec:eighth_iteration}
 Se tomó la decisión de dividir el módulo de armonización en dos sub-módulos ASP:
 \begin{itemize}
 	\item \textbf{Armonización:} Busca fijar una armonización ofreciendo al usuario diferentes soluciones ordenadas según unos valores de optimización.
@@ -417,39 +375,16 @@ Se tomó la decisión de dividir el módulo de armonización en dos sub-módulos
 
 Se realizaron cambios menores en ambas partes para adecuarlas a sus nuevas tareas, se eliminaron muchos componentes de salida y ciertas reglas de generación de predicados ahora inútiles en la asignación de acordes y se revisó el módulo de generación de notas para eliminar todo aquello referente a la asignación de acordes. Además en el módulo de generación de notas se restringió la generación de las mismas a aquellas posibles dentro de la tesitura de la voz.
 
-Se diferenciaron los predicados \texttt{freebeat}, generados por el procesador y por tanto con un \texttt{figure} relacionado, de los pulsos a rellenar de las voces nuevas. Estos \texttt{newvoicebeat(voz, pulso)} se utilizan para realizar la asignación de los \texttt{newvoicefigure(voz, nota, duración, pulso)}, de modo que ya se cree la figura de salida desde el principio. No obstante para realizar las restricciones correspondientes, a partir de estos \texttt{newvoicefigure} se infieren después predicados como \texttt{ex\_note} o \texttt{ex\_octave} para poder ser analizados al igual que las nuevas notas asignadas a los \texttt{freebeat}. Esto atiende a una cuestión de claridad para evitar confusiones a la hora de analizar los resultados.
+Se diferenciaron los hechos \texttt{freebeat}, generados por el procesador y por tanto con un \texttt{figure} relacionado, de los pulsos a rellenar de las voces nuevas. Estos \texttt{newvoicebeat} se utilizan para realizar la asignación de las nuevas figuras y notas, de modo que ya se cree la figura de salida desde el principio. 
 	
-Para posibilitar la configuración de pesos y orden de optimización en los diferentes módulos y archivos de preferencias se cambiaron los valores constantes de las reglas de optimización por nombres de valores especificados en cada uno de los ficheros para que sirvan de valores por defecto. Investigando sobre la precedencia de los valores asignados a constantes en ASP se descubrió que no se puede redefinir valores constantes y que el primer valor que toma es el usado. Esto se aplica a ficheros de configuración y los parámetros pasados por línea de comandos. Teniendo esto en mente, se creó un fichero de configuración \texttt{sample.lp} en la nueva carpeta pref, destinada a almacenar los diferentes ficheros de configuración de preferencias. Si este fichero se incluye en la llamada a clingo antes que cualquier otro fichero, los valores definidos en él serán los que se usen en el proceso de armonización y completado. Si alguno de los valores se borra en este fichero, se usará el valor por defecto. Además para poder trabajar con los módulos de preferencias opcionales que también contienen pesos y orden de optimización, se modificó el orden en el que estos ficheros se incluyen en la llamada a clingo.
+Para posibilitar la configuración de pesos y orden de optimización en los diferentes módulos y archivos de preferencias se cambiaron los valores constantes de las reglas de optimización por nombres de valores especificados en cada uno de los ficheros para que sirvan de valores por defecto. Se investigó sobre el orden de precedencia de los valores asignados a constantes en ASP y se descubrió que no se puede redefinir valores constantes y que el primer valor que toma es el usado. Esto se aplica a ficheros de configuración y los parámetros pasados por línea de comandos. Teniendo esto en mente, se creó un fichero de configuración \texttt{sample.lp} en la nueva carpeta pref, destinada a almacenar los diferentes ficheros de configuración de preferencias. Si este fichero se incluye en la llamada a clingo antes que cualquier otro fichero, los valores definidos en él serán los que se usen en el proceso de armonización y completado. Si alguno de los valores se borra en este fichero, se usará el valor por defecto. Además para poder trabajar con los módulos de preferencias opcionales que también contienen pesos y orden de optimización, se modificó el orden en el que estos ficheros se incluyen en la llamada a clingo.
 
-Debido a estos cambios se modificaron las clases de almacenamiento para reflejar los resultados únicamente armonización. De modo paralelo a las clases de almacenamiento \texttt{ClaspResult} y \texttt{HaspSolution} se crearon \texttt{ClaspChords} y \texttt{ChordSolution}. \texttt{ClaspChords} Realiza la transformación de los predicados \texttt{chord} de cada una de las soluciones de la salida del módulo de armonización a objetos \texttt{Chord} y los agrega en un objeto \texttt{ChordSolution} que a su vez se almacenan en un vector de soluciones, cada solución además contiene sus valores de optimización. De este modo mediante una representación textual de \texttt{ClaspChords} se pueden visualizar las soluciones calculadas y ofrecérselas de modo amigable al usuario.
+Debido a estos cambios se modificaron las clases de almacenamiento para reflejar los resultados de la armonización y el completado de forma separada. De modo paralelo a las clases de almacenamiento \texttt{ClaspResult} y \texttt{HaspSolution} se crearon \texttt{ClaspChords} y \texttt{ChordSolution}.
 
-Se detectó que el error de valores de las notas alteradas procedía de un problema en el procesador de MusicXML a hechos lógicos y se corrigió. El error se debía a una mala identificación de los valores que podía tomar la etiqueta \texttt{alteration}. Se revisó al mismo tiempo este módulo para corregir el error de los instrumentos con varios pentagramas, haciendo uso de un valor modificador del identificador de la voz que varía al ir encontrando las diferentes etiquetas \texttt{staff} para cada voz. Al estar entrelazadas las notas de cada uno de los pentagramas en una misma voz es necesario llevar un acumulador de los pulsos que ha realizado cada voz antes de cambiar de \texttt{staff} para poder compensarlo correctamente. Además durante el desarrollo se identificó un símbolo especial que usa MusicXML para representar compases vacíos, un silencio de duración igual a la del compás pero que no incluye tipo de figura y siempre es representado visualmente como un silencio de redonda.Por último se eliminó la opción -d de este módulo al no ser necesario especificar la nota con la que se quiere subdividir la partitura por poder calcularse automáticamente siempre.
+Se revisaron errores producidos en la interpretación de los valores de las notas alteradas. El error se debía a una mala identificación por parte del \textit{parser} de los valores que podía tomar la etiqueta \texttt{alteration}. Se revisó también este módulo para corregir otro error que afectaba a instrumentos de varios pentagramas, donde las diferentes partes se dvididían en diferentes voces pero no se asignaba el nombre del instrumento de forma correcta a otras voces que no fuesen la primera.
 
-Tal y como estaba diseñado el procesador, que identificaba el tipo de figura y la subdividía cuando fuese necesario, este tipo de figuras eran irreconocibles y se tuvo que implementar un caso especifico para estos silencios especiales. En caso de encontrar un silencio sin tipo de figura y de duración igual a la cantidad de figuras que caben en el compás, este se traduce de modo correcto haciendo uso de un valor especial que se reconoce al sacarlo de la cola de símbolos leídos y se trata de forma correcta.
+Durante las pruebas finales se detectó un tipo de silencio no reconocido correctamente, este silencio usaba el símbolo de un silencio de blanca pero ocupaba todo el compás siempre, fuese cual fuese su duración. Tal y como estaba diseñado el procesador, que identificaba el tipo de figura y la subdividía cuando fuese necesario, este tipo de figuras eran irreconocibles y se tuvo que implementar un caso especifico para estos silencios especiales. 
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.8\linewidth]{imagenes/arquitectura_final.pdf}
-	\caption{Diagrama de la arquitectura final del sistema}
-	\label{fig:arquitectura_final}
-\end{figure}
+En el pipeline se incluyeron dos nuevas opciones. Una para establecer el número máximo de soluciones deseadas y otra que permite pasarle a los módulos de armonización y completado de partitura el fichero de configuración deseado. Se cambió ligeramente el comportamiento del pipeline al tener que realizar las llamadas a los dos nuevos sub-módulos ASP, parando tras hallar las mejores armonizaciones y ofreciendo al usuario seleccionar la deseada y pasando el resultado al sub-módulo de completado, donde la ejecución continúa de modo similar a los anteriores prototipos. Por último se modificó la opción que permite especificar el tiempo límite de búsqueda para ser solo usada en caso de querer buscar todos los óptimos en vez de quedarse con el primero encontrado.
 
-En el pipeline se incluyeron dos nuevas opciones. La opción -O permite establecer el número máximo de soluciones deseadas, este valor se pasa a la llamada del constructor de \texttt{ClaspResult} y este ya se encarga de cribar la cantidad de resultados ofrecidos al usuario en base a este número, dado que el único resultado que es deseable cribar por la gran cantidad de opciones presentes es el del módulo de completado de partituras, esta opción solo criba los resultados de dicho módulo. La opción -c por otra parte permite pasarle a los módulos de armonización y completado de partitura un fichero de configuración de pesos y orden de optimización para las diferentes preferencias. En este módulo se añadió un paso nuevo, ya que ahora hay dos sub-módulos ASP. Cuando se han calculado las diferentes armonizaciones estas son mostradas al usuario para que escoja la que desea utilizar, si el usuario no escoge ninguna se escoge por defecto la última, ya que se supone mejor que las demás al estar ordenadas por los valores de optimización. Con esta solución seleccionada se crea un fichero temporal que incluye la armonización seleccionada en forma de predicados \texttt{chord}. Después de esto se llama al módulo de completado de partituras incluyendo el anteriormente mencionado fichero con los acordes y se procede al completado de la partitura de modo similar al de anteriores prototipos. La opción -t que controla el tiempo límite de búsqueda limita únicamente el tiempo de ejecución del módulo de completado de partituras. Se añadió una opción -a que permite activar o desactivar la búsqueda de todos los óptimos a la hora de completar, esto ya estaba desactivado a la hora de armonizar, ya que al ser un espacio de búsqueda más reducido, se comprobí que los resultados no mejoraban sustancialmente con respecto al tiempo de búsqueda adicional. Finalmente, por coherencia con el módulo de procesado, se eliminó la opción -d incluida originalmente para dividir la partitura a cualquier tipo de nota al no ser útil en ningún caso por poder calcularse automáticamente siempre.
 
-\subsection{Pruebas}
-\label{subsec:eighth_iteration_test}
-Las pruebas de esta iteración se centraron en observar los tiempos de ejecución cuando aparecían espacios para rellenar o nuevas voces, así como en comprobar que las nuevas funcionalidades (el filtrado de los N mejores óptimos, la inclusión de ficheros de configuración de los pesos de los parámetros y la nueva secuencia de ejecución del pipeline) funcionasen correctamente. Por supuesto se revisó que los errores de la anterior iteración corregidos en esta estuviesen realmente corregidos.
-
-Se utilizó una nueva partitura para las pruebas de esta iteración, que no reveló mayor problema en ninguno de los módulos.
-
-Las nuevas opciones incluidas en el pipeline funcionaron correctamente, restringiendo los valores incorrectos de forma adecuada y produciendo los resultados esperados.
-
-Por último se verificó que los errores producidos por el procesador de MusicXML a hechos lógicos (tanto las voces con múltiples pentagramas asignados y las notas alteradas no identificadas correctamente) no se repitiesen tras aplicar los cambios de esta iteración.
-
-\subsection{Resultados}
-\label{subsec:eighth_iteration_results}
-Se completaron correctamente todos los objetivos propuestos para esta iteración, solucionando el grave problema de tiempo de ejecución.
-
-No obstante, debido a que Music21 es una librería que aun se encuentra en desarrollo, la salida de MusicXML puede producir fallos visuales. Esto no afecta al resultado de la armonización ni al completado de partituras, y suponiendo un problema estético se anotó como trabajo futuro.
-
-Esta iteración cierró satisfactoriamente el ciclo de desarrollo y dejó paso a la evaluación de la herramienta en términos cualitativos y cuantitativos.

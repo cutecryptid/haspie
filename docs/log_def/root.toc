@@ -3,81 +3,55 @@
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}
 \contentsline {section}{\numberline {1.1}Motivaci\IeC {\'o}n}{1}
 \contentsline {section}{\numberline {1.2}El proyecto}{2}
-\contentsline {section}{\numberline {1.3}Estructura}{4}
+\contentsline {section}{\numberline {1.3}Estructura}{5}
 \contentsline {chapter}{\numberline {2}Contextualizaci\IeC {\'o}n}{7}
-\contentsline {section}{\numberline {2.1}Contexto Tecnol\IeC {\'o}gico}{7}
-\contentsline {subsection}{\numberline {2.1.1}Answer Set Programming}{7}
-\contentsline {subsubsection}{\numberline {2.1.1.1}gringo}{8}
-\contentsline {subsubsection}{\numberline {2.1.1.2}clasp}{8}
-\contentsline {subsubsection}{\numberline {2.1.1.3}clingo}{8}
-\contentsline {subsection}{\numberline {2.1.2}Formatos}{8}
-\contentsline {subsubsection}{\numberline {2.1.2.1}MusicXML}{9}
-\contentsline {subsubsection}{\numberline {2.1.2.2}LilyPond}{9}
-\contentsline {subsubsection}{\numberline {2.1.2.3}MIDI}{9}
-\contentsline {subsection}{\numberline {2.1.3}Software}{10}
-\contentsline {subsubsection}{\numberline {2.1.3.1}Herramientas}{10}
-\contentsline {subsubsection}{\numberline {2.1.3.2}Composici\IeC {\'o}n Asistida}{10}
-\contentsline {subsubsection}{\numberline {2.1.3.3}Sistemas Inteligentes}{11}
-\contentsline {section}{\numberline {2.2}Contextualizaci\IeC {\'o}n musical}{12}
-\contentsline {subsection}{\numberline {2.2.1}Ritmo y Figuras}{13}
-\contentsline {subsection}{\numberline {2.2.2}Melod\IeC {\'\i }a y pentagrama}{16}
-\contentsline {subsection}{\numberline {2.2.3}Armon\IeC {\'\i }a}{18}
-\contentsline {subsection}{\numberline {2.2.4}Modulaci\IeC {\'o}n}{21}
-\contentsline {subsection}{\numberline {2.2.5}Tesitura}{22}
-\contentsline {chapter}{\numberline {3}Desarrollo}{23}
-\contentsline {section}{\numberline {3.1}Planificaci\IeC {\'o}n y Presupuesto}{23}
-\contentsline {section}{\numberline {3.2}Iteraci\IeC {\'o}n 1}{26}
-\contentsline {subsection}{\numberline {3.2.1}Agenda de Iteraci\IeC {\'o}n}{26}
-\contentsline {subsection}{\numberline {3.2.2}Trabajo}{26}
-\contentsline {subsection}{\numberline {3.2.3}Pruebas}{29}
-\contentsline {subsection}{\numberline {3.2.4}Resultados}{31}
-\contentsline {section}{\numberline {3.3}Iteraci\IeC {\'o}n 2}{32}
-\contentsline {subsection}{\numberline {3.3.1}Agenda de Iteraci\IeC {\'o}n}{32}
-\contentsline {subsection}{\numberline {3.3.2}Trabajo}{32}
-\contentsline {subsection}{\numberline {3.3.3}Pruebas}{34}
-\contentsline {subsection}{\numberline {3.3.4}Resultados}{35}
-\contentsline {section}{\numberline {3.4}Iteraci\IeC {\'o}n 3}{36}
-\contentsline {subsection}{\numberline {3.4.1}Agenda de Iteraci\IeC {\'o}n}{36}
-\contentsline {subsection}{\numberline {3.4.2}Trabajo}{36}
-\contentsline {subsection}{\numberline {3.4.3}Pruebas}{38}
-\contentsline {subsection}{\numberline {3.4.4}Resultados}{39}
-\contentsline {section}{\numberline {3.5}Iteraci\IeC {\'o}n 4}{39}
-\contentsline {subsection}{\numberline {3.5.1}Agenda de Iteraci\IeC {\'o}n}{39}
-\contentsline {subsection}{\numberline {3.5.2}Trabajo}{39}
-\contentsline {subsection}{\numberline {3.5.3}Pruebas}{41}
-\contentsline {subsection}{\numberline {3.5.4}Resultados}{41}
-\contentsline {section}{\numberline {3.6}Iteraci\IeC {\'o}n 5}{41}
-\contentsline {subsection}{\numberline {3.6.1}Agenda de Iteraci\IeC {\'o}n}{41}
-\contentsline {subsection}{\numberline {3.6.2}Trabajo}{42}
-\contentsline {subsection}{\numberline {3.6.3}Pruebas}{44}
-\contentsline {subsection}{\numberline {3.6.4}Resultados}{44}
-\contentsline {section}{\numberline {3.7}Iteraci\IeC {\'o}n 6}{45}
-\contentsline {subsection}{\numberline {3.7.1}Agenda de Iteraci\IeC {\'o}n}{45}
-\contentsline {subsection}{\numberline {3.7.2}Trabajo}{45}
-\contentsline {subsection}{\numberline {3.7.3}Pruebas}{47}
-\contentsline {subsection}{\numberline {3.7.4}Resultados}{47}
-\contentsline {section}{\numberline {3.8}Iteraci\IeC {\'o}n 7}{48}
-\contentsline {subsection}{\numberline {3.8.1}Agenda de Iteraci\IeC {\'o}n}{48}
-\contentsline {subsection}{\numberline {3.8.2}Trabajo}{48}
-\contentsline {subsection}{\numberline {3.8.3}Pruebas}{51}
-\contentsline {subsection}{\numberline {3.8.4}Resultados}{52}
-\contentsline {section}{\numberline {3.9}Iteraci\IeC {\'o}n 8}{53}
-\contentsline {subsection}{\numberline {3.9.1}Agenda de Iteraci\IeC {\'o}n}{53}
-\contentsline {subsection}{\numberline {3.9.2}Trabajo}{53}
-\contentsline {subsection}{\numberline {3.9.3}Pruebas}{56}
-\contentsline {subsection}{\numberline {3.9.4}Resultados}{57}
-\contentsline {chapter}{\numberline {4}Evaluaci\IeC {\'o}n}{59}
-\contentsline {section}{\numberline {4.1}Comparativa}{64}
-\contentsline {section}{\numberline {4.2}Problemas conocidos}{65}
-\contentsline {chapter}{\numberline {5}Conclusiones}{67}
-\contentsline {section}{\numberline {5.1}Trabajo Futuro}{69}
-\contentsline {subsection}{\numberline {5.1.1}Est\IeC {\'e}tica e Interfaz}{69}
-\contentsline {subsection}{\numberline {5.1.2}Procesado y Armonizaci\IeC {\'o}n}{70}
-\contentsline {subsection}{\numberline {5.1.3}Modulaci\IeC {\'o}n}{70}
-\contentsline {subsection}{\numberline {5.1.4}Publicaci\IeC {\'o}n}{70}
-\contentsline {chapter}{\numberline {A}Diagramas}{71}
-\contentsline {chapter}{\numberline {B}An\IeC {\'a}lisis de MusicXML}{77}
-\contentsline {chapter}{\numberline {C}Partituras}{79}
-\contentsline {chapter}{\numberline {D}Instalaci\IeC {\'o}n}{89}
-\contentsline {chapter}{\numberline {E}Manual de uso}{91}
-\contentsline {chapter}{Bibliograf\'{\i }a}{99}
+\contentsline {section}{\numberline {2.1}Contextualizaci\IeC {\'o}n musical}{7}
+\contentsline {subsection}{\numberline {2.1.1}Ritmo y Figuras}{7}
+\contentsline {subsection}{\numberline {2.1.2}Melod\IeC {\'\i }a y pentagrama}{9}
+\contentsline {subsection}{\numberline {2.1.3}Armon\IeC {\'\i }a}{13}
+\contentsline {subsection}{\numberline {2.1.4}Modulaci\IeC {\'o}n}{15}
+\contentsline {subsection}{\numberline {2.1.5}Tesitura}{16}
+\contentsline {section}{\numberline {2.2}Contexto Tecnol\IeC {\'o}gico}{17}
+\contentsline {subsection}{\numberline {2.2.1}Answer Set Programming}{17}
+\contentsline {subsection}{\numberline {2.2.2}Formatos}{18}
+\contentsline {subsubsection}{\numberline {2.2.2.1}MusicXML}{18}
+\contentsline {subsubsection}{\numberline {2.2.2.2}LilyPond}{19}
+\contentsline {subsubsection}{\numberline {2.2.2.3}MIDI}{20}
+\contentsline {subsection}{\numberline {2.2.3}Software}{20}
+\contentsline {subsubsection}{\numberline {2.2.3.1}Herramientas}{20}
+\contentsline {subsubsection}{\numberline {2.2.3.2}Composici\IeC {\'o}n Asistida}{21}
+\contentsline {subsubsection}{\numberline {2.2.3.3}Sistemas Inteligentes}{21}
+\contentsline {chapter}{\numberline {3}Trabajo Desarrollado}{25}
+\contentsline {section}{\numberline {3.1}Metodolog\IeC {\'\i }a}{25}
+\contentsline {section}{\numberline {3.2}Planificaci\IeC {\'o}n}{26}
+\contentsline {section}{\numberline {3.3}Desarrollo}{28}
+\contentsline {subsection}{\numberline {3.3.1}Entrada}{28}
+\contentsline {subsection}{\numberline {3.3.2}N\IeC {\'u}cleo ASP}{30}
+\contentsline {subsection}{\numberline {3.3.3}M\IeC {\'o}dulos de Preferencias}{33}
+\contentsline {subsection}{\numberline {3.3.4}Ficheros de Configuraci\IeC {\'o}n}{35}
+\contentsline {subsection}{\numberline {3.3.5}Clases de Almacenamiento}{35}
+\contentsline {subsection}{\numberline {3.3.6}Salida}{37}
+\contentsline {section}{\numberline {3.4}Iteraciones}{38}
+\contentsline {subsection}{\numberline {3.4.1}Iteraci\IeC {\'o}n 1}{38}
+\contentsline {subsection}{\numberline {3.4.2}Iteraci\IeC {\'o}n 2}{39}
+\contentsline {subsection}{\numberline {3.4.3}Iteraci\IeC {\'o}n 3}{40}
+\contentsline {subsection}{\numberline {3.4.4}Iteraci\IeC {\'o}n 4}{41}
+\contentsline {subsection}{\numberline {3.4.5}Iteraci\IeC {\'o}n 5}{41}
+\contentsline {subsection}{\numberline {3.4.6}Iteraci\IeC {\'o}n 6}{43}
+\contentsline {subsection}{\numberline {3.4.7}Iteraci\IeC {\'o}n 7}{44}
+\contentsline {subsection}{\numberline {3.4.8}Iteraci\IeC {\'o}n 8}{46}
+\contentsline {chapter}{\numberline {4}Evaluaci\IeC {\'o}n}{49}
+\contentsline {section}{\numberline {4.1}Comparativa}{54}
+\contentsline {section}{\numberline {4.2}Problemas conocidos}{55}
+\contentsline {chapter}{\numberline {5}Conclusiones}{57}
+\contentsline {section}{\numberline {5.1}Trabajo Futuro}{59}
+\contentsline {subsection}{\numberline {5.1.1}Est\IeC {\'e}tica e Interfaz}{59}
+\contentsline {subsection}{\numberline {5.1.2}Procesado y Armonizaci\IeC {\'o}n}{60}
+\contentsline {subsection}{\numberline {5.1.3}Modulaci\IeC {\'o}n}{60}
+\contentsline {subsection}{\numberline {5.1.4}Publicaci\IeC {\'o}n}{60}
+\contentsline {chapter}{\numberline {A}Diagramas}{61}
+\contentsline {chapter}{\numberline {B}An\IeC {\'a}lisis de MusicXML}{67}
+\contentsline {chapter}{\numberline {C}Partituras}{69}
+\contentsline {chapter}{\numberline {D}Instalaci\IeC {\'o}n}{79}
+\contentsline {chapter}{\numberline {E}Manual de uso}{81}
+\contentsline {chapter}{Bibliograf\'{\i }a}{89}

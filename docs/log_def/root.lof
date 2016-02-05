@@ -4,60 +4,69 @@
 \contentsline {xchapter}{Introducci\IeC {\'o}n}{1}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Contextualizaci\IeC {\'o}n}{7}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagrama de subdivisi\IeC {\'o}n de figuras}}{14}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Figuras con sus respectivos silencios, de izquierda a derecha: Redonda, blanca, negra, corchea}}{14}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Equivalencias de tiempos entre tresillos y dosillos}}{15}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Ejemplos de tipos de compases: Cuaternario y Ternario}}{16}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces La misma secuencia de notas en clave de Sol y de Fa}}{17}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Escalas de Do Mayor y Do Menor}}{18}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Escala de Do Menor sin armadura y con armadura}}{19}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Acordes de la tonalidad de Do Mayor}}{20}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Ejemplo de polifon\IeC {\'\i }a para Piano (Sonata en Do Mayor, Mozart)}}{20}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagrama de subdivisi\IeC {\'o}n de figuras}}{8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Figuras con sus respectivos silencios, de izquierda a derecha: Redonda, blanca, negra, corchea}}{8}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Ejemplos de tipos de compases: Cuaternario y Ternario}}{9}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Disposici\IeC {\'o}n de los doce sonidos disponibles en cada octava sobre las teclas del piano}}{10}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces La misma secuencia de notas en clave de Sol y de Fa}}{11}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Escalas de Do Mayor y Do Menor}}{11}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Escala de Do Menor sin armadura y con armadura}}{12}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Acordes de la tonalidad de Do Mayor}}{14}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Ejemplo de polifon\IeC {\'\i }a para Piano (Sonata en Do Mayor, Mozart)}}{14}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Ejemplo de nota representada en MusicXML}}{19}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Ejemplo de una peque\IeC {\~n}a pieza musical en lilypond}}{20}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Desarrollo}{23}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Ciclo de desarrollo en espiral t\IeC {\'\i }pico}}{24}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Diagrama que muestra la secuencia de tareas}}{25}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Ejemplo de nota representada en MusicXML}}{28}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Gram\IeC {\'a}tica inicial utilizada por el procesador de MusicXML a hechos l\IeC {\'o}gicos}}{30}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Diagrama del planteamiento inicial de la arquitectura del sistema}}{31}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Diagrama de la arquitectura final del sistema}}{55}
+\contentsline {xchapter}{Trabajo Desarrollado}{25}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama que muestra la secuencia de tareas}}{27}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Arquitectura del sistema}}{28}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Una pieza simple transformada a hechos l\IeC {\'o}gicos}}{30}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Asignaci\IeC {\'o}n de un \IeC {\'u}nico posible acorde a cada intervalo de armonizaci\IeC {\'o}n}}{30}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Reglas de inferencia de Octava y Grado para una nota en el modo mayor.}}{31}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Acordes anotados sobre una pieza sencilla y los hechos l\IeC {\'o}gicos correspondientes a esos acordes}}{31}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Asignaci\IeC {\'o}n de nuevas notas a espacios en blanco, respetando la tesitura especificada}}{32}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Relaci\IeC {\'o}n de tesituras corales y sus l\IeC {\'\i }mites inferior y superior}}{33}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Definici\IeC {\'o}n de salto de octava para las notas generadas y restricci\IeC {\'o}n que lo prohibe}}{33}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Partitura armonizada con un tiempo incompleto y resultado del completado}}{34}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Definici\IeC {\'o}n de salto mel\IeC {\'o}dico}}{34}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Partitura de ejemplo armonizada y con notas de paso coloreadas en azul}}{38}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Diagrama del planteamiento inicial de la arquitectura del sistema}}{39}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Evaluaci\IeC {\'o}n}{59}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Comienzo de Greensleeves armonizado}}{60}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Comp\IeC {\'a}s de Greensleeves completado sin y con preferencias mel\IeC {\'o}dicas activadas}}{61}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces La salida de Joy to the World produce un error de clave en la voz de la Soprano}}{61}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Menuet con una voz de Bajo adicional (sin preferencias mel\IeC {\'o}dicas)}}{61}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Comienzo de Joy to the World armonizado}}{62}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Comienzo de Twinkle Twinkle Little Star armonizado}}{62}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Comp\IeC {\'a}s de Twinkle Twinkle Little Star completado sin y con preferencias mel\IeC {\'o}dicas activadas}}{63}
+\contentsline {xchapter}{Evaluaci\IeC {\'o}n}{49}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Comienzo de Greensleeves armonizado}}{50}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Comp\IeC {\'a}s de Greensleeves completado sin y con preferencias mel\IeC {\'o}dicas activadas}}{51}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces La salida de Joy to the World produce un error de clave en la voz de la Soprano}}{51}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Menuet con una voz de Bajo adicional (sin preferencias mel\IeC {\'o}dicas)}}{51}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Comienzo de Joy to the World armonizado}}{52}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Comienzo de Twinkle Twinkle Little Star armonizado}}{52}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Comp\IeC {\'a}s de Twinkle Twinkle Little Star completado sin y con preferencias mel\IeC {\'o}dicas activadas}}{53}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusiones}{67}
+\contentsline {xchapter}{Conclusiones}{57}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Diagramas}{71}
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Diagrama de clases de almacenamiento de la Iteraci\IeC {\'o}n 3}}{72}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Diagrama de clases de almacenamiento de la Iteraci\IeC {\'o}n 4}}{73}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Diagrama de clases de almacenamiento de la Iteraci\IeC {\'o}n 5}}{73}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Diagrama de clases de almacenamiento de las Iteraciones 6, 7 y 8}}{74}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Diagrama de clases de almacenamiento del m\IeC {\'o}dulo de armonizaci\IeC {\'o}n de la iteraci\IeC {\'o}n 8}}{75}
+\contentsline {xchapter}{Diagramas}{61}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Diagrama de clases de almacenamiento de la Iteraci\IeC {\'o}n 3}}{62}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Diagrama de clases de almacenamiento de la Iteraci\IeC {\'o}n 4}}{63}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Diagrama de clases de almacenamiento de la Iteraci\IeC {\'o}n 5}}{63}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Diagrama de clases de almacenamiento de las Iteraciones 6, 7 y 8}}{64}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Diagrama de clases de almacenamiento del m\IeC {\'o}dulo de armonizaci\IeC {\'o}n de la iteraci\IeC {\'o}n 8}}{65}
 \addvspace {10\p@ }
-\contentsline {xchapter}{An\IeC {\'a}lisis de MusicXML}{77}
+\contentsline {xchapter}{An\IeC {\'a}lisis de MusicXML}{67}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Partituras}{79}
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Partitura de Greensleeves, por Enrique VIII}}{80}
-\contentsline {figure}{\numberline {C.2}{\ignorespaces Partitura de Menuet, por Johann S. Bach}}{81}
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Partitura de Joy to the World, por George F. Handel}}{82}
-\contentsline {figure}{\numberline {C.4}{\ignorespaces Partitura de Silent Night (Noche de Paz), por Franz X. Gruber}}{83}
-\contentsline {figure}{\numberline {C.5}{\ignorespaces Partitura de la pieza popular infantil Twinkle Twinkle Little Star (Brilla Brilla Estrellita)}}{84}
-\contentsline {figure}{\numberline {C.6}{\ignorespaces Partitura de ejemplo con una serie de acordes sencillos}}{85}
-\contentsline {figure}{\numberline {C.7}{\ignorespaces Partitura de ejemplo con algunos silencios reales y otros invisibles}}{86}
-\contentsline {figure}{\numberline {C.8}{\ignorespaces Partitura de ejemplo con acordes definidos por la quinta para ser completada.}}{87}
+\contentsline {xchapter}{Partituras}{69}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Partitura de Greensleeves, por Enrique VIII}}{70}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Partitura de Menuet, por Johann S. Bach}}{71}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Partitura de Joy to the World, por George F. Handel}}{72}
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Partitura de Silent Night (Noche de Paz), por Franz X. Gruber}}{73}
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Partitura de la pieza popular infantil Twinkle Twinkle Little Star (Brilla Brilla Estrellita)}}{74}
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Partitura de ejemplo con una serie de acordes sencillos}}{75}
+\contentsline {figure}{\numberline {C.7}{\ignorespaces Partitura de ejemplo con algunos silencios reales y otros invisibles}}{76}
+\contentsline {figure}{\numberline {C.8}{\ignorespaces Partitura de ejemplo con acordes definidos por la quinta para ser completada.}}{77}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Instalaci\IeC {\'o}n}{89}
+\contentsline {xchapter}{Instalaci\IeC {\'o}n}{79}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Manual de uso}{91}
-\contentsline {figure}{\numberline {E.1}{\ignorespaces Opciones de uso de la herramienta}}{92}
-\contentsline {figure}{\numberline {E.2}{\ignorespaces La informaci\IeC {\'o}n relevante de la partitura se muestra al comenzar la armonizaci\IeC {\'o}n}}{93}
-\contentsline {figure}{\numberline {E.3}{\ignorespaces Se pide al usuario que fije la armonizaci\IeC {\'o}n a utilizar de entre varias posibles}}{94}
-\contentsline {figure}{\numberline {E.4}{\ignorespaces Seleccionando una figura podemos ver sus propiedades, entre otras la casilla de visibilidad}}{96}
-\contentsline {figure}{\numberline {E.5}{\ignorespaces Desmarcando la casilla de visibilidad, la figura pasa a un color m\IeC {\'a}s claro, indicando que no es visible}}{96}
-\contentsline {figure}{\numberline {E.6}{\ignorespaces Se pide al usuario que seleccione la soluci\IeC {\'o}n que m\IeC {\'a}s le guste entre varias posibles}}{97}
+\contentsline {xchapter}{Manual de uso}{81}
+\contentsline {figure}{\numberline {E.1}{\ignorespaces Opciones de uso de la herramienta}}{82}
+\contentsline {figure}{\numberline {E.2}{\ignorespaces La informaci\IeC {\'o}n relevante de la partitura se muestra al comenzar la armonizaci\IeC {\'o}n}}{83}
+\contentsline {figure}{\numberline {E.3}{\ignorespaces Se pide al usuario que fije la armonizaci\IeC {\'o}n a utilizar de entre varias posibles}}{84}
+\contentsline {figure}{\numberline {E.4}{\ignorespaces Seleccionando una figura podemos ver sus propiedades, entre otras la casilla de visibilidad}}{86}
+\contentsline {figure}{\numberline {E.5}{\ignorespaces Desmarcando la casilla de visibilidad, la figura pasa a un color m\IeC {\'a}s claro, indicando que no es visible}}{86}
+\contentsline {figure}{\numberline {E.6}{\ignorespaces Se pide al usuario que seleccione la soluci\IeC {\'o}n que m\IeC {\'a}s le guste entre varias posibles}}{87}
