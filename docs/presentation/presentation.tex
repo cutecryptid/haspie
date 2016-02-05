@@ -227,12 +227,15 @@ Universidade da Coruña \\ % Your institution for the title page
 		\frametitle{haspie's Architecture}
 		\begin{figure}
 		\centering
-		\includegraphics[width=0.8\linewidth]{imagenes/arquitectura_final.pdf}
+		\includegraphics[width=\linewidth]{imagenes/arquitectura_final.pdf}
 		\end{figure}
 	\end{frame}
 \subsection{ASP Core}
-	\begin{frame}
+	\begin{frame}[t]
 		\frametitle{The ASP Core}
+		\begin{center}
+		\includegraphics[width=0.6\linewidth]{imagenes/arch_trans/arquitectura_final_asp_core-01.png}
+		\end{center}
 		\begin{itemize}
 			\item Independent of the solving process and its heuristics
 			\item The power of ASP resides in this independence
@@ -260,8 +263,11 @@ Universidade da Coruña \\ % Your institution for the title page
 			\end{verbatim}
 		\end{example}
 	\end{frame}
-	\begin{frame}
+	\begin{frame}[t]
 	\frametitle{Harmonization}
+	\begin{center}
+			\includegraphics[width=0.6\linewidth]{imagenes/arch_trans/arquitectura_final_asp_harm-01.png}
+	\end{center}
 	\begin{itemize}
 		\item Notes are converted to grades of the scale given the key and mode
 		\item Chords are assignated to the harmonizable times of the score
@@ -273,20 +279,26 @@ Universidade da Coruña \\ % Your institution for the title page
 	\end{center}
 
 	\end{frame}
-	\begin{frame}
+	\begin{frame}[t]
 	\frametitle{Score Completion}
+	\begin{center}
+			\includegraphics[width=0.6\linewidth]{imagenes/arch_trans/arquitectura_final_asp_comp-01.png}
+			\end{center}
 	\begin{itemize}
 		\item Only used if there are new voices or sections that need to be completed
 		\item Given the incomplete or new voices' \textit{tessiturae} notes are assignated to the available positions.
 		\item Errors are calculated and solver determines the fittest notes for each time
 	\end{itemize}
 		\begin{center}
-				\includegraphics[width=0.39\linewidth]{imagenes/incomplete_score.png}
-				\includegraphics[width=0.39\linewidth]{imagenes/completed_score.png}
+				\includegraphics[width=0.25\linewidth]{imagenes/incomplete_score.png}
+				\includegraphics[width=0.25\linewidth]{imagenes/completed_score.png}
 		\end{center}
 	\end{frame}
-	\begin{frame}
+	\begin{frame}[t]
 	\frametitle{Melodious Preferences Module}
+	\begin{center}
+			\includegraphics[width=0.6\linewidth]{imagenes/arch_trans/arquitectura_final_asp_pref_mel-01.png}
+			\end{center}
 	\begin{itemize}
 		\item Althought not composing melodiously, this module smoothens the output
 		\item Checks the tendency of the voices already on the score and makes the new voices imitate them
@@ -294,8 +306,11 @@ Universidade da Coruña \\ % Your institution for the title page
 		\item Reduces the number of consecutive repeated sounds
 	\end{itemize}
 	\end{frame}
-	\begin{frame}
+	\begin{frame}[t]
 	\frametitle{Sixths Link Preferences Module}
+	\begin{center}
+			\includegraphics[width=0.6\linewidth]{imagenes/arch_trans/arquitectura_final_asp_pref_six.png}
+			\end{center}
 	\begin{itemize}
 		\item Progressions of the second inversion of chords are very common in choral music
 		\item Creates a per-time harmonization of the score
@@ -332,8 +347,11 @@ Universidade da Coruña \\ % Your institution for the title page
 				\end{center}
 	\end{frame}
 \subsection{Output}
-		\begin{frame}
+		\begin{frame}[t]
 		\frametitle{Output Module}
+		\begin{center}
+				\includegraphics[width=0.6\linewidth]{imagenes/arch_trans/arquitectura_final_out-01.png}
+				\end{center}
 			\begin{itemize}
 				\item Written in Python with the toolkit Music21
 				\item Transforms the internal representation of the solution to a Music21 representation
@@ -343,8 +361,11 @@ Universidade da Coruña \\ % Your institution for the title page
 			\end{itemize}
 		\end{frame}
 \subsection{Pipeline}
-	\begin{frame}
+	\begin{frame}[t]
 	\frametitle{Pipeline}
+	\begin{center}
+			\includegraphics[width=0.6\linewidth]{imagenes/arch_trans/arquitectura_final_pipe-01.png}
+			\end{center}
 		\begin{itemize}
 			\item Written in Python
 			\item Coordinates the different modules secuentially
