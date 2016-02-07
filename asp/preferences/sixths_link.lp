@@ -1,4 +1,5 @@
 % Sixths sequence (Sequence of second inversions of 4ths and 6ths)
+% Assign one chord to each time to check these progressions
 1 { unary_chord(B,C) : pos_chord(C) } 1 :- beat(B).
 unary_error(V,G,B) :- chord(T,C), out_grade(V,G,O,B), voice(V), not belongs(G,C), beat(B).
 

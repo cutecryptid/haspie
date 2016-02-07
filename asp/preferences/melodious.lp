@@ -12,6 +12,7 @@ same_tendency(V1,V2,B1,B2) :- voice(V1), voice(V2), V1 != V2, tendency(T,V1,B1,B
 cont_tendency(V1,V2,B1,B2) :- voice(V1), voice(V2), V1 != V2, tendency(pos,V1,B1,B2), tendency(neg,V2,B1,B2),
 							beat(B1), beat(B2).
 
+% Define the melodic jump between to notes
 melodic_jump(V,J,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2), (B1+1) == B2, beat(B1+1), J = #abs(N1-N2).
 
 #const melodicjumpw = 1.
