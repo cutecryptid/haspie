@@ -15,7 +15,8 @@ beat(B) :- rest(_,B).
 harm_span(S) :- S=(subdiv/span).
 
 % define the places where a note should be assignated
-% maybe it'd be better to specify these points by hand (somehow)
+% notes in the score come with an assignated figure of a certain duration
+% new voice's notes don't have these figures so we need to assign them
 busybeat(V,B) :- beat(B), voice(V), note(V,P,B).
 busybeat(V,B) :- beat(B), voice(V), rest(V,B).
 newvoicebeat(V,B) :- not busybeat(V,B), not freebeat(V,B), beat(B), voice(V).
@@ -29,30 +30,30 @@ freefigure(V,D,B) :- figure(V,D,B), freebeat(V,B).
 
 beat_belongs_htime(((((T-1)*span)+1)..(T*span)),T) :- htime(T).
 
+% define what an error is to be able to porhibit or minimize it 
 error(V,G,B) :- chord(T,C), htime(T), grade(V,G,B), voice(V), not belongs(G,C), beat_belongs_htime(B,T), beat(B).
 error(V,G,B) :- chord(T,C), htime(T), ex_grade(V,G,B), voice(V), not belongs(G,C), beat_belongs_htime(B,T), beat(B).
 error(V,G,B) :- grade(V,G,B), non_scale_grade(G), voice(V), beat(B).
 error(V,G,B) :- ex_grade(V,G,B), non_scale_grade(G), voice(V), beat(B).
 
+% some other definitions for better optimization
 repeated_grade(V1,V2,B) :- out_grade(V1,G,O1,B), out_grade(V2,G,O2,B), voice(V1), voice(V2), V1 != V2.
 unison(V1,V2,B) :- out_note(V1,N,B), out_note(V2,N,B), voice(V1), voice(V2), V1 != V2.
+voice_limit_low(V,VL) :-  voice(V), voice_type(V, VT), voice_low(VT, VL).
+voice_limit_high(V,VH) :-  voice(V), voice_type(V, VT), voice_high(VT, VH).
 
+% more-than-one-octave jumping is prohibited for newly generated notes
 octave_jump(V,B1,B2) :- ex_note(V,N1,B1), ex_note(V,N2,B2), (B1+1) == B2, N2 > (N1+12), beat(B1+1).
 octave_jump(V,B1,B2) :- ex_note(V,N1,B1), ex_note(V,N2,B2), (B1+1) == B2, N2 < (N1-12), beat(B1+1).
-
 :- octave_jump(_,_,_).
 
-same_chord(HT1,HT2) :- htime(HT1), htime(HT2), htime(HT1+1), HT1+1 == HT2,
-						chord(HT1,C1), chord(HT2,C2), C1 == C2, pos_chord(C1), pos_chord(C2).
-
+% error differenciation from the time in which it appears
 error_in_strong(V,G,B) :- error(V,G,B), beat(B), strong_beat(B), out_note(V,N,B).
 error_in_weak(V,G,B) :- error(V,G,B), beat(B), weak_beat(B), out_note(V,N,B).
 
+% projections for the output
 out_figure(V,N,D,FB) :- out_note(V,N,B), figure(V,D,FB), B >= FB, B < FB + D.
 out_figure(V,-1,D,FB) :- rest(V,B), figure(V,D,FB), B >= FB, B < FB + D.
-
-voice_limit_low(V,VL) :-  voice(V), voice_type(V, VT), voice_low(VT, VL).
-voice_limit_high(V,VH) :-  voice(V), voice_type(V, VT), voice_high(VT, VH).
 
 out_error(V,FB) :- error_in_strong(V,G,B), figure(V,D,FB), B >= FB, B < FB+D.
 out_error_weak(V,FB) :- error_in_weak(V,G,B), figure(V,D,FB), B >= FB, B < FB+D.
