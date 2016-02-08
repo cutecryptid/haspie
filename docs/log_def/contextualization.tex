@@ -15,7 +15,7 @@ El presente proyecto, pese a estar realizado para Ingeniería Informática, pose
 \label{subsec:rhythm_and_figures}
 La parte más elemental de la música es la estructura rítmica de la pieza, es decir, los patrones de golpes sonoros que están presentes en la canción y que normalmente se repiten a lo largo de toda ella. Para componer estas secuencias rítmicas se utilizan una serie de símbolos (denominados \textit{figuras}) que representan sonidos de una duración relativa al \textit{tempo} de la pieza, en combinación con otra serie de símbolos (denominados \textit{silencios}) que representan la ausencia de sonido durante esas mismas duraciones. 
 
-Tomando una figura de referencia, en este caso la redonda, y mediante un proceso de escisión binaria se obtienen el resto de figuras presentes en las partituras. Una redonda equivale a dos blancas, una blanca equivale a dos negras, una negra equivale a dos corcheas, una corchea equivale a dos semicorcheas, etc. A modo de detalle, para facilitar la lectura de figuras fraccionarias pequeñas, estas pueden ser unidas mediante una barra horizontal si aparecen de forma consecutiva. Es importante tener en cuenta que aunque la duración total de dos figuras iguales sea equivalente a otra figura de mayor duración, rítmicamente sí existe diferencia: no se debe olvidar en ningún momento que cada figura es un golpe de sonido con una duración determinada y por tanto, pese a que en cuanto a duración una redonda equivale a cuatro negras, a la hora de interpretar la pieza, una redonda será un único sonido largo mientras que cuatro negras serán cuatro sonidos más cortos. Esto en combinación con los silencios, componen los patrones de ritmo de los que se hablaba anteriormente.
+Tomando una figura de referencia, en este caso la redonda, y mediante un proceso de escisión binaria se obtienen el resto de figuras presentes en las partituras (Ver figura \ref{fig:subdivision-figuras}). Una redonda equivale a dos blancas, una blanca equivale a dos negras, una negra equivale a dos corcheas, una corchea equivale a dos semicorcheas, etc. A modo de detalle, para facilitar la lectura de figuras fraccionarias pequeñas, estas pueden ser unidas mediante una barra horizontal si aparecen de forma consecutiva. Es importante tener en cuenta que aunque la duración total de dos figuras iguales sea equivalente a otra figura de mayor duración, rítmicamente sí existe diferencia: no se debe olvidar en ningún momento que cada figura es un golpe de sonido con una duración determinada y por tanto, pese a que en cuanto a duración una redonda equivale a cuatro negras, a la hora de interpretar la pieza, una redonda será un único sonido largo mientras que cuatro negras serán cuatro sonidos más cortos. Esto en combinación con los silencios (Ver Figura \ref{fig:figuras}), componen los patrones de ritmo de los que se hablaba anteriormente.
 
 \begin{figure}
 	\centering
@@ -47,7 +47,7 @@ El \textit{tempo}, anteriormente mencionado, es una relación que indica la cant
 
 La partitura está dividida en compases, y al principio de la pieza se indica el tipo de compás de la misma. Se representa con dos números colocados en vertical que indican respectivamente la cantidad de figuras que caben en cada compás y el tipo de dicha figura, utilizando el sistema del numerador de la fracción de redonda detallado anteriormente. A modo de aclaración, el tipo de figura utilizado en el compás solamente indica la figura base del mismo, pero eso no impide que se utilicen fracciones o figuras de mayor longitud equivalentes siempre y cuando se respete que la suma de sus duraciones no supere la especificada en el tipo de compás. 
 
-Según la cantidad de figuras que caben en cada compás, estos reciben diferentes nombres. En la música moderna lo más habitual es encontrar compases binarios o cuaternarios, aunque en algunas corrientes de la música clásica como el \textit{Waltz} predominan los ternarios. 
+Según la cantidad de figuras que caben en cada compás, estos reciben diferentes nombres. En la música moderna lo más habitual es encontrar compases binarios o cuaternarios, aunque en algunas corrientes de la música clásica como el \textit{Waltz} predominan los ternarios. Estos tipos de compases se ilustran en la Figura \ref{fig:compas}.
 
 \begin{figure}[hpt]
 	\centering
@@ -73,12 +73,12 @@ El acento en la música es un mero hincapié interpretativo en los tiempos fuert
 
 \subsection{Melodía y pentagrama}
 \label{subsec:melody_pentagram}
-La melodía de la pieza es la secuencia temporal de notas que siguen las diferentes voces a lo largo de la partitura leyéndola horizontalmente. Para ello se utilizan siete notas fundamentales diferentes: Do, Re, Mi, Fa, Sol, La y Si (C, D, E, F, G, A, B en la notación internacional). Entre cada una de estas notas fundamentales se establece una distancia en frecuencia conocida como tono, excepto entre Si y Do; y entre Mi y Fa, entre las cuales sólo hay medio tono (también denominado semitono). Las fundamentales pueden ser alteradas mediante modificaciones conocidas como \textit{sostenido} y \textit{bemol}, que suben o bajan, respectivamente, un semitono a dichas notas. Por eso podemos entender que contamos, en total, con 12 sonidos distintos. Las alteraciones son muy fáciles de entender en las teclas del piano, ya que las notas sin alterar corresponden a las teclas blancas mientras que las alteradas corresponden a las negras que hay entre algunas de las blancas. 
+La melodía de la pieza es la secuencia temporal de notas que siguen las diferentes voces a lo largo de la partitura leyéndola horizontalmente. Para ello se utilizan siete notas fundamentales diferentes: Do, Re, Mi, Fa, Sol, La y Si (C, D, E, F, G, A, B en la notación internacional). Entre cada una de estas notas fundamentales se establece una distancia en frecuencia conocida como tono, excepto entre Si y Do; y entre Mi y Fa, entre las cuales sólo hay medio tono (también denominado semitono). Las fundamentales pueden ser alteradas mediante modificaciones conocidas como \textit{sostenido} y \textit{bemol}, que suben o bajan, respectivamente, un semitono a dichas notas. Por eso podemos entender que contamos, en total, con 12 sonidos distintos. Las alteraciones son muy fáciles de visualizar en las teclas del piano, ya que las notas sin alterar corresponden a las teclas blancas mientras que las alteradas corresponden a las negras que hay entre algunas de las blancas (Ver Fig. \ref{fig:piano-keys}). De este modo podemos ver que una nota fundamental con un sostenido es igual a la siguiente fundamental con un bemol, la diferencia de cuando usar una representación u otra depende de la clave, el modo, el estilo y algunos otros factores.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\linewidth]{imagenes/PianoKeys.png}
-	\label{fig:paino-keys}
+	\label{fig:piano-keys}
 	\caption{Disposición de los doce sonidos disponibles en cada octava sobre las teclas del piano}
 \end{figure}
 
@@ -86,7 +86,7 @@ Estas siete notas fundamentales (o doce sonidos), tienen asociadas a su vez una 
 
 La representación de estos sonidos se hace sobre un pentagrama, bandas formadas por cinco líneas con sus respectivos cuatro huecos donde pueden colocarse las notas de la partitura, representando cada línea y hueco consecutivos una nota fundamental diferente. Ya que esto solo permitiría representar nueve notas, se pueden utilizar líneas y huecos adicionales situados encima y debajo del pentagrama para indicar notas más graves o más agudas. En conjunción con las alteraciones ya mencionadas (Sostenido y Bemol) en un mismo pentagrama pueden representarse más de una veintena de sonidos diferentes. 
 
-Para poder interpretar el sonido correspondiente a cada línea o hueco existe la clave. La clave es un símbolo situado al principio de cada pentagrama e indica la nota correspondiente a una de las cinco líneas. El resto se calculan subiendo o bajando huecos y renglones a partir de esa línea. 
+Para poder interpretar el sonido correspondiente a cada línea o hueco existe la clave. La clave es un símbolo situado al principio de cada pentagrama e indica la nota correspondiente a una de las cinco líneas. El resto se calculan subiendo o bajando huecos y renglones a partir de esa línea, como se puede apreciar en la Figura \ref{fig:claves}.
 
 \begin{figure}[h!]
 	\centering
@@ -105,7 +105,7 @@ Para poder interpretar el sonido correspondiente a cada línea o hueco existe la
 	\label{fig:claves}
 \end{figure}
 
-En la Figura \ref{fig:claves}, la clave de Sol indica que en la segunda línea, contando desde abajo, estaría ubicada la nota sol, mientras que la clave de Fa\footnote{En este caso, la clave de ``Fa en 4ª'', ya que existen claves de ``Fa en 2ª'' y ``Fa en 3ª''} indica que en la cuarta línea, contando también desde abajo, se ubicaría el sonido Fa. La finalidad de las diferentes claves es ofrecer diferentes puntos de referencia, ya que no solo indican nota sino también octava, evitando así sobrecargar la partitura con notas fuera de las cinco líneas principales. La clave de Sol utiliza sonidos más agudos, mientras que la de Fa utiliza sonidos más graves. Es habitual encontrar, por ejemplo, partituras para piano donde la mano izquierda estará escrita en clave de Fa al ser notas más graves y en clave de Sol la de la mano derecha, al ser notas más agudas. 
+En la Figura \ref{fig:claves}, la clave de Sol indica que en la segunda línea, contando desde abajo, estaría ubicada la nota sol, mientras que la clave de Fa\footnote{En este caso, la clave de ``Fa en 4ª'', ya que existen claves de ``Fa en 2ª'' y ``Fa en 3ª''.} indica que en la cuarta línea, contando también desde abajo, se ubicaría el sonido Fa. La finalidad de las diferentes claves es ofrecer diferentes puntos de referencia, ya que no solo indican nota sino también octava, evitando así sobrecargar la partitura con notas fuera de las cinco líneas principales. La clave de Sol utiliza sonidos más agudos, mientras que la de Fa utiliza sonidos más graves. Es habitual encontrar, por ejemplo, partituras para piano donde la mano izquierda estará escrita en clave de Fa al ser notas más graves y en clave de Sol la de la mano derecha, al ser notas más agudas. 
 
 Un salto melódico es la diferencia de frecuencia entre dos sonidos consecutivos de una misma melodía. De este modo, si el siguiente sonido es más agudo se producirá un salto ascendente, y si es más grave, descendente. Las secuencias ascendentes y descendentes se combinan con el ritmo de la canción para crear tramos de tensión melódica, de resolución, de reposo... Para entender estos conceptos es necesario introducir el concepto de escala. 
 
@@ -131,9 +131,9 @@ Un salto melódico es la diferencia de frecuencia entre dos sonidos consecutivos
 	\caption{Escalas de Do Mayor y Do Menor}
 \end{figure}
 
-Una escala es un subconjunto de los doce sonidos disponibles donde sus miembros cumplen una distribución concreta de separaciones tonales. La escala más conocida es la de Do Mayor, ya que empezando desde Do, pasa por las siete notas fundamentales sin alterar (ver \ref{fig:escalas}). Si se mira de desde la distribución de tonos y semitonos entre las notas de Do Mayor (Tono, Tono, Semitono, Tono, Tono, Tono, Semitono) se puede construir cualquier otra escala mayor dada una nota arbitraria de partida. Las escalas pueden ser, según su distribución tonal Mayores o Menores, así como recibir diferentes nombres según la cantidad de sonidos que incluyan. La escala sobre la que se construye una pieza puede ser denominada tonalidad y recibe el nombre de la nota raíz junto con su modo. Así una pieza construida con la escala de Do Mayor puede decirse que está en tonalidad de Do Mayor.
+Una escala es un subconjunto de los doce sonidos disponibles donde sus miembros cumplen una distribución concreta de separaciones tonales. La escala más conocida es la de Do Mayor, ya que empezando desde Do, pasa por las siete notas fundamentales sin alterar (ver Figura \ref{fig:escalas}). Si se mira de desde la distribución de tonos y semitonos entre las notas de Do Mayor (Tono, Tono, Semitono, Tono, Tono, Tono, Semitono) se puede construir cualquier otra escala mayor dada una nota arbitraria de partida. Las escalas pueden ser, según su distribución tonal Mayores o Menores, así como recibir diferentes nombres según la cantidad de sonidos que incluyan. La escala sobre la que se construye una pieza puede ser denominada tonalidad y recibe el nombre de la nota raíz junto con su modo. Así una pieza construida con la escala de Do Mayor puede decirse que está en tonalidad de Do Mayor.
 
-En aquellas piezas en las que se trabaja con una determinada tonalidad hay una serie de notas que deben aparecer siempre alteradas. En esos casos resulta cómodo especificar una \textit{armadura}. La armadura es un conjunto de alteraciones al principio del pentagrama, justo a la derecha de la clave, que indica qué alteraciones tendrán las notas de ese pentagrama a lo largo de toda la canción o hasta que se especifique lo contrario. De este modo, para la escala de Do Menor de la Figura \ref{fig:escalas} podría especificarse una armadura que indicase tres bemoles en las líneas de mi, la y si. Si quisiéramos escribir esas notas sin la alteración, para contrarrestar la armadura, habría que usar otra alteración denominada \textit{becuadro}. El becuadro, también conocido como \textit{natural}, elimina las alteraciones establecidas por la armadura del pentagrama. Esta armadura no solo resulta conveniente para el compositor, al tener que escribir las alteraciones de las notas una única vez al comienzo, sino que también es muy útil a la hora de identificar la tonalidad de la pieza, ya que suele ser un indicativo fiable de la misma.
+En aquellas piezas en las que se trabaja con una determinada tonalidad hay una serie de notas que deben aparecer siempre alteradas. En esos casos resulta cómodo especificar una \textit{armadura}. La armadura es un conjunto de alteraciones al principio del pentagrama, justo a la derecha de la clave, que indica qué alteraciones tendrán las notas de ese pentagrama a lo largo de toda la canción o hasta que se especifique lo contrario. De este modo, para la escala de Do Menor de la Figura \ref{fig:escalas} podría especificarse una armadura que indicase tres bemoles en las líneas de mi, la y si (Ver Figura \ref{fig:armadura}). Si quisiéramos escribir esas notas sin la alteración, para contrarrestar la armadura, habría que usar otra alteración denominada \textit{becuadro}. El becuadro, también conocido como \textit{natural}, elimina las alteraciones establecidas por la armadura del pentagrama. Esta armadura no solo resulta conveniente para el compositor, al tener que escribir las alteraciones de las notas una única vez al comienzo, sino que también es muy útil a la hora de identificar la tonalidad de la pieza, ya que suele ser un indicativo fiable de la misma.
 
 \begin{figure}[h]
 	\centering
@@ -160,9 +160,9 @@ En aquellas piezas en las que se trabaja con una determinada tonalidad hay una s
 
 \subsection{Armonía}
 \label{subsec:harmony}
-Si la melodía es la sucesión de notas en el tiempo, se puede entender la armonía como los conjuntos de notas que suenan a la vez a lo largo de un intervalo de tiempo. Por eso se habla de que el análisis melódico es horizontal y el armónico vertical, aunque esto no es del todo cierto, pues al fin y al cabo la armonía analiza también intervalos horizontales de tiempo (normalmente acotados en compases) y la estructura general de la pieza. Para poder estudiar o crear armonía se debe contar siempre, o bien con varias voces, o bien con instrumentos polifónicos capaces de producir sonidos simultáneos (Como el Piano o la Guitarra).
+Si la melodía es la sucesión de notas en el tiempo, se puede entender la armonía como los conjuntos de notas que suenan a la vez a lo largo de un intervalo de tiempo. Por eso se habla de que el análisis melódico es horizontal y el armónico vertical, aunque esto no es del todo cierto, pues al fin y al cabo la armonía analiza también intervalos horizontales de tiempo (normalmente acotados en compases) y la estructura general de la pieza. Para poder estudiar o crear armonía se debe contar siempre, o bien con una pieza polifónica (es decir, con varias voces), o bien con instrumentos polifónicos capaces de producir sonidos simultáneos tales como el Piano o la Guitarra. La Figura \ref{fig:polifonia} ilustra una pieza de este tipo.
 
-Uno de los conceptos más importantes dentro de la armonía es la tonalidad. La armonía define siete grados para una tonalidad, y están relacionados con la escala de dicha tonalidad. Cada grado está referido a cada una de las notas de la escala y se representa mediante un número romano de forma consecutiva, además de un nombre. Los grados más relevantes son el I, IV y V, mientras que los menos importantes o débiles son el II y el VI. A mayores, los grados muy débiles son el III y el VII.
+Uno de los conceptos más importantes dentro de la armonía es la tonalidad. La armonía define siete grados para una tonalidad, y están relacionados con la escala de dicha tonalidad. Cada grado está referido a cada una de las notas de la escala y se representa mediante un número romano de forma consecutiva, además de un nombre. Los grados más relevantes son el I, IV y V, mientras que los menos importantes o débiles son el II y el VI. Además, los grados muy débiles son el III y el VII. (Ver Figura \ref{fig:acordes})
 
 \begin{itemize} 
 	\item I (Tónica)
@@ -176,7 +176,7 @@ Uno de los conceptos más importantes dentro de la armonía es la tonalidad. La 
 
 Establecidos los grados podemos comprender el concepto de intervalo entre dos notas. Dados los grados de dos notas cualesquiera, contando los grados intermedios entre ambas podemos determinar el intervalo. De este modo existiría un intervalo de segunda entre el grado I y el grado II, un intervalo de tercera entre el grado II y el grado IV, un intervalo de cuarta entre el grado III y el grado VI, etc. Este intervalo puede ser ascendente o descendente si la segunda nota del intervalo es más aguda que la primera o más grave.
 
-Según la teoría, un acorde son tres o más sonidos simultáneos a una distancia de tercera entre sí de forma ascendente. Analizando el tercer grado de la escala de las notas del acorde, podemos determinar si éste es mayor o menor. La nota generadora del acorde suele ser la tónica y además la más grave del mismo, si no es así se dice que el acorde está invertido.
+Según la teoría, un acorde son tres o más sonidos simultáneos a una distancia de tercera entre sí de forma ascendente. Analizando el tercer grado de la escala de las notas del acorde, podemos determinar si éste es mayor o menor. La nota generadora del acorde suele ser la tónica y además la más grave del mismo, si no es así se dice que el acorde está invertido. 
 
 \begin{figure}[h!]
 	\centering
@@ -250,13 +250,13 @@ La tesitura define el rango de notas que un instrumento o tipo de voz es capaz d
 En música coral se diferencian las tesituras por el sexo\footnote{Existen excepciones como los coros en que las tesituras femeninas son interpretadas por niños o en algunos casos por los conocidos como ``castrati'', varones que eran castrados en la infancia para mantener su timbre agudo.} de la persona que canta y se les asignan roles en la polifonía del mismo modo que se asignan a los diferentes instrumentos en una orquesta. Las tesituras corales más comunes son:
 
 \begin{itemize}
-	\item Bajo: Voz masculina encargada de las partes más graves
-	\item Barítono: Voz masculina intermedia
-	\item Tenor: Voz masculina más aguda
-	\item Contra-Tenor: Voz masculina especialmente aguda, normalmente cantada en falsete
-	\item Contralto: Voz femenina más grave, no obstante, situada por encima de la de Contra-Tenor
-	\item Mezzo-Soprano: Voz femenina intermedia entre la de Contralto y Soprano
-	\item Soprano: Voz femenina encargada de las secciones más agudas
+	\item Bajo: Voz masculina encargada de las partes más graves.
+	\item Barítono: Voz masculina intermedia.
+	\item Tenor: Voz masculina más aguda.
+	\item Contra-Tenor: Voz masculina especialmente aguda, normalmente cantada en falsete.
+	\item Contralto: Voz femenina más grave, no obstante, situada por encima de la de Contra-Tenor.
+	\item Mezzo-Soprano: Voz femenina intermedia entre la de Contralto y Soprano.
+	\item Soprano: Voz femenina encargada de las secciones más agudas.
 \end{itemize} 
 
 \section{Contexto Tecnológico}
@@ -270,18 +270,16 @@ Si bien el sistema planteado en el proyecto no es un compositor, se enmarca dent
 
 \subsection{Answer Set Programming}
 \label{subsec:asp}
-El módulo principal del proyecto se ha desarrollado usando técnicas conocidas como \textit{Answer Set Programming}\cite{Brewka:2011:ASP:2043174.2043195} (ASP de ahora en adelante) basadas en modelos estables (Gelfond \& Lifschitz 1988) y lógica no-monótona. ASP es un lenguaje de programación declarativa orientado a problemas de búsqueda difíciles, principalmente NP-complejos. ASP ha demostrado ser particularmente útil en aplicaciones donde es necesaria la representación del conocimiento y el razonamiento a partir de dicho conocimiento. En ASP, los problemas de búsqueda se reducen al cómputo de modelos estables, usándose programas conocidos como\textit{solvers} para realizar la búsqueda de las soluciones. El lenguaje de entrada de ASP es una variante enriquecida del lenguaje prolog. Para traducir el lenguaje de entrada a reglas de programación declarativa convencional y poder construir los modelos estables subyacentes del problema, ASP cuenta con \textit{grounders} que se encargan de esta transformación.
+El módulo principal del proyecto se ha desarrollado usando técnicas conocidas como \textit{Answer Set Programming}\cite{Brewka:2011:ASP:2043174.2043195} (ASP de ahora en adelante) basadas en modelos estables de Gelfond \& Lifschitz\cite{Gelfond88thestable} y lógica no-monótona. ASP es un lenguaje de programación declarativa orientado a problemas de búsqueda difíciles, principalmente NP-complejos. ASP ha demostrado ser particularmente útil en aplicaciones donde es necesaria la representación del conocimiento y el razonamiento a partir de dicho conocimiento. En ASP, los problemas de búsqueda se reducen al cómputo de modelos estables, usándose programas conocidos como\textit{solvers} para realizar la búsqueda de las soluciones. El lenguaje de entrada de ASP es una variante enriquecida del lenguaje prolog. Para traducir el lenguaje de entrada a reglas de programación declarativa convencional y poder construir los modelos estables subyacentes del problema, ASP cuenta con \textit{grounders} que se encargan de esta transformación.
 
 La implementación de un programa que busque soluciones a un problema concreto pasa por la definición de las reglas de ese problema de modo general, mientras que la definición del problema concreto a solucionar se especifica mediante hechos lógicos que, en combinación con las reglas generales del problema generan todas las posibles soluciones del mismo. Finalmente, estas soluciones se podan mediante restricciones lógicas y/o restricciones de cardinalidad. Este proceso constituye la metodología general del desarrollo en ASP, conocida como \textit{generate and test}
 
 Las herramientas desarrolladas por el grupo Potassco\footnote{http://potassco.sourceforge.net/} incluyen, entre otras, un \textit{grounder} (Gringo) y un \textit{solver} (Clasp), junto con una herramienta única que combina ambos llamada Clingo.
 
 \begin{itemize}
- \item \textbf{Gringo} es el \textit{grounder} de la suite. Se encarga de transformar reglas generales a reglas concretas y transforma el problema planteado a un lenguaje entendible por el \textit{solver}
- 
- \item \textbf{Clasp} es el \textit{solver} de la suite. Se encarga de decidir el conjunto final de soluciones válidas dado el problema procesado e interpretado por el \textit{grounder}
- 
- \item \textbf{Clingo} es una herramienta combinada formada por clasp y gringo. Realiza el procesado completo de un problema planteado en ASP y permite indicar algunas preferencias adicionales
+ \item \textbf{Gringo} es el \textit{grounder} de la suite. Se encarga de transformar reglas generales a reglas concretas y transforma el problema planteado a un lenguaje entendible por el \textit{solver}.
+ \item \textbf{Clasp} es el \textit{solver} de la suite. Se encarga de decidir el conjunto final de soluciones válidas dado el problema procesado e interpretado por el \textit{grounder}.
+ \item \textbf{Clingo} es una herramienta combinada formada por clasp y gringo. Realiza el procesado completo de un problema planteado en ASP y permite indicar algunas preferencias adicionales.
 \end{itemize}
 
 \subsection{Formatos}
@@ -289,40 +287,40 @@ Las herramientas desarrolladas por el grupo Potassco\footnote{http://potassco.so
 Debido al contexto en el que se enmarca este proyecto no se cree necesario considerar formatos de salida finales, como OGG, WAV o MP3 ya que como su nombre indica, son formatos utilizados solo para reproducción que no permiten extraer ni editar información musical de forma precisa. Así mismo tampoco se contemplan formatos de representación de partituras en forma de imágenes como SVG, PNG o PDF por motivos similares.
 
 \subsubsection{MusicXML}
-MusicXML, MXML o \textit{Music Extensible Markup Language} es una extensión del formato XML usado en la representación de música occidental. No solo contiene información musical sino que también incluye información de su representación en papel, tal como márgenes, tamaños de fuente, posición de las notas en coordenadas, etc. Hace uso del sistema de etiquetas anidadas de XML para agrupar los diferentes bloques de información de una pieza, como las voces, los compases o la información individual de cada nota. Es un formato muy rico aunque difícil de escribir correctamente a mano. Es por esto que normalmente se usa solo como formato de intercambio entre software que lo acepta como entrada o salida.
+MusicXML, MXML o \textit{Music Extensible Markup Language} es una extensión del formato XML usado en la representación de música occidental. No solo contiene información musical sino que también incluye información de su representación en papel, tal como márgenes, tamaños de fuente, posición de las notas en coordenadas, etc. Hace uso del sistema de etiquetas anidadas de XML para agrupar los diferentes bloques de información de una pieza, como las voces, los compases o la información individual de cada nota (Ver Figura \ref{fig:nota_musicxml}). Es un formato muy rico aunque difícil de escribir correctamente a mano. Es por esto que normalmente se usa solo como formato de intercambio entre software que lo acepta como entrada o salida.
 
 \begin{figure}[h!]
 	\centering
-	\begin{verbatim}
-	<note default-x="74.65" default-y="-25.00">
-	    <pitch>
-	        <step>A</step>
-	        <octave>4</octave>
-	    </pitch>
-	    <duration>1</duration>
-	    <voice>1</voice>
-	    <type>quarter</type>
-	    <stem>up</stem>
-	</note>
-	\end{verbatim}
+	\begin{Verbatim}[frame=single]
+<note default-x="74.65" default-y="-25.00">
+	<pitch>
+		<step>A</step>
+		<octave>4</octave>
+	</pitch>
+	<duration>1</duration>
+	<voice>1</voice>
+	<type>quarter</type>
+	<stem>up</stem>
+</note>
+	\end{Verbatim}
 	\caption{Ejemplo de nota representada en MusicXML}
 	\label{fig:nota_musicxml}
 \end{figure}
 
 
 \subsubsection{LilyPond}
-LilyPond\footnote{http://www.lilypond.org/} es un conjunto formado por el software y el formato de fichero homónimos. LilyPond como formato usa su propio lenguaje de marcado. Las eqtiquetas de LilyPond se parecen más a las usadas en \LaTeX. De forma similar a MusicXML, incluye información de representación final, aunque en mucha menor cantidad (Sólo tamaño de papel, márgenes o sangrados). La información musical de la canción está anidada por secciones de forma similar a MusicXML, aunque ésta se organiza de forma mucho más intuitiva para el lector humano del fichero. Es un formato ligero pensado para poder ser editado a mano, aunque la mayoría del software musical actual lo soporta como entrada y salida. 
+LilyPond\footnote{http://www.lilypond.org/} es un conjunto formado por el software y el formato de fichero homónimos. LilyPond como formato usa su propio lenguaje de marcado. Las etiquetas de LilyPond se parecen más a las usadas en \LaTeX. De forma similar a MusicXML, incluye información de representación final, aunque en mucha menor cantidad (Sólo tamaño de papel, márgenes o sangrados). La información musical de la canción está anidada por secciones de forma similar a MusicXML, aunque ésta se organiza de forma mucho más intuitiva para el lector humano del fichero (Ver Figura \ref{fig:partitura_lilypond}). Es un formato ligero pensado para poder ser editado a mano, aunque la mayoría del software musical actual lo soporta como entrada y salida. 
 
 El software del mismo nombre es un programa de grabado musical (tipografía musical o edición de partituras), pensado para producir partituras de alta calidad. Lleva la estética de la música tipografiada de la forma tradicional a las partituras impresas mediante ordenador. LilyPond es software libre y forma parte del Proyecto GNU. 
 
 \begin{figure}[h!]
 	\centering
-	\begin{verbatim}
-		\version "2.14.1"
-		{
-		  <c' d'' b''>8. ~ <c' d'' b''>8
-		}
-	\end{verbatim}
+\begin{Verbatim}[frame=single]
+\version "2.14.1"
+{
+	<c' d'' b''>8. ~ <c' d'' b''>8
+}
+\end{Verbatim}
 	\caption{Ejemplo de una pequeña pieza musical en lilypond}
 	\label{fig:partitura_lilypond}
 \end{figure}
@@ -366,7 +364,7 @@ Dentro de la inteligencia artificial, se han realizado aproximaciones a la compo
 	\item \textbf{ANTON}\cite{anton-composing} es un sistema de composición rítmica, melódica y armónica basado en Answer Set Programming. ANTON compone breves piezas musicales desde cero o partiendo de partituras incompletas utilizando un estilo basado en el del compositor renacentista Giovanni Pierluigi da Palestrina. Recibe como entrada ficheros con las notas codificadas como hechos lógicos para después rellenar las secciones incompletas o añadir nuevas notas hasta que la pieza está completa. ANTON crea y completa dichas piezas teniendo en cuenta el número de tiempos rítmicos de las mismas y seleccionando la nota correspondiente de acuerdo a la nota  o estado anterior.
 	\item \textbf{Vox Populi}\cite{vox-populi} utiliza algoritmos evolutivos para componer música en tiempo real. En este sistema, se parte de una población de acordes codificados mediante el protocolo MIDI para después mutarlos y seleccionar los mejores acordes a criterios puramente físicos relevantes para la música. Su interfaz gráfica permite al usuario controlar la función de \textit{fitness} del proceso evolutivo así como los atributos del sonido producido.
 	\item \textbf{CHORAL} es un sistema experto que funciona como armonizador en el estilo clásico de Johann Sebastian Bach. Las reglas que utiliza el sistema representan conocimiento musical desde varios puntos de vista de la coral. El programa armoniza melodías corales mediante un sistema de generación y prueba con \textit{backtracking}. La base de conocimiento de CHORAL permite realizar modulaciones propias del estilo, crear patrones rítmicos e impone restricciones complejas para mantener el interés melódico en las voces intermedias.
-	\item \textbf{CHASP} es una herramienta creada por el grupo Potassco para calcular progresiones de acordes mediante Answer Set Programming partiendo de cero, pudiendo especificar clave y duración. A diferencia del presente proyecto no toma un fichero de entrada para armonizar piezas, pero sí que es capaz de dotar a la salida del programa de diferentes estilos rítimicos.
+	\item \textbf{CHASP} es una herramienta creada por el grupo Potassco para calcular progresiones de acordes mediante Answer Set Programming partiendo de cero, pudiendo especificar clave y duración. A diferencia del presente proyecto no toma un fichero de entrada para armonizar piezas, pero sí que es capaz de dotar a la salida del programa de diferentes estilos rítmicos.
 \end{itemize} 
 
 

@@ -41,33 +41,33 @@ Se detalla una relación de los elementos MusicXML identificados por el procesad
 
  \begin{center}
  	\newcommand*{\TitleParbox}[1]{\parbox[c]{1.75cm}{\raggedright #1}}%
- 	\begin{longtable}{ | l | c | c | l | }
+ 	\begin{longtable}{ | l | c | c | p{6.5cm} | }
  		\hline
  		Nombre & Pertenece a & Tipo & Uso \\ \hline \hline
- 		note & measure & Etiqueta & \parbox[l]{6.5cm}{\raggedright Delimita el bloque correspondiente a una nota o silencio} \\ \hline
- 		step & note & Etiqueta & \parbox[l]{6.5cm}{\raggedright Especifica el nombre de la nota en notación internacional} \\ \hline
- 		octave & note & Etiqueta & \parbox[l]{6.5cm}{\raggedright Indica el número de la octava de la nota} \\ \hline
- 		rest & note & Autocerrada & \parbox[l]{6.5cm}{\raggedright Indica si la figura es un silencio, en caso de aparecer, step y octave no se especifican} \\ \hline
- 		chord & note & Autocerrada & \parbox[l]{6.5cm}{\raggedright Indica si la nota forma parte de un acorde} \\ \hline
- 		type & note & Etiqueta & \parbox[l]{6.5cm}{\raggedright Especifica el tipo de figura mediante un string (whole, half, quarter...)} \\ \hline
- 		staff & note & Etiqueta & \parbox[l]{6.5cm}{\raggedright Identifica el número de pentagrama al que pertenece la nota, usado en instrumentos con múltiples pentagramas como el piano} \\ \hline
- 		grace & note & Autocerrada & \parbox[l]{6.5cm}{\raggedright Indica si la nota es una apoyatura} \\ \hline
- 		alter & note & Etiqueta & \parbox[l]{6.5cm}{\raggedright Especifica el valor de alteración usando números positivos para sostenidos y negativos para bemoles} \\ \hline
- 		duration & note & Etiqueta & \parbox[l]{6.5cm}{\raggedright Indica la duración de la figura} \\ \hline
- 		dot & note & Autocerrada & \parbox[l]{6.5cm}{\raggedright Indica si la nota está acompañada de un puntillo} \\ \hline
- 		part & score-partwise & Etiqueta & \parbox[l]{6.5cm}{\raggedright Delimita los bloques de cada voz o parte de la partitura} \\ \hline
- 		score-part & part-list & Etiqueta & \parbox[l]{6.5cm}{\raggedright Delimita los bloques de meta-información de cada una de las partes} \\ \hline
- 		instrument & score-part & Etiqueta & \parbox[l]{6.5cm}{\raggedright Especifica el nombre del instrumento la parte correspondiente} \\ \hline
- 		print-object & note & Atributo & \parbox[l]{6.5cm}{\raggedright Indica si la nota es visible o no} \\ \hline
- 		credit-words & credit & Etiqueta & \parbox[l]{6.5cm}{\raggedright Almacena metadatos sobre autor o título de la partitura} \\ \hline
- 		time & attributes & Etiqueta & \parbox[l]{6.5cm}{\raggedright Delimita bloques sobre la información de compases} \\ \hline
- 		beats & time & Etiqueta & \parbox[l]{6.5cm}{\raggedright Indica la cantidad de figuras del compás (numerador)} \\ \hline
- 		beat-type & time & Etiqueta & \parbox[l]{6.5cm}{\raggedright Indica la figura base del compás (denominador)} \\ \hline
- 		harmony & measure & Etiqueta & \parbox[l]{6.5cm}{\raggedright Delimita un bloque que especifica la notación de armonía del compás} \\ \hline
- 		root-step & harmony & Etiqueta & \parbox[l]{6.5cm}{\raggedright Indica la nota raíz del acorde que se anota sobre el compás} \\ \hline
- 		kind & harmony & Etiqueta & \parbox[l]{6.5cm}{\raggedright Indica el tipo de acorde anotado sobre el compás (mayor, menor, dominante séptima...)} \\ \hline
- 		fifths & key & Etiqueta & \parbox[l]{6.5cm}{\raggedright Indica la cantidad de sostenidos o bemoles presentes en la armadura de la partitura. Usa números positivos para los sostenidos y negativos para los bemoles} \\ \hline
- 		mode & key & Etiqueta & \parbox[l]{6.5cm}{\raggedright Indica el modo (mayor o menor) de la tonalidad especificada por la armadura de la partitura} \\ \hline
+ 		note & measure & Etiqueta & Delimita el bloque correspondiente a una nota o silencio \\ \hline
+ 		step & note & Etiqueta &  Especifica el nombre de la nota en notación internacional \\ \hline
+ 		octave & note & Etiqueta &  Indica el número de la octava de la nota \\ \hline
+ 		rest & note & Autocerrada & Indica si la figura es un silencio, en caso de aparecer, step y octave no se especifican \\ \hline
+ 		chord & note & Autocerrada & Indica si la nota forma parte de un acorde \\ \hline
+ 		type & note & Etiqueta & Especifica el tipo de figura mediante un string (whole, half, quarter...) \\ \hline
+ 		staff & note & Etiqueta & Identifica el número de pentagrama al que pertenece la nota, usado en instrumentos con múltiples pentagramas como el piano \\ \hline
+ 		grace & note & Autocerrada & Indica si la nota es una apoyatura \\ \hline
+ 		alter & note & Etiqueta & Especifica el valor de alteración usando números positivos para sostenidos y negativos para bemoles \\ \hline
+ 		duration & note & Etiqueta & Indica la duración de la figura \\ \hline
+ 		dot & note & Autocerrada & Indica si la nota está acompañada de un puntillo \\ \hline
+ 		part & score-partwise & Etiqueta & Delimita los bloques de cada voz o parte de la partitura \\ \hline
+ 		score-part & part-list & Etiqueta & Delimita los bloques de meta-información de cada una de las partes \\ \hline
+ 		instrument & score-part & Etiqueta & Especifica el nombre del instrumento la parte correspondiente \\ \hline
+ 		print-object & note & Atributo & Indica si la nota es visible o no \\ \hline
+ 		credit-words & credit & Etiqueta & Almacena metadatos sobre autor o título de la partitura \\ \hline
+ 		time & attributes & Etiqueta & Delimita bloques sobre la información de compases \\ \hline
+ 		beats & time & Etiqueta & Indica la cantidad de figuras del compás (numerador) \\ \hline
+ 		beat-type & time & Etiqueta & Indica la figura base del compás (denominador) \\ \hline
+ 		harmony & measure & Etiqueta & Delimita un bloque que especifica la notación de armonía del compás \\ \hline
+ 		root-step & harmony & Etiqueta & Indica la nota raíz del acorde que se anota sobre el compás \\ \hline
+ 		kind & harmony & Etiqueta & Indica el tipo de acorde anotado sobre el compás (mayor, menor, dominante séptima...) \\ \hline
+ 		fifths & key & Etiqueta & Indica la cantidad de sostenidos o bemoles presentes en la armadura de la partitura. Usa números positivos para los sostenidos y negativos para los bemoles \\ \hline
+ 		mode & key & Etiqueta & Indica el modo (mayor o menor) de la tonalidad especificada por la armadura de la partitura \\ \hline
  	\end{longtable}
  \end{center} 
  
@@ -134,7 +134,7 @@ Se detalla una relación de los elementos MusicXML identificados por el procesad
 \label{chap:installation}
 Se recomienda la instalación de la herramienta en un sistema operativo Linux. Esto se debe a que las librerías Flex y Bison se  compilan fácilmente en dicha plataforma. No obstante se proporciona el código fuente completo, por lo tanto es posible compilarlo para otros sistemas operativos.
 
-El requisito es tener instalado Python 2.7, las ultimas versiones de Flex y Bison, además de un compilador de C (gcc sirve perfectamente). A mayores es necesario descargar tanto gringo 3.0.5 como clingo 3.0.5 de la página en Sourceforge del grupo Potassco\cite{potasscoweb} y el módulo Music21 en su versión 2.1.2 o superior de la página de la librería. Todas estas herramientas, compiladores y librerías deben ser accesibles mediante en el \texttt{PATH} del sistema operativo.
+El requisito es tener instalado Python 2.7, las ultimas versiones de Flex y Bison, además de un compilador de C (gcc sirve perfectamente). Además es necesario descargar tanto gringo 3.0.5 como clingo 3.0.5 de la página en Sourceforge del grupo Potassco\cite{potasscoweb} y el módulo Music21 en su versión 2.1.2 o superior de la página de la librería. Todas estas herramientas, compiladores y librerías deben ser accesibles mediante en el \texttt{PATH} del sistema operativo.
 
 La instalación de tanto gringo como clingo no tiene mayor complicación, sólo deben ubicarse en alguna carpeta accesible y añadir dicha ruta al \texttt{PATH}. En la página web de Music21\cite{music21web} se incluyen instrucciones para su instalación automatizada en el sistema. Se aconseja, no obstante instalar primero diferentes herramientas para transformación y visualización o reproducción de los diferentes formatos (Léase PDF, MIDI, Lilypond, etc.) ya que de este modo, la instalación de Music21 las reconocerá y podrán ser usadas sin configuración posterior. Si se desean cambiar las preferencias sobre estas herramientas vinculadas a Music21, ha de editarse el fichero \texttt{.music21rc} presente en la carpeta \texttt{home} del usuario activo del sistema.
 	
@@ -146,8 +146,7 @@ Con la herramienta, además del código fuente, se ofrece el procesador MusicXML
 \label{chap:usage}
 Esta herramienta está pensada para ser usada desde la línea de comandos en sistemas operativos Linux. El comando básico para su ejecución es \texttt{python haspie.py <fichero.xml>} y las opciones que permite la herramienta, junto con una pequeña explicación de cada una de ellas, pueden ser invocadas mediante la opción \texttt{-h}, como es habitual. No obstante se detalla una ejecución completa a modo de guía de uso.
 
-\begin{figure}
-	\begin{verbatim}
+\begin{Verbatim}[frame=single,fontsize=\relsize{-1}]
 usage: haspie.py [-h] [-n N] [-s S] [-v V [V ...]] [-S] [-f xml|pdf|midi|ly]
                  [-o output/dir/for/file] [-t T] [-k A~G+-?] [-m major|minor]
                  [-M] [-6] [-a] [-O O] [-c config_file_name.lp]
@@ -192,10 +191,7 @@ optional arguments:
   -c config_file_name.lp, --config config_file_name.lp
                         reads preference order and weights for parameters from
                         the desired *.lp file stored in /pref folder
-	\end{verbatim}
-	\label{fig:usage}
-	\caption{Opciones de uso de la herramienta}
-\end{figure}
+\end{Verbatim}
 
 Lo primero que se debe tener en cuenta es que el fichero de entrada debe proporcionarse en formato MusicXML estándar, este tipo de ficheros son uno de los más comunes en intercambio de partituras y no es difícil encontrar la partitura que deseemos armonizar en este formato. De no ser así, casi cualquier herramienta moderna de composición musical por ordenador puede exportar archivos a este formato. Ya que durante el desarrollo del proyecto se ha usado MuseScore 2, las figuras que acompañan esta sección son capturas de esta herramienta. Para opciones similares en otros editores, consúltese el manual de cada uno.
 
@@ -226,13 +222,13 @@ El formato en el que se debe especificar la clave es el nombre internacional de 
 
 Para modificar el comportamiento del módulo de completado de partituras se puede hacer uso de dos módulos de preferencias adicionales que refinan la salida para obtener un mejor resultado a cambio de requerir más tiempo de búsqueda de las soluciones. Estas preferencias tienen en cuenta las notas presentes en la entrada, pero no las modifican de ningún modo. 
 El módulo de preferencias melódicas está orientado a ofrecer unas melodías más suavizadas y pulidas, principalmente minimiza la distancia de los saltos melódicos entre notas de la partitura y realiza un análisis de tendencia de las otras voces para imitar dicha tendencia. Este módulo puede ser utilizado con la opción \texttt{-M}.
-El módulo de enlaces de sextas está basado en la detección y enlazado de inversiones de cuarta y sexta de acordes, muy común en polifonía. Este módulo intenta detectar estos patrones y de hallarlos busca que las nuevas notas generadas los continúen. Es signficativamente costoso computacionalmente, puede ser invocado mediante la opción \texttt{-6}.
+El módulo de enlaces de sextas está basado en la detección y enlazado de inversiones de cuarta y sexta de acordes, muy común en polifonía. Este módulo intenta detectar estos patrones y de hallarlos busca que las nuevas notas generadas los continúen. Es significativamente costoso computacionalmente, puede ser invocado mediante la opción \texttt{-6}.
 
 Para configurar más aún el comportamiento de ambos módulos, la importancia de cada uno de los parámetros que se maximizan o minimizan durante la búsqueda de las mejores soluciones puede ser alterada haciendo uso de ficheros de configuración en formato ASP. En la carpeta \texttt{pref} se encuentra uno comentado con las opciones por defecto. De querer hacer uso de un archivo de configuración solo hay que indicarle la ruta del mismo mediante la opción \texttt{-c /ruta/fichero/config.lp}. 
 
 Cada parámetro de los ficheros de configuración cuenta con dos valores:
 \begin{itemize}
-	\item \textbf{Peso:} Indicado mediante \texttt{nombre\_weight} mide la importancia de cada uno de estos hechos en el resultado
+	\item \textbf{Peso:} Indicado mediante \texttt{nombre\_weight} mide la importancia de cada uno de estos hechos en el resultado.
 	\item \textbf{Prioridad:} Indicado mediante \texttt{nombrep} indica el orden en el que se ordenarán las preferencias, a más valor, mayor relevancia en el orden.
 \end{itemize}
 

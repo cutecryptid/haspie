@@ -6,7 +6,15 @@
 % Objetivo: Contar cómo está ahora el proyecto, si ha merecido la              %
 %           pena, lo que se ha aprendido, si se aplicaría de nuevo, etc.       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\lettrine{E}{n} el proyecto se ha construido una herramienta software capaz de tomar como entrada una partitura polifónica parcial, deducir los acordes correspondientes a la unidad de tiempo deseada, y si el usuario lo desease, completarla respetando las reglas básicas de armonía, de modo similar a los ejercicios habituales en esta disciplina musical. Se ha logrado abarcar la estructura musical de forma tanto horizontal como vertical. Se ha demostrado empíricamente que este problema de armonización se puede especificar en términos de resolución de restricciones. El proyecto hizo uso del paradigma de \textit{Answer Set Programming}, una variante de Programación Lógica de uso frecuente para la Representación del Conocimiento y la resolución de problemas. La principal ventaja de ASP para este caso fue la facilidad que otorgaba el uso de predicados simples a la hora de definir ciertos sucesos dentro de la partitura así como añadir directamente las reglas usadas en armonía bajo la forma de reglas de programación lógica. Esto proporcionó una enorme flexibilidad, ya que ASP es un paradigma totalmente declarativo, en el que sólo se realiza la especificación del problema, y no se describe el método de resolución que se aplica para el mismo. Otra ventaja importante de ASP para este escenario fue la posibilidad de implementar y usar preferencias, ya que algunas reglas armónicas no son estrictas, sino que se busca que se respeten en la medida de lo posible. Se diseñó e implementó un conjunto de módulos que, funcionando como uno solo, son capaces de ofrecer resultados a ejercicios sencillos de armonización aceptables desde el punto de vista de un experto, de modo que el software final puede ser utilizado en el mundo real para ayudar a la composición y al aprendizaje de armonía.
+\lettrine{E}{n} el proyecto se ha construido una herramienta software capaz de tomar como entrada una partitura polifónica parcial, deducir los acordes correspondientes a la unidad de tiempo deseada, y si el usuario lo desease, completarla respetando las reglas básicas de armonía, de modo similar a los ejercicios habituales en esta disciplina musical. Se ha logrado abarcar la estructura musical de forma tanto horizontal como vertical y también se ha probado empíricamente que este problema de armonización se puede especificar en términos de resolución de restricciones.
+
+El proyecto hizo uso del paradigma de \textit{Answer Set Programming}, una variante de Programación Lógica de uso frecuente para la Representación del Conocimiento y la resolución de problemas. La principal ventaja de ASP para este caso fue la facilidad que otorgaba el uso de predicados simples a la hora de definir ciertos sucesos dentro de la partitura así como añadir directamente las reglas usadas en armonía bajo la forma de reglas de programación lógica.
+
+ Esto proporcionó una enorme flexibilidad, ya que ASP es un paradigma totalmente declarativo, en el que sólo se realiza la especificación del problema, y no se describe el método de resolución que se aplica para el mismo. En el estado actual de \texttt{haspie}, pueden considerarse las reglas de cada módulo una entrada más del problema a resolver, junto con los hechos, lo que permite modificar su comportamiento con un esfuerzo mínimo.
+ 
+  Otra ventaja importante de ASP para este escenario fue la posibilidad de implementar y usar preferencias, ya que algunas reglas armónicas no son estrictas, sino que se busca que se respeten en la medida de lo posible. 
+  
+  En resumen, se diseñó e implementó con éxito un conjunto de módulos que, funcionando como uno solo, son capaces de ofrecer buenos resultados a ejercicios sencillos de armonización.
 
 Los módulos implementados, de forma general, para el proyecto son:
 \begin{itemize}
@@ -16,15 +24,22 @@ Los módulos implementados, de forma general, para el proyecto son:
 	\item \textbf{Salida y postprocesado:} Tomando como entrada las soluciones en forma de hechos lógicos, produce un fichero en el formato de salida especificado para su posterior visualización.
 \end{itemize}
 
-Se han mantenido las restricciones establecidas al proyecto, tanto la de no buscar resultados con coherencia melódica como la de no implementar de ningún modo la capacidad de detectar y trabajar con modulación en piezas musicales.
+Se han mantenido las restricciones establecidas al proyecto, tanto la de no buscar resultados con coherencia melódica como la de no implementar de ningún modo la capacidad de detectar y trabajar con modulación en piezas musicales. 
 
-En el estado en el que se encuentra el proyecto, no podría estar más emocionado con sus resultados. Es cierto que flaquea en algunos puntos, especialmente los relacionados con la subdivisión de tiempos fuertes y débiles, y que se ha descuidado un poco la estética de los resultados finales, pero los buenos resultados cuantitativa y cualitativamente cubren de sobra estos escollos.
- 
- Desde luego ha merecido la pena embarcarse en este proyecto con el profesor Cabalar, no solo el trabajo ha resultado ser tan interesante y satisfactorio como inicialmente parecía, si no que su buena guía y el trabajo realizado han congeniado lo suficientemente bien como para dar frutos y obtener un resultado excelente.
- 
- El mayor remordimiento es que, pese a que el estado sea bueno como para presentar el trabajo ante un tribunal y que ahora mismo tenga aplicabilidad real, aún requerirá algo de trabajo a mayores para que la herramienta esté a un nivel publicable y usable cómodamente en el día a día de los diferentes perfiles para los que está planteada.
- 
- Como gran logro indocumentado del proyecto, pues ha sido este quien lo ha propiciado pero no está involucrado directamente en el trabajo realizado en el mismo, ha sido mejorar mis técnicas de desarrollo en múltiples lenguajes y la integración de sistemas muy dispares en uno solo. Además, habiendo trabajado escasamente con anterioridad en \textit{Answer Set Programming} siento que mis habilidades con este conjunto de herramientas y la sintaxis y particularidades de su lenguaje propio han mejorado enormemente. Esto se ha visto reflejado en pequeños proyectos paralelos ideados y planteados durante estos meses de trabajo, que espero poder emprender una vez haya concluido este trabajo.
+A lo largo del desarrollo del proyecto no ha sido necesario descartar funcionalidad o tomar una dirección diferente a la planteada de forma inicial, aunque a pesar de ello, sí que ha sido necesario refactorizar el módulo ASP hacia el final del ciclo de desarrollo. Dicho módulo, encargado de armonizar y completar partituras a la vez, fue dividido en dos submódulos, uno encargado de armonizar y otro encargado de completar la partitura, para limitar el espacio de búsqueda y así mejorar sustancialmente el rendimiento general de la herramienta.
+
+Los resultados de \texttt{haspie} son, cualitativa y cuantitativamente, realmente buenos, y compensan enormemente los defectos del proyecto en su estado actual. No obstante, el mayor logro obtenido ha sido la versatilidad de la herramienta. Esta flexibilidad se ha logrado al no depender del proceso de búsqueda ni de definir heurísticas, ya que de eso se encargan herramientas externas. El comportamiento de \texttt{haspie} puede ser alterado de forma limitada a través de sus ficheros de configuración que permiten alterar enormemente el estilo y los resultados obtenidos, pero al mismo tiempo, el comportamiento de la herramienta puede ser alterado de forma ilimitada a través de la definición de nuevas reglas. Bajo este punto de vista, el usuario solo tiene que modificar el conjunto de reglas, definiendo o prohibiendo determinados predicados, sin preocuparse del procesado de la entrada ni de le búsqueda ni de la representación de la salida.
+
+Aunque el balance resulta positivo, el proyecto no está libre de errores, algunas limitaciones, impuestas por el propio proyecto o por falta de recursos, hacen que flaquee en algunos aspectos:
+\begin{itemize}
+	\item La subdivisión en tiempos débiles y fuertes, que falla para algunas secuencias rítmicas o tipos de compases.
+	\item La interfaz, pese a ser plenamente funcional a través de la línea de comandos, es muy pobre.
+	\item Pese a la flexibilidad, aún son necesarios conocimientos de ASP, del dominio particular del sistema y de teoría musical.
+	\item No ha sido probado con una base de usuarios.
+	\item Aún necesita ser pulido y sus resultados necesitan ser contrastados con expertos para poder ser utilizado en enseñanza.
+\end{itemize} 
+
+Finalmente, aunque no por ello menos importante, el proyecto ha resultado ser tremendamente entretenido de desarrollar, ya que cada nueva iteración ha presentado nuevos retos a implementar mediante ASP. Esto ha servido de ayuda y guía para la implementación de pequeños proyectos adicionales bajo el mismo paradigma y ha incrementado la habilidad y soltura del alumno con ASP. Además, la necesidad de aplicar conocimiento de teoría musical ha resultado tremendamente interesante, ya que ha permitido ampliar conocimientos sobre la materia.
  
 \section{Trabajo Futuro}
 \label{sec:future_work}
@@ -38,7 +53,7 @@ Se quiere además transformar el proyecto a un \textit{plug-in} para MuseScore 2
 
 \subsection{Procesado y Armonización}
 \label{subsec:parsing_harm}
-Se busca implementar en el módulo de entrada una mejor detección del tipo de clave de cada una de las voces, permitiendo a la salida ofrecer un resultado más fidedigno. Además en conjunción con el módulo de armonización se pretende detectar mejor los tiempos débiles y fuertes de la pieza, ya que esta es una de las grandes flaquezas en el estado final del proyecto al no poder identificar algunos patrones más complejos de subdivisión fuerte y débil en conjuntos de figuras como corcheas y semicorcheas. Por último, aunque esto quizas sea lo más complicado, se intentará atacar el problema de la detección y la correcta interpretación de los tresillos y otras figuras irregulares.
+Se busca implementar en el módulo de entrada una mejor detección del tipo de clave de cada una de las voces, permitiendo a la salida ofrecer un resultado más fidedigno. Además en conjunción con el módulo de armonización se pretende detectar mejor los tiempos débiles y fuertes de la pieza, ya que esta es una de las grandes flaquezas en el estado final del proyecto al no poder identificar algunos patrones más complejos de subdivisión fuerte y débil en conjuntos de figuras como corcheas y semicorcheas. Por último, aunque esto quizás sea lo más complicado, se intentará atacar el problema de la detección y la correcta interpretación de los tresillos y otras figuras irregulares.
 
 \subsection{Modulación}
 \label{subsec:future_modulation}
