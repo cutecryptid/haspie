@@ -192,7 +192,7 @@ melodic_jump(V,J,B1,B2) :- out_note(V,N1,B1), out_note(V,N2,B2),
 El segundo módulo detecta progresiones de un determinado tipo de acordes (inversiones de cuarta y sexta). Este tipo de progresión es muy común en música coral, y por tanto, los resultados usando este módulo con piezas corales resultan mucho más realistas. Para esto se realiza una armonización a tiempo, es decir, se asigna un acorde a cada instante de la pieza y se intentan detectar estas progresiones concretas de acordes con el fin de crearlas o continuarlas si ya existen con la ayuda de las nuevas notas generadas. Es debido a esta armonización a tiempo que este módulo es tremendamente pesado computacionalmente.
 
 \subsection{Ficheros de Configuración}
-Las reglas de optimización, ya sean maximización o minimización, presentes en los módulos y submódulos ASP asignan un peso y un orden de relevancia a los predicados que se cuantifican de cara a la optimización. Este peso por defecto puede ser sobreescrito mediante ficheros de configuración. Cambiando el peso de cada hecho se altera como de importante es la aparición de cada uno de esos hechos, mientras que cambiando el orden de relevancia se determina como se realizará el proceso de optimización al completo.
+Las reglas de optimización, ya sean maximización o minimización, presentes en los módulos y submódulos ASP asignan un peso y un orden de relevancia a los predicados que se cuantifican de cara a la optimización. Este peso por defecto puede ser sobreescrito mediante ficheros de configuración. Cambiando el peso de cada hecho se altera cómo de importante es la aparición de cada uno de esos hechos, mientras que cambiando el orden de relevancia se determina cómo se realizará el proceso de optimización al completo.
 Se presenta un fichero de configuración de ejemplo comentado para que el usuario pueda cambiar el funcionamiento de la herramienta a su antojo, produciendo cambios drásticos en el estilo con un esfuerzo mínimo y permitiendo almacenar estas preferencias en un fichero que determine su estilo personal de composición.
 
 \subsection{Clases de Almacenamiento}
@@ -201,7 +201,7 @@ Para poder almacenar temporalmente los resultados de los dos submódulos ASP de 
 En cuanto al módulo de armonización, éste cuenta con las siguiente clases:
 \begin{itemize}
 	\item \texttt{\textbf{ClaspChords:}} Almacena todas las soluciones del armonizador, tanto en texto plano como en un array de objetos \texttt{ChordSolution}. Posee un método para transformar la salida de clasp a los diferentes objetos de la jerarquía.
-	\item \texttt{\textbf{ChordSolution:}} Contiene dos listas ordenadas, una de objetos \texttt{Error} y otra de objetos \texttt{Chord}, y un valor de optimización que mide como de buena es la solución.
+	\item \texttt{\textbf{ChordSolution:}} Contiene dos listas ordenadas, una de objetos \texttt{Error} y otra de objetos \texttt{Chord}, y un valor de optimización que mide cómo de buena es la solución.
 	\item \texttt{\textbf{Error:}} Representa una nota errónea en la partitura, especificando voz y tiempo para ubicarla en ella, así como el grado musical que produce el error.
 	\item \texttt{\textbf{Chord:}} Representa un acorde en la pieza, especificando el nombre del mismo y el tiempo al que ha sido asignado.
 \end{itemize}
@@ -240,7 +240,7 @@ En este proceso de conversión, no solo se traducen las notas, voces y anotacion
 
 
 \section{Iteraciones}
-Se detalla un breve resumen de cada una de las iteraciones de desarrollo del proyecto, indicando cuales fueron los progresos, cambios y refactorizaciones en cada una de ellas. Junto al número de iteración se indican las fechas de inicio y final de las mismas.
+Se detalla un breve resumen de cada una de las iteraciones de desarrollo del proyecto, indicando cuáles fueron los progresos, cambios y refactorizaciones en cada una de ellas. Junto al número de iteración se indican las fechas de inicio y final de las mismas.
 
 \subsection{Iteración 1 -- 28 Sept 2015/11 Oct 2015}
 \label{subsec:first_iteration}
@@ -269,7 +269,7 @@ Además se incluyó como parte de esta iteración, el diseño e implementación 
 
 \subsection{Iteración 3  -- 26 Oct 2015/30 Oct 2015}
 \label{subsec:third_iteration}
-Se modificó el \textit{parser} substancialmente ya que este imprimía a un fichero según procesaba las notas. Esto no planteaba problema alguno si la subdivisión se especificaba de antemano mediante el parámetro correspondiente, pero sí que resultaba complicado mantener esta aproximación si la unidad de subdivisión debía calcularse al mismo tiempo que se procesaba la partitura en MusicXML. Se plantearon dos soluciones: o bien incluir en el pipeline en Python un análisis previo a la conversión de MXML a hechos en ASP que dedujese cual era la nota de menor longitud y la usase como parámetro en la llamada al \textit{parser} o bien se modificaba el comportamiento del anterior para realizar simultáneamente ambas tareas. 
+Se modificó el \textit{parser} substancialmente ya que este imprimía a un fichero según procesaba las notas. Esto no planteaba problema alguno si la subdivisión se especificaba de antemano mediante el parámetro correspondiente, pero sí que resultaba complicado mantener esta aproximación si la unidad de subdivisión debía calcularse al mismo tiempo que se procesaba la partitura en MusicXML. Se plantearon dos soluciones: o bien incluir en el pipeline en Python un análisis previo a la conversión de MXML a hechos en ASP que dedujese cuál era la nota de menor longitud y la usase como parámetro en la llamada al \textit{parser} o bien se modificaba el comportamiento del anterior para realizar simultáneamente ambas tareas. 
 
 Se optó por la segunda opción por motivos de coherencia con el sistema, es decir, no incluir funcionalidad innecesaria y replicada en el pipeline, cuya tarea es simplemente manejar las entradas y salidas de los diferentes módulos, y por motivos de eficiencia, ya que como se ha mencionado no hay necesidad de procesar el mismo fichero dos veces, siendo una de ellas en un lenguaje interpretado en vez de compilado, lo que añadiría un sobrecoste temporal evitable.
 
@@ -318,7 +318,7 @@ Se creó el sub-módulo ASP de preferencias melódicas que busca alcanzar una op
 
 Se ha descartado la detección de apoyaturas con el fin de no contemplarlas como errores por un motivo similar, al uniformizar la longitud de las figuras de la partitura, no es posible detectarlas bien, ya que una de las características de las apoyaturas es que ``roban'' brevemente el tiempo fuerte a una nota representativa del acorde de la armonía.
 
-\subsection{Iteración 7 -- 21 Dic 2015/3 Ene 2015}
+\subsection{Iteración 7 -- 21 Dic 2015/3 Ene 2016}
 \label{subsec:seventh_iteration}
 
 Se incluyeron en el \textit{parser} nuevos \textit{tokens} y reglas en la gramática para poder extraer metadatos y otra información de la partitura y exportarlos a un fichero temporal usado por el módulo de salida. Los diferentes datos extraídos para cada partitura son:
@@ -328,7 +328,7 @@ Se incluyeron en el \textit{parser} nuevos \textit{tokens} y reglas en la gramá
 	\item \textbf{base\_note:} Longitud de la nota más breve presente.
 	\item \textbf{key\_name:} Nombre de la clave en la que se armonizará la pieza.
 	\item \textbf{mode:} Modo (mayor o menor).
-	\item \textbf{last\_voice:} Número que identifica cual es la última voz presente.
+	\item \textbf{last\_voice:} Número que identifica cuál es la última voz presente.
 \end{itemize}
 
 El procesador extrae una nueva pieza de información de la partitura, conocida como \texttt{figure}. Figure es un hecho lógico que describe la duración de una figura para un pulso de una voz dada. De este modo, pese a subdividir las notas a la longitud de la más breve para el análisis, se pueden recomponer en la salida fidedignamente. Se han incluido reglas adicionales para reconocer los acordes presentes en la partitura y estos se plasman en el fichero de salida.
@@ -349,7 +349,7 @@ Tras probar el prototipo de esta iteración se llegó a la conclusión de que ha
 	\item La generación de notas se calculaba para cualquier rango y después se restringía para la tesitura correcta en vez de generar notas entre los límites de la tesitura. 
 \end{itemize}
 
-\subsection{Iteración 8  -- 11 Ene 2015/24 Ene 2015}
+\subsection{Iteración 8  -- 11 Ene 2016/24 Ene 2016}
 \label{subsec:eighth_iteration}
 Se tomó la decisión de dividir el módulo de armonización en dos sub-módulos ASP:
 \begin{itemize}

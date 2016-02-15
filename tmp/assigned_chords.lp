@@ -4,3 +4,14 @@ chord(3,v7).
 chord(4,iv). 
 chord(5,iiim). 
 chord(6,vim). 
+chord(7,v7). 
+chord(8,vim). 
+chord(9,iv). 
+chord(10,i). 
+chord(11,v7). 
+chord(12,vim). 
+chord(13,iiim). 
+chord(14,i). 
+chord(15,v7). 
+chord(16,iv). 
+chord(17,vim). 
