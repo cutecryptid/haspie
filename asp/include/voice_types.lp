@@ -8,7 +8,7 @@ voice_low(contralto,53). voice_high(contralto,77).
 voice_low(mezzosoprano,57). voice_high(mezzosoprano,81).
 voice_low(soprano,60). voice_high(soprano,84).
 
-voice_low(violin,50). voice_high(violin,76).
+voice_low(violin,59). voice_high(violin,76).
 voice_low(violonchelo,40). voice_high(violonchelo,64).
 
 voice_low(piano,57). voice_high(piano,77).

@@ -17,7 +17,7 @@
 
 
 
-\documentclass[english]{beamer}
+\documentclass[english,handout]{beamer}
 
 \mode<presentation> {
 
@@ -204,7 +204,8 @@ February 18, 2016\par
 		\end{itemize}
 		\end{column}
 		\begin{column}{.39\textwidth}%
-		\includegraphics[width=\linewidth]{imagenes/music_tree.pdf}
+		\includegraphics[width=\linewidth]{imagenes/music_tree.pdf} \\
+		\includegraphics[width=\linewidth]{imagenes/C_scale_time.png}
 		\end{column}
 		\end{columns}
 		\end{beamercolorbox}
@@ -232,6 +233,28 @@ February 18, 2016\par
 \subsection{Tonality}
 \begin{frame}
 	\frametitle{Tonality}
+	\begin{itemize}
+		\item The \alert{tonality} is the set of sounds given by a certain scale
+		\only{
+		\item The different sounds of a tonality are abstracted in \alert{grades}
+		\item This abstraction allows to \alert{use notes by the role} they play in the tonality, regardless of the sound of the note.
+		}<2->
+	\end{itemize}
+	\begin{center}
+		\only{\includegraphics[width=0.5\linewidth]{imagenes/C_scale_grades.png} \vfill
+		\href{file:///home/trigork/presentation/midi/intro_scale.mp3}{\beamergotobutton{Play}}
+		}<1,2 | handout:0>
+		\only{
+		\vfill
+		\includegraphics[width=0.5\linewidth]{imagenes/E_scale.png} \vfill
+		\href{file:///home/trigork/presentation/midi/e_scale.mp3}{\beamergotobutton{Play}}
+		}<3  | handout:0>
+		\only{
+		\vfill
+		\includegraphics[width=0.5\linewidth]{imagenes/G_scale.png} \vfill
+		\href{file:///home/trigork/presentation/midi/g_scale.mp3}{\beamergotobutton{Play}}
+		}<4>
+	\end{center}
 \end{frame}
 \subsection{Harmony}
 	\begin{frame}
@@ -305,23 +328,10 @@ February 18, 2016\par
 	\end{frame}
 	\begin{frame}[fragile]
 		\frametitle{ASP Example: the 8 queens problem}
-			\begin{Verbatim}[frame=single]
-				% Facts
-				number(1..8).
-				
-				% (1) Generate: potential solutions
-				1 { q(X,Y) : number(Y) } 1 :- number(X).
-				
-				% (2) Define: auxiliary predicates
-				cell(X,Y) :- number(X), number(Y).
-				diff(X,Y,Z,T) :- cell(X,Y), cell(Z,T), X!=Z.
-				diff(X,Y,Z,T) :- cell(X,Y), cell(Z,T), Y!=T.
-				
-				% (3) Test: constraints prune invalid solutions
-				:- q(X,Y), q(Z,Y), X!=Z.
-				:- q(X,Y), q(X,Z), Y!=Z.
-				:- q(X,Y), q(Z,T), diff(X,T,Z,T), |X-Z|=|Y-T|.
-			\end{Verbatim}
+			\only{\includegraphics[width=\linewidth]{imagenes/queens/eightqueens_facts.png}}<1 | handout:0>
+			\only{\includegraphics[width=\linewidth]{imagenes/queens/eightqueens_aux.png}}<2| handout:0>
+			\only{\includegraphics[width=\linewidth]{imagenes/queens/eightqueens_wrongsol.png}}<3 | handout:0>
+			\only{\includegraphics[width=\linewidth]{imagenes/queens/eightqueens_rightgsol.png}}<4>
 	\end{frame}
 	\begin{frame}[t,fragile]
 	\frametitle{Harmonization}
@@ -391,10 +401,6 @@ February 18, 2016\par
 		\item \alert{Finds patterns} of second inversion of chords linked in other voices
 		\item \alert{Continues and creates} new progressions of this kind if possible
 	\end{itemize}
-	\begin{Verbatim}[frame=single]
-		second_inversion(C,B) :- harmonic_step(V1,V2,4,B), 
-		harmonic_step(V1,V3,6,B), beat(B), unary_chord(B,C),V2!=V3.
-	\end{Verbatim}
 	\end{frame}
 	\begin{frame}[fragile]
 	\frametitle{User Configuration}
@@ -540,7 +546,6 @@ February 18, 2016\par
 				  \item<pro@1-> Achieved \alert{maximum flexibility}
 			      \item<pro@1-> The tool produces correct scores in good times
 			      \end{itemize}
-			      \pause
 			      \begin{itemize}
 			      \item<con@1-> About 200 ASP lines that are hard to debug
 			      \item<con@1-> User still needs \alert{Computer Science and ASP knowledge} to use it
