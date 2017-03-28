@@ -1,0 +1,121 @@
+\chapter{Background}
+\label{chap:background}
+\vspace{0.5cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Objetivo: Contar cómo estaba la situación antes de empezar,                  %
+%           todo lo que se hizo para familiarizarse con las tecnologías,       %
+%           casarlas, etc.                                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{State of the Art}
+\label{sec:state-of-the-art}
+
+\lettrine{L}a mayor parte del trabajo en la creación y composición musical en ordenadores se ha extraído de la relación entre la teoría musical y las matemáticas. No es difícil concluir que la música y sus reglas son fácilmente modelables de forma matemática. 
+
+Dentro de la música en computación existen varias ramas diferenciadas, aunque en el contexto de un mismo trabajo pueden verse mezcladas más de una. Hablamos de composición asistida y de de sistemas inteligentes orientados a composición y, aunque se tratarán con más detalle en los siguientes puntos, todos ellos, así como el software desarrollado en dichos campos, están destinados a la creación y composición musical. Se detallan, además, algunos de los formatos más comunes de representación musical.
+
+Si bien el sistema planteado en el proyecto no es un compositor, se enmarca dentro de este mismo contexto, y por tanto es necesario desglosarlo para entender en qué punto se encuentra la tecnología desarrollada en el momento de la publicación de este documento.
+
+\subsection{Answer Set Programming}
+\label{subsec:asp}
+El módulo principal del proyecto se ha desarrollado usando técnicas conocidas como \textit{Answer Set Programming}\cite{Brewka:2011:ASP:2043174.2043195} (ASP de ahora en adelante) basadas en modelos estables de Gelfond \& Lifschitz\cite{Gelfond88thestable} y lógica no-monótona. ASP es un lenguaje de programación declarativa orientado a problemas de búsqueda difíciles, principalmente NP-complejos. ASP ha demostrado ser particularmente útil en aplicaciones donde es necesaria la representación del conocimiento y el razonamiento a partir de dicho conocimiento. En ASP, los problemas de búsqueda se reducen al cómputo de modelos estables, usándose programas conocidos como\textit{solvers} para realizar la búsqueda de las soluciones. El lenguaje de entrada de ASP es una variante enriquecida del lenguaje prolog. Para traducir el lenguaje de entrada a reglas de programación declarativa convencional y poder construir los modelos estables subyacentes del problema, ASP cuenta con \textit{grounders} que se encargan de esta transformación.
+
+La implementación de un programa que busque soluciones a un problema concreto pasa por la definición de las reglas de ese problema de modo general, mientras que la definición del problema concreto a solucionar se especifica mediante hechos lógicos que, en combinación con las reglas generales del problema generan todas las posibles soluciones del mismo. Finalmente, estas soluciones se podan mediante restricciones lógicas y/o restricciones de cardinalidad. Este proceso constituye la metodología general del desarrollo en ASP, conocida como \textit{generate and test}
+
+Las herramientas desarrolladas por el grupo Potassco\footnote{http://potassco.sourceforge.net/} incluyen, entre otras, un \textit{grounder} (Gringo) y un \textit{solver} (Clasp), junto con una herramienta única que combina ambos llamada Clingo.
+
+\begin{itemize}
+ \item \textbf{Gringo} es el \textit{grounder} de la suite. Se encarga de transformar reglas generales a reglas concretas y transforma el problema planteado a un lenguaje entendible por el \textit{solver}.
+ \item \textbf{Clasp} es el \textit{solver} de la suite. Se encarga de decidir el conjunto final de soluciones válidas dado el problema procesado e interpretado por el \textit{grounder}.
+ \item \textbf{Clingo} es una herramienta combinada formada por clasp y gringo. Realiza el procesado completo de un problema planteado en ASP y permite indicar algunas preferencias adicionales.
+\end{itemize}
+
+\subsection{Formatos}
+\label{subsec:formats}
+Debido al contexto en el que se enmarca este proyecto no se cree necesario considerar formatos de salida finales, como OGG, WAV o MP3 ya que como su nombre indica, son formatos utilizados solo para reproducción que no permiten extraer ni editar información musical de forma precisa. Así mismo tampoco se contemplan formatos de representación de partituras en forma de imágenes como SVG, PNG o PDF por motivos similares.
+
+\subsubsection{MusicXML}
+MusicXML, MXML o \textit{Music Extensible Markup Language} es una extensión del formato XML usado en la representación de música occidental. No solo contiene información musical sino que también incluye información de su representación en papel, tal como márgenes, tamaños de fuente, posición de las notas en coordenadas, etc. Hace uso del sistema de etiquetas anidadas de XML para agrupar los diferentes bloques de información de una pieza, como las voces, los compases o la información individual de cada nota (Ver Figura \ref{fig:nota_musicxml}). Es un formato muy rico aunque difícil de escribir correctamente a mano. Es por esto que normalmente se usa solo como formato de intercambio entre software que lo acepta como entrada o salida.
+
+\begin{figure}[h!]
+	\centering
+	\begin{Verbatim}[frame=single]
+<note default-x="74.65" default-y="-25.00">
+	<pitch>
+		<step>A</step>
+		<octave>4</octave>
+	</pitch>
+	<duration>1</duration>
+	<voice>1</voice>
+	<type>quarter</type>
+	<stem>up</stem>
+</note>
+	\end{Verbatim}
+	\caption{Ejemplo de nota representada en MusicXML}
+	\label{fig:nota_musicxml}
+\end{figure}
+
+
+\subsubsection{LilyPond}
+LilyPond\footnote{http://www.lilypond.org/} es un conjunto formado por el software y el formato de fichero homónimos. LilyPond como formato usa su propio lenguaje de marcado. Las etiquetas de LilyPond se parecen más a las usadas en \LaTeX. De forma similar a MusicXML, incluye información de representación final, aunque en mucha menor cantidad (Sólo tamaño de papel, márgenes o sangrados). La información musical de la canción está anidada por secciones de forma similar a MusicXML, aunque ésta se organiza de forma mucho más intuitiva para el lector humano del fichero (Ver Figura \ref{fig:partitura_lilypond}). Es un formato ligero pensado para poder ser editado a mano, aunque la mayoría del software musical actual lo soporta como entrada y salida. 
+
+El software del mismo nombre es un programa de grabado musical (tipografía musical o edición de partituras), pensado para producir partituras de alta calidad. Lleva la estética de la música tipografiada de la forma tradicional a las partituras impresas mediante ordenador. LilyPond es software libre y forma parte del Proyecto GNU. 
+
+\begin{figure}[h!]
+	\centering
+\begin{Verbatim}[frame=single]
+\version "2.14.1"
+{
+	<c' d'' b''>8. ~ <c' d'' b''>8
+}
+\end{Verbatim}
+	\caption{Ejemplo de una pequeña pieza musical en lilypond}
+	\label{fig:partitura_lilypond}
+\end{figure}
+
+
+
+\subsubsection{MIDI}
+MIDI son las siglas de \textit{Musical Instrument Digital Interface}. Es un standard técnico compuesto de un protocolo, una interfaz digital y conectores que permiten a una gran variedad de instrumentos electrónicos, ordenadores y otros dispositivos conectarse y comunicarse entre sí, principalmente con fines musicales, pero no siempre.
+
+MIDI transmite mensajes de eventos que especifican notación, tono y velocidad, aunque también incluye información de modificaciones sobre estos sonidos como volumen, \textit{vibrato} y marcas de tiempo para sincronizar entre dispositivos. 
+
+Estos mensajes pueden ser codificados en ficheros para reproducción, edición o simplemente como formato de representación musical pudiendo ser editado posteriormente. Dado que no contiene información final de audio, MIDI supone una gran ventaja en cuanto a espacio en disco, aunque el sonido final depende del equipo que reproduzca el fichero.
+
+
+\subsection{Software}
+\label{subsec:software}
+\subsubsection{Herramientas}
+\begin{itemize}
+	\item \textbf{Flex y Bison} son utilidades Unix que permiten escribir \textit{parsers} veloces para casi cualquier formato de archivo. Implementan procesado \textit{Look-Ahead-Left-Right} de gramáticas libres de contexto no ambiguas.
+	\item \textbf{Music21} es un conjunto de herramientas que sirve de ayuda a estudiantes y músicos a responder preguntas sobre música rápida y eficazmente. No sólo posee una base de datos bastante completa para realizar análisis musicológicos sino que contiene herramientas para la composición programática de música.
+\end{itemize}
+
+\subsubsection{Composición Asistida}
+Dentro de la composición asistida encontramos principalmente software de composición general en forma de editores de partituras que incorporan herramientas para ayudar al compositor en el proceso. Estas herramientas pueden ser corrección de la métrica de los compases, transposición de secciones de la canción, cambios de tonalidad, construcción de acordes dada una nota generadora, etc.
+
+\begin{itemize}
+ \item \textbf{Musescore 2} es un editor \textit{WYSIWYG} capaz de exportar a varios formatos de representación musical digital, tales como MIDI, LilyPond o MusicXML.
+\item \textbf{Sibelius} permite trabajar con gran variedad de modos de entrada de notas para sus partituras, desde los formatos convencionales hasta a través de instrumentos con salida MIDI o mediante el escaneado de partituras en papel haciendo uso de OCR.
+\item \textbf{Finale} destaca por la cantidad de ajustes que permite realizar sobre el pentagrama a un nivel de detalle muy fino, aunque presenta una curva de aprendizaje muy elevada. Sus principales características  tienen que ver con la visualización del pentagrama, ya que posee \textit{plug-ins} que se encargan de que el espacio entre las notas sea el correcto o que no haya colisiones entre notas de diferentes voces entre otros. 
+\end{itemize}
+
+
+\subsubsection{Sistemas Inteligentes}
+Aunque la música puede modelarse de forma matemática, con reglas estrictas que derivan en algoritmos de composición, también requiere creatividad. Un algoritmo determinista no puede ser creativo, ya que para la misma entrada, siempre producirá la misma salida. Si bien existe la composición algorítmica como aproximación a la música compuesta por ordenadores, no es relevante para este trabajo.
+
+Dentro de la inteligencia artificial, se han realizado aproximaciones a la composición musical desde gran parte de las ramas principales del campo
+
+\begin{itemize}
+	\item \textbf{EMI y Emily Howell} Desarrollado por David Cope\cite{experiments-musical-intelligence}, EMI o Experiments in Music Composition, es un sistema capaz de identificar el estilo presente en una partitura incompleta y completar la cantidad de notas restantes que el compositor requiera. El trabajo de Cope estudia la posibilidad de emplear gramáticas y diccionarios en la composición musical. EMI derivó en el software Emily Howell.
+	Emily Howell utiliza EMI para crear y actualizar su base de datos, pero cuenta con una interfaz a través de la cual se puede modificar, a través de \textit{feedback}, la composición. Cope enriqueció y pulió Emily Howell con su propio estilo musical para crear varios discos que después fueron publicados.
+	\item \textbf{ANTON}\cite{anton-composing} es un sistema de composición rítmica, melódica y armónica basado en Answer Set Programming. ANTON compone breves piezas musicales desde cero o partiendo de partituras incompletas utilizando un estilo basado en el del compositor renacentista Giovanni Pierluigi da Palestrina. Recibe como entrada ficheros con las notas codificadas como hechos lógicos para después rellenar las secciones incompletas o añadir nuevas notas hasta que la pieza está completa. ANTON crea y completa dichas piezas teniendo en cuenta el número de tiempos rítmicos de las mismas y seleccionando la nota correspondiente de acuerdo a la nota  o estado anterior.
+	\item \textbf{Vox Populi}\cite{vox-populi} utiliza algoritmos evolutivos para componer música en tiempo real. En este sistema, se parte de una población de acordes codificados mediante el protocolo MIDI para después mutarlos y seleccionar los mejores acordes a criterios puramente físicos relevantes para la música. Su interfaz gráfica permite al usuario controlar la función de \textit{fitness} del proceso evolutivo así como los atributos del sonido producido.
+	\item \textbf{CHORAL} es un sistema experto que funciona como armonizador en el estilo clásico de Johann Sebastian Bach. Las reglas que utiliza el sistema representan conocimiento musical desde varios puntos de vista de la coral. El programa armoniza melodías corales mediante un sistema de generación y prueba con \textit{backtracking}. La base de conocimiento de CHORAL permite realizar modulaciones propias del estilo, crear patrones rítmicos e impone restricciones complejas para mantener el interés melódico en las voces intermedias.
+	\item \textbf{CHASP} es una herramienta creada por el grupo Potassco para calcular progresiones de acordes mediante Answer Set Programming partiendo de cero, pudiendo especificar clave y duración. A diferencia del presente proyecto no toma un fichero de entrada para armonizar piezas, pero sí que es capaz de dotar a la salida del programa de diferentes estilos rítmicos.
+\end{itemize} 
+
+
+
+

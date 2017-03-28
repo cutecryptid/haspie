@@ -1,0 +1,78 @@
+% !TeX spellcheck = en_GB
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Preamble                                                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper,twoside,openright,openbib]{report}
+
+\usepackage{estilo_pfc}
+\usepackage{longtable}
+\usepackage{musixtex}
+\usepackage{cite}
+\usepackage{titlesec}
+\usepackage{fancyvrb}
+\usepackage[export]{adjustbox}
+\usepackage{relsize}
+
+\author{AUTOR/A DEL PROYECTO}
+\date{FECHA DEL PROYECTO}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Body                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Definición de comandos               %
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \newcommand{\paginaenblanco}{\mbox{}\thispagestyle{empty}\newpage}
+ \newcommand{\exedout}{%
+   \rule{0.8\textwidth}{0.5\textwidth}%
+ }
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Preliminares documento               %
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \include{cover}
+ \include{abstract}
+ \include{keywords}
+
+ \pagenumbering{roman}
+ \setcounter{page}{1}
+
+ \tableofcontents
+ \listoffigures
+ \clearpage
+ \mbox{}
+ \clearpage
+
+ \pagenumbering{arabic}
+ \setcounter{page}{1}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Capítulos                            %
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \include{introduction}
+ \include{contextualization}
+ \include{implementation}
+ \include{evaluation}
+ \include{conclusions}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Apéndices, glosarios y bibliografía  %
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \appendix
+ \include{appendix}
+
+ \nocite*
+ \bibliography{bibliography}
+ \bibliographystyle{IEEEtran}
+
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
