@@ -1,0 +1,57 @@
+\relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \hfill \textsf {\textbf {P\'agina}}\endgraf 
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}
+\contentsline {section}{\numberline {1.1}Motivaci\IeC {\'o}n}{1}
+\contentsline {section}{\numberline {1.2}El proyecto}{2}
+\contentsline {section}{\numberline {1.3}Estructura}{5}
+\contentsline {chapter}{\numberline {2}Contextualizaci\IeC {\'o}n}{7}
+\contentsline {section}{\numberline {2.1}Contextualizaci\IeC {\'o}n musical}{7}
+\contentsline {subsection}{\numberline {2.1.1}Ritmo y Figuras}{7}
+\contentsline {subsection}{\numberline {2.1.2}Melod\IeC {\'\i }a y pentagrama}{9}
+\contentsline {subsection}{\numberline {2.1.3}Armon\IeC {\'\i }a}{13}
+\contentsline {subsection}{\numberline {2.1.4}Modulaci\IeC {\'o}n}{16}
+\contentsline {subsection}{\numberline {2.1.5}Tesitura}{16}
+\contentsline {section}{\numberline {2.2}Contexto Tecnol\IeC {\'o}gico}{17}
+\contentsline {subsection}{\numberline {2.2.1}Answer Set Programming}{17}
+\contentsline {subsection}{\numberline {2.2.2}Formatos}{18}
+\contentsline {subsubsection}{\numberline {2.2.2.1}MusicXML}{19}
+\contentsline {subsubsection}{\numberline {2.2.2.2}LilyPond}{19}
+\contentsline {subsubsection}{\numberline {2.2.2.3}MIDI}{20}
+\contentsline {subsection}{\numberline {2.2.3}Software}{21}
+\contentsline {subsubsection}{\numberline {2.2.3.1}Herramientas}{21}
+\contentsline {subsubsection}{\numberline {2.2.3.2}Composici\IeC {\'o}n Asistida}{21}
+\contentsline {subsubsection}{\numberline {2.2.3.3}Sistemas Inteligentes}{22}
+\contentsline {chapter}{\numberline {3}Trabajo Desarrollado}{25}
+\contentsline {section}{\numberline {3.1}Metodolog\IeC {\'\i }a}{25}
+\contentsline {section}{\numberline {3.2}Planificaci\IeC {\'o}n}{26}
+\contentsline {section}{\numberline {3.3}Desarrollo}{28}
+\contentsline {subsection}{\numberline {3.3.1}Entrada}{28}
+\contentsline {subsection}{\numberline {3.3.2}N\IeC {\'u}cleo ASP}{30}
+\contentsline {subsection}{\numberline {3.3.3}M\IeC {\'o}dulos de Preferencias}{34}
+\contentsline {subsection}{\numberline {3.3.4}Ficheros de Configuraci\IeC {\'o}n}{35}
+\contentsline {subsection}{\numberline {3.3.5}Clases de Almacenamiento}{35}
+\contentsline {subsection}{\numberline {3.3.6}Salida}{37}
+\contentsline {section}{\numberline {3.4}Iteraciones}{38}
+\contentsline {subsection}{\numberline {3.4.1}Iteraci\IeC {\'o}n 1 -- 28 Sept 2015/11 Oct 2015}{38}
+\contentsline {subsection}{\numberline {3.4.2}Iteraci\IeC {\'o}n 2 -- 12 Oct 2015/25 Oct 2015}{39}
+\contentsline {subsection}{\numberline {3.4.3}Iteraci\IeC {\'o}n 3 -- 26 Oct 2015/30 Oct 2015}{40}
+\contentsline {subsection}{\numberline {3.4.4}Iteraci\IeC {\'o}n 4 -- 2 Nov 2015/17 Nov 2015}{41}
+\contentsline {subsection}{\numberline {3.4.5}Iteraci\IeC {\'o}n 5 -- 25 Nov 2015/6 Dic 2015}{41}
+\contentsline {subsection}{\numberline {3.4.6}Iteraci\IeC {\'o}n 6 -- 7 Dic 2015/20 Dic 2015}{43}
+\contentsline {subsection}{\numberline {3.4.7}Iteraci\IeC {\'o}n 7 -- 21 Dic 2015/3 Ene 2016}{44}
+\contentsline {subsection}{\numberline {3.4.8}Iteraci\IeC {\'o}n 8 -- 11 Ene 2016/24 Ene 2016}{46}
+\contentsline {chapter}{\numberline {4}Evaluaci\IeC {\'o}n}{49}
+\contentsline {section}{\numberline {4.1}Comparativa}{54}
+\contentsline {section}{\numberline {4.2}Problemas conocidos}{55}
+\contentsline {chapter}{\numberline {5}Conclusiones}{57}
+\contentsline {section}{\numberline {5.1}Trabajo Futuro}{59}
+\contentsline {subsection}{\numberline {5.1.1}Est\IeC {\'e}tica e Interfaz}{60}
+\contentsline {subsection}{\numberline {5.1.2}Procesado y Armonizaci\IeC {\'o}n}{60}
+\contentsline {subsection}{\numberline {5.1.3}Modulaci\IeC {\'o}n}{61}
+\contentsline {subsection}{\numberline {5.1.4}Publicaci\IeC {\'o}n}{61}
+\contentsline {chapter}{\numberline {A}Diagramas}{63}
+\contentsline {chapter}{\numberline {B}An\IeC {\'a}lisis de MusicXML}{69}
+\contentsline {chapter}{\numberline {C}Partituras}{73}
+\contentsline {chapter}{\numberline {D}Instalaci\IeC {\'o}n}{83}
+\contentsline {chapter}{\numberline {E}Manual de uso}{85}
+\contentsline {chapter}{Bibliograf\'{\i }a}{93}

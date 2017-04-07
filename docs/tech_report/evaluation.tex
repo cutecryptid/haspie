@@ -1,4 +1,4 @@
-\chapter{Evaluación}
+\chapter{Evaluation}
 \label{chap:evaluation}
 \vspace{0.5cm}
 
@@ -8,22 +8,21 @@
 
  \lettrine{E}{n} este capítulo exponen los resultados de la evaluación del sistema. Se han seleccionado tres piezas musicales conocidas para realizar las diferentes pruebas. A continuación se describen las tres piezas y las pruebas realizadas. Para realizar una prueba de carga que establezca los límites del sistema se ha añadido una última partitura suficientemente sencilla sobre la que trabajar para poder realizar estas pruebas cómodamente sin preocuparse por la calidad de los resultados.
  
+ \lettrine{F}or the tool's evaluation, three pieces were chosen to test the different aspects of the tool. To perform a workload test of the tool, a last simple piece was added to these three first pieces, just to measure execution times, regardless of the quality of the results.
+ 
  \begin{itemize}
- 	\item \textbf{Menuet en Sol Mayor:} Famosa pieza de Johann S. Bach, destaca por su simpleza y es interesante para ver cómo funciona el programa ante compases ternarios. Se sugiere añadir una voz nueva de tesitura más grave a la presente en la pieza. (Ver Figura \ref{fig:menuet_extra_bass})
- 	\item \textbf{Greensleves:} Supuestamente compuesta por Enrique VIII, esta archiconocida partitura presenta una polifonía coral a cuatro voces, ideal para comprobar las capacidades de armonización del sistema. Se sugiere eliminar secciones de alguna voz y ver cómo la completa. (Ver Figuras \ref{fig:greensleeves_harm} y \ref{fig:greensleeves_measure})
- 	\item \textbf{Joy to the World:} Conocido villancico de Georg F. Händel, sería interesante escuchar una reinterpretación de la voz más grave para la pieza, ya sea completando secciones o bien añadiendo una voz de bajo (Ver Figura \ref{fig:joy_harm}).
-    \item \textbf{Twinkle Twinkle Little Star:} Esta sencilla pieza popular es adecuada para realizar, además de pruebas similares a otras piezas, pruebas de carga para comprobar cómo crecen los tiempos de búsqueda y hallar los límites de la herramienta (Ver Figuras \ref{fig:twinkle_harm} y \ref{fig:twinkle_measure}).
+ 	\item \textbf{Minuet in Major G:} Famous Johann Sebastian Bach musical piece. Interesting to check the tool's performance in ternary measures.
+ 	\item \textbf{Greensleves:} By Henry the VIII, it's a complex four-part polyphony, useful to check the tool's harmonization performance.
+ 	\item \textbf{Joy to the World:} Well known Georg F. Händel jingle.
+    \item \textbf{Twinkle Twinkle Little Star:} Very simple piece to test workload and measure run times of heavy computation tasks.
  \end{itemize}
  
- Para la evaluación se han realizado armonizaciones de todas las piezas y se han medido los tiempos y la calidad de las mismas, además se han realizado pruebas de completado de un compás en cada pieza junto con la inclusión de una nueva voz, también se han medido calidad y tiempo. Por último, con la última partitura se han realizado pruebas para comprobar hasta donde funciona bien en cuestión temporal, para ello se ha ido vaciando porcentualmente una de las voces para ser completada y después se han ido añadiendo diferentes voces. Las figuras de esta sección sirven para ilustrar algunos resultados obtenidos, se puede comparar con las partituras originales presentes en el Apéndice \ref{chap:scores} Partituras.
+Using each of these pieces, the tool was asked to harmonize and complete a measure of each as well as a whole new part, measuring not only runtime but also quality of the result. Due to the non-deterministic nature of ASP, as well as the I/O times, the time measures are just to provide an approximate idea of the run times of the tool. Each measure was taken 100 times, subtracted user input time to each and then averaged.
  
- Nótese que debido al carácter no-determinista de \textit{Answer Set Programming} y a los tiempos de entrada y salida estos tiempos sirven para dar una idea aproximada de los tiempos de funcionamiento de la herramienta. Para suavizar los valores dispares se ha ejecutado cada medida 100 veces, se ha restado el tiempo de usuario y se ha calculado el tiempo promedio. 
-
-
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\linewidth]{imagenes/evaluation/greensleeves_harm.png}
-	\caption{Comienzo de Greensleeves armonizado}
+	\caption{Harmonization result of the first measures of Greensleeves}
 	\label{fig:greensleeves_harm}
 \end{figure}
 
@@ -31,32 +30,14 @@
    	\centering
    	\includegraphics[width=0.2\linewidth,valign=c]{imagenes/evaluation/greensleeves_measure.png}
    	\includegraphics[width=0.2\linewidth,valign=c]{imagenes/evaluation/greensleeves_measure_melodious.png}
-   	\caption{Compás de Greensleeves completado sin y con preferencias melódicas activadas}
+   	\caption{Completed single measure of Greensleves with and without melodic preferences}
    	\label{fig:greensleeves_measure}
 \end{figure}
-
-
-
-\begin{figure}
-    	\centering
-    	\includegraphics[width=0.9\linewidth]{imagenes/evaluation/menuet_extra_bass.png}
-    	\caption{Menuet con una voz de Bajo adicional (sin preferencias melódicas)}
-    	\label{fig:menuet_extra_bass}
-\end{figure}
-
-\begin{figure}
-    	\centering
-    	\includegraphics[width=0.8\linewidth]{imagenes/evaluation/joy_harm.png}
-    	\caption{Comienzo de Joy to the World armonizado}
-    	\label{fig:joy_harm}
-\end{figure}
-
-
 
 \begin{center}
 	\begin{tabular}{ | l | c | c | c | }
 		\hline
-		Pieza 			& T. Armonización 	& T. Compás & T. Nueva voz \\ \hline \hline
+		Piece 			& Harmonization 	& Measure & New Part \\ \hline \hline
 		Greensleeves 	& 1.016s 			& 1.926s	& 4m 49.032s \\ \hline
 		Menuet 			& 0.631s 			& 0.726s 	& 3m 50.376s \\ \hline
 		Joy to the World& 2.381s 			& 3.813s	& 7m 17.115s \\ \hline
@@ -64,24 +45,15 @@
 	\end{tabular}
 \end{center}
 
-Cuantitativamente, los resultados del sistema son los esperados. Los tiempos de armonización de partituras son excepcionalmente buenos y los de completado de secciones obtienen resultados muy interesantes ya que para un compás vacío se puede observar un escaso segundo de diferencia. No obstante, se ha podido comprobar que el crecimiento de tiempo necesario para completar una partitura no es lineal, ya que al haber cada vez más figuras que completar, surgen más posibilidades combinatorias.
+The run time results of the tool are the expected for an ASP tool. Harmony selection times are very good and the completion times are very promising. Nevertheless, the required time to complete new parts grows very quickly as adding more and more sections to complete makes the possibilities grow exponentially.
 
-Esto queda reflejado en el tiempo necesario para añadir una nueva voz a la partitura, que crece hasta el orden de los minutos para una voz. No resulta problemático, ya que teniendo en cuenta la cantidad de posibilidades sigue siendo un orden de tiempo aceptable para hallar el mejor resultado posible, si tenemos en cuenta que podemos especificar un timeout, podríamos obtener un resultado aceptable (por ejemplo una voz nueva con una ratio de errores por nota de alrededor del 10\%) en prácticamente la mitad de tiempo.
+In quality terms, the selected chords are correct, and the section completion or the new parts creation offer interesting harmonically correct solutions.
 
-Cualitativamente, los resultados de armonización son adecuados y el completado de secciones o la inclusión de nuevas voces ofrece soluciones interesantes y correctas armónicamente. En algunos casos, por culpa del módulo se salida, se producen errores visuales al asignar la clave de forma equivocada (Ver Figura \ref{fig:joy_harm_err}), pero este error es subsanable en el editor de partituras y no presenta ningún fallo real en la armonización ni completado. 
-
-\begin{figure}
-    	\centering
-    	\includegraphics[width=0.9\linewidth]{imagenes/evaluation/joy_harm_err.png}
-    	\caption{La salida de Joy to the World produce un error de clave en la voz de la Soprano}
-    	\label{fig:joy_harm_err}
-\end{figure}
-
-Las pruebas de carga sobre ``Twinkle Twinkle Little Star'' se han realizado primero vaciando progresivamente una de las voces. La pieza cuenta con 24 compases, se han vaciado 4 compases en cada iteración, aunque no se ha vaciado del todo la voz ya que eso corresponde al siguiente punto. Por último se han ido añadiendo voces, una voz de una tesitura diferente en cada iteración.
+The load tests for  ``Twinkle Twinkle Little Star'' were performed by emptying progressively more and more measures of one of the parts. The piece has 24 measures, and were emptied in blocks of four. Finally more and more voices were added to the piece, achieving the following run times.
 \begin{center}
 	\begin{tabular}{ | l | r | }
 		\hline
-		Prueba & Tiempo \\ \hline
+		Test & Time \\ \hline
 		4 compases  & 1.481s \\ \hline
 		8 compases 	& 2.394s \\ \hline
 		12 compases	& 3.978s \\ \hline
@@ -92,37 +64,43 @@ Las pruebas de carga sobre ``Twinkle Twinkle Little Star'' se han realizado prim
 	\end{tabular}
 \end{center}
 
-\begin{figure}
-     	\centering
-     	\includegraphics[width=0.8\linewidth]{imagenes/evaluation/twinkle_harm.png}
-     	\caption{Comienzo de Twinkle Twinkle Little Star armonizado}
-     	\label{fig:twinkle_harm}
-\end{figure}
+\section{Comparison}
+Haspie is quite unique in what it does and how does it achieve it. The only comparable tool would be ANTON \cite{anton-composing} as both use ASP to perform musical harmonization and composition and both can work over new or previously created scores.
 
-\begin{figure}
-   	\centering
-   	\includegraphics[width=0.2\linewidth,valign=c]{imagenes/evaluation/twinkle_measure.png}
-   	\includegraphics[width=0.2\linewidth,valign=c]{imagenes/evaluation/twinkle_measure_melodious.png}
-   	\caption{Compás de Twinkle Twinkle Little Star completado sin y con preferencias melódicas activadas}
-   	\label{fig:twinkle_measure}
-\end{figure}
+ANTON is a way more complex system, allowing not only harmonic but melodic composition and also features rhythmic patterning, thing that haspie lacks.
 
-No se realizaron ejecuciones con más de dos voces adicionales ya que el tiempo de ejecución ya se dispara a las decenas de minutos y no se consideró relevante, se puede establecer el límite del funcionamiento usable en dos voces si se interrumpe la ejecución o en una voz completa. Puede resultar curioso que una pieza casi vacía (como en el ejemplo de 20 compases vacíos) siga en el orden de segundos mientras que una voz nueva se va a los minutos. La explicación de esto radica en las figuras completables contra las nuevas voces. Las figuras completables cuentan con un patrón rítmico determinado al que se ajustan las notas, reduciendo drásticamente la cantidad de notas que hay que calcular para la solución. En una nueva voz no existe este patronaje rítmico, las figuras son siempre la figura base con la que se ha armonizado y subdividido internamente toda la pieza, resultando siempre en tener que calcular el máximo de notas en cada voz. Para solucionar esto se pueden incluir voces nuevas en la partitura directamente en el editor, especificando los patrones rítmicos, en lugar de a través de la línea de comandos.
+Haspie is a bit more deep in harmony terms, allowing any style of musical piece to be processed, when ANTON only works with pieces of one or two voices of a certain musical style.
 
-\section{Comparativa}
-El presente proyecto es un sistema relativamente único en cuanto a qué hace y cómo lo hace. La única herramienta comparable sería el software ANTON \cite{anton-composing} ya que ambos tienen su fundamento en \textit{Answer Set Programming}, pueden trabajar sobre partituras ya creadas y funcionan mediante módulos destinados a las diferentes partes del proceso de composición. La gran diferencia radica en que ANTON es un sistema mucho más complejo que el presente, permitiendo componer no solo armónica sino también melódicamente y, además, ANTON contempla la creación de patrones rítmicos. Por otra parte, el proyecto aquí creado ahonda más en la armonía que ANTON, permitiendo simplemente armonizar una pieza completa y completar partituras de cualquier número de voces y estilos, mientras que ANTON se limita a la composición de piezas de dos voces en un estilo renacentista concreto.
+The tests ran for ANTON for pieces of two parts and 32 measures have run times in the minutes order, while haspie achieves a similar performance when creating a second part but it's still hard to compare, as haspie does not work in the complexity level that ANTON does.
 
-Ya que ANTON trabaja siempre con dos voces resulta algo complejo comparar tiempos de ejecución, pero las pruebas realizadas al sistema para duetos de 32 compases completamente nuevos daban resultados en el orden de los minutos. El sistema actual presenta un rendimiento similar a la hora de crear una segunda voz para convertir una pieza monofónica en un dueto, pero al no contemplar ritmo y necesitar la primera voz para componerla, puede verse la inferioridad del sistema frente a ANTON.
-
-  \section{Problemas conocidos}
+  \section{Known Issues}
   \label{sec:known_issues}
-  Las diferentes pruebas han revelado ciertos problemas que se producen si no siempre, sí lo hacen con una frecuencia relativamente alta y que por diseño de la herramienta no han sido atacados. En la sección de \ref{sec:future_work} Trabajo Futuro en el capítulo \ref{chap:conclusiones} Conclusión se detalla cuales de ellos se pretenden arreglar a corto o medio plazo.
+  The tests performed revealed a few recurrent problems. In the Future Work section \ref{sec:future_work} it's detailed which of them will be addressed in short or mid term.
   
   \begin{itemize}
-  		\item \textbf{Tresillos:} Los tresillos, dosillos y otras figuras irregulares no funcionan correctamente en la herramienta y han de ser editados en la partitura antes de procesarla. Esto se debe a que no es posible realizar una subdivisión directa a la nota base de la partitura de este tipo de figuras.
-  		\item \textbf{Clave:} Algunas voces aparecen en la salida con la clave mal identificada, produciendo un resultado poco legible. Esto es fácilmente solucionable cambiando la clave de la voz correspondiente en el archivo de salida, ya que pese a todo, esto es un fallo meramente visual y no afecta a los valores de las notas de la voz.
-  		\item \textbf{Nombres de Tesituras:} Si bien los nombres de las voces corales no varían sustancialmente, los nombres de los instrumentos sí lo hacen, por esto el \textit{locale} de la herramienta usada para la edición de partituras puede producir incompatibilidades a la hora de restringir el rango de voces, por ejemplo, una partitura para escrita para Violonchelo en un sistema en castellano marcará esa voz como \texttt{voice\_type(x, violonchelo)} mientras que un sistema en inglés producirá  \texttt{voice\_type(x, violoncello)}. Para solucionarlo se ruega editar el fichero \texttt{voice\_types.lp} en la carpeta \texttt{asp/include} para que los límites de cada instrumento se correspondan con el locale del sistema.
-  		\item \textbf{Falsos positivos:} Debido a que en algunas figuras como los conjuntos de corcheas o semicorcheas consecutivas no se puede identificar los subtiempos débiles y fuertes que no dependen del compás si no de la propia figura junto con algunas dificultades a la hora de identificar los tiempos débiles y fuertes de un compás con las notas subdivididas y después transformarlo a otro tipo de compás, es probable que algunas notas marcadas como error en la partitura no lo sean realmente.
+  		\item \textbf{Triplets:} Triplets and similar irregular figures don't work properly and need to be edited in the input score before processing it. This is because of the rhythmic standardization that the parser performs, being unable to assign correctly the time of these kind of figures.
+  		\item \textbf{Key:} Some of the inferred keys are mis-interpreted in the output. This is a visual mistake more than a functional one and produces no further problems.
+  		\item \textbf{Voice Names:} The locale of the system affects the parsing of the voices' names, producing some mis-interpretations.
+  		\item \textbf{Falsos positivos:} Due to the simple implementation of the identification of strong and weak beats, some notes marked as mistakes or passing notes in the score may not be so.
   \end{itemize}
   
+  \section{Future Work}
+  \label{sec:future_work}
+  The main guideline of Future Work is about developing a user friendly UI and correcting visual output errors as well as expanding the project to achieve one of the restrictions initially imposed to it, such as modulation.
+ 
+  \subsection{Aesthetic and GUI}
+  \label{subsec:look_interface}
+	With the release of improved versions of the music21 library, the visual errors of the score output should be fixed. Regardless of this, there is the intention of implementing the tool as a Musescore2 plugin so the user could be able to harmonize and complete scores live, instead of having to switch back and forth between the score editor and the command line. 
+  
+  \subsection{Parsing and Harmonization}
+  \label{subsec:parsing_harm}
+  The key detection should be improved, as well as the parts name and their voice types. The strong and weak beat detection needs further work, to make it able to detect these kind of beats in complex rhythmical patterns, thus improving the harmony selection and completion results. This point also includes complex figures such as the mentioned triplets.
+  
+  \subsection{Modulation}
+  \label{subsec:future_modulation}
+  Modulation was one of the self imposed restrictions of the project to keep it's development time in check. Not only is hard to parse and detect but also presents problems to the tool due to it's way of detecting the best chords and the way it completes blank sections. The main approach for this should be splitting the score in sub-scores, preforming the current steps and finally re-assembling it.
+  
+  \subsection{Publishing}
+  \label{subsec:releasing}
+  After making the tool more user friendly and fixing some of the tool's limitation, professionals of the music teaching sector should be contacted to provide feedback and to further improve the tool so it can finally fulfill it's role as a full-fledged music learning tool.
 

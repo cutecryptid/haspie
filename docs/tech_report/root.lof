@@ -1,0 +1,20 @@
+\relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \textsf {\textbf {Figura}}\hfill \textsf {\textbf {P\'agina}}\endgraf 
+\select@language {english}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Introduction}{1}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Background}{2}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Sample A note represented in MusicXML}}{3}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Method}{6}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Haspie's Architecture}}{6}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Small piece parsed to ASP facts}}{7}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Chords annotated over a small piece and their corresponding output logic facts}}{8}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Completed harmonized score with an incomplete beat}}{9}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Sample harmonized score tih passing notes marked in blue}}{11}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Evaluation}{12}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Harmonization result of the first measures of Greensleeves}}{13}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Completed single measure of Greensleves with and without melodic preferences}}{13}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Installation}{17}
