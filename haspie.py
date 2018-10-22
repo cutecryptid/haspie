@@ -5,8 +5,8 @@ import sys
 import os
 import threading
 import errno
-import ConfigParser
-sys.path.append('./lib') 
+import configparser
+sys.path.append('./lib')
 from HaspMusic import ClaspResult
 from HaspMusic import ClaspChords
 import HaspMusic
@@ -16,10 +16,10 @@ def clasp_timeout(p):
     if p.poll() is None:
         try:
             p.kill()
-            print 'Timeout reached, terminating clasp'
+            print('Timeout reached, terminating clasp')
         except OSError as e:
             if e.errno != errno.ESRCH:
-                print 'All options explored before timeout'
+                print('All options explored before timeout')
 
 def key_to_base(key):
 	base = 21
@@ -42,7 +42,7 @@ def key_to_base(key):
 		raise ValueError("Key should be in the form [A-G][+-]?")
 	return (base + mod)
 
-		
+
 def main():
 	parser = argparse.ArgumentParser(description='haspie - Harmonizing music with ASP')
 	parser.add_argument('xml_score', metavar='XML_SCORE',
@@ -133,8 +133,8 @@ def main():
 	lp_outname = outname + ".lp"
 	xml_parser_args = ("parser/mxml_asp", infile, "-o", "asp/generated_logic_music/" + lp_outname, "-s", str(span), "-k", str(key), "-m", str(mode))
 	xml_parser_ret = subprocess.call(xml_parser_args)
-	
-	score_config = ConfigParser.ConfigParser()
+
+	score_config = configparser.ConfigParser()
 	score_config.read('./tmp/score_meta.cfg')
 
 	title = score_config.get('meta', 'title')
@@ -168,7 +168,7 @@ def main():
 				if (vrange[1] != "0"):
 					f.write("voice_limit_high("+ str(last_voice+i) + ", " + vrange[1] +").\n")
 			else:
-				print "Voice limit for voice "+str(last_voice+1)+" has not been properly specified, please refer to usage.\n"
+				print("Voice limit for voice "+str(last_voice+1)+" has not been properly specified, please refer to usage.\n")
 			i += 1
 		f.close()
 
@@ -177,25 +177,25 @@ def main():
 
 	asp_chord_args = ("clingo", config, "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
 		"asp/include/chord_conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", extra_voices,
-		"asp/generated_logic_music/" + lp_outname,"-n", str(n), 
-		"--const", "span=" + str(span), "--const", "base="+ str(base), 
+		"asp/generated_logic_music/" + lp_outname,"-n", str(n),
+		"--const", "span=" + str(span), "--const", "base="+ str(base),
 		"--const", "subdiv="+subdivision)
 
 	asp_proc = subprocess.Popen(asp_chord_args, stdout=subprocess.PIPE)
-    
+
 	asp_chord_out = asp_proc.stdout.read()
 
 	if (re.search("UNSATISFIABLE",asp_chord_out) != None):
 		sys.exit("UNSATISFIABLE, stopping execution.")
 
 	chords = ClaspChords(asp_chord_out)
-	print chords
-	
+	print(chords)
+
 	sol_num = len(chords.chord_solutions)
 	selected_solution = raw_input('Select a chord solution for this score (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
 	if selected_solution == '':
 		selected_solution = sol_num
-	print chords.chord_solutions[int(selected_solution)-1]
+	print(chords.chord_solutions[int(selected_solution)-1])
 
 	assig_chords = open("tmp/assigned_chords.lp", "w")
 	assig_chords.write(HaspMusic.asp_clean_chords(chords.chord_solutions[int(selected_solution)-1].raw_ans))
@@ -203,8 +203,8 @@ def main():
 
 	asp_note_args = ("clingo", config, sixthslink, melodious, "asp/complete_score.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
 		"asp/include/conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", "tmp/assigned_chords.lp", extra_voices,
-		"asp/generated_logic_music/" + lp_outname,"-n", str(n), 
-		"--const", "span=" + str(span), "--const", "base="+ str(base), 
+		"asp/generated_logic_music/" + lp_outname,"-n", str(n),
+		"--const", "span=" + str(span), "--const", "base="+ str(base),
 		"--const", "subdiv="+subdivision)
 
 	asp_proc = subprocess.Popen(asp_note_args, stdout=subprocess.PIPE)
@@ -221,7 +221,7 @@ def main():
 		sys.exit("UNSATISFIABLE, stopping execution.")
 
 	res = ClaspResult(asp_note_out,max_optimums)
-	print res
+	print(res)
 
 	sol_num = len(res.solutions)
 	if sol_num > 0:
@@ -229,7 +229,7 @@ def main():
 			selected_solution = raw_input('Select a solution to output (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
 			if selected_solution == '':
 				selected_solution = sol_num
-			print res.solutions[int(selected_solution)-1]
+			print(res.solutions[int(selected_solution)-1])
 		else:
 			selected_solution = sol_num
 
@@ -237,10 +237,10 @@ def main():
 		if args.show:
 			output.show(fmt)
 		else:
-			print "Writing output file to", final_out
+			print("Writing output file to", final_out)
 			output.write(fp=final_out, fmt=fmt)
 	else:
-		print "Timeout was to short or something went wrong, no solutions were found.\n"
+		print("Timeout was to short or something went wrong, no solutions were found.\n")
 
 if __name__ == "__main__":
     main()

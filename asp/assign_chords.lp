@@ -20,7 +20,7 @@ harm_span(S) :- S=(subdiv/span).
 % need to know which beats are we taking in consideration for harmonization
 beat_belongs_htime(((((T-1)*span)+1)..(T*span)),T) :- htime(T).
 
-% define what an error is to be able to porhibit or minimize it 
+% define what an error is to be able to porhibit or minimize it
 error(V,G,B) :- chord(T,C), htime(T), grade(V,G,B), voice(V), not belongs(G,C), beat_belongs_htime(B,T), beat(B).
 error(V,G,B) :- chord(T,C), htime(T), ex_grade(V,G,B), voice(V), not belongs(G,C), beat_belongs_htime(B,T).
 error(V,G,B) :- grade(V,G,B), non_scale_grade(G), voice(V), beat(B).
@@ -51,11 +51,10 @@ out_error_weak(V,FB) :- D{error(V,G,FB..FB+D-1)}D, figure(V,D,FB), error_in_weak
 #const chord_samechordp = 2.
 #const chord_errorinweakp = 1.
 
-#minimize[out_error(_,_)=chord_errorinstrongw @ chord_errorinstrongp].
-#minimize[same_chord(_,_)=chord_samechordw @ chord_samechordp].
-#minimize[out_error_weak(_,_)=chord_errorinweakw @ chord_errorinweakp].
+#minimize{chord_errorinstrongw @ chord_errorinstrongp : out_error(_,_)}.
+#minimize{chord_samechordw @ chord_samechordp : same_chord(_,_)}.
+#minimize{chord_errorinweakw @ chord_errorinweakp : out_error_weak(_,_)}.
 
-#hide.
 #show chord/2.
 #show out_error/2.
 #show out_error_weak/2.

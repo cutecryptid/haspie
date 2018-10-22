@@ -4,14 +4,14 @@ us = environment.UserSettings()
 
 def rom_to_int(input):
 	if type(input) != type(""):
-		raise TypeError, "expected string, got %s" % type(input)
+		raise TypeError("expected string, got %s" % type(input))
 	input = input.upper()
 	nums = ['M', 'D', 'C', 'L', 'X', 'V', 'I']
 	ints = [1000, 500, 100, 50,  10,  5,   1]
 	places = []
 	for c in input:
 		if not c in nums:
-			raise ValueError, "input is not a valid roman numeral: %s" % input
+			raise ValueError("input is not a valid roman numeral: %s" % input)
 	for i in range(len(input)):
 		c = input[i]
 		value = ints[nums.index(c)]
@@ -40,7 +40,7 @@ def romanToChord(roman, base, mode):
 	if chord[0][1] != None:
 		out_chord += chord[0][1]
 	return out_chord
-	
+
 
 def solution_to_music21(solution, subdivision, span, base, key_value, mode, title, composer):
 	score = stream.Score()

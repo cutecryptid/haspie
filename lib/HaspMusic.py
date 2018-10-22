@@ -47,7 +47,7 @@ class VoiceChord:
 				ret_str += str(n)
 				first = False
 			else:
-				ret_str += "/" + str(n) 
+				ret_str += "/" + str(n)
 		return "{" + ret_str + "}"
 
 class VoiceType:
@@ -198,7 +198,7 @@ class ClaspResult:
 							if (int(figure[0]) in voices.keys()):
 								voices[int(figure[0])].append(act_rest)
 							else:
-								voices.update({(int(figure[0])) : [act_rest]})									
+								voices.update({(int(figure[0])) : [act_rest]})
 						i += 1
 
 					measures = re.findall('real_measure\(([0-9]+),([0-9]+),([0-9]+)\)', ans)
@@ -219,7 +219,7 @@ class ClaspResult:
 					optimums = map(int, str_opts)
 					solutions += [HaspSolution(chords,voices,instrum,errors,passing,optimums)]
 				except AttributeError:
-					print "Discarding incomplete answer due to early temrination."
+					print("Discarding incomplete answer due to early temrination.")
 		return solutions
 
 	def __str__(self):
@@ -285,7 +285,7 @@ class ClaspChords:
 					min_opt = (tmp_opts[0] * 100 + tmp_opts[1] * 50 + tmp_opts[2])
 		sols = [s for s in sols if (s.optimization[0] * 100 + s.optimization[1]*50 + s.optimization[2]) == min_opt]
 		return sols
-		
+
 	def __str__(self):
 		ret = ""
 		ansno = 1
