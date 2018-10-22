@@ -4,9 +4,13 @@ Tool for harmonizing musical pieces based in Answer Set Programming
 # Disclaimer
 Currently, haspie is being deeply revised and refactored, repo might (and will) be unstable until next release.
 I will be porting haspie to Python3 and Clingo5, and it will start using the official Clingo Python Module.
+
 Other than that, as I'll be improving haspie as I conduct my PhD research, big changes will come for the tool, such as simplification in usage, the always mentioned Musescore2 plugin interface and performance increase.
+
 The focus of my PhD is the Efficient Generation of heterogeneous solutions to optimization problems in ASP so I hope that my research also helps improving the quality and diversity of the solutions provided by haspie.
+
 Haspie v2 will have different parallel versions from now on, each one of them taking advantage of different aspects of problem solving to achieve better times and solutions, so expect a few forks.
+
 For now, I will be developing what I call haspie_core, which is a very simple and functional version of haspie. It will only feature chord selection for now.
 
 # What is this?
