@@ -192,7 +192,7 @@ def main():
 	print(chords)
 
 	sol_num = len(chords.chord_solutions)
-	selected_solution = raw_input('Select a chord solution for this score (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
+	selected_solution = input('Select a chord solution for this score (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
 	if selected_solution == '':
 		selected_solution = sol_num
 	print(chords.chord_solutions[int(selected_solution)-1])
@@ -226,7 +226,7 @@ def main():
 	sol_num = len(res.solutions)
 	if sol_num > 0:
 		if (args.voices != "" or freebeat == 1):
-			selected_solution = raw_input('Select a solution to output (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
+			selected_solution = input('Select a solution to output (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
 			if selected_solution == '':
 				selected_solution = sol_num
 			print(res.solutions[int(selected_solution)-1])
