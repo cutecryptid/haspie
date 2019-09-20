@@ -183,7 +183,7 @@ def main():
 
 	asp_proc = subprocess.Popen(asp_chord_args, stdout=subprocess.PIPE)
 
-	asp_chord_out = asp_proc.stdout.read()
+	asp_chord_out = asp_proc.stdout.read().decode('utf-8')
 
 	if (re.search("UNSATISFIABLE",asp_chord_out) != None):
 		sys.exit("UNSATISFIABLE, stopping execution.")
@@ -215,7 +215,7 @@ def main():
 			t.join()
 			t.cancel()
 
-	asp_note_out = asp_proc.stdout.read()
+	asp_note_out = asp_proc.stdout.read().decode('utf-8')
 
 	if (re.search("UNSATISFIABLE",asp_note_out) != None):
 		sys.exit("UNSATISFIABLE, stopping execution.")
