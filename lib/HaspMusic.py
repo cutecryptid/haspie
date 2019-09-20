@@ -269,7 +269,7 @@ class ClaspChords:
 
 	def parse_chords(self):
 		out = self.raw_output
-		answers = re.split('Answer:\s*[0-9]+', out)
+		answers = re.split('Answer:\s*[0-9]+', out)[1:]
 		min_opt = 99999
 		sols = []
 		for ans in answers:
