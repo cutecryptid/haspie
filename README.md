@@ -23,3 +23,22 @@ Python 3.6.6, clingo 5.3.0, music21 >= 5.3.0 and clingo python modules installed
 
 # Compiling from source
 The only compiled part of the project is the MXML to ASP facts parser. A binary is bundled with every release, but if you wish to compile it for compatibility reasons, a Makefile is also bundled. Go to ```parser/source``` and run ```make```. The bin file is generated in the parser folder so it can be properly referenced by the python pipeline.
+
+# Usage
+
+## Install
+
+Install docker https://docs.docker.com/install/
+
+## Run
+
+On your machine
+```bash
+docker build -t haspie .
+docker run -v $(pwd):/app -it --entrypoint=/bin/bash haspie
+```
+
+Inside opened docker container
+```bash
+python3.6 haspie.py sample_input/msilent_night.xml
+```

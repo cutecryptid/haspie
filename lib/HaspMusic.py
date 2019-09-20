@@ -269,14 +269,14 @@ class ClaspChords:
 
 	def parse_chords(self):
 		out = self.raw_output
-		answers = re.split('Answer:\s*[0-9]+', out)
+		answers = re.split('Answer:\s*[0-9]+', out)[1:]
 		min_opt = 99999
 		sols = []
 		for ans in answers:
 			if len(ans) > 0:
 				str_opts = re.split("\s*", re.search('Optimization:((?:\s*[0-9]+)+)', ans).group(1))
 				str_opts = [a for a in str_opts if len(a) > 0]
-				tmp_opts = map(int, str_opts)
+				tmp_opts = list(map(int, str_opts))
 				tmp_chords = [Chord(int(ch[0]),ch[1]) for ch in sorted(re.findall('chord\(([0-9]+),([ivxmo7]+)\)', ans))]
 				tmp_chords.sort(key=lambda x: x.time)
 				tmp_errors = [Error(int(er[0]),int(er[1])) for er in re.findall('out_error\(([0-9]+),([0-9]+)\)', ans)]

@@ -175,15 +175,15 @@ def main():
 	if xml_parser_ret != 0:
 		sys.exit("Parsing error, stopping execution.")
 
-	asp_chord_args = ("clingo", config, "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
-		"asp/include/chord_conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", extra_voices,
+	asp_chord_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
+		"asp/include/chord_conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp",
 		"asp/generated_logic_music/" + lp_outname,"-n", str(n),
 		"--const", "span=" + str(span), "--const", "base="+ str(base),
 		"--const", "subdiv="+subdivision)
 
 	asp_proc = subprocess.Popen(asp_chord_args, stdout=subprocess.PIPE)
 
-	asp_chord_out = asp_proc.stdout.read()
+	asp_chord_out = asp_proc.stdout.read().decode('utf-8')
 
 	if (re.search("UNSATISFIABLE",asp_chord_out) != None):
 		sys.exit("UNSATISFIABLE, stopping execution.")
@@ -192,7 +192,7 @@ def main():
 	print(chords)
 
 	sol_num = len(chords.chord_solutions)
-	selected_solution = raw_input('Select a chord solution for this score (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
+	selected_solution = input('Select a chord solution for this score (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
 	if selected_solution == '':
 		selected_solution = sol_num
 	print(chords.chord_solutions[int(selected_solution)-1])
@@ -201,8 +201,8 @@ def main():
 	assig_chords.write(HaspMusic.asp_clean_chords(chords.chord_solutions[int(selected_solution)-1].raw_ans))
 	assig_chords.close()
 
-	asp_note_args = ("clingo", config, sixthslink, melodious, "asp/complete_score.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
-		"asp/include/conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", "tmp/assigned_chords.lp", extra_voices,
+	asp_note_args = ("clingo", "asp/complete_score.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
+		"asp/include/conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", "tmp/assigned_chords.lp",
 		"asp/generated_logic_music/" + lp_outname,"-n", str(n),
 		"--const", "span=" + str(span), "--const", "base="+ str(base),
 		"--const", "subdiv="+subdivision)
@@ -215,7 +215,7 @@ def main():
 			t.join()
 			t.cancel()
 
-	asp_note_out = asp_proc.stdout.read()
+	asp_note_out = asp_proc.stdout.read().decode('utf-8')
 
 	if (re.search("UNSATISFIABLE",asp_note_out) != None):
 		sys.exit("UNSATISFIABLE, stopping execution.")
@@ -226,7 +226,7 @@ def main():
 	sol_num = len(res.solutions)
 	if sol_num > 0:
 		if (args.voices != "" or freebeat == 1):
-			selected_solution = raw_input('Select a solution to output (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
+			selected_solution = input('Select a solution to output (1..' + str(sol_num) +') [' + str(sol_num) + ']: ')
 			if selected_solution == '':
 				selected_solution = sol_num
 			print(res.solutions[int(selected_solution)-1])

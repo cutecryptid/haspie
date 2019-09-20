@@ -26,11 +26,11 @@ freefigure(V,D,B) :- figure(V,D,B), freebeat(V,B).
 :- freefigure(V,D,FB), ex_octave(V,O1,B1), ex_octave(V,O2,B2), B1 >= FB, B2 >= FB, B1 < FB+D, B2 < FB+D, B1 != B2, O1 != O2.
 
 1 { freebeatfigure(V,N,1,FB) : N=VL..VH } 1 :- freebeat(V,FB), voice_limit_low(V,VL), voice_limit_high(V,VH).
-1 { newvoicefigure(V,N,1,FB) : N=VL..VH } 1 :- newvoicebeat(V,FB), voice_limit_low(V,VL), voice_limit_high(V,VH). 
+1 { newvoicefigure(V,N,1,FB) : N=VL..VH } 1 :- newvoicebeat(V,FB), voice_limit_low(V,VL), voice_limit_high(V,VH).
 
 beat_belongs_htime(((((T-1)*span)+1)..(T*span)),T) :- htime(T).
 
-% define what an error is to be able to porhibit or minimize it 
+% define what an error is to be able to porhibit or minimize it
 error(V,G,B) :- chord(T,C), htime(T), grade(V,G,B), voice(V), not belongs(G,C), beat_belongs_htime(B,T), beat(B).
 error(V,G,B) :- chord(T,C), htime(T), ex_grade(V,G,B), voice(V), not belongs(G,C), beat_belongs_htime(B,T), beat(B).
 error(V,G,B) :- grade(V,G,B), non_scale_grade(G), voice(V), beat(B).
@@ -58,7 +58,7 @@ out_figure(V,-1,D,FB) :- rest(V,B), figure(V,D,FB), B >= FB, B < FB + D.
 out_error(V,FB) :- error_in_strong(V,G,B), figure(V,D,FB), B >= FB, B < FB+D.
 out_error_weak(V,FB) :- error_in_weak(V,G,B), figure(V,D,FB), B >= FB, B < FB+D.
 
-out_passing(V,B) :- out_error_weak(V,B), out_figure(V,N,D,B), out_figure(V,N2,D2,B2), B2 = B+D, beat(B+D), 
+out_passing(V,B) :- out_error_weak(V,B), out_figure(V,N,D,B), out_figure(V,N2,D2,B2), B2 = B+D, beat(B+D),
 						out_grade(V,G2,O2,B+D), belongs(G2,C), chord(HT,C), beat_belongs_htime(B+D,HT).
 
 #const note_errorinstrongw = 1.
@@ -71,12 +71,11 @@ out_passing(V,B) :- out_error_weak(V,B), out_figure(V,N,D,B), out_figure(V,N2,D2
 #const unisonp = 2.
 #const note_errorinweakp = 1.
 
-#minimize[out_error(_,_) = note_errorinstrongw @ note_errorinstrongp].
-#minimize[repeated_grade(_,_,_) = repeatedgradew @ repeatedgradep].
-#minimize[unison(_,_,_) = unisonw @ unisonp].
-#minimize[out_error_weak(_,_) = note_errorinweakw @ note_errorinweakp].
+#minimize{note_errorinstrongw @ note_errorinstrongp : out_error(_,_)}.
+#minimize{repeatedgradew @ repeatedgradep : repeated_grade(_,_,_)}.
+#minimize{unisonw @ unisonp : unison(_,_,_)}.
+#minimize{note_errorinweakw @ note_errorinweakp : out_error_weak(_,_)}.
 
-#hide.
 #show chord/2.
 #show voice_type/2.
 #show real_measure/3.
