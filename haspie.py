@@ -175,8 +175,8 @@ def main():
 	if xml_parser_ret != 0:
 		sys.exit("Parsing error, stopping execution.")
 
-	asp_chord_args = ("clingo", config, "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
-		"asp/include/chord_conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", extra_voices,
+	asp_chord_args = ("clingo", "asp/assign_chords.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
+		"asp/include/chord_conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp",
 		"asp/generated_logic_music/" + lp_outname,"-n", str(n),
 		"--const", "span=" + str(span), "--const", "base="+ str(base),
 		"--const", "subdiv="+subdivision)
@@ -201,8 +201,8 @@ def main():
 	assig_chords.write(HaspMusic.asp_clean_chords(chords.chord_solutions[int(selected_solution)-1].raw_ans))
 	assig_chords.close()
 
-	asp_note_args = ("clingo", config, sixthslink, melodious, "asp/complete_score.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
-		"asp/include/conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", "tmp/assigned_chords.lp", extra_voices,
+	asp_note_args = ("clingo", "asp/complete_score.lp", "asp/include/" + mode + "_mode.lp", "asp/include/" + mode + "_chords.lp",
+		"asp/include/conversions.lp", "asp/include/measures.lp", "asp/include/voice_types.lp", "tmp/assigned_chords.lp",
 		"asp/generated_logic_music/" + lp_outname,"-n", str(n),
 		"--const", "span=" + str(span), "--const", "base="+ str(base),
 		"--const", "subdiv="+subdivision)
